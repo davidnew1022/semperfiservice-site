@@ -796,19 +796,51 @@ FINAL: responsive behavior
 }
 
 @media (max-width: 860px) {
-  .site-nav {
-    position: absolute;
-    top: 78px;
-    left: 0;
-    right: 0;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 1rem;
-    background: #ffffff;
-    border-bottom: 1px solid #dbe4ec;
-  }
+    .hero {
+        padding-top: 4.5rem;
+        padding-bottom: 3rem;
+        background-position: 68% top;
+        background-size: cover;
+    }
+
+        .hero::before {
+            background: linear-gradient( to bottom, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.80) 34%, rgba(255,255,255,0.52) 62%, rgba(255,255,255,0.22) 100% );
+        }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-copy {
+        position: relative;
+        z-index: 1;
+    }
+
+        .hero-copy h1 {
+            font-size: clamp(2.6rem, 10vw, 4rem);
+            line-height: 1.02;
+            max-width: none;
+        }
+
+    .hero-media {
+        display: block;
+        position: relative;
+        padding-top: 0;
+        min-height: auto;
+    }
+
+    .hero-panel {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: auto;
+        transform: none;
+        width: calc(100% - 1rem);
+        max-width: none;
+        margin: 0 auto;
+    }
+}
     .nav-dropdown {
         width: 100%;
         display: block;
