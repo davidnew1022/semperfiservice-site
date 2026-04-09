@@ -42,11 +42,30 @@ Purpose:
             </a>
 
             <!-- FINAL:
-            Main site nav = dedicated top-level pages
-            These are the pages you asked for
-            -->
+    Main site nav = dedicated top-level pages
+    These are the pages you asked for
+    -->
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <a href="index.html" aria-current="page">Home</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="home-dropdown-menu">
+                        Home
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="home-dropdown-menu">
+                        <a href="index.html#hero">Overview</a>
+                        <a href="index.html#capabilities-overview">Capabilities</a>
+                        <a href="index.html#products">Products</a>
+                        <a href="index.html#process">Process</a>
+                        <a href="index.html#quality-overview">Quality</a>
+                        <a href="index.html#government-overview">Government</a>
+                        <a href="index.html#company-overview">Company</a>
+                        <a href="index.html#contact-preview">Contact</a>
+                    </div>
+                </div>
+
                 <a href="company/index.html">Company</a>
                 <a href="capabilities/index.html">Capabilities</a>
                 <a href="quality/index.html">Quality</a>
@@ -102,9 +121,49 @@ Purpose:
                 </div>
 
                 <div class="hero-media">
-                    <!-- NOT FINAL: replace with actual image / photo / branded visual -->
-                    <div class="media-placeholder">
-                        <span>Homepage Hero Visual / Aviation / Industrial / Operations</span>
+                    <div class="hero-panel">
+                        <div class="hero-panel-top">
+                            <p class="hero-panel-kicker">Operational Readiness</p>
+                            <h3>Documentation, Traceability, and Responsive Support</h3>
+                            <p>
+                                Built for buyers and partners who expect organized communication,
+                                disciplined records, and dependable execution.
+                            </p>
+                        </div>
+
+                        <div class="hero-panel-grid">
+                            <article class="hero-panel-card">
+                                <span class="hero-panel-label">Distribution</span>
+                                <strong>Aviation &amp; Industrial Supply</strong>
+                            </article>
+
+                            <article class="hero-panel-card">
+                                <span class="hero-panel-label">Quality</span>
+                                <strong>Process-Oriented Documentation</strong>
+                            </article>
+
+                            <article class="hero-panel-card">
+                                <span class="hero-panel-label">Government</span>
+                                <strong>Procurement-Ready Communication</strong>
+                            </article>
+                        </div>
+
+                        <div class="hero-panel-metrics" aria-label="Company focus highlights">
+                            <div class="hero-metric">
+                                <span class="hero-metric-value">Veteran</span>
+                                <span class="hero-metric-label">Led</span>
+                            </div>
+
+                            <div class="hero-metric">
+                                <span class="hero-metric-value">Quality</span>
+                                <span class="hero-metric-label">Focused</span>
+                            </div>
+
+                            <div class="hero-metric">
+                                <span class="hero-metric-value">Gov</span>
+                                <span class="hero-metric-label">Ready</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
