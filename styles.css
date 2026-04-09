@@ -150,7 +150,7 @@ FINAL: header/nav
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: #12385f; /* NEW: dark navy */
+    background: #102f52; /* NEW: dark navy */
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     backdrop-filter: blur(8px);
 }
@@ -714,7 +714,7 @@ FINAL: contact
 FINAL: footer
 ========================= */
 .site-footer {
-    background: #12385f;
+    background: #102f52;
     color: #d8e3ed;
     padding-top: 3rem;
 }
