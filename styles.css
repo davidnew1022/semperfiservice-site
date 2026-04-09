@@ -200,6 +200,71 @@ FINAL: header/nav
   color: #12385f;
 }
 
+/* =========================
+HOME DROPDOWN NAV
+FINAL: desktop + mobile dropdown structure
+NOT FINAL: spacing/colors can be tuned later
+========================= */
+.nav-dropdown {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.nav-dropdown-toggle {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    font-size: 0.95rem;
+    color: #203345;
+    cursor: pointer;
+}
+
+    .nav-dropdown-toggle:hover {
+        color: #12385f;
+    }
+
+.nav-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 220px;
+    background: #ffffff;
+    border: 1px solid #dbe4ec;
+    border-radius: 0.8rem;
+    box-shadow: 0 16px 40px rgba(18, 32, 47, 0.10);
+    padding: 0.5rem 0;
+    display: none;
+    z-index: 1001;
+}
+
+    .nav-dropdown-menu a {
+        display: block;
+        padding: 0.8rem 1rem;
+        font-size: 0.95rem;
+        color: #203345;
+        white-space: nowrap;
+    }
+
+        .nav-dropdown-menu a:hover {
+            background: #f5f8fb;
+            color: #12385f;
+        }
+
+.nav-dropdown.is-open .nav-dropdown-menu {
+    display: block;
+}
+
+/* =========================
+AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
+========================= */
+@media (min-width: 861px) {
+    .nav-dropdown:hover .nav-dropdown-menu {
+        display: block;
+    }
+}
+
 .header-actions {
   display: flex;
   align-items: center;
@@ -569,7 +634,40 @@ FINAL: responsive behavior
     background: #ffffff;
     border-bottom: 1px solid #dbe4ec;
   }
+    .nav-dropdown {
+        width: 100%;
+        display: block;
+    }
+        /* FIX: invisible hover bridge to prevent dropdown closing */
+    .nav-dropdown::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 14px;
+    }
+    .nav-dropdown-toggle {
+        width: 100%;
+        text-align: left;
+        padding: 0.9rem 0;
+        border-bottom: 1px solid #eef3f7;
+    }
 
+    .nav-dropdown-menu {
+        position: static;
+        min-width: 100%;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0 0 0.5rem 0.75rem;
+        background: transparent;
+    }
+
+        .nav-dropdown-menu a {
+            padding: 0.7rem 0;
+            border-bottom: 1px solid #eef3f7;
+        }
   .site-nav.is-open {
     display: flex;
   }
