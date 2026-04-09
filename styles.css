@@ -1811,7 +1811,7 @@ FINAL: responsive behavior
 
   .hero {
     position: relative;
-    padding-top: 4.25rem;
+    padding-top: 0;
     padding-bottom: 3rem;
     background: #f7f8fa;
   }
@@ -1822,7 +1822,7 @@ FINAL: responsive behavior
     top: 0;
     left: 0;
     right: 0;
-    height: 860px;
+    height: 760px;
     background-image:
       linear-gradient(
         to bottom,
@@ -1833,10 +1833,14 @@ FINAL: responsive behavior
       ),
       url("images/hero.jpg");
     background-repeat: no-repeat;
-    background-position: 72% 24px;
-    background-size: 135% auto;
+    background-position: 72% top;
+    background-size: cover;
     z-index: 0;
     pointer-events: none;
+  }
+
+  .hero-copy {
+    padding-top: 4.25rem;
   }
 
   .hero-grid,
@@ -1913,6 +1917,10 @@ FINAL: responsive behavior
 
     .hero {
         padding-top: 0;
+    }
+
+    .hero-copy {
+        padding-top: 4.25rem;
     }
 
     .header-inner {
