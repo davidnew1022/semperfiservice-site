@@ -773,8 +773,13 @@ FINAL: responsive behavior
         background-position: 72% center;
     }
 
-        .hero::before {
-            background: linear-gradient( to right, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.88) 55%, rgba(255,255,255,0.20) 100% );
+    .hero::before {
+        background: linear-gradient(
+            to bottom,
+        rgba(255,255,255,0.72) 0%,
+        rgba(255,255,255,0.58) 34%,
+        rgba(255,255,255,0.28) 64%,
+        rgba(255,255,255,0.08) 100% );
         }
 
     .hero-media {
@@ -895,12 +900,12 @@ FINAL: responsive behavior
     .hero {
         padding-top: 4.25rem;
         padding-bottom: 3rem;
-        background-position: center top;
-        background-size: 180% auto;
+        background-image: none;
+        background-color: #f7f8fa;
     }
 
         .hero::before {
-            background: linear-gradient( to bottom, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.86) 34%, rgba(255,255,255,0.56) 64%, rgba(255,255,255,0.24) 100% );
+            display: none;
         }
 
     .hero-grid,
@@ -914,7 +919,7 @@ FINAL: responsive behavior
     }
 
     .hero-grid {
-        gap: 1.5rem;
+        gap: 1.25rem;
     }
 
     .hero-copy h1 {
@@ -927,7 +932,12 @@ FINAL: responsive behavior
         position: relative;
         width: 100%;
         padding-top: 0;
-        overflow: hidden;
+        overflow: visible;
+    }
+
+    .hero-mobile-image {
+        display: block;
+        margin: 0.5rem 0 1rem;
     }
 
     .hero-panel {
@@ -939,6 +949,10 @@ FINAL: responsive behavior
         width: 100%;
         max-width: none;
         margin: 0;
+    }
+
+    .hero-panel-metrics {
+        grid-template-columns: 1fr;
     }
 
     .process-step {

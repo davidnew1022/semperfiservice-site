@@ -1,831 +1,113 @@
 /* =========================
-FILE: styles.css
+FILE: script.js
 Final status:
-- FINAL for starter design system / layout skeleton
-- NOT FINAL for branding, imagery, final spacing choices, and visual identity
+- FINAL for mobile nav toggle + Home dropdown behavior
+- NOT FINAL for advanced interactions, animations, or form submission
+
 Purpose:
-- Clean professional styling
-- No frameworks
-- Easy to extend in VS Code
+- Keep JS minimal
+- Handle mobile navigation
+- Handle Home dropdown on desktop and mobile
 ========================= */
 
-/* =========================
-FINAL: CSS reset / base
-========================= */
-*,
-*:: before,
-*::after {
-    box - sizing: border - box;
+const navToggle = document.getElementById("nav-toggle");
+const siteNav = document.getElementById("site-nav");
+const homeDropdown = document.querySelector(".nav-dropdown");
+const homeDropdownToggle = document.querySelector(".nav-dropdown-toggle");
+const homeDropdownLinks = homeDropdown
+    ? homeDropdown.querySelectorAll(".nav-dropdown-menu a")
+    : [];
+
+/* FINAL: mobile nav toggle behavior */
+if (navToggle && siteNav) {
+    navToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const isOpen = siteNav.classList.toggle("is-open");
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+
+        // Keep the Home dropdown closed when opening/closing the main mobile nav
+        if (!isOpen && homeDropdown && homeDropdownToggle) {
+            homeDropdown.classList.remove("is-open");
+            homeDropdownToggle.setAttribute("aria-expanded", "false");
+        }
+    });
 }
 
-html {
-    scroll - behavior: smooth;
+/* FINAL: Home dropdown toggle behavior */
+if (homeDropdown && homeDropdownToggle) {
+    homeDropdownToggle.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const isOpen = homeDropdown.classList.toggle("is-open");
+        homeDropdownToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    homeDropdownLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            homeDropdown.classList.remove("is-open");
+            homeDropdownToggle.setAttribute("aria-expanded", "false");
+
+            if (siteNav && navToggle) {
+                siteNav.classList.remove("is-open");
+                navToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
 }
 
-body,
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    ul,
-    li {
-    margin: 0;
+/* FINAL: close mobile nav when any normal nav link is clicked */
+if (siteNav && navToggle) {
+    siteNav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            siteNav.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+
+            if (homeDropdown && homeDropdownToggle) {
+                homeDropdown.classList.remove("is-open");
+                homeDropdownToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    });
 }
 
-body {
-    font - family: Arial, Helvetica, sans - serif; /* NOT FINAL: replace with brand font later if desired */
-    line - height: 1.6;
-    color: #12202f;
-    background: #ffffff;
-}
-
-img {
-    max - width: 100 %;
-    display: block;
-}
-
-a {
-    color: inherit;
-    text - decoration: none;
-}
-
-ul {
-    padding - left: 1.2rem;
-}
-
-/* =========================
-FINAL: reusable layout utilities
-========================= */
-.container {
-    width: min(1180px, calc(100 % - 2rem));
-    margin: 0 auto;
-}
-
-.section {
-    padding: 5rem 0;
-}
-
-.section - alt {
-    background: #f5f8fb;
-}
-
-.section - heading {
-    max - width: 760px;
-    margin - bottom: 2rem;
-}
-
-.section - heading h2 {
-    font - size: clamp(2rem, 4vw, 2.8rem);
-    line - height: 1.1;
-    margin - bottom: 0.75rem;
-}
-
-.section - heading p {
-    color: #4a5b6d;
-}
-
-.section - kicker,
-.eyebrow {
-    display: inline - block;
-    margin - bottom: 0.75rem;
-    font - size: 0.85rem;
-    font - weight: 700;
-    letter - spacing: 0.08em;
-    text - transform: uppercase;
-    color: #1f4f82;
-}
-
-/* =========================
-FINAL: buttons
-NOT FINAL: brand colors if you want different palette later
-========================= */
-.btn {
-    display: inline - flex;
-    align - items: center;
-    justify - content: center;
-    min - height: 46px;
-    padding: 0.8rem 1.2rem;
-    border - radius: 0.5rem;
-    border: 1px solid transparent;
-    font - weight: 700;
-    transition: transform 0.2s ease, background - color 0.2s ease, border - color 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-1px);
-}
-
-.btn - primary {
-    background: #12385f;
-    color: #ffffff;
-}
-
-.btn - primary:hover {
-    background: #0f2f50;
-}
-
-.btn - secondary {
-    background: transparent;
-    color: #12385f;
-    border - color: #12385f;
-}
-
-.btn - secondary:hover {
-    background: rgba(18, 56, 95, 0.06);
-}
-
-.button - row {
-    display: flex;
-    flex - wrap: wrap;
-    gap: 0.9rem;
-}
-
-/* =========================
-FINAL: header/nav
-========================= */
-.site - header {
-    position: sticky;
-    top: 0;
-    z - index: 1000;
-    background: rgba(255, 255, 255, 0.97);
-    border - bottom: 1px solid #dbe4ec;
-    backdrop - filter: blur(8px);
-}
-
-.header - inner {
-    display: flex;
-    align - items: center;
-    justify - content: space - between;
-    min - height: 78px;
-    gap: 1rem;
-}
-
-.logo {
-    display: inline - flex;
-    align - items: center;
-    gap: 0.75rem;
-    font - weight: 800;
-}
-
-.logo - mark {
-    display: inline - grid;
-    place - items: center;
-    width: 42px;
-    height: 42px;
-    border - radius: 50 %;
-    background: #12385f;
-    color: #ffffff;
-    font - size: 0.9rem;
-    font - weight: 800;
-}
-
-.logo - text {
-    font - size: 1rem;
-    letter - spacing: 0.02em;
-}
-
-.site - nav {
-    display: flex;
-    align - items: center;
-    gap: 1.2rem;
-}
-
-.site - nav a {
-    font - size: 0.95rem;
-    color: #203345;
-}
-
-.site - nav a:hover {
-    color: #12385f;
-}
-
-/* =========================
-HOME DROPDOWN NAV
-FINAL: desktop + mobile dropdown structure
-NOT FINAL: spacing/colors can be tuned later
-========================= */
-.nav - dropdown {
-    position: relative;
-    display: flex;
-    align - items: center;
-}
-
-.nav - dropdown - toggle {
-    background: transparent;
-    border: 0;
-    padding: 0;
-    font: inherit;
-    font - size: 0.95rem;
-    color: #203345;
-    cursor: pointer;
-}
-
-    .nav - dropdown - toggle:hover {
-    color: #12385f;
-}
-
-.nav - dropdown - menu {
-    position: absolute;
-    top: 100 %;
-    left: 0;
-    min - width: 220px;
-    background: #ffffff;
-    border: 1px solid #dbe4ec;
-    border - radius: 0.8rem;
-    box - shadow: 0 16px 40px rgba(18, 32, 47, 0.10);
-    padding: 0.5rem 0;
-    display: none;
-    z - index: 1001;
-}
-
-    .nav - dropdown - menu a {
-    display: block;
-    padding: 0.8rem 1rem;
-    font - size: 0.95rem;
-    color: #203345;
-    white - space: nowrap;
-}
-
-        .nav - dropdown - menu a:hover {
-    background: #f5f8fb;
-    color: #12385f;
-}
-
-.nav - dropdown.is - open.nav - dropdown - menu {
-    display: block;
-}
-
-/* =========================
-AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
-========================= */
-@media(min - width: 861px) {
-    .nav - dropdown: hover.nav - dropdown - menu {
-        display: block;
-    }
-}
-
-.header - actions {
-    display: flex;
-    align - items: center;
-    gap: 0.75rem;
-}
-
-.nav - toggle {
-    display: none;
-    border: 0;
-    background: transparent;
-    padding: 0.25rem;
-    cursor: pointer;
-}
-
-.nav - toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: #12202f;
-    margin: 5px 0;
-}
-
-/* =========================
-FINAL: hero
-========================= */
-.hero {
-    padding - top: 6rem;
-    padding - bottom: 5rem;
-    background:
-    linear - gradient(to bottom, #f7fafc 0 %, #ffffff 100 %);
-}
-
-.hero - grid {
-    display: grid;
-    grid - template - columns: 1.15fr 0.85fr;
-    gap: 2rem;
-    align - items: center;
-}
-
-.hero - copy h1 {
-    font - size: clamp(2.4rem, 5vw, 4.6rem);
-    line - height: 1.02;
-    margin - bottom: 1rem;
-    max - width: 12ch;
-}
-
-.hero - text {
-    max - width: 62ch;
-    color: #4a5b6d;
-    margin - bottom: 1.5rem;
-}
-
-.hero - media {
-    display: flex;
-    justify - content: center;
-}
-.hero - panel {
-    position: relative;
-    display: grid;
-    gap: 1.25rem;
-    padding: 1.5rem;
-    border: 1px solid rgba(15, 43, 58, 0.12);
-    border - radius: 20px;
-    background: linear - gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 251, 0.96));
-    box - shadow: 0 18px 45px rgba(15, 43, 58, 0.08), 0 4px 12px rgba(15, 43, 58, 0.04);
-    overflow: hidden;
-}
-
-    .hero - panel::before {
-    content: "";
-    position: absolute;
-    inset: 0 0 auto 0;
-    height: 4px;
-    background: linear - gradient(90deg, #0f2b3a, #7f98a5);
-}
-
-.hero - panel - top h3 {
-    margin: 0.35rem 0 0.65rem;
-    font - size: 1.35rem;
-    line - height: 1.25;
-}
-
-.hero - panel - top p {
-    margin: 0;
-}
-
-.hero - panel - kicker {
-    margin: 0;
-    font - size: 0.72rem;
-    font - weight: 700;
-    letter - spacing: 0.14em;
-    text - transform: uppercase;
-    color: #5a7280;
-}
-
-.hero - panel - grid {
-    display: grid;
-    gap: 0.9rem;
-}
-
-.hero - panel - card {
-    padding: 1rem 1rem 0.95rem;
-    border: 1px solid rgba(15, 43, 58, 0.1);
-    border - radius: 14px;
-    background: rgba(255, 255, 255, 0.78);
-}
-
-    .hero - panel - card strong {
-    display: block;
-    font - size: 1rem;
-    line - height: 1.35;
-    color: #0f2b3a;
-}
-
-.hero - panel - label {
-    display: inline - block;
-    margin - bottom: 0.35rem;
-    font - size: 0.72rem;
-    font - weight: 700;
-    letter - spacing: 0.12em;
-    text - transform: uppercase;
-    color: #6c828e;
-}
-
-.hero - panel - metrics {
-    display: grid;
-    grid - template - columns: repeat(3, minmax(0, 1fr));
-    gap: 0.75rem;
-    padding - top: 0.25rem;
-}
-
-.hero - metric {
-    padding: 0.9rem 0.75rem;
-    border - radius: 14px;
-    background: #0f2b3a;
-    text - align: center;
-}
-
-.hero - metric - value {
-    display: block;
-    font - size: 0.95rem;
-    font - weight: 700;
-    letter - spacing: 0.08em;
-    text - transform: uppercase;
-    color: #ffffff;
-}
-
-.hero - metric - label {
-    display: block;
-    margin - top: 0.2rem;
-    font - size: 0.78rem;
-    color: rgba(255, 255, 255, 0.72);
-}
-
-@media(max - width: 768px) {
-    .hero - panel {
-        padding: 1.15rem;
+/* FINAL: close nav/dropdown when clicking outside */
+document.addEventListener("click", (event) => {
+    if (homeDropdown && homeDropdownToggle && !homeDropdown.contains(event.target)) {
+        homeDropdown.classList.remove("is-open");
+        homeDropdownToggle.setAttribute("aria-expanded", "false");
     }
 
-    .hero - panel - top h3 {
-        font - size: 1.15rem;
+    if (
+        siteNav &&
+        navToggle &&
+        !siteNav.contains(event.target) &&
+        !navToggle.contains(event.target)
+    ) {
+        siteNav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
     }
+});
 
-    .hero - panel - metrics {
-        grid - template - columns: 1fr;
+/* FINAL: reset mobile states when resizing back to desktop */
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 860) {
+        if (siteNav && navToggle) {
+            siteNav.classList.remove("is-open");
+            navToggle.setAttribute("aria-expanded", "false");
+        }
+
+        if (homeDropdown && homeDropdownToggle) {
+            homeDropdown.classList.remove("is-open");
+            homeDropdownToggle.setAttribute("aria-expanded", "false");
+        }
     }
-}
-.media - placeholder {
-    width: 100 %;
-    min - height: 420px;
-    border: 1px dashed #9db2c5;
-    border - radius: 1rem;
-    background:
-    linear - gradient(135deg, #e7eef5, #f7fafc);
-    display: grid;
-    place - items: center;
-    text - align: center;
-    color: #5a7186;
-    padding: 1rem;
-}
+});
 
-.media - placeholder.small {
-    min - height: 320px;
-}
-
-/* =========================
-FINAL: credibility strip
-========================= */
-.credibility - strip {
-    border - top: 1px solid #dbe4ec;
-    border - bottom: 1px solid #dbe4ec;
-    background: #ffffff;
-}
-
-.credibility - items {
-    min - height: 72px;
-    display: flex;
-    flex - wrap: wrap;
-    align - items: center;
-    justify - content: center;
-    gap: 1rem 2rem;
-    padding: 1rem 0;
-    color: #29455f;
-    font - weight: 700;
-    text - align: center;
-}
-
-/* =========================
-FINAL: cards / grids
-========================= */
-.card - grid {
-    display: grid;
-    gap: 1.25rem;
-}
-
-.card - grid - 4 {
-    grid - template - columns: repeat(4, minmax(0, 1fr));
-}
-
-.card - grid - 3 {
-    grid - template - columns: repeat(3, minmax(0, 1fr));
-}
-
-.card - grid - 2 {
-    grid - template - columns: repeat(2, minmax(0, 1fr));
-}
-
-.card {
-    background: #ffffff;
-    border: 1px solid #dbe4ec;
-    border - radius: 1rem;
-    padding: 1.4rem;
-    box - shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
-}
-
-.card h3 {
-    font - size: 1.15rem;
-    margin - bottom: 0.6rem;
-}
-
-.card p {
-    color: #4a5b6d;
-}
-
-/* =========================
-FINAL: process
-========================= */
-.process - row {
-    display: grid;
-    grid - template - columns: repeat(5, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin - bottom: 1.5rem;
-}
-
-.process - step {
-    background: #12385f;
-    color: #ffffff;
-    border - radius: 999px;
-    text - align: center;
-    padding: 0.9rem 1rem;
-    font - weight: 700;
-}
-
-.detail - grid {
-    display: grid;
-    grid - template - columns: repeat(4, minmax(0, 1fr));
-    gap: 1rem;
-}
-
-.detail - item {
-    padding: 1rem 0;
-}
-
-.detail - item h3 {
-    margin - bottom: 0.5rem;
-}
-
-.detail - item p {
-    color: #4a5b6d;
-}
-
-/* =========================
-FINAL: split layout / panels / lists
-========================= */
-.split - layout {
-    display: grid;
-    grid - template - columns: 1.1fr 0.9fr;
-    gap: 2rem;
-    align - items: center;
-}
-
-.panel {
-    background: #ffffff;
-    border: 1px solid #dbe4ec;
-    border - radius: 1rem;
-    padding: 1.5rem;
-    box - shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
-}
-
-.panel h3 {
-    margin - bottom: 0.75rem;
-}
-
-.panel p,
-.feature - list li {
-    color: #4a5b6d;
-}
-
-.feature - list {
-    margin - top: 1rem;
-    display: grid;
-    gap: 0.65rem;
-}
-
-/* =========================
-FINAL: CTA banner
-========================= */
-.cta - banner {
-    background: linear - gradient(135deg, #12385f, #1a4b7f);
-    color: #ffffff;
-}
-
-.cta - banner.section - kicker,
-.cta - banner p {
-    color: rgba(255, 255, 255, 0.88);
-}
-
-.cta - banner - inner {
-    display: flex;
-    flex - wrap: wrap;
-    align - items: center;
-    justify - content: space - between;
-    gap: 1.5rem;
-}
-
-.cta - banner h2 {
-    font - size: clamp(2rem, 4vw, 3rem);
-    line - height: 1.05;
-    margin - bottom: 0.75rem;
-}
-
-.cta - banner.btn - secondary {
-    color: #ffffff;
-    border - color: rgba(255, 255, 255, 0.75);
-}
-
-.cta - banner.btn - secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-/* =========================
-FINAL: contact
-========================= */
-.contact - layout {
-    display: grid;
-    grid - template - columns: 0.85fr 1.15fr;
-    gap: 1.5rem;
-}
-
-.contact - card,
-.contact - form {
-    background: #ffffff;
-    border: 1px solid #dbe4ec;
-    border - radius: 1rem;
-    padding: 1.5rem;
-    box - shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
-}
-
-.contact - card h3,
-.contact - form h3 {
-    margin - bottom: 0.75rem;
-}
-
-.form - row {
-    display: grid;
-    gap: 0.4rem;
-    margin - bottom: 1rem;
-}
-
-.form - row label {
-    font - weight: 700;
-    color: #203345;
-}
-
-.form - row input,
-.form - row textarea {
-    width: 100 %;
-    padding: 0.85rem 0.95rem;
-    border: 1px solid #c5d2de;
-    border - radius: 0.65rem;
-    font: inherit;
-    color: #12202f;
-    background: #ffffff;
-}
-
-.form - row input: focus,
-.form - row textarea:focus {
-    outline: 2px solid rgba(31, 79, 130, 0.16);
-    border - color: #1f4f82;
-}
-
-/* =========================
-FINAL: footer
-========================= */
-.site - footer {
-    background: #0e1d2c;
-    color: #d8e3ed;
-    padding - top: 3rem;
-}
-
-.footer - grid {
-    display: grid;
-    grid - template - columns: 1.2fr 1fr 1fr;
-    gap: 1.5rem;
-    padding - bottom: 2rem;
-}
-
-.site - footer h3,
-.site - footer h4 {
-    color: #ffffff;
-    margin - bottom: 0.75rem;
-}
-
-.footer - links {
-    list - style: none;
-    padding - left: 0;
-    display: grid;
-    gap: 0.45rem;
-}
-
-.footer - links a {
-    color: #d8e3ed;
-}
-
-.footer - links a:hover {
-    color: #ffffff;
-}
-
-.footer - bottom {
-    border - top: 1px solid rgba(216, 227, 237, 0.16);
-    padding: 1rem 0 1.5rem;
-    font - size: 0.95rem;
-    color: #c6d4e1;
-}
-
-/* =========================
-FINAL: responsive behavior
-========================= */
-@media(max - width: 1080px) {
-  .card - grid - 4,
-  .detail - grid {
-        grid - template - columns: repeat(2, minmax(0, 1fr));
-    }
-
-  .hero - grid,
-  .split - layout,
-  .contact - layout {
-        grid - template - columns: 1fr;
-    }
-
-  .hero - copy h1 {
-        max - width: none;
-    }
-}
-
-@media(max - width: 860px) {
-  .site - nav {
-        position: absolute;
-        top: 78px;
-        left: 0;
-        right: 0;
-        display: none;
-        flex - direction: column;
-        align - items: flex - start;
-        gap: 0;
-        padding: 1rem;
-        background: #ffffff;
-        border - bottom: 1px solid #dbe4ec;
-    }
-    .nav - dropdown {
-        width: 100 %;
-        display: block;
-    }
-        /* FIX: invisible hover bridge to prevent dropdown closing */
-    .nav - dropdown::after {
-        content: "";
-        position: absolute;
-        top: 100 %;
-        left: 0;
-        width: 100 %;
-        height: 14px;
-    }
-    .nav - dropdown - toggle {
-        width: 100 %;
-        text - align: left;
-        padding: 0.9rem 0;
-        border - bottom: 1px solid #eef3f7;
-    }
-
-    .nav - dropdown - menu {
-        position: static;
-        min - width: 100 %;
-        border: 0;
-        border - radius: 0;
-        box - shadow: none;
-        padding: 0 0 0.5rem 0.75rem;
-        background: transparent;
-    }
-
-        .nav - dropdown - menu a {
-        padding: 0.7rem 0;
-        border - bottom: 1px solid #eef3f7;
-    }
-  .site - nav.is - open {
-        display: flex;
-    }
-
-  .site - nav a {
-        width: 100 %;
-        padding: 0.9rem 0;
-        border - bottom: 1px solid #eef3f7;
-    }
-
-  .nav - toggle {
-        display: inline - block;
-    }
-
-  .header - actions.btn {
-        display: none;
-    }
-
-  .card - grid - 3,
-  .card - grid - 2,
-  .process - row,
-  .footer - grid {
-        grid - template - columns: 1fr;
-    }
-
-  .process - step {
-        border - radius: 0.8rem;
-    }
-}
-
-@media(max - width: 560px) {
-  .section {
-        padding: 4rem 0;
-    }
-
-  .container {
-        width: min(100 % - 1rem, 1180px);
-    }
-
-  .hero {
-        padding - top: 5rem;
-    }
-
-  .header - inner {
-        min - height: 72px;
-    }
-
-  .logo - text {
-        font - size: 0.95rem;
-    }
-}
+/* NOT FINAL: Future options for this file:
+- sticky header shrink effect
+- scroll animations
+- active nav highlighting
+- real form validation
+- AJAX or backend form submission
+*/
