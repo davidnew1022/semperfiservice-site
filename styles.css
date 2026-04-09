@@ -126,14 +126,14 @@ NOT FINAL: brand colors if you want different palette later
     }
 
 .btn-secondary {
-    background: #0e2a3f;
+    background: #12385f;
     color: #ffffff;
-    border-color: #0e2a3f;
+    border-color: #12385f;
 }
 
     .btn-secondary:hover {
-        background: #12385f;
-        border-color: #12385f;
+        background: #0f2f50;
+        border-color: #0f2f50;
     }
 
 
@@ -443,7 +443,7 @@ FINAL: hero
 .hero-metric {
     padding: 0.9rem 0.75rem;
     border-radius: 14px;
-    background: #0f2b3a;
+    background: #12385f;
     text-align: center;
 }
 
