@@ -1912,15 +1912,13 @@ FINAL: responsive behavior
     }
 
     .hero {
-        padding-top: 5rem;
+        padding-top: 1.25rem;
     }
 
     .header-inner {
         min-height: 72px;
     }
-
-    }
-
+}
 
   .hero-grid,
   .split-layout,
