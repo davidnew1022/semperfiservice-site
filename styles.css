@@ -357,8 +357,9 @@ FINAL: hero
 }
 .hero-panel {
     position: relative;
-    left: 120px;
-    top: -24px;
+    top: 20px;
+    width: 100%;
+    max-width: 690px;
     display: grid;
     gap: 1.25rem;
     padding: 1.5rem;
@@ -367,9 +368,8 @@ FINAL: hero
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 251, 0.96));
     box-shadow: 0 18px 45px rgba(15, 43, 58, 0.08), 0 4px 12px rgba(15, 43, 58, 0.04);
     overflow: hidden;
-    transform: none;
+    transform: translateX(320px);
 }
-
 
     .hero-panel::before {
         content: "";
