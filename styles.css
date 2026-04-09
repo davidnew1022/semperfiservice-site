@@ -224,9 +224,13 @@ NOT FINAL: spacing/colors can be tuned later
     padding: 0;
     font: inherit;
     font-size: 0.95rem;
-    color: #203345;
+    color: rgba(255, 255, 255, 0.85);
     cursor: pointer;
 }
+
+    .nav-dropdown-toggle:hover {
+        color: #ffffff;
+    }
 
     .nav-dropdown-toggle:hover {
         color: #12385f;
@@ -298,17 +302,36 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 FINAL: hero
 ========================= */
 .hero {
-  padding-top: 6rem;
-  padding-bottom: 5rem;
-  background:
-    linear-gradient(to bottom, #f7fafc 0%, #ffffff 100%);
+    position: relative;
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+    background-image: url("images/hero.jpg"); /* <-- update path */
+    background-size: cover;
+    background-position: 85% center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
+    /* dark overlay for readability */
+    .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient( to right, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.85) 40%, rgba(255,255,255,0.0) 70% );
+        z-index: 0;
+    }
+
+    /* keep content above image */
+    .hero > .container {
+        position: relative;
+        z-index: 1;
+    }
+
 .hero-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: 2rem;
-  align-items: center;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 2rem;
+    align-items: start;
 }
 
 .hero-copy h1 {
@@ -325,11 +348,17 @@ FINAL: hero
 }
 
 .hero-media {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 0;
+    padding-right: 0;
+    position: relative;
 }
 .hero-panel {
     position: relative;
+    left: 120px;
+    top: -24px;
     display: grid;
     gap: 1.25rem;
     padding: 1.5rem;
@@ -338,7 +367,9 @@ FINAL: hero
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 251, 0.96));
     box-shadow: 0 18px 45px rgba(15, 43, 58, 0.08), 0 4px 12px rgba(15, 43, 58, 0.04);
     overflow: hidden;
+    transform: none;
 }
+
 
     .hero-panel::before {
         content: "";
