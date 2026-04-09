@@ -1,517 +1,609 @@
 <!-- =========================
 FILE: index.html
 Final status:
-- FINAL for structure/skeleton
-- NOT FINAL for text, branding, images, links, and form handling
+- FINAL for upgraded homepage structure and multi-page navigation
+- NOT FINAL for final branding, imagery, long-form copy, and form backend
 Purpose:
-- Main homepage markup
-- Uses semantic sections
-- Ready to paste into a new VS Code project
+- Home page for a multi-page Semper Fi Services website
+- Keeps homepage concise
+- Adds secondary "home sub-navigation" for deeper content areas
+- Ready for future pages: Company, Capabilities, Quality, Government, Contact
 ========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semper Fi Services</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semper Fi Services</title>
 
-  <!-- NOT FINAL: update meta description later -->
-  <meta
-    name="description"
-    content="Semper Fi Services - aircraft, ground support, and industrial parts distribution."
-  />
+    <!-- NOT FINAL: update description after brand/copy is finalized -->
+    <meta name="description"
+          content="Semper Fi Services provides quality-driven sourcing, distribution, compliance support, and government-ready industrial and aviation solutions." />
 
-  <!-- FINAL: stylesheet link -->
-  <link rel="stylesheet" href="styles.css" />
+    <!-- FINAL: shared stylesheet -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- =========================
-  FINAL: Site Header / Navigation structure
-  NOT FINAL: logo text, nav URLs, final CTA wording
-  ========================= -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="#hero" class="logo" aria-label="Semper Fi  Services Home">
-        <!-- NOT FINAL: replace with text logo image or SVG later -->
-        <span class="logo-mark">SS</span>
-        <span class="logo-text">Semper Fi Services</span>
-      </a>
-
-      <!-- FINAL: desktop/mobile nav structure -->
-      <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#capabilities">Capabilities</a>
-        <a href="#products">Products</a>
-        <a href="#quality">Quality</a>
-        <a href="#government">Government</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="header-actions">
-        <!-- NOT FINAL: CTA destination -->
-        <a href="#contact" class="btn btn-primary">Request a Quote</a>
-
-        <!-- FINAL: mobile menu button functionality handled in script.js -->
-        <button
-          class="nav-toggle"
-          id="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="site-nav"
-          aria-label="Open menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <main>
     <!-- =========================
-    HERO
-    FINAL: layout block
-    NOT FINAL: hero image, final headline/subtext, CTA wording
+    HEADER
+    FINAL:
+    - top-level navigation now points to dedicated pages
+    - homepage remains separate from deeper content pages
+    NOT FINAL:
+    - logo treatment
+    - final CTA wording
     ========================= -->
-    <section class="hero section" id="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <!-- NOT FINAL: replace with final approved homepage headline -->
-          <p class="eyebrow">Veteran-Led | Quality-Driven | Government-Ready</p>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo" aria-label="Semper Fi Services Home">
+                <!-- NOT FINAL: replace with real logo mark / SVG later -->
+                <span class="logo-mark">SFS</span>
+                <span class="logo-text">Semper Fi Services</span>
+            </a>
 
-          <h1>
-            Aircraft &amp; Industrial Parts Distribution
-            Built on Military-Grade Quality Standards
-          </h1>
+            <!-- FINAL:
+            Main site nav = dedicated top-level pages
+            These are the pages you asked for
+            -->
+            <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="home-submenu">
+                        Home
+                    </button>
 
-          <!-- NOT FINAL: replace with final approved supporting text -->
-          <p class="hero-text">
-            Semper Fi Services provides reliable sourcing and distribution of aircraft
-            parts, ground support equipment, and industrial components—backed by
-            disciplined quality control, traceability, and responsive service.
-          </p>
+                    <div class="nav-dropdown-menu" id="home-submenu">
+                        <a href="index.html#hero">Overview</a>
+                        <a href="index.html#capabilities-overview">Capabilities</a>
+                        <a href="index.html#products">Products</a>
+                        <a href="index.html#process">Process</a>
+                        <a href="index.html#quality-overview">Quality</a>
+                        <a href="index.html#government-overview">Government</a>
+                        <a href="index.html#company-overview">Company</a>
+                        <a href="index.html#contact-preview">Contact</a>
+                    </div>
+                </div>
+                <a href="company/index.html">Company</a>
+                <a href="capabilities/index.html">Capabilities</a>
+                <a href="quality/index.html">Quality</a>
+                <a href="government/index.html">Government</a>
+                <a href="contact/index.html">Contact</a>
+            </nav>
 
-          <div class="button-row">
-            <a href="#contact" class="btn btn-primary">Request a Quote</a>
-            <a href="#capabilities" class="btn btn-secondary">View Capabilities</a>
-          </div>
+            <div class="header-actions">
+                <!-- NOT FINAL: can later route to RFQ form page -->
+                <a href="contact/index.html" class="btn btn-primary">Request a Quote</a>
+
+                <!-- FINAL: mobile nav toggle -->
+                <button class="nav-toggle"
+                        id="nav-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="site-nav"
+                        aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
+    </header>
 
-        <div class="hero-media">
-          <!-- NOT FINAL: replace this placeholder with final image/SVG/video -->
-          <div class="media-placeholder">
-            <span>Hero Image / Aviation / Logistics Visual</span>
-          </div>
-        </div>
-      </div>
-    </section>
+    <main>
+        <!-- =========================
+        HERO
+        FINAL: homepage lead-in remains brief and focused
+        NOT FINAL: headline, supporting text, media
+        ========================= -->
+        <section class="hero section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Veteran-Led | Quality-Driven | Government-Ready</p>
+
+                    <h1>
+                        Distribution, Compliance, and Quality-Focused Support
+                        for Aviation, Industrial, and Government Needs
+                    </h1>
+
+                    <p class="hero-text">
+                        Semper Fi Services provides reliable sourcing, supply support, and
+                        quality-driven operational solutions backed by disciplined documentation,
+                        traceability, and responsive service.
+                    </p>
+
+                    <div class="button-row">
+                        <a href="contact/index.html" class="btn btn-primary">Request a Quote</a>
+                        <a href="capabilities/index.html" class="btn btn-secondary">View Capabilities</a>
+                    </div>
+                </div>
+
+                <div class="hero-media">
+                    <!-- NOT FINAL: replace with actual image / photo / branded visual -->
+                    <div class="media-placeholder">
+                        <span>Homepage Hero Visual / Aviation / Industrial / Operations</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        HOME SUB-NAVIGATION
+        FINAL:
+        - this is the "smaller sub categories under Home"
+        - these are quick links to deeper content pages/sections
+        NOT FINAL:
+        - final labels
+        - exact destination structure
+        ========================= -->
+        <section class="home-subnav section-sm">
+            <div class="container">
+                <div class="section-heading section-heading-compact">
+                    <p class="section-kicker">Explore</p>
+                    <h2>Start Here</h2>
+                    <p>
+                        The homepage stays concise. Use these quick links to explore more
+                        detailed company, capability, and quality information.
+                    </p>
+                </div>
+
+                <div class="subnav-grid">
+                    <a class="subnav-card" href="company/index.html#story">
+                        <span class="subnav-label">Our Story</span>
+                        <span class="subnav-text">Veteran background, mission, and company direction.</span>
+                    </a>
+
+                    <a class="subnav-card" href="company/index.html#background">
+                        <span class="subnav-label">Background</span>
+                        <span class="subnav-text">Experience in aviation, quality, operations, and service.</span>
+                    </a>
+
+                    <a class="subnav-card" href="capabilities/index.html#statement">
+                        <span class="subnav-label">Capability Statement</span>
+                        <span class="subnav-text">Detailed capability overview and future downloadable PDF.</span>
+                    </a>
+
+                    <a class="subnav-card" href="company/index.html#case-examples">
+                        <span class="subnav-label">Past Work &amp; Case Examples</span>
+                        <span class="subnav-text">Examples, project snapshots, and proof of execution.</span>
+                    </a>
+
+                    <a class="subnav-card" href="quality/index.html#documents">
+                        <span class="subnav-label">Documents &amp; SOPs</span>
+                        <span class="subnav-text">Future SOPs, policies, forms, and quality documentation.</span>
+                    </a>
+
+                    <a class="subnav-card" href="government/index.html#readiness">
+                        <span class="subnav-label">Government Readiness</span>
+                        <span class="subnav-text">SAM, DIBBS, buyer-facing readiness, and support details.</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        CREDIBILITY BAR
+        FINAL: homepage credibility strip retained
+        NOT FINAL: exact badge text
+        ========================= -->
+        <section class="credibility-strip" aria-label="Credibility Highlights">
+            <div class="container credibility-items">
+                <span>Veteran-Led</span>
+                <span>Registered in SAM.gov</span>
+                <span>Active on DLA DIBBS</span>
+                <span>AS9120-Aligned Processes in Development</span>
+                <span>Quality-Driven Sourcing &amp; Documentation</span>
+            </div>
+        </section>
+
+        <!-- =========================
+        CAPABILITIES SNAPSHOT
+        FINAL:
+        - homepage version stays high-level
+        - deeper detail belongs on capabilities page
+        ========================= -->
+        <section class="section" id="capabilities-overview">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Capabilities</p>
+                    <h2>Core Capability Snapshot</h2>
+                    <p>
+                        A concise overview of what we do. Detailed capability content, statements,
+                        and expanded service descriptions will live on the dedicated Capabilities page.
+                    </p>
+                </div>
+
+                <div class="card-grid card-grid-4">
+                    <article class="card">
+                        <h3>Aircraft Parts Distribution</h3>
+                        <p>
+                            Sourcing and supplying aviation &amp; equipment components with attention to
+                            traceability, documentation, and reliability.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Quality Management &amp; Compliance</h3>
+                        <p>
+                            Implementing quality management systems and ensuring adherence to compliance
+                            requirements across sourcing, documentation, and operational processes.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Industrial Hardware Supply</h3>
+                        <p>
+                            Fasteners, fittings, seals, and general hardware for industrial and support applications.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Sourcing &amp; Procurement Support</h3>
+                        <p>
+                            Responsive sourcing through vetted suppliers and distributor networks for
+                            routine and urgent requirements.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="section-cta">
+                    <a href="capabilities/index.html" class="btn btn-secondary">Explore Full Capabilities</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        PRODUCTS SNAPSHOT
+        FINAL:
+        - remains overview only
+        - expanded categories can move to capabilities page later
+        ========================= -->
+        <section class="section section-alt" id="products">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Products</p>
+                    <h2>Product Categories</h2>
+                    <p>
+                        High-level product categories that communicate scope without implying fixed inventory.
+                    </p>
+                </div>
+
+                <div class="card-grid card-grid-3">
+                    <article class="card">
+                        <h3>Fasteners</h3>
+                        <p>Bolts, nuts, screws, washers, and related hardware.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Seals &amp; Gaskets</h3>
+                        <p>O-rings, packings, and sealing solutions.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Fittings &amp; Connectors</h3>
+                        <p>Adapters, connectors, and fluid system components.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Electrical &amp; Mechanical Components</h3>
+                        <p>General components used in aviation and industrial applications.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Ground Support Equipment</h3>
+                        <p>Equipment and parts used in support of aviation operations.</p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Industrial &amp; General Supply</h3>
+                        <p>Commercial and industrial-grade parts for broader sourcing requirements.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        PROCESS SNAPSHOT
+        FINAL:
+        - short process remains on home
+        - future SOP/process detail belongs on quality page
+        ========================= -->
+        <section class="section" id="process">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Process</p>
+                    <h2>How We Work</h2>
+                    <p>
+                        A concise, buyer-friendly process showing how requests move from sourcing to delivery.
+                    </p>
+                </div>
+
+                <div class="process-row">
+                    <div class="process-step">Source</div>
+                    <div class="process-step">Verify</div>
+                    <div class="process-step">Document</div>
+                    <div class="process-step">Package</div>
+                    <div class="process-step">Deliver</div>
+                </div>
+
+                <div class="detail-grid">
+                    <div class="detail-item">
+                        <h3>Vetted Suppliers</h3>
+                        <p>Supplier and sourcing discipline built into the front end of the process.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Traceability</h3>
+                        <p>Records and part details organized to support confidence and accountability.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Documentation Control</h3>
+                        <p>Structured handling of certs, records, and required supporting paperwork.</p>
+                    </div>
+                    <div class="detail-item">
+                        <h3>Requirement-Based Packaging</h3>
+                        <p>Packaging and delivery handled to meet customer and contract expectations.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        QUALITY SNAPSHOT
+        FINAL:
+        - homepage version remains brief
+        - detailed policies/SOPs/docs will go to Quality page
+        ========================= -->
+        <section class="section section-alt" id="quality-overview">
+            <div class="container split-layout">
+                <div>
+                    <p class="section-kicker">Quality</p>
+                    <h2>Quality Commitment</h2>
+                    <p>
+                        Quality is the foundation of every transaction. Our approach is built on
+                        disciplined documentation, traceability, and a commitment to doing the job correctly.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>Traceability from source to delivery</li>
+                        <li>Documentation retention and control</li>
+                        <li>Authenticity and risk-awareness mindset</li>
+                        <li>Inspection-ready operating discipline</li>
+                        <li>AS9120-aligned quality management system in development</li>
+                    </ul>
+
+                    <div class="section-cta">
+                        <a href="quality/index.html" class="btn btn-secondary">Explore Quality Page</a>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <!-- NOT FINAL: this can later become a capability statement, quality roadmap, or docs panel -->
+                    <h3>Documents &amp; Standards</h3>
+                    <p>
+                        This homepage panel is intentionally brief. The full Quality page can later
+                        include SOP summaries, policy documents, forms, compliance notes, and
+                        downloadable company materials.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        GOVERNMENT SNAPSHOT
+        FINAL:
+        - homepage stays concise
+        - detailed buyer-facing info moves to Government page
+        ========================= -->
+        <section class="section" id="government-overview">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Government</p>
+                    <h2>Government &amp; Defense Support</h2>
+                    <p>
+                        Clear, disciplined support for government and defense buyers with room for
+                        future expansion into readiness documents and buyer-facing content.
+                    </p>
+                </div>
+
+                <div class="card-grid card-grid-2">
+                    <article class="card">
+                        <h3>Responsive RFQ Support</h3>
+                        <p>
+                            Structured support for quote requests, sourcing inquiries, and procurement communication.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Documentation Readiness</h3>
+                        <p>
+                            Framework for certifications, reports, records, and required supporting documents.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Procurement Familiarity</h3>
+                        <p>
+                            Messaging and process designed for buyers who expect disciplined, professional responses.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Range of Part Categories</h3>
+                        <p>
+                            Flexible structure to support aircraft parts, support equipment, and broader industrial supply.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="section-cta">
+                    <a href="government/index.html" class="btn btn-secondary">Explore Government Page</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        COMPANY SNAPSHOT
+        FINAL:
+        - homepage version is a brief company preview
+        - in-depth story/background/case examples belong on Company page
+        ========================= -->
+        <section class="section section-alt" id="company-overview">
+            <div class="container split-layout">
+                <div class="about-media">
+                    <!-- NOT FINAL: replace with team image / founder visual later -->
+                    <div class="media-placeholder small">
+                        <span>Company / Leadership Image Placeholder</span>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="section-kicker">Company</p>
+                    <h2>Built on Discipline, Accountability, and Experience</h2>
+                    <p>
+                        Semper Fi Services is a veteran-led company built around attention to detail,
+                        responsive service, and a quality-first operating mindset.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>Aviation maintenance and quality assurance experience</li>
+                        <li>Airframe and Powerplant knowledge</li>
+                        <li>Quality control and inspection background</li>
+                        <li>Operational experience in structured, high-accountability environments</li>
+                    </ul>
+
+                    <div class="button-row">
+                        <a href="company/index.html" class="btn btn-secondary">Explore Company Page</a>
+                        <a href="company/index.html#case-examples" class="btn btn-secondary">View Case Examples</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        CTA BANNER
+        FINAL: keeps homepage action-focused
+        NOT FINAL: headline and exact conversion wording
+        ========================= -->
+        <section class="section cta-banner">
+            <div class="container cta-banner-inner">
+                <div>
+                    <p class="section-kicker">Next Step</p>
+                    <h2>Ready to Work With a Quality-Driven Team?</h2>
+                    <p>
+                        Whether you need sourcing support, documentation discipline, operational quality,
+                        or procurement response, we are ready to connect.
+                    </p>
+                </div>
+
+                <div class="button-row">
+                    <a href="contact/index.html" class="btn btn-primary">Request a Quote</a>
+                    <a href="contact/index.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================
+        CONTACT PREVIEW
+        FINAL:
+        - homepage contact preview remains
+        - full contact/RFQ expansion belongs on Contact page
+        ========================= -->
+        <section class="section" id="contact-preview">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Contact</p>
+                    <h2>Get in Touch</h2>
+                    <p>
+                        Use the contact page for direct communication, RFQs, document requests, and future intake forms.
+                    </p>
+                </div>
+
+                <div class="contact-layout">
+                    <div class="contact-card">
+                        <h3>Direct Contact</h3>
+                        <p><strong>Email:</strong> semperfiservices75@gmail.com</p>
+                        <p><strong>Phone:</strong> (910) 320-0800</p>
+                        <p><strong>Response:</strong> Prompt and professional communication.</p>
+
+                        <div class="section-cta">
+                            <a href="contact/index.html" class="btn btn-secondary">Open Contact Page</a>
+                        </div>
+                    </div>
+
+                    <form class="contact-form" action="#" method="post">
+                        <!-- NOT FINAL: front-end placeholder only -->
+                        <div class="form-row">
+                            <label for="name">Name</label>
+                            <input id="name" name="name" type="text" placeholder="Your name" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="email" placeholder="you@example.com" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="company">Company</label>
+                            <input id="company" name="company" type="text" placeholder="Company name" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="message">Request / RFQ</label>
+                            <textarea id="message"
+                                      name="message"
+                                      rows="6"
+                                      placeholder="Briefly describe your request"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Send Request</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- =========================
-    CREDIBILITY BAR
-    FINAL: structure
-    NOT FINAL: exact badges/statements
+    FOOTER
+    FINAL:
+    - footer links now point to real top-level pages
+    - support future document and company content growth
     ========================= -->
-    <section class="credibility-strip" aria-label="Credibility Highlights">
-      <div class="container credibility-items">
-        <span>Veteran-Led</span>
-        <span>Registered in SAM.gov</span>
-        <span>Active on DLA DIBBS</span>
-        <span>AS9120-Aligned Processes in Development</span>
-        <span>Quality-Driven Sourcing &amp; Documentation</span>
-      </div>
-    </section>
-
-    <!-- =========================
-    CAPABILITIES
-    FINAL: section/card layout
-    NOT FINAL: card text and icons if desired later
-    ========================= -->
-    <section class="section" id="capabilities">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Capabilities</p>
-          <h2>Core Capabilities</h2>
-          <p>
-            <!-- NOT FINAL: refine summary text later -->
-            Broad capability blocks designed to communicate what you do quickly and clearly.
-          </p>
-        </div>
-
-        <div class="card-grid card-grid-4">
-          <article class="card">
-            <h3>Aircraft Parts Distribution</h3>
-            <p>
-              Sourcing and supplying aviation components with attention to traceability,
-              documentation, and reliability.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Ground Support Equipment</h3>
-            <p>
-              Procurement and distribution support for equipment and components used in
-              aviation and operational environments.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Industrial Hardware Supply</h3>
-            <p>
-              Fasteners, fittings, seals, and general hardware for a range of industrial
-              and support applications.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Sourcing &amp; Procurement Support</h3>
-            <p>
-              Responsive sourcing through vetted suppliers and distributor networks for
-              routine and urgent requirements.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    PRODUCTS
-    FINAL: category grid layout
-    NOT FINAL: final product categories and wording
-    ========================= -->
-    <section class="section section-alt" id="products">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Products</p>
-          <h2>Product Categories</h2>
-          <p>
-            <!-- NOT FINAL: refine later -->
-            Category-based structure keeps the site credible without pretending fixed inventory.
-          </p>
-        </div>
-
-        <div class="card-grid card-grid-3">
-          <article class="card">
-            <h3>Fasteners</h3>
-            <p>Bolts, nuts, screws, washers, and related hardware.</p>
-          </article>
-
-          <article class="card">
-            <h3>Seals &amp; Gaskets</h3>
-            <p>O-rings, packings, and sealing solutions.</p>
-          </article>
-
-          <article class="card">
-            <h3>Fittings &amp; Connectors</h3>
-            <p>Adapters, connectors, and fluid system components.</p>
-          </article>
-
-          <article class="card">
-            <h3>Electrical &amp; Mechanical Components</h3>
-            <p>General components used in aviation and industrial applications.</p>
-          </article>
-
-          <article class="card">
-            <h3>Ground Support Equipment</h3>
-            <p>Equipment and parts used in support of aviation operations.</p>
-          </article>
-
-          <article class="card">
-            <h3>Industrial &amp; General Supply</h3>
-            <p>Commercial and industrial-grade parts for broader sourcing requirements.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    HOW WE WORK
-    FINAL: process section structure
-    NOT FINAL: process labels and supporting points
-    ========================= -->
-    <section class="section" id="process">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Process</p>
-          <h2>How We Work</h2>
-          <p>
-            A clear, buyer-friendly process that explains how you move from request to delivery.
-          </p>
-        </div>
-
-        <div class="process-row">
-          <div class="process-step">Source</div>
-          <div class="process-step">Verify</div>
-          <div class="process-step">Document</div>
-          <div class="process-step">Package</div>
-          <div class="process-step">Deliver</div>
-        </div>
-
-        <div class="detail-grid">
-          <div class="detail-item">
-            <h3>Vetted Suppliers</h3>
-            <p>Supplier and sourcing discipline built into the front end of the process.</p>
-          </div>
-          <div class="detail-item">
-            <h3>Traceability</h3>
-            <p>Records and part details organized to support confidence and accountability.</p>
-          </div>
-          <div class="detail-item">
-            <h3>Documentation Control</h3>
-            <p>Structured handling of certs, records, and required supporting paperwork.</p>
-          </div>
-          <div class="detail-item">
-            <h3>Requirement-Based Packaging</h3>
-            <p>Packaging and delivery handled to meet customer and contract expectations.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    QUALITY
-    FINAL: section layout
-    NOT FINAL: final compliance wording
-    IMPORTANT: keep wording honest until certification exists
-    ========================= -->
-    <section class="section section-alt" id="quality">
-      <div class="container split-layout">
-        <div>
-          <p class="section-kicker">Quality</p>
-          <h2>Quality Commitment</h2>
-          <p>
-            Quality is the foundation of every transaction. Our approach is built on
-            disciplined documentation, traceability, and a commitment to doing the job correctly.
-          </p>
-
-          <ul class="feature-list">
-            <li>Traceability from source to delivery</li>
-            <li>Documentation retention and control</li>
-            <li>Authenticity and risk-awareness mindset</li>
-            <li>Inspection-ready operating discipline</li>
-            <li>AS9120-aligned quality management system in development</li>
-          </ul>
-        </div>
-
-        <div class="panel">
-          <!-- NOT FINAL: later this could become a compliance snapshot, timeline, PDF link, or graphic -->
-          <h3>Quality Snapshot</h3>
-          <p>
-            Use this panel later for a short quality summary, certifications, compliance
-            roadmap, or downloadable capability statement.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    GOVERNMENT
-    FINAL: section layout
-    NOT FINAL: exact government messaging and documents list
-    ========================= -->
-    <section class="section" id="government">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Government</p>
-          <h2>Government &amp; Defense Support</h2>
-          <p>
-            Built to speak clearly to government and defense buyers without overclaiming.
-          </p>
-        </div>
-
-        <div class="card-grid card-grid-2">
-          <article class="card">
-            <h3>Responsive RFQ Support</h3>
-            <p>
-              Structured support for quote requests, sourcing inquiries, and procurement communication.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Documentation Readiness</h3>
-            <p>
-              Framework for certifications, reports, records, and required supporting documents.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Procurement Familiarity</h3>
-            <p>
-              Messaging and process designed for buyers who expect disciplined, professional responses.
-            </p>
-          </article>
-
-          <article class="card">
-            <h3>Range of Part Categories</h3>
-            <p>
-              Flexible structure to support aircraft parts, support equipment, and broader industrial supply.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    ABOUT SNAPSHOT
-    FINAL: layout
-    NOT FINAL: bio details, team photos, final personal story
-    ========================= -->
-    <section class="section section-alt" id="about">
-      <div class="container split-layout">
-        <div class="about-media">
-          <!-- NOT FINAL: replace with real team image or branded visual -->
-          <div class="media-placeholder small">
-            <span>Team / Founder Photo Placeholder</span>
-          </div>
-        </div>
-
-        <div>
-          <p class="section-kicker">About</p>
-          <h2>Built on Discipline, Accountability, and Experience</h2>
-          <p>
-            Semper Fi Services is a veteran-led company built around attention to detail,
-            responsive service, and a quality-first operating mindset.
-          </p>
-
-          <ul class="feature-list">
-            <li>Aviation maintenance and quality assurance experience</li>
-            <li>Airframe and Powerplant knowledge</li>
-            <li>Quality control and inspection background</li>
-            <li>Operational experience in structured, high-accountability environments</li>
-          </ul>
-
-          <!-- NOT FINAL: later can link to a full About page -->
-          <a href="#contact" class="btn btn-secondary">Learn More</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    CTA BANNER
-    FINAL: layout
-    NOT FINAL: headline and exact conversion wording
-    ========================= -->
-    <section class="section cta-banner">
-      <div class="container cta-banner-inner">
-        <div>
-          <p class="section-kicker">Next Step</p>
-          <h2>Ready to Source Reliable Parts?</h2>
-          <p>
-            Whether you need aircraft components, hardware, or sourcing support,
-            this section is designed to push the visitor to contact you.
-          </p>
-        </div>
-
-        <div class="button-row">
-          <a href="#contact" class="btn btn-primary">Request a Quote</a>
-          <a href="#contact" class="btn btn-secondary">Contact Us</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- =========================
-    CONTACT
-    FINAL: contact section structure and form skeleton
-    NOT FINAL: email, phone, backend form processing, spam protection
-    IMPORTANT: current form is front-end only
-    ========================= -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-heading">
-          <p class="section-kicker">Contact</p>
-          <h2>Get in Touch</h2>
-          <p>
-            Use this section for direct contact details and RFQ intake.
-          </p>
-        </div>
-
-        <div class="contact-layout">
-          <div class="contact-card">
-            <h3>Direct Contact</h3>
-
-            <!-- NOT FINAL: replace placeholders -->
-            <p><strong>Email:</strong> your@email.com</p>
-            <p><strong>Phone:</strong> (000) 000-0000</p>
-            <p><strong>Response:</strong> Prompt and professional communication.</p>
-          </div>
-
-          <form class="contact-form" action="#" method="post">
-            <!-- NOT FINAL: replace action with actual backend/form endpoint later -->
-            <div class="form-row">
-              <label for="name">Name</label>
-              <input id="name" name="name" type="text" placeholder="Your name" />
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Semper Fi Services</h3>
+                <p>
+                    Quality-driven sourcing, distribution, and government-ready operational support.
+                </p>
             </div>
 
-            <div class="form-row">
-              <label for="email">Email</label>
-              <input id="email" name="email" type="email" placeholder="you@example.com" />
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="company/index.html">Company</a></li>
+                    <li><a href="capabilities/index.html">Capabilities</a></li>
+                    <li><a href="quality/index.html">Quality</a></li>
+                    <li><a href="government/index.html">Government</a></li>
+                    <li><a href="contact/index.html">Contact</a></li>
+                </ul>
             </div>
 
-            <div class="form-row">
-              <label for="company">Company</label>
-              <input id="company" name="company" type="text" placeholder="Company name" />
+            <div>
+                <h4>Contact</h4>
+                <p>semperfiservices75@gmail.com</p>
+                <p>(910) 320-0800</p>
             </div>
-
-            <div class="form-row">
-              <label for="message">Request / RFQ</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Briefly describe your request"
-              ></textarea>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Send Request</button>
-          </form>
         </div>
-      </div>
-    </section>
-  </main>
 
-  <!-- =========================
-  FOOTER
-  FINAL: footer structure
-  NOT FINAL: legal text, links, future capability statement download
-  ========================= -->
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <h3>Semper Fi Services</h3>
-        <p>
-          Aircraft, Ground Support, and Industrial Parts Distribution.
-        </p>
-      </div>
+        <div class="container footer-bottom">
+            <!-- NOT FINAL: update year later if needed -->
+            <p>&copy; 2025 Semper Fi Services. All rights reserved.</p>
+        </div>
+    </footer>
 
-      <div>
-        <h4>Quick Links</h4>
-        <ul class="footer-links">
-          <li><a href="#hero">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#capabilities">Capabilities</a></li>
-          <li><a href="#products">Products</a></li>
-          <li><a href="#quality">Quality</a></li>
-          <li><a href="#government">Government</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Contact</h4>
-        <!-- NOT FINAL: replace placeholders -->
-        <p>your@email.com</p>
-        <p>(000) 000-0000</p>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <!-- NOT FINAL: update year/business legal text later -->
-      <p>&copy; 2026 Semper Fi Services. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- FINAL: script file link -->
-  <script src="script.js"></script>
+    <!-- FINAL: shared script -->
+    <script src="script.js"></script>
 </body>
 </html>
