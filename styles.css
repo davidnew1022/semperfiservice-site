@@ -308,8 +308,8 @@ FINAL: hero
     padding-top: 6rem;
     padding-bottom: 5rem;
     background-image: url("images/hero.jpg"); /* <-- update path */
-    background-size: cover;
-    background-position: 85% center;
+    background-size: 135%;
+    background-position: 68% center;
     background-repeat: no-repeat;
     overflow: hidden;
 }
