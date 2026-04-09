@@ -1822,7 +1822,7 @@ FINAL: responsive behavior
     top: 0;
     left: 0;
     right: 0;
-    height: 760px;
+    height: 860px;
     background-image:
       linear-gradient(
         to bottom,
@@ -1833,8 +1833,8 @@ FINAL: responsive behavior
       ),
       url("images/hero.jpg");
     background-repeat: no-repeat;
-    background-position: 72% -64px;
-    background-size: 115% auto;
+    background-position: 72% 24px;
+    background-size: 135% auto;
     z-index: 0;
     pointer-events: none;
   }
@@ -1912,14 +1912,13 @@ FINAL: responsive behavior
     }
 
     .hero {
-        padding-top: 2.5rem;
+        padding-top: 0;
     }
 
     .header-inner {
         min-height: 72px;
     }
 }
-
   .hero-grid,
   .split-layout,
   .contact-layout,
@@ -1993,7 +1992,7 @@ FINAL: responsive behavior
     }
 
     .hero {
-        padding-top: 5rem;
+        padding-top: 2.5rem;
     }
 
     .header-inner {
