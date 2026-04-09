@@ -1833,7 +1833,7 @@ FINAL: responsive behavior
       ),
       url("images/hero.jpg");
     background-repeat: no-repeat;
-    background-position: right 0 top 24px;
+    background-position: right 0 top -12px;
     background-size: cover;
     z-index: 0;
     pointer-events: none;
