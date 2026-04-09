@@ -126,14 +126,16 @@ NOT FINAL: brand colors if you want different palette later
     }
 
 .btn-secondary {
-  background: transparent;
-  color: #12385f;
-  border-color: #12385f;
+    background: #0e2a3f;
+    color: #ffffff;
+    border-color: #0e2a3f;
 }
 
-.btn-secondary:hover {
-  background: rgba(18, 56, 95, 0.06);
-}
+    .btn-secondary:hover {
+        background: #12385f;
+        border-color: #12385f;
+    }
+
 
 .button-row {
   display: flex;
