@@ -896,7 +896,7 @@ FINAL: responsive behavior
         padding-top: 4.25rem;
         padding-bottom: 3rem;
         background-position: center top;
-        background-size: 165% auto;
+        background-size: 180% auto;
     }
 
         .hero::before {
