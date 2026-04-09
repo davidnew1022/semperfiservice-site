@@ -117,13 +117,13 @@ NOT FINAL: brand colors if you want different palette later
 }
 
 .btn-primary {
-  background: #12385f;
-  color: #ffffff;
+    background: #ffffff;
+    color: #0e2a3f;
 }
 
-.btn-primary:hover {
-  background: #0f2f50;
-}
+    .btn-primary:hover {
+        background: #e6edf3;
+    }
 
 .btn-secondary {
   background: transparent;
@@ -145,12 +145,12 @@ NOT FINAL: brand colors if you want different palette later
 FINAL: header/nav
 ========================= */
 .site-header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(255, 255, 255, 0.97);
-  border-bottom: 1px solid #dbe4ec;
-  backdrop-filter: blur(8px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #0e2a3f; /* NEW: dark navy */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
 }
 
 .header-inner {
@@ -168,16 +168,21 @@ FINAL: header/nav
   font-weight: 800;
 }
 
+.site-header .logo,
+.site-header .logo-text {
+    color: #ffffff !important;
+}
+
 .logo-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  background: #12385f;
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 800;
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #ffffff; /* inverted */
+    color: #0e2a3f; /* inverted */
+    font-size: 0.9rem;
+    font-weight: 800;
 }
 
 .logo-text {
@@ -192,13 +197,15 @@ FINAL: header/nav
 }
 
 .site-nav a {
-  font-size: 0.95rem;
-  color: #203345;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.85); /* NEW */
+
 }
 
-.site-nav a:hover {
-  color: #12385f;
-}
+    .site-nav a:hover {
+        color: #ffffff;
+    }
+
 
 /* =========================
 HOME DROPDOWN NAV
@@ -809,23 +816,20 @@ FINAL: responsive behavior
 }
 
 @media (max-width: 560px) {
-  .section {
-    padding: 4rem 0;
-  }
+    .section {
+        padding: 4rem 0;
+    }
 
-  .container {
-    width: min(100% - 1rem, 1180px);
-  }
+    .container {
+        width: min(100% - 1rem, 1180px);
+    }
 
-  .hero {
-    padding-top: 5rem;
-  }
+    .hero {
+        padding-top: 5rem;
+    }
 
-  .header-inner {
-    min-height: 72px;
-  }
+    .header-inner {
+        min-height: 72px;
+    }
 
-  .logo-text {
-    font-size: 0.95rem;
-  }
-}
+    }
