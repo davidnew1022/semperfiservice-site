@@ -1927,6 +1927,13 @@ FINAL: responsive behavior
         min-height: 72px;
     }
 }
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 860px) {
+        .hero::before {
+            background-position: right 0 top -36px;
+        }
+    }
+}  
   .hero-grid,
   .split-layout,
   .contact-layout,
