@@ -1833,8 +1833,8 @@ FINAL: responsive behavior
       ),
       url("images/hero.jpg");
     background-repeat: no-repeat;
-    background-position: 72% top;
-    background-size: cover;
+    background-position: 72% -64px;
+    background-size: 115% auto;
     z-index: 0;
     pointer-events: none;
   }
