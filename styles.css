@@ -900,25 +900,29 @@ FINAL: responsive behavior
     .hero {
         padding-top: 4.25rem;
         padding-bottom: 3rem;
-        background-image: url("images/hero.jpg");
+        background-image: none;
         background-color: #f7f8fa;
-        background-repeat: no-repeat;
-        background-position: 72% top;
-        background-size: cover;
     }
 
         .hero::before {
-            display: block;
             content: "";
             position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                to bottom,
-                rgba(255,255,255,0.72) 0%,
-                rgba(255,255,255,0.58) 34%,
-                rgba(255,255,255,0.28) 64%,
-                rgba(255,255,255,0.08) 100%
-            );
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 760px;
+            background-image: 
+                linear-gradient( 
+                to bottom, 
+                rgba(255,255,255,0.52) 0%, 
+            rgba(255,255,255,0.32) 42%, 
+            rgba(255,255,255,0.10) 78%, 
+            rgba(255,255,255,0.00) 100%
+                ), 
+                url("images/hero.jpg");
+            background-repeat: no-repeat;
+            background-position: right 0 top 0;
+            background-size: 140% auto;
             z-index: 0;
             pointer-events: none;
         }
