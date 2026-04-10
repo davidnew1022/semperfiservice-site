@@ -898,10 +898,21 @@ FINAL: responsive behavior
     }
 
     .hero {
-        position: relative;
         padding-top: 4.25rem;
         padding-bottom: 3rem;
-        background: #f7f8fa;
+        background-image: url("images/hero.jpg");
+        background-color: #f7f8fa;
+        background-repeat: no-repeat;
+        background-position: 72% top;
+        background-size: cover;
     }
 
-   
+        .hero::before {
+            display: block;
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient( to bottom, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.58) 34%, rgba(255,255,255,0.28) 64%, rgba(255,255,255,0.08) 100% );
+            z-index: 0;
+            pointer-events: none;
+        }
