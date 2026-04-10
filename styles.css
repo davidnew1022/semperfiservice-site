@@ -377,12 +377,10 @@ FINAL: hero
     transform: translateX(320px);
 }
 
-    .hero-panel::before {
-        content: "";
-        position: absolute;
-        inset: 0 0 auto 0;
-        height: 4px;
-        background: linear-gradient(90deg, #0f2b3a, #7f98a5);
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
     }
 
 .hero-panel-top h3 {
@@ -922,7 +920,7 @@ FINAL: responsive behavior
                 url("images/hero.jpg");
             background-repeat: no-repeat;
             background-position: right 0 top -24px;
-            background-size: 140% auto;
+            background-size: cover;
             z-index: 0;
             pointer-events: none;
         }
