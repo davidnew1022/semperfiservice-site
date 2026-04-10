@@ -909,15 +909,15 @@ FINAL: responsive behavior
             left: 0;
             right: 0;
             height: 760px;
-            background-image: 
-                linear-gradient( 
-                to bottom, 
-                rgba(255,255,255,0.52) 0%, 
-            rgba(255,255,255,0.32) 42%, 
-            rgba(255,255,255,0.10) 78%, 
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.28) 0%,
+            rgba(255,255,255,0.14) 42%,
+            rgba(255,255,255,0.04) 78%,
             rgba(255,255,255,0.00) 100%
-                ), 
-                url("images/hero.jpg");
+        ),
+        url("images/hero.jpg");
             background-repeat: no-repeat;
             background-position: right 0 top -24px;
             background-size: cover;
