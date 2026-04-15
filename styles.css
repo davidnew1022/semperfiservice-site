@@ -377,10 +377,12 @@ FINAL: hero
     transform: translateX(320px);
 }
 
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+    .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0f2b3a, #7f98a5);
     }
 
 .hero-panel-top h3 {
@@ -827,32 +829,32 @@ FINAL: responsive behavior
         z-index: 1100;
     }
 
-    .site-nav.is-open {
-        display: flex;
-    }
+        .site-nav.is-open {
+            display: flex;
+        }
 
-    .site-nav a,
-    .nav-dropdown-toggle {
-        width: 100%;
-        text-align: left;
-        padding: 0.9rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-        color: rgba(255, 255, 255, 0.92);
-    }
+        .site-nav a,
+        .nav-dropdown-toggle {
+            width: 100%;
+            text-align: left;
+            padding: 0.9rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+            color: rgba(255, 255, 255, 0.92);
+        }
 
-    .site-nav a:hover,
-    .nav-dropdown-toggle:hover {
-        color: #ffffff;
-    }
+            .site-nav a:hover,
+            .nav-dropdown-toggle:hover {
+                color: #ffffff;
+            }
 
     .nav-dropdown {
         width: 100%;
         display: block;
     }
 
-    .nav-dropdown::after {
-        display: none;
-    }
+        .nav-dropdown::after {
+            display: none;
+        }
 
     .nav-dropdown-menu {
         position: static;
@@ -878,18 +880,18 @@ FINAL: responsive behavior
         white-space: normal;
     }
 
-    .nav-dropdown-menu a:hover {
-        color: #ffffff;
-        background: transparent;
-    }
+        .nav-dropdown-menu a:hover {
+            color: #ffffff;
+            background: transparent;
+        }
 
     .nav-toggle {
         display: inline-block;
     }
 
-    .nav-toggle span {
-        background: #ffffff;
-    }
+        .nav-toggle span {
+            background: #ffffff;
+        }
 
     .header-actions .btn {
         display: none;
@@ -902,107 +904,76 @@ FINAL: responsive behavior
         background-color: #f7f8fa;
     }
 
-    .hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 760px;
-        background-image:
-            linear-gradient(
-                to bottom,
-                rgba(255,255,255,0.28) 0%,
-                rgba(255,255,255,0.14) 42%,
-                rgba(255,255,255,0.04) 78%,
-                rgba(255,255,255,0.00) 100%
-            ),
-            url("images/hero.jpg");
-        background-repeat: no-repeat;
-        background-position: right 0 top -24px;
-        background-size: cover;
-        z-index: 0;
-        pointer-events: none;
-    }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 760px;
+            background-image: linear-gradient( to bottom, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.32) 42%, rgba(255,255,255,0.10) 78%, rgba(255,255,255,0.00) 100% ), url("images/hero.jpg");
+            background-repeat: no-repeat;
+            background-position: right 0 top 0;
+            background-size: 140% auto;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-    .hero-grid,
-    .split-layout,
-    .contact-layout,
-    .card-grid-3,
-    .card-grid-2,
-    .process-row,
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+        }
+.capabilities-page .hero-grid {
+    grid-template-columns: 1fr;
+}
 
-    .hero-copy h1 {
-        max-width: none;
-        font-size: clamp(2.4rem, 10vw, 4rem);
-    }
+.capabilities-page .hero-copy {
+    max-width: 980px;
+    position: relative;
+    z-index: 2;
+}
 
-    .hero-media {
-        display: block;
-        position: relative;
-        width: 100%;
-        padding-top: 0;
-        overflow: visible;
-    }
+.capabilities-page .capability-tab-grid {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+    width: 100%;
+}
 
-    .hero-panel {
-        position: relative;
-        top: 0;
-        left: 0;
-        right: auto;
-        transform: none;
-        width: 100%;
-        max-width: none;
-        margin: 0;
-    }
-
-    .hero-panel-metrics {
-        grid-template-columns: 1fr;
-    }
-
-    .process-step {
-        border-radius: 0.8rem;
-    }
-
-    .capabilities-page .capability-tab-grid {
-        grid-column: 1 / -1;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-        width: 100%;
-        margin-top: 1.5rem;
-    }
-
-    .capabilities-page .capability-tab {
-        display: block;
-        min-width: 260px;
-        background: #12385f;
-        color: #ffffff;
-        border: none;
-        border-radius: 999px;
-        text-align: center;
-        padding: 0.9rem 1.2rem;
-        font-weight: 700;
-    }
-
-    .capabilities-page .capability-tab-label {
-        display: block;
-        margin-bottom: 0.15rem;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.65);
-    }
+.capabilities-page .capability-tab {
+    background: #12385f;
+    color: #ffffff;
+    border-radius: 999px;
+    text-align: center;
+    padding: 0.9rem 1.2rem;
+    font-weight: 700;
+    border: none;
+    min-width: 260px;
+}
 
     .capabilities-page .capability-tab strong {
         display: block;
         font-size: 0.95rem;
         line-height: 1.25;
         color: #ffffff;
+    }
+
+.capabilities-page .capability-tab-label {
+    display: block;
+    margin-bottom: 0.15rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+}
+
+@media (max-width: 860px) {
+    .capabilities-page .capability-tab-grid {
+        justify-content: center;
+    }
+
+    .capabilities-page .capability-tab {
+        min-width: 260px;
     }
 }
