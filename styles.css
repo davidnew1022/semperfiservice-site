@@ -904,20 +904,20 @@ FINAL: responsive behavior
         background-color: #f7f8fa;
     }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 760px;
-            background-image: linear-gradient( to bottom, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.32) 42%, rgba(255,255,255,0.10) 78%, rgba(255,255,255,0.00) 100% ), url("images/hero.jpg");
-            background-repeat: no-repeat;
-            background-position: right 0 top 0;
-            background-size: 140% auto;
-            z-index: 0;
-            pointer-events: none;
-        }
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 980px;
+        background-image: linear-gradient( to bottom, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.32) 42%, rgba(255,255,255,0.10) 78%, rgba(255,255,255,0.00) 100% ), url("images/hero.jpg");
+        background-repeat: no-repeat;
+        background-position: right 0 top 0;
+        background-size: 140% auto;
+        z-index: 0;
+        pointer-events: none;
+    }
 }
 
 .capabilities-page .hero-grid {
