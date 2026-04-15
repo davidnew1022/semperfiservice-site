@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -47,54 +47,36 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (homeDropdown && homeDropdownToggle) {
-        homeDropdownToggle.addEventListener("click", (event) => {
-            const isMobile = window.innerWidth <= 860;
-            const isOpen = homeDropdown.classList.contains("is-open");
+if (homeDropdown && homeDropdownToggle) {
+    homeDropdownToggle.addEventListener("click", (event) => {
+        const isRootPage =
+            window.location.pathname.endsWith("/index.html") ||
+            window.location.pathname === "/" ||
+            window.location.pathname === "";
 
-            if (isMobile) {
-                event.preventDefault();
-                event.stopPropagation();
+        if (!isRootPage) {
+            event.preventDefault();
+            window.location.href = "../index.html#hero";
+            return;
+        }
 
-                const nextState = !isOpen;
-                homeDropdown.classList.toggle("is-open", nextState);
-                homeDropdownToggle.setAttribute("aria-expanded", String(nextState));
-                return;
-            }
+        event.preventDefault();
+        event.stopPropagation();
 
-            if (!isOpen) {
-                event.preventDefault();
-                event.stopPropagation();
+        const isOpen = homeDropdown.classList.contains("is-open");
+        const nextState = !isOpen;
 
-                homeDropdown.classList.add("is-open");
-                homeDropdownToggle.setAttribute("aria-expanded", "true");
-                return;
-            }
+        homeDropdown.classList.toggle("is-open", nextState);
+        homeDropdownToggle.setAttribute("aria-expanded", String(nextState));
+    });
 
-            const isRootPage =
-                window.location.pathname.endsWith("/index.html") ||
-                window.location.pathname === "/" ||
-                window.location.pathname === "";
-
-            window.location.href = isRootPage ? "index.html#hero" : "../index.html#hero";
+    homeDropdownLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            closeHomeDropdown();
+            closeMobileMenu();
         });
-
-        homeDropdownLinks.forEach((link) => {
-            link.addEventListener("click", () => {
-                closeHomeDropdown();
-                closeMobileMenu();
-            });
-        });
-    }
-
-    if (siteNav) {
-        siteNav.querySelectorAll("a").forEach((link) => {
-            link.addEventListener("click", () => {
-                closeHomeDropdown();
-                closeMobileMenu();
-            });
-        });
-    }
+    });
+}
 
     document.addEventListener("click", (event) => {
         if (homeDropdown && !homeDropdown.contains(event.target)) {
