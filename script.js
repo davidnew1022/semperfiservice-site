@@ -8,7 +8,7 @@ Purpose:
 - Keep JS minimal
 - Handle mobile navigation
 - Handle Home dropdown on desktop and mobile
-======================== */
+========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.getElementById("nav-toggle");
