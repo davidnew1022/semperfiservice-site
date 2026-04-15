@@ -1,4 +1,4 @@
-﻿/* =========================
+/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -47,34 +47,37 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-if (homeDropdown && homeDropdownToggle) {
-    homeDropdownToggle.addEventListener("click", (event) => {
-        const isOpen = homeDropdown.classList.contains("is-open");
+    if (homeDropdown && homeDropdownToggle) {
+        homeDropdownToggle.addEventListener("click", (event) => {
+            const isMobile = window.innerWidth <= 860;
+            const isOpen = homeDropdown.classList.contains("is-open");
 
-        if (!isOpen) {
-            event.preventDefault();
-            event.stopPropagation();
+            if (isMobile) {
+                event.preventDefault();
+                event.stopPropagation();
 
-            homeDropdown.classList.add("is-open");
-            homeDropdownToggle.setAttribute("aria-expanded", "true");
-            return;
-        }
+                const nextState = !isOpen;
+                homeDropdown.classList.toggle("is-open", nextState);
+                homeDropdownToggle.setAttribute("aria-expanded", String(nextState));
+                return;
+            }
 
-        const isRootPage =
-            window.location.pathname.endsWith("/index.html") ||
-            window.location.pathname === "/" ||
-            window.location.pathname === "";
+            if (!isOpen) {
+                event.preventDefault();
+                event.stopPropagation();
 
-        window.location.href = isRootPage ? "index.html#hero" : "../index.html#hero";
-    });
+                homeDropdown.classList.add("is-open");
+                homeDropdownToggle.setAttribute("aria-expanded", "true");
+                return;
+            }
 
-    homeDropdownLinks.forEach((link) => {
-        link.addEventListener("click", () => {
-            closeHomeDropdown();
-            closeMobileMenu();
+            const isRootPage =
+                window.location.pathname.endsWith("/index.html") ||
+                window.location.pathname === "/" ||
+                window.location.pathname === "";
+
+            window.location.href = isRootPage ? "index.html#hero" : "../index.html#hero";
         });
-    });
-}
 
         homeDropdownLinks.forEach((link) => {
             link.addEventListener("click", () => {
