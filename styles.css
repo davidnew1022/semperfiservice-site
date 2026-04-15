@@ -919,7 +919,7 @@ FINAL: responsive behavior
             rgba(255,255,255,0.00) 100%
         ), url("images/hero.jpg");
         background-repeat: no-repeat;
-        background-position: right 0 top 0;
+        background-position: right top;
         background-size: 140% auto;
         z-index: 0;
         pointer-events: none;
