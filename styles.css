@@ -977,3 +977,9 @@ FINAL: responsive behavior
         min-width: 260px;
     }
 }
+@media (min-width: 861px) {
+    .quality-page .quality-pill-grid {
+        margin-top: -2.25rem;
+    }
+}
+
