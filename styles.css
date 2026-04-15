@@ -344,7 +344,7 @@ FINAL: hero
 
 .hero-text {
     max-width: 62ch;
-    color: #4a5b6d;
+    color: #12385f;
     margin-bottom: 1.5rem;
 }
 
@@ -918,8 +918,8 @@ FINAL: responsive behavior
             z-index: 0;
             pointer-events: none;
         }
+}
 
-        }
 .capabilities-page .hero-grid {
     grid-template-columns: 1fr;
 }

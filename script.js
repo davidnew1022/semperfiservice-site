@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -47,14 +47,34 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (homeDropdown && homeDropdownToggle) {
-        homeDropdownToggle.addEventListener("click", (event) => {
+if (homeDropdown && homeDropdownToggle) {
+    homeDropdownToggle.addEventListener("click", (event) => {
+        const isOpen = homeDropdown.classList.contains("is-open");
+
+        if (!isOpen) {
             event.preventDefault();
             event.stopPropagation();
 
-            const isOpen = homeDropdown.classList.toggle("is-open");
-            homeDropdownToggle.setAttribute("aria-expanded", String(isOpen));
+            homeDropdown.classList.add("is-open");
+            homeDropdownToggle.setAttribute("aria-expanded", "true");
+            return;
+        }
+
+        const isRootPage =
+            window.location.pathname.endsWith("/index.html") ||
+            window.location.pathname === "/" ||
+            window.location.pathname === "";
+
+        window.location.href = isRootPage ? "index.html#hero" : "../index.html#hero";
+    });
+
+    homeDropdownLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+            closeHomeDropdown();
+            closeMobileMenu();
         });
+    });
+}
 
         homeDropdownLinks.forEach((link) => {
             link.addEventListener("click", () => {
