@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company | Semper Fi Services</title>
+    <meta name="description"
+          content="Learn the story behind Semper Fi Services: two Marines, longtime friends, and a company built on discipline, resilience, and quality-driven execution." />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .company-page .hero-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .company-page .hero-copy {
+            max-width: 900px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .company-history-links {
+            margin-top: 1.5rem;
+        }
+
+        .company-values-banner {
+            border-top: 1px solid #dbe4ec;
+            border-bottom: 1px solid #dbe4ec;
+            background: #eaf2f8;
+        }
+
+        .company-values-list {
+            min-height: 72px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem 2rem;
+            padding: 1rem 0;
+            color: #29455f;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bio-card {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+        .bio-headshot {
+            width: 100%;
+            aspect-ratio: 4 / 4.5;
+            object-fit: cover;
+            border-radius: 0.9rem;
+            border: 1px solid #dbe4ec;
+            margin-bottom: 1rem;
+            background: #eef3f7;
+        }
+
+        .bio-card h3 {
+            margin-bottom: 0.35rem;
+            font-size: 1.3rem;
+        }
+
+        .bio-role {
+            margin-bottom: 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #1f4f82;
+        }
+
+        .bio-card p + p {
+            margin-top: 0.9rem;
+        }
+
+        .motto-photo {
+            width: 100%;
+            border-radius: 1rem;
+            border: 1px solid #dbe4ec;
+            object-fit: cover;
+            background: #eef3f7;
+        }
+
+        .quote-panel {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+            .quote-panel blockquote {
+                margin: 0;
+                font-size: 1.15rem;
+                line-height: 1.5;
+                color: #203345;
+            }
+
+            .quote-panel p {
+                margin-top: 0.75rem;
+                color: #4a5b6d;
+            }
+
+        @media (max-width: 860px) {
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="company-page">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo" aria-label="Semper Fi Services Home">
+                <span class="logo-mark">SFS</span>
+                <span class="logo-text">Semper Fi Services</span>
+            </a>
+
+            <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="home-dropdown-menu">
+                        Home
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="home-dropdown-menu">
+                        <a href="../index.html#hero">Overview</a>
+                        <a href="../index.html#capabilities-overview">Capabilities</a>
+                        <a href="../index.html#products">Products</a>
+                        <a href="../index.html#process">Process</a>
+                        <a href="../index.html#quality-overview">Quality</a>
+                        <a href="../index.html#government-overview">Government</a>
+                        <a href="../index.html#company-overview">Company</a>
+                        <a href="../index.html#contact-preview">Contact</a>
+                    </div>
+                </div>
+
+                <a href="index.html">Company</a>
+                <a href="../capabilities/index.html">Capabilities</a>
+                <a href="../quality/index.html">Quality</a>
+                <a href="../government/index.html">Government</a>
+                <a href="../contact/index.html">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+
+                <button class="nav-toggle"
+                        id="nav-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="site-nav"
+                        aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Company</p>
+
+                    <h1>
+                        Built by Two Marines, Strengthened by Friendship,
+                        and Driven by a Bigger Mission
+                    </h1>
+
+                    <p class="hero-text">
+                        Semper Fi Services was built from a long friendship, shared struggle,
+                        and a belief that disciplined people can build something bigger than
+                        themselves. What started as two Marines talking about the future became
+                        a company shaped by service, resilience, fatherhood, and a commitment
+                        to building a reliable, quality-driven operation.
+                    </p>
+
+                    <div class="button-row company-history-links">
+                        <a href="#history" class="btn btn-primary">Company History</a>
+                        <a href="#leadership" class="btn btn-secondary">Meet the Team</a>
+                    </div>
+
+                    <div class="hero-mobile-band" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-values-banner" aria-label="Core Values">
+            <div class="container company-values-list">
+                <span>Discipline</span>
+                <span>Loyalty</span>
+                <span>Accountability</span>
+                <span>Resilience</span>
+                <span>Service Before Self</span>
+                <span>Quality in Execution</span>
+            </div>
+        </section>
+
+        <section class="section" id="history">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">History</p>
+                    <h2>The Story Behind the Company</h2>
+                    <p>
+                        This page is about where Semper Fi Services comes from, what shaped it,
+                        and why the company is being built the way it is.
+                    </p>
+                </div>
+
+                <div class="split-layout">
+                    <div>
+                        <p>
+                            Semper Fi Services began with two Marines who both carried a bigger vision
+                            for life after active service. Over time, that vision became grounded in
+                            real-world responsibility, long-term friendship, and a shared determination
+                            to build something meaningful for themselves and their families.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Through deployments, transition, work, fatherhood, and personal struggles,
+                            the friendship remained. What held it together was not just shared history,
+                            but shared mindset: keep moving, stay accountable, solve problems, and build
+                            something that lasts.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Today, that same foundation shapes the company. Semper Fi Services is being
+                            built as a disciplined, trustworthy operation that reflects military values,
+                            personal resilience, and a serious commitment to doing business the right way.
+                        </p>
+                    </div>
+
+                    <div class="panel">
+                        <h3>What We Are Building</h3>
+                        <p>
+                            We are building a company that combines personal grit with operational
+                            discipline. The goal is not just to win work, but to create a dependable,
+                            quality-focused business that buyers, manufacturers, and partners can trust.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Mission-oriented execution</li>
+                            <li>Long-term relationships over short-term shortcuts</li>
+                            <li>Professionalism rooted in real-life experience</li>
+                            <li>Growth built on discipline, not hype</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="leadership">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Leadership</p>
+                    <h2>The Dynamic Duo Behind Semper Fi Services</h2>
+                    <p>
+                        The company reflects two different strengths working together: one outward-facing,
+                        one operationally focused, both committed to the same mission.
+                    </p>
+                </div>
+
+                <div class="bio-grid">
+                    <article class="bio-card">
+                        <img src="../images/thomas-headshot.jpg" alt="Headshot of Thomas" class="bio-headshot" />
+                        <h3>Thomas</h3>
+                        <p class="bio-role">The Face of the Company</p>
+                        <p>
+                            Thomas brings leadership presence, relationship-building strength, and
+                            practical field experience to the company. He represents the visible,
+                            forward-facing side of Semper Fi Services: the man who helps communicate
+                            the mission, build confidence, and carry the company’s values into the
+                            marketplace.
+                        </p>
+                        <p>
+                            His background in construction and quality control brings real-world
+                            discipline to how work is approached. He understands accountability,
+                            responsibility, and what it means to represent a company with credibility.
+                        </p>
+                    </article>
+
+                    <article class="bio-card">
+                        <img src="../images/david-headshot.jpg" alt="Headshot of David" class="bio-headshot" />
+                        <h3>David</h3>
+                        <p class="bio-role">The Behind-the-Scenes Operator</p>
+                        <p>
+                            David drives the internal structure of the company: systems, documentation,
+                            process, strategy, and the details that make execution dependable. He is
+                            focused on building the foundation that allows the business to scale with
+                            discipline and professionalism.
+                        </p>
+                        <p>
+                            With a military aviation background and quality assurance experience, he
+                            brings a mindset built around precision, traceability, and operational
+                            control. He is the one making sure the back end is as strong as the front.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="why-it-matters">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Why It Matters</p>
+                    <h2>A Company Built on More Than Business</h2>
+                    <p>
+                        Semper Fi Services is not just a company idea. It is the result of shared
+                        hardship, earned trust, and the desire to build a better future.
+                    </p>
+                </div>
+
+                <div class="card-grid card-grid-3">
+                    <article class="card">
+                        <h3>Shared Struggle</h3>
+                        <p>
+                            The company was shaped through the realities of military transition,
+                            fatherhood, responsibility, and the pressure to create something better.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Shared Vision</h3>
+                        <p>
+                            Both founders carried the same long-term goal: build something real,
+                            create opportunity, and make the most of life after service.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Shared Standard</h3>
+                        <p>
+                            The standard is simple: be dependable, stay accountable, and execute with
+                            the same seriousness that defined military service.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="motto">
+            <div class="container split-layout">
+                <div>
+                    <p class="section-kicker">Motto</p>
+                    <h2>Still Side by Side, Still Building Forward</h2>
+                    <p>
+                        The story of this company is a story of brotherhood, perseverance, and the
+                        refusal to quit on the future. Semper Fi Services stands on the belief that
+                        loyalty, discipline, and shared purpose can still build something powerful.
+                    </p>
+                    <div class="quote-panel" style="margin-top: 1rem;">
+                        <blockquote>
+                            “Built on friendship. Strengthened by hardship. Driven by mission.”
+                        </blockquote>
+                        <p>
+                            This is more than branding. It is the foundation of how the company was formed.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <img src="../images/company-motto-photo.jpg"
+                         alt="Thomas and David together during military service"
+                         class="motto-photo" />
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-banner">
+            <div class="container cta-banner-inner">
+                <div>
+                    <p class="section-kicker">Next Step</p>
+                    <h2>Want to Work With a Company Built on Discipline and Trust?</h2>
+                    <p>
+                        Semper Fi Services is building a professional, quality-driven business with
+                        strong personal roots and a serious commitment to dependable execution.
+                    </p>
+                </div>
+
+                <div class="button-row">
+                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Semper Fi Services</h3>
+                <p>
+                    Quality-driven sourcing, distribution, and government-ready operational support.
+                </p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Company</a></li>
+                    <li><a href="../capabilities/index.html">Capabilities</a></li>
+                    <li><a href="../quality/index.html">Quality</a></li>
+                    <li><a href="../government/index.html">Government</a></li>
+                    <li><a href="../contact/index.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>semperfiservices75@gmail.com</p>
+                <p>(910) 320-0800</p>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2025 Semper Fi Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
