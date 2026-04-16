@@ -288,12 +288,12 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 
 .quality-page .quality-pill-grid {
     grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 0.9rem;
     margin-top: 1.5rem;
     width: 100%;
+    align-items: stretch;
 }
 
 .quality-page .quality-pill {
@@ -304,7 +304,13 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     padding: 0.9rem 1.2rem;
     font-weight: 700;
     border: none;
-    min-width: 260px;
+    width: 100%;
+    min-width: 0;
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: unset !important;
 }
 
     .quality-page .quality-pill strong {
@@ -324,19 +330,23 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     color: rgba(255,255,255,0.65);
 }
 
+@media (max-width: 1080px) {
+    .quality-page .quality-pill-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
 @media (max-width: 860px) {
     .quality-page .quality-pill-grid {
-        display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
         gap: 0.75rem;
-        justify-content: stretch;
-        width: 100%;
     }
 
     .quality-page .quality-pill {
-        min-width: 0;
         width: 100%;
+        min-width: 0;
         max-width: 100%;
+        min-height: 0;
         padding: 0.9rem 1rem;
     }
 }
@@ -996,11 +1006,12 @@ FINAL: responsive behavior
 
 .capabilities-page .capability-tab-grid {
     grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 0.9rem;
     margin-top: 1.5rem;
     width: 100%;
+    align-items: stretch;
 }
 
 .capabilities-page .capability-tab {
@@ -1013,7 +1024,13 @@ FINAL: responsive behavior
     border: none;
     width: 100%;
     min-width: 0;
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: unset !important;
 }
+
     .capabilities-page .capability-tab strong {
         display: block;
         font-size: 0.95rem;
@@ -1031,28 +1048,23 @@ FINAL: responsive behavior
     color: rgba(255,255,255,0.65);
 }
 
+@media (max-width: 1080px) {
+    .capabilities-page .capability-tab-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+}
+
 @media (max-width: 860px) {
     .capabilities-page .capability-tab-grid {
-        justify-content: center;
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem;
     }
 
     .capabilities-page .capability-tab {
-        min-width: 260px;
-    }
-}
-    .nav-dropdown {
-        position: relative;
-    }
-
-    .nav-dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        display: none;
-    }
-/* AUTO DROPDOWN (DESKTOP ONLY) */
-@media (min-width: 861px) {
-    .nav-dropdown:hover .nav-dropdown-menu {
-        display: block;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 0;
+        padding: 0.9rem 1rem;
     }
 }
