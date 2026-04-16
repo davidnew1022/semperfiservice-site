@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Semper Fi Services</title>
+    <meta name="description"
+          content="Contact Semper Fi Services for quotes, sourcing requests, customer support, and business inquiries." />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .contact-page .hero-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-page .hero-copy {
+            max-width: 920px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-directory-banner {
+            border-top: 1px solid #dbe4ec;
+            border-bottom: 1px solid #dbe4ec;
+            background: #eaf2f8;
+        }
+
+        .contact-directory-items {
+            min-height: 72px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem 2rem;
+            padding: 1rem 0;
+            color: #29455f;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .contact-directory-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .directory-card {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.4rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+            .directory-card h3 {
+                margin-bottom: 0.35rem;
+                font-size: 1.1rem;
+            }
+
+        .directory-role {
+            margin-bottom: 0.8rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #1f4f82;
+        }
+
+        .directory-card p + p {
+            margin-top: 0.4rem;
+        }
+
+        .contact-page .contact-layout {
+            align-items: start;
+        }
+
+        .contact-stack {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .contact-card h3,
+        .contact-form h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-note {
+            color: #4a5b6d;
+            margin-top: 0.65rem;
+        }
+
+        .routing-list {
+            margin-top: 0.75rem;
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .routing-item {
+            padding: 0.9rem 1rem;
+            border: 1px solid #dbe4ec;
+            border-radius: 0.8rem;
+            background: #f9fbfd;
+        }
+
+            .routing-item strong {
+                display: block;
+                margin-bottom: 0.2rem;
+                color: #12202f;
+            }
+
+            .routing-item span {
+                color: #4a5b6d;
+            }
+
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .form-row select {
+            width: 100%;
+            padding: 0.85rem 0.95rem;
+            border: 1px solid #c5d2de;
+            border-radius: 0.65rem;
+            font: inherit;
+            color: #12202f;
+            background: #ffffff;
+        }
+
+            .form-row select:focus {
+                outline: 2px solid rgba(31, 79, 130, 0.16);
+                border-color: #1f4f82;
+            }
+
+        .form-help {
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+            color: #5a7186;
+        }
+
+        .contact-checklist {
+            margin-top: 0.9rem;
+            display: grid;
+            gap: 0.55rem;
+            color: #4a5b6d;
+        }
+
+        .support-panel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .support-card {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.4rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+            .support-card h3 {
+                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
+            }
+
+            .support-card p {
+                color: #4a5b6d;
+            }
+
+        @media (max-width: 1080px) {
+            .contact-directory-grid,
+            .support-panel-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 860px) {
+            .contact-directory-grid,
+            .support-panel-grid,
+            .form-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="contact-page">
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo" aria-label="Semper Fi Services Home">
+                <span class="logo-mark">SFS</span>
+                <span class="logo-text">Semper Fi Services</span>
+            </a>
+
+            <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="home-dropdown-menu">
+                        Home
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="home-dropdown-menu">
+                        <a href="../index.html#hero">Overview</a>
+                        <a href="../index.html#capabilities-overview">Capabilities</a>
+                        <a href="../index.html#products">Products</a>
+                        <a href="../index.html#process">Process</a>
+                        <a href="../index.html#quality-overview">Quality</a>
+                        <a href="../index.html#government-overview">Government</a>
+                        <a href="../index.html#company-overview">Company</a>
+                        <a href="../index.html#contact-preview">Contact</a>
+                    </div>
+                </div>
+
+                <a href="../company/index.html">Company</a>
+                <a href="../capabilities/index.html">Capabilities</a>
+                <a href="../quality/index.html">Quality</a>
+                <a href="../government/index.html">Government</a>
+                <a href="index.html">Contact</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="index.html" class="btn btn-primary">Request a Quote</a>
+
+                <button class="nav-toggle"
+                        id="nav-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="site-nav"
+                        aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section" id="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow">Contact</p>
+
+                    <h1>
+                        Reach the Right Person Faster for Quotes, Support,
+                        Sales, and Business Inquiries
+                    </h1>
+
+                    <p class="hero-text">
+                        The contact page is built to make communication easier. Whether you need a
+                        quote, customer support, sourcing help, or general business contact, Semper Fi
+                        Services is organizing a direct-response contact structure so inquiries can be
+                        routed to the right person with less back and forth.
+                    </p>
+
+                    <div class="button-row">
+                        <a href="#request-form" class="btn btn-primary">Request a Quote</a>
+                        <a href="#directory" class="btn btn-secondary">View Contact Directory</a>
+                    </div>
+
+                    <div class="hero-mobile-band" aria-hidden="true"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-directory-banner" aria-label="Contact Options">
+            <div class="container contact-directory-items">
+                <span>Quotes & RFQs</span>
+                <span>Sales Inquiries</span>
+                <span>Customer Support</span>
+                <span>Front Office Contact</span>
+                <span>Future Catalog Requests</span>
+                <span>Direct Team Access</span>
+            </div>
+        </section>
+
+        <section class="section" id="directory">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Directory</p>
+                    <h2>Contact Directory</h2>
+                    <p>
+                        Use the directory below to contact the right inbox based on the type of request.
+                    </p>
+                </div>
+
+                <div class="contact-directory-grid">
+                    <article class="directory-card">
+                        <h3>Front Office</h3>
+                        <p class="directory-role">General Intake</p>
+                        <p><strong>Email:</strong> semperfi@sfsdistribution.com</p>
+                        <p>Best for general inquiries, routing requests, and first-contact communication.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>Sales</h3>
+                        <p class="directory-role">Quotes & Opportunities</p>
+                        <p><strong>Email:</strong> sales@sfsdistribution.com</p>
+                        <p>Best for RFQs, sourcing requests, pricing discussions, and business development.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>Customer Support</h3>
+                        <p class="directory-role">Existing Customer Help</p>
+                        <p><strong>Email:</strong> customer.support@sfsdistribution.com</p>
+                        <p>Best for order follow-up, delivery questions, documentation requests, and support.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>Thomas Smith</h3>
+                        <p class="directory-role">Field / Business-Facing Contact</p>
+                        <p><strong>Email:</strong> thomas.smith@sfsdistribution.com</p>
+                        <p>Best for relationship-driven communication, business coordination, and project-facing contact.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>David New</h3>
+                        <p class="directory-role">Operations / Documentation Contact</p>
+                        <p><strong>Email:</strong> david.new@sfsdistribution.com</p>
+                        <p>Best for process questions, documentation detail, internal coordination, and operational follow-up.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>Main Phone</h3>
+                        <p class="directory-role">Direct Contact</p>
+                        <p><strong>Phone:</strong> (910) 320-0800</p>
+                        <p>Best for prompt communication when email is not ideal or you need fast routing.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="request-form">
+            <div class="container contact-layout">
+                <div class="contact-stack">
+                    <div class="contact-card">
+                        <h3>Direct Contact</h3>
+                        <p><strong>Front Office:</strong> semperfi@sfsdistribution.com</p>
+                        <p><strong>Sales:</strong> sales@sfsdistribution.com</p>
+                        <p><strong>Customer Support:</strong> customer.support@sfsdistribution.com</p>
+                        <p><strong>Thomas:</strong> thomas.smith@sfsdistribution.com</p>
+                        <p><strong>David:</strong> david.new@sfsdistribution.com</p>
+                        <p><strong>Phone:</strong> (910) 320-0800</p>
+                        <p class="contact-note">
+                            Response focus: professional communication, quote intake, customer support,
+                            and routing to the appropriate contact.
+                        </p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>How to Route Your Request</h3>
+                        <div class="routing-list">
+                            <div class="routing-item">
+                                <strong>Request a Quote</strong>
+                                <span>Use sales@sfsdistribution.com or the quote form for RFQs, product sourcing, and pricing.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>Customer Support</strong>
+                                <span>Use customer.support@sfsdistribution.com for documentation, order status, and post-contact support.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>General Inquiry</strong>
+                                <span>Use semperfi@sfsdistribution.com for first-touch routing and general company communication.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>Future Catalog / Product Inquiry</strong>
+                                <span>Use the form below and choose Catalog / Product Interest so the inquiry can be organized for future catalog features.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <h3>Request / Quote Form</h3>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="contact-name">Name</label>
+                            <input id="contact-name" type="text" name="name" placeholder="Your name" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="contact-company">Company</label>
+                            <input id="contact-company" type="text" name="company" placeholder="Company name" />
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="contact-email">Email</label>
+                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="contact-phone">Phone</label>
+                            <input id="contact-phone" type="tel" name="phone" placeholder="(000) 000-0000" />
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="request-type">Request Type</label>
+                            <select id="request-type" name="request_type">
+                                <option value="">Select a request type</option>
+                                <option>Request a Quote</option>
+                                <option>Sales Inquiry</option>
+                                <option>Customer Support</option>
+                                <option>Catalog / Product Interest</option>
+                                <option>Documentation Request</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="preferred-contact">Preferred Contact</label>
+                            <select id="preferred-contact" name="preferred_contact">
+                                <option value="">Select preferred contact</option>
+                                <option>Front Office</option>
+                                <option>Sales</option>
+                                <option>Customer Support</option>
+                                <option>Thomas Smith</option>
+                                <option>David New</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="product-category">Product / Service Category</label>
+                            <input id="product-category" type="text" name="product_category" placeholder="Example: hardware, sourcing support, documentation" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="solicitation-number">Solicitation / Reference Number</label>
+                            <input id="solicitation-number" type="text" name="solicitation_number" placeholder="Optional reference number" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="request-details">Request / RFQ Details</label>
+                        <textarea id="request-details"
+                                  name="request_details"
+                                  rows="7"
+                                  placeholder="Describe your request, required item or service, quantity, due date, documentation needs, and any other relevant details."></textarea>
+                        <div class="form-help">
+                            Helpful details: quantities, delivery window, documentation requirements,
+                            solicitation number, approved source requirements, and contact deadlines.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Send Request</button>
+
+                    <div class="contact-checklist">
+                        <span>Future-ready for quote intake</span>
+                        <span>Structured for catalog and product requests</span>
+                        <span>Built to support direct routing and cleaner communication</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section" id="future-contact-structure">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Future Structure</p>
+                    <h2>Built to Grow With Catalog and Customer Workflows</h2>
+                    <p>
+                        This page is designed to support your current direct-contact model while also
+                        preparing for future catalog browsing, quote workflows, and customer service routing.
+                    </p>
+                </div>
+
+                <div class="support-panel-grid">
+                    <article class="support-card">
+                        <h3>Catalog Interest Ready</h3>
+                        <p>
+                            The request structure already includes a path for catalog and product-interest inquiries,
+                            making it easier to connect future product pages to contact workflows.
+                        </p>
+                    </article>
+
+                    <article class="support-card">
+                        <h3>Quote-Friendly Intake</h3>
+                        <p>
+                            The form is organized to collect the kinds of details that matter for quoting:
+                            quantities, references, category, point of contact, and specific request notes.
+                        </p>
+                    </article>
+
+                    <article class="support-card">
+                        <h3>Cleaner Email Routing</h3>
+                        <p>
+                            The separate addresses create a more professional front office, sales, and support
+                            structure while still allowing direct founder access when needed.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-banner">
+            <div class="container cta-banner-inner">
+                <div>
+                    <p class="section-kicker">Next Step</p>
+                    <h2>Need a Quote, Product Contact, or Direct Response?</h2>
+                    <p>
+                        Semper Fi Services is building a cleaner, more professional intake system so customers
+                        and partners can reach the right person faster.
+                    </p>
+                </div>
+
+                <div class="button-row">
+                    <a href="#request-form" class="btn btn-primary">Request a Quote</a>
+                    <a href="mailto:semperfi@sfsdistribution.com" class="btn btn-secondary">Email Front Office</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div>
+                <h3>Semper Fi Services</h3>
+                <p>
+                    Quality-driven sourcing, distribution, and government-ready operational support.
+                </p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../company/index.html">Company</a></li>
+                    <li><a href="../capabilities/index.html">Capabilities</a></li>
+                    <li><a href="../quality/index.html">Quality</a></li>
+                    <li><a href="../government/index.html">Government</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>semperfi@sfsdistribution.com</p>
+                <p>(910) 320-0800</p>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2025 Semper Fi Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
