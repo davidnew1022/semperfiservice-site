@@ -1,83 +1,138 @@
-<!-- =========================
-FILE: index.html
-Final status:
-- FINAL for upgraded homepage structure and multi-page navigation
-- NOT FINAL for final branding, imagery, long-form copy, and form backend
-Purpose:
-- Home page for a multi-page Semper Fi Services website
-- Keeps homepage concise
-- Adds secondary "home sub-navigation" for deeper content areas
-- Ready for future pages: Company, Capabilities, Quality, Government, Contact
-========================= -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Semper Fi Services</title>
-
-    <!-- NOT FINAL: update description after brand/copy is finalized -->
+    <title>Company | Semper Fi Services</title>
     <meta name="description"
-          content="Semper Fi Services provides quality-driven sourcing, distribution, compliance support, and government-ready industrial and aviation solutions." />
+          content="Learn the story behind Semper Fi Services: two Marines, longtime friends, and a company built on discipline, resilience, and quality-driven execution." />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+        .company-page .hero-copy {
+            position: relative;
+            z-index: 2;
+        }
 
-    <!-- FINAL: shared stylesheet -->
-    <link rel="stylesheet" href="styles.css" />
+        .company-history-links {
+            margin-top: 1.5rem;
+        }
+
+        .company-values-banner {
+            border-top: 1px solid #dbe4ec;
+            border-bottom: 1px solid #dbe4ec;
+            background: #eaf2f8;
+        }
+
+        .company-values-list {
+            min-height: 72px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem 2rem;
+            padding: 1rem 0;
+            color: #29455f;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .bio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .bio-card {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+        .bio-headshot {
+            width: 100%;
+            aspect-ratio: 4 / 4.5;
+            object-fit: cover;
+            border-radius: 0.9rem;
+            border: 1px solid #dbe4ec;
+            margin-bottom: 1rem;
+            background: #eef3f7;
+        }
+
+        .bio-card h3 {
+            margin-bottom: 0.35rem;
+            font-size: 1.3rem;
+        }
+
+        .bio-role {
+            margin-bottom: 0.85rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #1f4f82;
+        }
+
+        .bio-card p + p {
+            margin-top: 0.9rem;
+        }
+
+        .motto-photo {
+            width: 100%;
+            border-radius: 1rem;
+            border: 1px solid #dbe4ec;
+            object-fit: cover;
+            background: #eef3f7;
+        }
+
+        .quote-panel {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+            .quote-panel blockquote {
+                margin: 0;
+                font-size: 1.15rem;
+                line-height: 1.5;
+                color: #203345;
+            }
+
+            .quote-panel p {
+                margin-top: 0.75rem;
+                color: #4a5b6d;
+            }
+
+        @media (max-width: 860px) {
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body>
-    <!-- =========================
-    HEADER
-    FINAL:
-    - top-level navigation now points to dedicated pages
-    - homepage remains separate from deeper content pages
-    NOT FINAL:
-    - logo treatment
-    - final CTA wording
-    ========================= -->
+<body class="company-page">
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="logo" aria-label="Semper Fi Services Home">
-                <!-- NOT FINAL: replace with real logo mark / SVG later -->
+            <a href="../index.html" class="logo" aria-label="Semper Fi Services Home">
                 <span class="logo-mark">SFS</span>
                 <span class="logo-text">Semper Fi Services</span>
             </a>
 
-            <!-- FINAL:
-            Main site nav = dedicated top-level pages
-            These are the pages you asked for
-            -->
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <div class="nav-dropdown">
-                    <button class="nav-dropdown-toggle"
-                            type="button"
-                            aria-expanded="false"
-                            aria-controls="home-dropdown-menu">
-                        Home
-                    </button>
-
-                    <div class="nav-dropdown-menu" id="home-dropdown-menu">
-                        <a href="index.html#hero">Overview</a>
-                        <a href="index.html#capabilities-overview">Capabilities</a>
-                        <a href="index.html#products">Products</a>
-                        <a href="index.html#process">Process</a>
-                        <a href="index.html#quality-overview">Quality</a>
-                        <a href="index.html#government-overview">Government</a>
-                        <a href="index.html#company-overview">Company</a>
-                        <a href="index.html#contact-preview">Contact</a>
-                    </div>
-                </div>
-
-                <a href="company/index.html">Company</a>
-                <a href="capabilities/index.html">Capabilities</a>
-                <a href="quality/index.html">Quality</a>
-                <a href="government/index.html">Government</a>
-                <a href="contact/index.html">Contact</a>
+                <a href="../index.html#hero">Home</a>
+                <a href="index.html">Company</a>
+                <a href="../capabilities/index.html">Capabilities</a>
+                <a href="../quality/index.html">Quality</a>
+                <a href="../government/index.html">Government</a>
+                <a href="../contact/index.html">Contact</a>
             </nav>
 
             <div class="header-actions">
-                <!-- NOT FINAL: can later route to RFQ form page -->
-                <a href="contact/index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
 
-                <!-- FINAL: mobile nav toggle -->
                 <button class="nav-toggle"
                         id="nav-toggle"
                         type="button"
@@ -93,498 +148,226 @@ Purpose:
     </header>
 
     <main>
-        <!-- =========================
-        HERO
-        FINAL: homepage lead-in remains brief and focused
-        NOT FINAL: headline, supporting text, media
-        ========================= -->
         <section class="hero section" id="hero">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Veteran-Led | Quality-Driven | Government-Ready</p>
+                    <p class="eyebrow">Company</p>
 
                     <h1>
-                        Distribution, Compliance, and Quality-Focused Support
-                        for Aviation, Industrial, and Government Needs
+                        Built by Two Marines, Strengthened by Friendship,
+                        and Driven by a Bigger Mission
                     </h1>
 
                     <p class="hero-text">
-                        Semper Fi Services provides reliable sourcing, supply support, and
-                        quality-driven operational solutions backed by disciplined documentation,
-                        traceability, and responsive service.
+                        This page is about where Semper Fi Services comes from, what shaped it,
+                        and why the company is being built the way it is.
                     </p>
 
-                    <div class="button-row">
-                        <a href="government/index.html#past-performance" class="btn btn-primary">Past Performance</a>
-                        <a href="capabilities/index.html" class="btn btn-secondary">View Capabilities</a>
+                    <div class="button-row company-history-links">
+                        <a href="#history" class="btn btn-primary">Company History</a>
+                        <a href="#leadership" class="btn btn-secondary">Meet the Team</a>
                     </div>
 
                     <div class="hero-mobile-band" aria-hidden="true"></div>
                 </div>
 
-                <div class="hero-media">
-                    <div class="hero-panel">
-                        <div class="hero-panel-top">
-                            <p class="hero-panel-kicker">Operational Readiness</p>
-                            <h3>Documentation, Traceability, and Responsive Support</h3>
-                            <p>
-                                Built for buyers and partners who expect organized communication,
-                                disciplined records, and dependable execution.
-                            </p>
-                        </div>
+                <div class="hero-media" aria-hidden="true"></div>
+            </div>
+        </section>
 
-                        <div class="hero-panel-grid">
-                            <article class="hero-panel-card">
-                                <span class="hero-panel-label">Distribution</span>
-                                <strong>Aviation &amp; Industrial Supply</strong>
-                            </article>
+        <section class="company-values-banner" aria-label="Core Values">
+            <div class="container company-values-list">
+                <span>Discipline</span>
+                <span>Loyalty</span>
+                <span>Accountability</span>
+                <span>Resilience</span>
+                <span>Service Before Self</span>
+                <span>Quality in Execution</span>
+            </div>
+        </section>
 
-                            <article class="hero-panel-card">
-                                <span class="hero-panel-label">Quality</span>
-                                <strong>Process-Oriented Documentation</strong>
-                            </article>
+        <section class="section" id="history">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">History</p>
+                    <h2>The Story Behind the Company</h2>
+                </div>
 
-                            <article class="hero-panel-card">
-                                <span class="hero-panel-label">Government</span>
-                                <strong>Procurement-Ready Communication</strong>
-                            </article>
-                        </div>
+                <div class="split-layout">
+                    <div>
+                        <p>
+                            Semper Fi Services began with two Marines who both carried a bigger vision
+                            for life after active service. Over time, that vision became grounded in
+                            real-world responsibility, long-term friendship, and a shared determination
+                            to build something meaningful for themselves and their families.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Through deployments, transition, work, fatherhood, and personal struggles,
+                            the friendship remained. What held it together was not just shared history,
+                            but shared mindset: keep moving, stay accountable, solve problems, and build
+                            something that lasts.
+                        </p>
+                        <p style="margin-top: 1rem;">
+                            Today, that same foundation shapes the company. Semper Fi Services is being
+                            built as a disciplined, trustworthy operation that reflects military values,
+                            personal resilience, and a serious commitment to doing business the right way.
+                        </p>
+                    </div>
 
-                        <div class="hero-panel-metrics" aria-label="Company focus highlights">
-                            <div class="hero-metric">
-                                <span class="hero-metric-value">Veteran</span>
-                                <span class="hero-metric-label">Led</span>
-                            </div>
-
-                            <div class="hero-metric">
-                                <span class="hero-metric-value">Quality</span>
-                                <span class="hero-metric-label">Focused</span>
-                            </div>
-
-                            <div class="hero-metric">
-                                <span class="hero-metric-value">Gov</span>
-                                <span class="hero-metric-label">Ready</span>
-                            </div>
-                        </div>
+                    <div class="panel">
+                        <h3>What We Are Building</h3>
+                        <p>
+                            We are building a company that combines personal grit with operational
+                            discipline. The goal is not just to win work, but to create a dependable,
+                            quality-focused business that buyers, manufacturers, and partners can trust.
+                        </p>
+                        <ul class="feature-list">
+                            <li>Mission-oriented execution</li>
+                            <li>Long-term relationships over short-term shortcuts</li>
+                            <li>Professionalism rooted in real-life experience</li>
+                            <li>Growth built on discipline, not hype</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- =========================
-        HOME SUB-NAVIGATION
-        FINAL:
-        - this is the "smaller sub categories under Home"
-        - these are quick links to deeper content pages/sections
-        NOT FINAL:
-        - final labels
-        - exact destination structure
-        ========================= -->
-        <section class="home-subnav section-sm">
-            <div class="container">
-                <div class="section-heading section-heading-compact">
-                    <p class="section-kicker"></p>
-                    <h2>Mission</h2>
-                    <p>
-                        Our mission is to deliver fully traceable, compliant parts through controlled quality processes that ensure precision, reliability, and performance.
-                    </p>
-                </div>
-
-                <div class="subnav-message">
-                    <p class="subnav-text">
-                        What started as two Marines with a shared vision has become a disciplined operation focused on quality, traceability, and execution. We’ve seen firsthand what happens when standards slip, and we’ve built this company to be the opposite of that—controlled, accountable, and dependable.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- =========================
-        CREDIBILITY BAR
-        FINAL: homepage credibility strip retained
-        NOT FINAL: exact badge text
-        ========================= -->
-        <section class="credibility-strip" aria-label="Credibility Highlights">
-            <div class="container credibility-items">
-                <span>Veteran-Led</span>
-                <span>Registered in SAM.gov</span>
-                <span>Active on DLA DIBBS</span>
-                <span>AS9120-Aligned Processes in Development</span>
-                <span>Quality-Driven Sourcing &amp; Documentation</span>
-            </div>
-        </section>
-
-        <!-- =========================
-        CAPABILITIES SNAPSHOT
-        FINAL:
-        - homepage version stays high-level
-        - deeper detail belongs on capabilities page
-        ========================= -->
-        <section class="section" id="capabilities-overview">
+        <section class="section section-alt" id="leadership">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-kicker">Capabilities</p>
-                    <h2>Core Capability Snapshot</h2>
+                    <p class="section-kicker">Leadership</p>
+                    <h2>The Dynamic Duo Behind Semper Fi Services</h2>
                     <p>
-                        Detailed capability content, statements, and expanded service descriptions
-                        can be found on our dedicated Capabilities page.
+                        The company reflects two different strengths working together: one outward-facing,
+                        one operationally focused, both committed to the same mission.
                     </p>
                 </div>
 
-                <div class="card-grid card-grid-4">
-                    <article class="card">
-                        <h3>Aircraft Parts Distribution</h3>
+                <div class="bio-grid">
+                    <article class="bio-card">
+                        <img src="../images/thomas-headshot.jpg" alt="Headshot of Thomas" class="bio-headshot" />
+                        <h3>Thomas</h3>
+                        <p class="bio-role">The Face of the Company</p>
                         <p>
-                            Sourcing and supplying aviation &amp; equipment components with attention to
-                            traceability, documentation, and reliability.
+                            Thomas brings leadership presence, relationship-building strength, and
+                            practical field experience to the company. He represents the visible,
+                            forward-facing side of Semper Fi Services: the man who helps communicate
+                            the mission, build confidence, and carry the company's values into the
+                            marketplace.
+                        </p>
+                        <p>
+                            His background in construction and quality control brings real-world
+                            discipline to how work is approached. He understands accountability,
+                            responsibility, and what it means to represent a company with credibility.
                         </p>
                     </article>
 
-                    <article class="card">
-                        <h3>Quality Management &amp; Compliance</h3>
+                    <article class="bio-card">
+                        <img src="../images/david-headshot.jpg" alt="Headshot of David" class="bio-headshot" />
+                        <h3>David</h3>
+                        <p class="bio-role">The Behind-the-Scenes Operator</p>
                         <p>
-                            Implementing quality management systems and ensuring adherence to compliance
-                            requirements across sourcing, documentation, and operational processes.
+                            David drives the internal structure of the company: systems, documentation,
+                            process, strategy, and the details that make execution dependable. He is
+                            focused on building the foundation that allows the business to scale with
+                            discipline and professionalism.
+                        </p>
+                        <p>
+                            With a military aviation background and quality assurance experience, he
+                            brings a mindset built around precision, traceability, and operational
+                            control. He is the one making sure the back end is as strong as the front.
                         </p>
                     </article>
-
-                    <article class="card">
-                        <h3>Industrial Hardware Supply</h3>
-                        <p>
-                            Fasteners, fittings, seals, and general hardware for industrial and support applications.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Sourcing &amp; Procurement Support</h3>
-                        <p>
-                            Responsive sourcing through vetted suppliers and distributor networks for
-                            routine and urgent requirements.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="section-cta">
-                    <a href="capabilities/index.html" class="btn btn-secondary">Explore Full Capabilities</a>
                 </div>
             </div>
         </section>
 
-        <!-- =========================
-        PRODUCTS SNAPSHOT
-        FINAL:
-        - remains overview only
-        - expanded categories can move to capabilities page later
-        ========================= -->
-        <section class="section section-alt" id="products">
+        <section class="section" id="why-it-matters">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-kicker">Products</p>
-                    <h2>Product Categories</h2>
+                    <p class="section-kicker">Why It Matters</p>
+                    <h2>A Company Built on More Than Business</h2>
                     <p>
-                        High-level product categories that communicate scope without implying fixed inventory.
+                        Semper Fi Services is not just a company idea. It is the result of shared
+                        hardship, earned trust, and the desire to build a better future.
                     </p>
                 </div>
 
                 <div class="card-grid card-grid-3">
                     <article class="card">
-                        <h3>Fasteners</h3>
-                        <p>Bolts, nuts, screws, washers, and related hardware.</p>
+                        <h3>Shared Struggle</h3>
+                        <p>
+                            The company was shaped through the realities of military transition,
+                            fatherhood, responsibility, and the pressure to create something better.
+                        </p>
                     </article>
 
                     <article class="card">
-                        <h3>Seals &amp; Gaskets</h3>
-                        <p>O-rings, packings, and sealing solutions.</p>
+                        <h3>Shared Vision</h3>
+                        <p>
+                            Both founders carried the same long-term goal: build something real,
+                            create opportunity, and make the most of life after service.
+                        </p>
                     </article>
 
                     <article class="card">
-                        <h3>Fittings &amp; Connectors</h3>
-                        <p>Adapters, connectors, and fluid system components.</p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Electrical &amp; Mechanical Components</h3>
-                        <p>General components used in aviation and industrial applications.</p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Ground Support Equipment</h3>
-                        <p>Equipment and parts used in support of aviation operations.</p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Industrial &amp; General Supply</h3>
-                        <p>Commercial and industrial-grade parts for broader sourcing requirements.</p>
+                        <h3>Shared Standard</h3>
+                        <p>
+                            The standard is simple: be dependable, stay accountable, and execute with
+                            the same seriousness that defined military service.
+                        </p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- =========================
-        PROCESS SNAPSHOT
-        FINAL:
-        - short process remains on home
-        - future SOP/process detail belongs on quality page
-        ========================= -->
-        <section class="section" id="process">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Process</p>
-                    <h2>How We Work</h2>
-                    <p>
-                        A concise, buyer-friendly process showing how requests move from sourcing to delivery.
-                    </p>
-                </div>
-
-                <div class="process-row">
-                    <div class="process-step">Source</div>
-                    <div class="process-step">Verify</div>
-                    <div class="process-step">Document</div>
-                    <div class="process-step">Package</div>
-                    <div class="process-step">Deliver</div>
-                </div>
-
-                <div class="detail-grid">
-                    <div class="detail-item">
-                        <h3>Vetted Suppliers</h3>
-                        <p>Supplier and sourcing discipline built into the front end of the process.</p>
-                    </div>
-                    <div class="detail-item">
-                        <h3>Traceability</h3>
-                        <p>Records and part details organized to support confidence and accountability.</p>
-                    </div>
-                    <div class="detail-item">
-                        <h3>Documentation Control</h3>
-                        <p>Structured handling of certs, records, and required supporting paperwork.</p>
-                    </div>
-                    <div class="detail-item">
-                        <h3>Requirement-Based Packaging</h3>
-                        <p>Packaging and delivery handled to meet customer and contract expectations.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- =========================
-        QUALITY SNAPSHOT
-        FINAL:
-        - homepage version remains brief
-        - detailed policies/SOPs/docs will go to Quality page
-        ========================= -->
-        <section class="section section-alt" id="quality-overview">
+        <section class="section section-alt" id="motto">
             <div class="container split-layout">
                 <div>
-                    <p class="section-kicker">Quality</p>
-                    <h2>Quality Commitment</h2>
+                    <p class="section-kicker">Motto</p>
+                    <h2>Still Side by Side, Still Building Forward</h2>
                     <p>
-                        Quality is the foundation of every transaction. Our approach is built on
-                        disciplined documentation, traceability, and a commitment to doing the job correctly.
+                        The story of this company is a story of brotherhood, perseverance, and the
+                        refusal to quit on the future. Semper Fi Services stands on the belief that
+                        loyalty, discipline, and shared purpose can still build something powerful.
                     </p>
-
-                    <ul class="feature-list">
-                        <li>Traceability from source to delivery</li>
-                        <li>Documentation retention and control</li>
-                        <li>Authenticity and risk-awareness mindset</li>
-                        <li>Inspection-ready operating discipline</li>
-                        <li>AS9120-aligned quality management system in development</li>
-                    </ul>
-
-                    <div class="section-cta">
-                        <a href="quality/index.html" class="btn btn-secondary">Explore Quality Page</a>
-                    </div>
-                </div>
-
-                <div class="panel">
-                    <!-- NOT FINAL: this can later become a capability statement, quality roadmap, or docs panel -->
-                    <h3>Documents &amp; Standards</h3>
-                    <p>
-                        This homepage panel is intentionally brief. The full Quality page can later
-                        include SOP summaries, policy documents, forms, compliance notes, and
-                        downloadable company materials.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- =========================
-        GOVERNMENT SNAPSHOT
-        FINAL:
-        - homepage stays concise
-        - detailed buyer-facing info moves to Government page
-        ========================= -->
-        <section class="section" id="government-overview">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Government</p>
-                    <h2>Government &amp; Defense Support</h2>
-                    <p>
-                        Clear, disciplined support for government and defense buyers with room for
-                        future expansion into readiness documents and buyer-facing content.
-                    </p>
-                </div>
-
-                <div class="card-grid card-grid-2">
-                    <article class="card">
-                        <h3>Responsive RFQ Support</h3>
+                    <div class="quote-panel" style="margin-top: 1rem;">
+                        <blockquote>
+                            Built on friendship. Strengthened by hardship. Driven by mission.
+                        </blockquote>
                         <p>
-                            Structured support for quote requests, sourcing inquiries, and procurement communication.
+                            This is more than branding. It is the foundation of how the company was formed.
                         </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Documentation Readiness</h3>
-                        <p>
-                            Framework for certifications, reports, records, and required supporting documents.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Procurement Familiarity</h3>
-                        <p>
-                            Messaging and process designed for buyers who expect disciplined, professional responses.
-                        </p>
-                    </article>
-
-                    <article class="card">
-                        <h3>Range of Part Categories</h3>
-                        <p>
-                            Flexible structure to support aircraft parts, support equipment, and broader industrial supply.
-                        </p>
-                    </article>
-                </div>
-
-                <div class="section-cta">
-                    <a href="government/index.html" class="btn btn-secondary">Explore Government Page</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- =========================
-        COMPANY SNAPSHOT
-        FINAL:
-        - homepage version is a brief company preview
-        - in-depth story/background/case examples belong on Company page
-        ========================= -->
-        <section class="section section-alt" id="company-overview">
-            <div class="container split-layout">
-                <div class="about-media">
-                    <!-- NOT FINAL: replace with team image / founder visual later -->
-                    <div class="media-placeholder small">
-                        <span>Company / Leadership Image Placeholder</span>
                     </div>
                 </div>
 
                 <div>
-                    <p class="section-kicker">Company</p>
-                    <h2>Built on Discipline, Accountability, and Experience</h2>
-                    <p>
-                        Semper Fi Services is a veteran-led company built around attention to detail,
-                        responsive service, and a quality-first operating mindset.
-                    </p>
-
-                    <ul class="feature-list">
-                        <li>Aviation maintenance and quality assurance experience</li>
-                        <li>Airframe and Powerplant knowledge</li>
-                        <li>Quality control and inspection background</li>
-                        <li>Operational experience in structured, high-accountability environments</li>
-                    </ul>
-
-                    <div class="button-row">
-                        <a href="company/index.html" class="btn btn-secondary">Explore Company Page</a>
-                        <a href="company/index.html#case-examples" class="btn btn-secondary">View Case Examples</a>
-                    </div>
+                    <img src="../images/company-motto-photo.jpg"
+                         alt="Thomas and David together during military service"
+                         class="motto-photo" />
                 </div>
             </div>
         </section>
 
-        <!-- =========================
-        CTA BANNER
-        FINAL: keeps homepage action-focused
-        NOT FINAL: headline and exact conversion wording
-        ========================= -->
         <section class="section cta-banner">
             <div class="container cta-banner-inner">
                 <div>
                     <p class="section-kicker">Next Step</p>
-                    <h2>Ready to Work With a Quality-Driven Team?</h2>
+                    <h2>Want to Work With a Company Built on Discipline and Trust?</h2>
                     <p>
-                        Whether you need sourcing support, documentation discipline, operational quality,
-                        or procurement response, we are ready to connect.
+                        Semper Fi Services is building a professional, quality-driven business with
+                        strong personal roots and a serious commitment to dependable execution.
                     </p>
                 </div>
 
                 <div class="button-row">
-                    <a href="contact/index.html" class="btn btn-primary">Request a Quote</a>
-                    <a href="contact/index.html" class="btn btn-secondary">Contact Us</a>
-                </div>
-            </div>
-        </section>
-
-        <!-- =========================
-        CONTACT PREVIEW
-        FINAL:
-        - homepage contact preview remains
-        - full contact/RFQ expansion belongs on Contact page
-        ========================= -->
-        <section class="section" id="contact-preview">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Contact</p>
-                    <h2>Get in Touch</h2>
-                    <p>
-                        Use the contact page for direct communication, RFQs, document requests, and future intake forms.
-                    </p>
-                </div>
-
-                <div class="contact-layout">
-                    <div class="contact-card">
-                        <h3>Direct Contact</h3>
-                        <p><strong>Email:</strong> semperfi@sfsdistribution.com</p>
-                        <p><strong>Phone:</strong> +1 (623) 301-2271</p>
-                        <p><strong>Response:</strong> Prompt and professional communication.</p>
-
-                        <div class="section-cta">
-                            <a href="contact/index.html" class="btn btn-secondary">Open Contact Page</a>
-                        </div>
-                    </div>
-
-                    <form class="contact-form" action="#" method="post">
-                        <!-- NOT FINAL: front-end placeholder only -->
-                        <div class="form-row">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text" placeholder="Your name" />
-                        </div>
-
-                        <div class="form-row">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" placeholder="you@example.com" />
-                        </div>
-
-                        <div class="form-row">
-                            <label for="company">Company</label>
-                            <input id="company" name="company" type="text" placeholder="Company name" />
-                        </div>
-
-                        <div class="form-row">
-                            <label for="message">Request / RFQ</label>
-                            <textarea id="message"
-                                      name="message"
-                                      rows="6"
-                                      placeholder="Briefly describe your request"></textarea>
-                        </div>
-
-                        <button class="btn btn-primary" type="submit">Send Request</button>
-                    </form>
+                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- =========================
-    FOOTER
-    FINAL:
-    - footer links now point to real top-level pages
-    - support future document and company content growth
-    ========================= -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
@@ -597,29 +380,27 @@ Purpose:
             <div>
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="company/index.html">Company</a></li>
-                    <li><a href="capabilities/index.html">Capabilities</a></li>
-                    <li><a href="quality/index.html">Quality</a></li>
-                    <li><a href="government/index.html">Government</a></li>
-                    <li><a href="contact/index.html">Contact</a></li>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Company</a></li>
+                    <li><a href="../capabilities/index.html">Capabilities</a></li>
+                    <li><a href="../quality/index.html">Quality</a></li>
+                    <li><a href="../government/index.html">Government</a></li>
+                    <li><a href="../contact/index.html">Contact</a></li>
                 </ul>
             </div>
 
             <div>
                 <h4>Contact</h4>
                 <p>semperfi@sfsdistribution.com</p>
-                <p>+ (623) 301-2271</p>
+                <p>+1 (623) 301-2271</p>
             </div>
         </div>
 
         <div class="container footer-bottom">
-            <!-- NOT FINAL: update year later if needed -->
             <p>&copy; 2025 Semper Fi Services. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- FINAL: shared script -->
-    <script src="script.js"></script>
+    <script src="../script.js"></script>
 </body>
 </html>
