@@ -3,27 +3,28 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Company | Semper Fi Services</title>
+    <title>Contact | Semper Fi Services</title>
     <meta name="description"
-          content="Learn the story behind Semper Fi Services: two Marines, longtime friends, and a company built on discipline, resilience, and quality-driven execution." />
+          content="Contact Semper Fi Services for quotes, sourcing requests, customer support, and business inquiries." />
     <link rel="stylesheet" href="../styles.css" />
     <style>
-        .company-page .hero-copy {
+        .contact-page .hero-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-page .hero-copy {
+            max-width: 920px;
             position: relative;
             z-index: 2;
         }
 
-        .company-history-links {
-            margin-top: 1.5rem;
-        }
-
-        .company-values-banner {
+        .contact-directory-banner {
             border-top: 1px solid #dbe4ec;
             border-bottom: 1px solid #dbe4ec;
             background: #eaf2f8;
         }
 
-        .company-values-list {
+        .contact-directory-items {
             min-height: 72px;
             display: flex;
             flex-wrap: wrap;
@@ -36,84 +37,154 @@
             text-align: center;
         }
 
-        .bio-grid {
+        .contact-directory-grid {
             display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
         }
 
-        .bio-card {
+        .directory-card {
             background: #ffffff;
             border: 1px solid #dbe4ec;
             border-radius: 1rem;
-            padding: 1.5rem;
+            padding: 1.4rem;
             box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
         }
 
-        .bio-headshot {
-            width: 100%;
-            aspect-ratio: 4 / 4.5;
-            object-fit: cover;
-            border-radius: 0.9rem;
-            border: 1px solid #dbe4ec;
-            margin-bottom: 1rem;
-            background: #eef3f7;
-        }
+            .directory-card h3 {
+                margin-bottom: 0.35rem;
+                font-size: 1.1rem;
+            }
 
-        .bio-card h3 {
-            margin-bottom: 0.35rem;
-            font-size: 1.3rem;
-        }
-
-        .bio-role {
-            margin-bottom: 0.85rem;
-            font-size: 0.85rem;
+        .directory-role {
+            margin-bottom: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: #1f4f82;
         }
 
-        .bio-card p + p {
-            margin-top: 0.9rem;
+        .directory-card p + p {
+            margin-top: 0.4rem;
         }
 
-        .motto-photo {
-            width: 100%;
-            border-radius: 1rem;
+        .contact-page .contact-layout {
+            align-items: start;
+        }
+
+        .contact-stack {
+            display: grid;
+            gap: 1.25rem;
+        }
+
+        .contact-card h3,
+        .contact-form h3 {
+            margin-bottom: 0.75rem;
+        }
+
+        .contact-note {
+            color: #4a5b6d;
+            margin-top: 0.65rem;
+        }
+
+        .routing-list {
+            margin-top: 0.75rem;
+            display: grid;
+            gap: 0.65rem;
+        }
+
+        .routing-item {
+            padding: 0.9rem 1rem;
             border: 1px solid #dbe4ec;
-            object-fit: cover;
-            background: #eef3f7;
+            border-radius: 0.8rem;
+            background: #f9fbfd;
         }
 
-        .quote-panel {
-            background: #ffffff;
-            border: 1px solid #dbe4ec;
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
-        }
-
-            .quote-panel blockquote {
-                margin: 0;
-                font-size: 1.15rem;
-                line-height: 1.5;
-                color: #203345;
+            .routing-item strong {
+                display: block;
+                margin-bottom: 0.2rem;
+                color: #12202f;
             }
 
-            .quote-panel p {
-                margin-top: 0.75rem;
+            .routing-item span {
                 color: #4a5b6d;
             }
 
+        .form-grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+        }
+
+        .form-row select {
+            width: 100%;
+            padding: 0.85rem 0.95rem;
+            border: 1px solid #c5d2de;
+            border-radius: 0.65rem;
+            font: inherit;
+            color: #12202f;
+            background: #ffffff;
+        }
+
+            .form-row select:focus {
+                outline: 2px solid rgba(31, 79, 130, 0.16);
+                border-color: #1f4f82;
+            }
+
+        .form-help {
+            margin-top: 0.25rem;
+            font-size: 0.9rem;
+            color: #5a7186;
+        }
+
+        .contact-checklist {
+            margin-top: 0.9rem;
+            display: grid;
+            gap: 0.55rem;
+            color: #4a5b6d;
+        }
+
+        .support-panel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1.25rem;
+        }
+
+        .support-card {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.4rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+            .support-card h3 {
+                margin-bottom: 0.5rem;
+                font-size: 1.1rem;
+            }
+
+            .support-card p {
+                color: #4a5b6d;
+            }
+
+        @media (max-width: 1080px) {
+            .contact-directory-grid,
+            .support-panel-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
         @media (max-width: 860px) {
-            .bio-grid {
+            .contact-directory-grid,
+            .support-panel-grid,
+            .form-grid-2 {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-<body class="company-page">
+<body class="contact-page">
     <header class="site-header">
         <div class="container header-inner">
             <a href="../index.html" class="logo" aria-label="Semper Fi Services Home">
@@ -122,16 +193,35 @@
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <a href="../index.html#hero">Home</a>
-                <a href="index.html">Company</a>
+                <div class="nav-dropdown">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="home-dropdown-menu">
+                        Home
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="home-dropdown-menu">
+                        <a href="../index.html#hero">Overview</a>
+                        <a href="../index.html#capabilities-overview">Capabilities</a>
+                        <a href="../index.html#products">Products</a>
+                        <a href="../index.html#process">Process</a>
+                        <a href="../index.html#quality-overview">Quality</a>
+                        <a href="../index.html#government-overview">Government</a>
+                        <a href="../index.html#company-overview">Company</a>
+                        <a href="../index.html#contact-preview">Contact</a>
+                    </div>
+                </div>
+
+                <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
                 <a href="../quality/index.html">Quality</a>
                 <a href="../government/index.html">Government</a>
-                <a href="../contact/index.html">Contact</a>
+                <a href="index.html">Contact</a>
             </nav>
 
             <div class="header-actions">
-                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="index.html" class="btn btn-primary">Request a Quote</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -151,200 +241,261 @@
         <section class="hero section" id="hero">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Company</p>
+                    <p class="eyebrow">Contact</p>
 
                     <h1>
-                        Built by Two Marines, Strengthened by Friendship,
-                        and Driven by a Bigger Mission
+                        Reach the Right Person Faster for Quotes, Support,
+                        Sales, and Business Inquiries
                     </h1>
 
                     <p class="hero-text">
-                        This page is about where Semper Fi Services comes from, what shaped it,
-                        and why the company is being built the way it is.
+                        The contact page is built to make communication easier. Whether you need a
+                        quote, customer support, sourcing help, or general business contact, Semper Fi
+                        Services is organizing a direct-response contact structure so inquiries can be
+                        routed to the right person with less back and forth.
                     </p>
 
-                    <div class="button-row company-history-links">
-                        <a href="#history" class="btn btn-primary">Company History</a>
-                        <a href="#leadership" class="btn btn-secondary">Meet the Team</a>
+                    <div class="button-row">
+                        <a href="#request-form" class="btn btn-primary">Request a Quote</a>
+                        <a href="#directory" class="btn btn-secondary">View Contact Directory</a>
                     </div>
 
                     <div class="hero-mobile-band" aria-hidden="true"></div>
                 </div>
-
-                <div class="hero-media" aria-hidden="true"></div>
             </div>
         </section>
 
-        <section class="company-values-banner" aria-label="Core Values">
-            <div class="container company-values-list">
-                <span>Discipline</span>
-                <span>Loyalty</span>
-                <span>Accountability</span>
-                <span>Resilience</span>
-                <span>Service Before Self</span>
-                <span>Quality in Execution</span>
+        <section class="contact-directory-banner" aria-label="Contact Options">
+            <div class="container contact-directory-items">
+                <span>Quotes & RFQs</span>
+                <span>Sales Inquiries</span>
+                <span>Customer Support</span>
+                <span>Front Office Contact</span>
+                <span>Future Catalog Requests</span>
+                <span>Direct Team Access</span>
             </div>
         </section>
 
-        <section class="section" id="history">
+        <section class="section" id="directory">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-kicker">History</p>
-                    <h2>The Story Behind the Company</h2>
-                </div>
-
-                <div class="split-layout">
-                    <div>
-                        <p>
-                            Semper Fi Services began with two Marines who both carried a bigger vision
-                            for life after active service. Over time, that vision became grounded in
-                            real-world responsibility, long-term friendship, and a shared determination
-                            to build something meaningful for themselves and their families.
-                        </p>
-                        <p style="margin-top: 1rem;">
-                            Through deployments, transition, work, fatherhood, and personal struggles,
-                            the friendship remained. What held it together was not just shared history,
-                            but shared mindset: keep moving, stay accountable, solve problems, and build
-                            something that lasts.
-                        </p>
-                        <p style="margin-top: 1rem;">
-                            Today, that same foundation shapes the company. Semper Fi Services is being
-                            built as a disciplined, trustworthy operation that reflects military values,
-                            personal resilience, and a serious commitment to doing business the right way.
-                        </p>
-                    </div>
-
-                    <div class="panel">
-                        <h3>What We Are Building</h3>
-                        <p>
-                            We are building a company that combines personal grit with operational
-                            discipline. The goal is not just to win work, but to create a dependable,
-                            quality-focused business that buyers, manufacturers, and partners can trust.
-                        </p>
-                        <ul class="feature-list">
-                            <li>Mission-oriented execution</li>
-                            <li>Long-term relationships over short-term shortcuts</li>
-                            <li>Professionalism rooted in real-life experience</li>
-                            <li>Growth built on discipline, not hype</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt" id="leadership">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Leadership</p>
-                    <h2>The Dynamic Duo Behind Semper Fi Services</h2>
+                    <p class="section-kicker">Directory</p>
+                    <h2>Contact Directory</h2>
                     <p>
-                        The company reflects two different strengths working together: one outward-facing,
-                        one operationally focused, both committed to the same mission.
+                        Use the directory below to contact the right inbox based on the type of request.
                     </p>
                 </div>
 
-                <div class="bio-grid">
-                    <article class="bio-card">
-                        <img src="../images/thomas-headshot.jpg" alt="Headshot of Thomas" class="bio-headshot" />
-                        <h3>Thomas</h3>
-                        <p class="bio-role">The Face of the Company</p>
-                        <p>
-                            Thomas brings leadership presence, relationship-building strength, and
-                            practical field experience to the company. He represents the visible,
-                            forward-facing side of Semper Fi Services: the man who helps communicate
-                            the mission, build confidence, and carry the company's values into the
-                            marketplace.
-                        </p>
-                        <p>
-                            His background in construction and quality control brings real-world
-                            discipline to how work is approached. He understands accountability,
-                            responsibility, and what it means to represent a company with credibility.
-                        </p>
+                <div class="contact-directory-grid">
+                    <article class="directory-card">
+                        <h3>Front Office</h3>
+                        <p class="directory-role">General Intake</p>
+                        <p><strong>Email:</strong> semperfi@sfsdistribution.com</p>
+                        <p>Best for general inquiries, routing requests, and first-contact communication.</p>
                     </article>
 
-                    <article class="bio-card">
-                        <img src="../images/david-headshot.jpg" alt="Headshot of David" class="bio-headshot" />
-                        <h3>David</h3>
-                        <p class="bio-role">The Behind-the-Scenes Operator</p>
-                        <p>
-                            David drives the internal structure of the company: systems, documentation,
-                            process, strategy, and the details that make execution dependable. He is
-                            focused on building the foundation that allows the business to scale with
-                            discipline and professionalism.
-                        </p>
-                        <p>
-                            With a military aviation background and quality assurance experience, he
-                            brings a mindset built around precision, traceability, and operational
-                            control. He is the one making sure the back end is as strong as the front.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="why-it-matters">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Why It Matters</p>
-                    <h2>A Company Built on More Than Business</h2>
-                    <p>
-                        Semper Fi Services is not just a company idea. It is the result of shared
-                        hardship, earned trust, and the desire to build a better future.
-                    </p>
-                </div>
-
-                <div class="card-grid card-grid-3">
-                    <article class="card">
-                        <h3>Shared Struggle</h3>
-                        <p>
-                            The company was shaped through the realities of military transition,
-                            fatherhood, responsibility, and the pressure to create something better.
-                        </p>
+                    <article class="directory-card">
+                        <h3>Sales</h3>
+                        <p class="directory-role">Quotes & Opportunities</p>
+                        <p><strong>Email:</strong> sales@sfsdistribution.com</p>
+                        <p>Best for RFQs, sourcing requests, pricing discussions, and business development.</p>
                     </article>
 
-                    <article class="card">
-                        <h3>Shared Vision</h3>
-                        <p>
-                            Both founders carried the same long-term goal: build something real,
-                            create opportunity, and make the most of life after service.
-                        </p>
+                    <article class="directory-card">
+                        <h3>Customer Support</h3>
+                        <p class="directory-role">Existing Customer Help</p>
+                        <p><strong>Email:</strong> customer.support@sfsdistribution.com</p>
+                        <p>Best for order follow-up, delivery questions, documentation requests, and support.</p>
                     </article>
 
-                    <article class="card">
-                        <h3>Shared Standard</h3>
-                        <p>
-                            The standard is simple: be dependable, stay accountable, and execute with
-                            the same seriousness that defined military service.
-                        </p>
+                    <article class="directory-card">
+                        <h3>Thomas Smith</h3>
+                        <p class="directory-role">Field / Business-Facing Contact</p>
+                        <p><strong>Email:</strong> thomas.smith@sfsdistribution.com</p>
+                        <p>Best for relationship-driven communication, business coordination, and project-facing contact.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>David New</h3>
+                        <p class="directory-role">Operations / Documentation Contact</p>
+                        <p><strong>Email:</strong> david.new@sfsdistribution.com</p>
+                        <p>Best for process questions, documentation detail, internal coordination, and operational follow-up.</p>
+                    </article>
+
+                    <article class="directory-card">
+                        <h3>Main Phone</h3>
+                        <p class="directory-role">Direct Contact</p>
+                        <p><strong>Phone:</strong> +1 (623) 301-2271</p>
+                        <p>Best for prompt communication when email is not ideal or you need fast routing.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt" id="motto">
-            <div class="container split-layout">
-                <div>
-                    <p class="section-kicker">Motto</p>
-                    <h2>Still Side by Side, Still Building Forward</h2>
-                    <p>
-                        The story of this company is a story of brotherhood, perseverance, and the
-                        refusal to quit on the future. Semper Fi Services stands on the belief that
-                        loyalty, discipline, and shared purpose can still build something powerful.
-                    </p>
-                    <div class="quote-panel" style="margin-top: 1rem;">
-                        <blockquote>
-                            Built on friendship. Strengthened by hardship. Driven by mission.
-                        </blockquote>
-                        <p>
-                            This is more than branding. It is the foundation of how the company was formed.
+        <section class="section section-alt" id="request-form">
+            <div class="container contact-layout">
+                <div class="contact-stack">
+                    <div class="contact-card">
+                        <h3>Direct Contact</h3>
+                        <p><strong>Front Office:</strong> semperfi@sfsdistribution.com</p>
+                        <p><strong>Sales:</strong> sales@sfsdistribution.com</p>
+                        <p><strong>Customer Support:</strong> customer.support@sfsdistribution.com</p>
+                        <p><strong>Thomas:</strong> thomas.smith@sfsdistribution.com</p>
+                        <p><strong>David:</strong> david.new@sfsdistribution.com</p>
+                        <p><strong>Phone:</strong> +1 (623) 301-2271</p>
+                        <p class="contact-note">
+                            Response focus: professional communication, quote intake, customer support,
+                            and routing to the appropriate contact.
                         </p>
+                    </div>
+
+                    <div class="contact-card">
+                        <h3>How to Route Your Request</h3>
+                        <div class="routing-list">
+                            <div class="routing-item">
+                                <strong>Request a Quote</strong>
+                                <span>Use sales@sfsdistribution.com or the quote form for RFQs, product sourcing, and pricing.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>Customer Support</strong>
+                                <span>Use customer.support@sfsdistribution.com for documentation, order status, and post-contact support.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>General Inquiry</strong>
+                                <span>Use semperfi@sfsdistribution.com for first-touch routing and general company communication.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>Future Catalog / Product Inquiry</strong>
+                                <span>Use the form below and choose Catalog / Product Interest so the inquiry can be organized for future catalog features.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div>
-                    <img src="../images/company-motto-photo.jpg"
-                         alt="Thomas and David together during military service"
-                         class="motto-photo" />
+                <form class="contact-form">
+                    <h3>Request / Quote Form</h3>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="contact-name">Name</label>
+                            <input id="contact-name" type="text" name="name" placeholder="Your name" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="contact-company">Company</label>
+                            <input id="contact-company" type="text" name="company" placeholder="Company name" />
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="contact-email">Email</label>
+                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="contact-phone">Phone</label>
+                            <input id="contact-phone" type="tel" name="phone" placeholder="(000) 000-0000" />
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="request-type">Request Type</label>
+                            <select id="request-type" name="request_type">
+                                <option value="">Select a request type</option>
+                                <option>Request a Quote</option>
+                                <option>Sales Inquiry</option>
+                                <option>Customer Support</option>
+                                <option>Catalog / Product Interest</option>
+                                <option>Documentation Request</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="preferred-contact">Preferred Contact</label>
+                            <select id="preferred-contact" name="preferred_contact">
+                                <option value="">Select preferred contact</option>
+                                <option>Front Office</option>
+                                <option>Sales</option>
+                                <option>Customer Support</option>
+                                <option>Thomas Smith</option>
+                                <option>David New</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-grid-2">
+                        <div class="form-row">
+                            <label for="product-category">Product / Service Category</label>
+                            <input id="product-category" type="text" name="product_category" placeholder="Example: hardware, sourcing support, documentation" />
+                        </div>
+
+                        <div class="form-row">
+                            <label for="solicitation-number">Solicitation / Reference Number</label>
+                            <input id="solicitation-number" type="text" name="solicitation_number" placeholder="Optional reference number" />
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <label for="request-details">Request / RFQ Details</label>
+                        <textarea id="request-details"
+                                  name="request_details"
+                                  rows="7"
+                                  placeholder="Describe your request, required item or service, quantity, due date, documentation needs, and any other relevant details."></textarea>
+                        <div class="form-help">
+                            Helpful details: quantities, delivery window, documentation requirements,
+                            solicitation number, approved source requirements, and contact deadlines.
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-secondary">Send Request</button>
+
+                    <div class="contact-checklist">
+                        <span>Future-ready for quote intake</span>
+                        <span>Structured for catalog and product requests</span>
+                        <span>Built to support direct routing and cleaner communication</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section" id="future-contact-structure">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Future Structure</p>
+                    <h2>Built to Grow With Catalog and Customer Workflows</h2>
+                    <p>
+                        This page is designed to support your current direct-contact model while also
+                        preparing for future catalog browsing, quote workflows, and customer service routing.
+                    </p>
+                </div>
+
+                <div class="support-panel-grid">
+                    <article class="support-card">
+                        <h3>Catalog Interest Ready</h3>
+                        <p>
+                            The request structure already includes a path for catalog and product-interest inquiries,
+                            making it easier to connect future product pages to contact workflows.
+                        </p>
+                    </article>
+
+                    <article class="support-card">
+                        <h3>Quote-Friendly Intake</h3>
+                        <p>
+                            The form is organized to collect the kinds of details that matter for quoting:
+                            quantities, references, category, point of contact, and specific request notes.
+                        </p>
+                    </article>
+
+                    <article class="support-card">
+                        <h3>Cleaner Email Routing</h3>
+                        <p>
+                            The separate addresses create a more professional front office, sales, and support
+                            structure while still allowing direct founder access when needed.
+                        </p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -353,16 +504,16 @@
             <div class="container cta-banner-inner">
                 <div>
                     <p class="section-kicker">Next Step</p>
-                    <h2>Want to Work With a Company Built on Discipline and Trust?</h2>
+                    <h2>Need a Quote, Product Contact, or Direct Response?</h2>
                     <p>
-                        Semper Fi Services is building a professional, quality-driven business with
-                        strong personal roots and a serious commitment to dependable execution.
+                        Semper Fi Services is building a cleaner, more professional intake system so customers
+                        and partners can reach the right person faster.
                     </p>
                 </div>
 
                 <div class="button-row">
-                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
-                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="#request-form" class="btn btn-primary">Request a Quote</a>
+                    <a href="mailto:semperfi@sfsdistribution.com" class="btn btn-secondary">Email Front Office</a>
                 </div>
             </div>
         </section>
@@ -381,11 +532,11 @@
                 <h4>Quick Links</h4>
                 <ul class="footer-links">
                     <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html">Company</a></li>
+                    <li><a href="../company/index.html">Company</a></li>
                     <li><a href="../capabilities/index.html">Capabilities</a></li>
                     <li><a href="../quality/index.html">Quality</a></li>
                     <li><a href="../government/index.html">Government</a></li>
-                    <li><a href="../contact/index.html">Contact</a></li>
+                    <li><a href="index.html">Contact</a></li>
                 </ul>
             </div>
 
