@@ -3,28 +3,23 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Semper Fi Services</title>
+    <title>Government | Semper Fi Services</title>
     <meta name="description"
-          content="Contact Semper Fi Services for quotes, sourcing requests, customer support, and business inquiries." />
+          content="Semper Fi Services brings military aviation quality assurance, USACE/NAVFAC quality control experience, and disciplined documentation-driven contract execution to government customers." />
     <link rel="stylesheet" href="../styles.css" />
     <style>
-        .contact-page .hero-grid {
-            grid-template-columns: 1fr;
-        }
-
-        .contact-page .hero-copy {
-            max-width: 920px;
+        .government-page .hero-copy {
             position: relative;
             z-index: 2;
         }
 
-        .contact-directory-banner {
+        .gov-highlight-banner {
             border-top: 1px solid #dbe4ec;
             border-bottom: 1px solid #dbe4ec;
             background: #eaf2f8;
         }
 
-        .contact-directory-items {
+        .gov-highlight-items {
             min-height: 72px;
             display: flex;
             flex-wrap: wrap;
@@ -37,13 +32,13 @@
             text-align: center;
         }
 
-        .contact-directory-grid {
+        .past-performance-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 1.25rem;
         }
 
-        .directory-card {
+        .past-performance-card {
             background: #ffffff;
             border: 1px solid #dbe4ec;
             border-radius: 1rem;
@@ -51,140 +46,90 @@
             box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
         }
 
-            .directory-card h3 {
-                margin-bottom: 0.35rem;
-                font-size: 1.1rem;
+            .past-performance-card h3 {
+                margin-bottom: 0.45rem;
+                font-size: 1.15rem;
             }
 
-        .directory-role {
-            margin-bottom: 0.8rem;
+        .past-performance-meta {
+            margin-bottom: 0.75rem;
             font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #1f4f82;
+        }
+
+        .gov-bio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gov-bio-card {
+            background: #ffffff;
+            border: 1px solid #dbe4ec;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+        }
+
+            .gov-bio-card h3 {
+                margin-bottom: 0.35rem;
+                font-size: 1.25rem;
+            }
+
+        .gov-bio-role {
+            margin-bottom: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: #1f4f82;
         }
 
-        .directory-card p + p {
-            margin-top: 0.4rem;
-        }
-
-        .contact-page .contact-layout {
-            align-items: start;
-        }
-
-        .contact-stack {
-            display: grid;
-            gap: 1.25rem;
-        }
-
-        .contact-card h3,
-        .contact-form h3 {
-            margin-bottom: 0.75rem;
-        }
-
-        .contact-note {
-            color: #4a5b6d;
-            margin-top: 0.65rem;
-        }
-
-        .routing-list {
-            margin-top: 0.75rem;
-            display: grid;
-            gap: 0.65rem;
-        }
-
-        .routing-item {
-            padding: 0.9rem 1rem;
-            border: 1px solid #dbe4ec;
-            border-radius: 0.8rem;
-            background: #f9fbfd;
-        }
-
-            .routing-item strong {
-                display: block;
-                margin-bottom: 0.2rem;
-                color: #12202f;
-            }
-
-            .routing-item span {
-                color: #4a5b6d;
-            }
-
-        .form-grid-2 {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 1rem;
-        }
-
-        .form-row select {
-            width: 100%;
-            padding: 0.85rem 0.95rem;
-            border: 1px solid #c5d2de;
-            border-radius: 0.65rem;
-            font: inherit;
-            color: #12202f;
-            background: #ffffff;
-        }
-
-            .form-row select:focus {
-                outline: 2px solid rgba(31, 79, 130, 0.16);
-                border-color: #1f4f82;
-            }
-
-        .form-help {
-            margin-top: 0.25rem;
-            font-size: 0.9rem;
-            color: #5a7186;
-        }
-
-        .contact-checklist {
+        .gov-bio-card p + p {
             margin-top: 0.9rem;
-            display: grid;
-            gap: 0.55rem;
-            color: #4a5b6d;
         }
 
-        .support-panel-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 1.25rem;
+        .gov-photo {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 1rem;
+            border: 1px solid #dbe4ec;
+            background: #eef3f7;
         }
 
-        .support-card {
+        .gov-quote-panel {
             background: #ffffff;
             border: 1px solid #dbe4ec;
             border-radius: 1rem;
-            padding: 1.4rem;
+            padding: 1.5rem;
             box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
         }
 
-            .support-card h3 {
-                margin-bottom: 0.5rem;
-                font-size: 1.1rem;
+            .gov-quote-panel blockquote {
+                margin: 0;
+                font-size: 1.15rem;
+                line-height: 1.5;
+                color: #203345;
             }
 
-            .support-card p {
+            .gov-quote-panel p {
+                margin-top: 0.75rem;
                 color: #4a5b6d;
             }
 
-        @media (max-width: 1080px) {
-            .contact-directory-grid,
-            .support-panel-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
         @media (max-width: 860px) {
-            .contact-directory-grid,
-            .support-panel-grid,
-            .form-grid-2 {
+            .past-performance-grid,
+            .gov-bio-grid {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-<body class="contact-page">
+<body class="government-page">
     <header class="site-header">
         <div class="container header-inner">
             <a href="../index.html" class="logo" aria-label="Semper Fi Services Home">
@@ -193,35 +138,16 @@
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <div class="nav-dropdown">
-                    <button class="nav-dropdown-toggle"
-                            type="button"
-                            aria-expanded="false"
-                            aria-controls="home-dropdown-menu">
-                        Home
-                    </button>
-
-                    <div class="nav-dropdown-menu" id="home-dropdown-menu">
-                        <a href="../index.html#hero">Overview</a>
-                        <a href="../index.html#capabilities-overview">Capabilities</a>
-                        <a href="../index.html#products">Products</a>
-                        <a href="../index.html#process">Process</a>
-                        <a href="../index.html#quality-overview">Quality</a>
-                        <a href="../index.html#government-overview">Government</a>
-                        <a href="../index.html#company-overview">Company</a>
-                        <a href="../index.html#contact-preview">Contact</a>
-                    </div>
-                </div>
-
+                <a href="../index.html#hero">Home</a>
                 <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
                 <a href="../quality/index.html">Quality</a>
-                <a href="../government/index.html">Government</a>
-                <a href="index.html">Contact</a>
+                <a href="index.html">Government</a>
+                <a href="../contact/index.html">Contact</a>
             </nav>
 
             <div class="header-actions">
-                <a href="index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -241,23 +167,24 @@
         <section class="hero section" id="hero">
             <div class="container hero-grid">
                 <div class="hero-copy">
-                    <p class="eyebrow">Contact</p>
+                    <p class="eyebrow">Government</p>
 
                     <h1>
-                        Reach the Right Person Faster for Quotes, Support,
-                        Sales, and Business Inquiries
+                        Government-Ready Execution Backed by Military Aviation,
+                        USACE / NAVFAC Quality Control, and Large-Scale Project Experience
                     </h1>
 
                     <p class="hero-text">
-                        The contact page is built to make communication easier. Whether you need a
-                        quote, customer support, sourcing help, or general business contact, Semper Fi
-                        Services is organizing a direct-response contact structure so inquiries can be
-                        routed to the right person with less back and forth.
+                        Semper Fi Services is built on direct experience working in disciplined,
+                        inspection-driven environments where documentation, accountability, safety,
+                        and execution matter. Our background combines military aviation quality
+                        assurance with federal construction quality control and field leadership on
+                        projects ranging from small facility repairs to major public-sector work.
                     </p>
 
                     <div class="button-row">
-                        <a href="#request-form" class="btn btn-primary">Request a Quote</a>
-                        <a href="#directory" class="btn btn-secondary">View Contact Directory</a>
+                        <a href="#past-performance" class="btn btn-primary">Past Performance</a>
+                        <a href="../contact/index.html" class="btn btn-secondary">Request a Quote</a>
                     </div>
 
                     <div class="hero-mobile-band" aria-hidden="true"></div>
@@ -265,237 +192,264 @@
             </div>
         </section>
 
-        <section class="contact-directory-banner" aria-label="Contact Options">
-            <div class="container contact-directory-items">
-                <span>Quotes & RFQs</span>
-                <span>Sales Inquiries</span>
-                <span>Customer Support</span>
-                <span>Front Office Contact</span>
-                <span>Future Catalog Requests</span>
-                <span>Direct Team Access</span>
+        <section class="gov-highlight-banner" aria-label="Government Experience Highlights">
+            <div class="container gov-highlight-items">
+                <span>USACE / NAVFAC Experience</span>
+                <span>Projects Up To $400M</span>
+                <span>$80M+ Federal Contract Experience</span>
+                <span>Military QA & Documentation Discipline</span>
+                <span>Inspection-Ready Execution</span>
+                <span>Safety & Quality Leadership</span>
             </div>
         </section>
 
-        <section class="section" id="directory">
+        <section class="section" id="past-performance">
             <div class="container">
                 <div class="section-heading">
-                    <p class="section-kicker">Directory</p>
-                    <h2>Contact Directory</h2>
+                    <p class="section-kicker">Past Performance</p>
+                    <h2>Relevant Government and Large-Scale Project Experience</h2>
                     <p>
-                        Use the directory below to contact the right inbox based on the type of request.
+                        The experience behind Semper Fi Services includes direct responsibility for
+                        quality control, safety, inspections, documentation, scheduling, and execution
+                        on military, federal, and large public-sector work.
                     </p>
                 </div>
 
-                <div class="contact-directory-grid">
-                    <article class="directory-card">
-                        <h3>Front Office</h3>
-                        <p class="directory-role">General Intake</p>
-                        <p><strong>Email:</strong> semperfi@sfsdistribution.com</p>
-                        <p>Best for general inquiries, routing requests, and first-contact communication.</p>
+                <div class="past-performance-grid">
+                    <article class="past-performance-card">
+                        <h3>Fort Stewart Barracks Repair</h3>
+                        <p class="past-performance-meta">TDX | Fort Stewart, GA | $56M</p>
+                        <p>
+                            Quality Control Manager role supporting barracks repair with USACE-facing
+                            correspondence, inspections, Daily QC Reports, submittals, RFIs, DFOW tracking,
+                            and implementation of the Three-Phase Quality Control System.
+                        </p>
                     </article>
 
-                    <article class="directory-card">
-                        <h3>Sales</h3>
-                        <p class="directory-role">Quotes & Opportunities</p>
-                        <p><strong>Email:</strong> sales@sfsdistribution.com</p>
-                        <p>Best for RFQs, sourcing requests, pricing discussions, and business development.</p>
+                    <article class="past-performance-card">
+                        <h3>Camp Lejeune Train Trestle Project</h3>
+                        <p class="past-performance-meta">Walsh Group | Camp Lejeune, NC | $80M</p>
+                        <p>
+                            Superintendent / Lift Director experience supporting bridge girders, concrete
+                            pilings, concrete testing, cofferdam operations, crane and rigging safety,
+                            inspection support, and documented compliance during demolition and new work.
+                        </p>
                     </article>
 
-                    <article class="directory-card">
-                        <h3>Customer Support</h3>
-                        <p class="directory-role">Existing Customer Help</p>
-                        <p><strong>Email:</strong> customer.support@sfsdistribution.com</p>
-                        <p>Best for order follow-up, delivery questions, documentation requests, and support.</p>
+                    <article class="past-performance-card">
+                        <h3>Federal Courthouse Project</h3>
+                        <p class="past-performance-meta">Brasfield &amp; Gorrie | Charlotte, NC | $160M</p>
+                        <p>
+                            Oversight of lifting operations, structural steel placement coordination,
+                            concrete inspection support, safety controls, access zones, and material
+                            handling planning in an occupied high-traffic downtown environment.
+                        </p>
                     </article>
 
-                    <article class="directory-card">
-                        <h3>Thomas Smith</h3>
-                        <p class="directory-role">Field / Business-Facing Contact</p>
-                        <p><strong>Email:</strong> thomas.smith@sfsdistribution.com</p>
-                        <p>Best for relationship-driven communication, business coordination, and project-facing contact.</p>
+                    <article class="past-performance-card">
+                        <h3>Cherry Point Facility Repair & Renovation</h3>
+                        <p class="past-performance-meta">NAVFAC-Related Work | Cherry Point, NC | $1M-$3M</p>
+                        <p>
+                            Superintendent / SSHO / QCM support for facility repair, roofing and siding
+                            inspection, electrical and interior/exterior scopes, documentation turnover,
+                            subcontractor accountability, and safe execution on active facilities.
+                        </p>
                     </article>
 
-                    <article class="directory-card">
+                    <article class="past-performance-card">
+                        <h3>Duke Power Dam Spillway Project</h3>
+                        <p class="past-performance-meta">Brasfield &amp; Gorrie | Great Falls, SC | $58M</p>
+                        <p>
+                            Superintendent / Lift Director experience involving barges, cranes, concrete
+                            operations, structural updates, crew supervision, and controlled execution in
+                            a high-risk infrastructure setting.
+                        </p>
+                    </article>
+
+                    <article class="past-performance-card">
+                        <h3>High-Rise and Critical Lift Operations</h3>
+                        <p class="past-performance-meta">Baker Concrete &amp; Heede Southeast | Up To $400M</p>
+                        <p>
+                            Experience supporting critical lifts, crane assembly, structural steel and
+                            concrete placement, post-erection inspections, safety systems, and quality
+                            oversight on major commercial and public-sector projects.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="government-overview">
+            <div class="container split-layout">
+                <div>
+                    <p class="section-kicker">Government Readiness</p>
+                    <h2>What This Experience Means for Government Customers</h2>
+                    <p>
+                        The experience behind the company translates directly into government-relevant
+                        execution habits: controlled communication, disciplined records, inspection
+                        awareness, and accountability under contract requirements.
+                    </p>
+
+                    <ul class="feature-list">
+                        <li>USACE / NAVFAC quality control and documentation familiarity</li>
+                        <li>Submittals, RFIs, Daily QC Reports, and turnover-minded execution</li>
+                        <li>Three-Phase QC system exposure and inspection coordination</li>
+                        <li>Field leadership in safety-sensitive and mission-critical environments</li>
+                        <li>Operational discipline shaped by Marine Corps aviation QA experience</li>
+                    </ul>
+                </div>
+
+                <div class="panel">
+                    <h3>Execution Mindset</h3>
+                    <p>
+                        Government customers need more than technical capability. They need contractors
+                        and suppliers who understand structure, communication, documentation, and the
+                        seriousness of getting the work right. That is the operating mindset behind
+                        Semper Fi Services.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="resume-backed-strengths">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Relevant Experience</p>
+                    <h2>Resume-Backed Strengths Applicable to Government Work</h2>
+                    <p>
+                        These are the kinds of experience points that support credibility with government
+                        buyers, prime contractors, and partners.
+                    </p>
+                </div>
+
+                <div class="card-grid card-grid-3">
+                    <article class="card">
+                        <h3>Military Aviation Quality Assurance</h3>
+                        <p>
+                            Marine Corps aviation background with airworthiness documentation,
+                            inspections, technical publication use, torque witnessing, and maintenance
+                            quality assurance responsibilities.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Federal Construction Quality Control</h3>
+                        <p>
+                            Experience as Quality Control Manager / Superintendent / SSHO supporting
+                            federal documentation, inspections, submittals, RFIs, turnover, and
+                            contract-aligned field execution.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Large-Scale Project Leadership</h3>
+                        <p>
+                            Background supporting projects from $1M repairs to $400M high-rise and
+                            major infrastructure work, including crane operations, safety oversight,
+                            rigging, and quality inspections.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Safety &amp; Compliance Credentials</h3>
+                        <p>
+                            Resume-backed certifications and roles relevant to controlled execution,
+                            including CQM-C, CHST, EM-385, OSHA 30, crane/rigging credentials, and
+                            safety program leadership.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Inspection &amp; Documentation Discipline</h3>
+                        <p>
+                            Experience performing or overseeing inspections, discrepancy tracking,
+                            documentation review, maintenance records, daily reporting, and quality
+                            turnover expectations.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Operational Accountability</h3>
+                        <p>
+                            Leadership history involving supervision of crews, tasking of personnel,
+                            schedule support, quality management, and controlled execution in demanding
+                            military and construction environments.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="leadership-background">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="section-kicker">Leadership Background</p>
+                    <h2>The Experience Behind the Business</h2>
+                    <p>
+                        Semper Fi Services is supported by two different but complementary backgrounds:
+                        one rooted in military aviation quality assurance and documentation control, and
+                        one rooted in field leadership, quality control, safety, and federal project execution.
+                    </p>
+                </div>
+
+                <div class="gov-bio-grid">
+                    <article class="gov-bio-card">
                         <h3>David New</h3>
-                        <p class="directory-role">Operations / Documentation Contact</p>
-                        <p><strong>Email:</strong> david.new@sfsdistribution.com</p>
-                        <p>Best for process questions, documentation detail, internal coordination, and operational follow-up.</p>
-                    </article>
-
-                    <article class="directory-card">
-                        <h3>Main Phone</h3>
-                        <p class="directory-role">Direct Contact</p>
-                        <p><strong>Phone:</strong> +1 (623) 301-2271</p>
-                        <p>Best for prompt communication when email is not ideal or you need fast routing.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt" id="request-form">
-            <div class="container contact-layout">
-                <div class="contact-stack">
-                    <div class="contact-card">
-                        <h3>Direct Contact</h3>
-                        <p><strong>Front Office:</strong> semperfi@sfsdistribution.com</p>
-                        <p><strong>Sales:</strong> sales@sfsdistribution.com</p>
-                        <p><strong>Customer Support:</strong> customer.support@sfsdistribution.com</p>
-                        <p><strong>Thomas:</strong> thomas.smith@sfsdistribution.com</p>
-                        <p><strong>David:</strong> david.new@sfsdistribution.com</p>
-                        <p><strong>Phone:</strong> +1 (623) 301-2271</p>
-                        <p class="contact-note">
-                            Response focus: professional communication, quote intake, customer support,
-                            and routing to the appropriate contact.
+                        <p class="gov-bio-role">Military Aviation QA / Documentation Discipline</p>
+                        <p>
+                            David brings 9 years of U.S. Marine Corps aviation experience, including 5 years
+                            as a collateral-duty Quality Assurance Representative, FAA A&amp;P certification,
+                            technical publication use, inspection tooling familiarity, maintenance records,
+                            engineering directive support, and Lean Six Sigma / continuous improvement exposure.
                         </p>
-                    </div>
+                        <p>
+                            His background supports the company�s emphasis on traceability, inspection,
+                            documentation accuracy, and disciplined execution.
+                        </p>
+                    </article>
 
-                    <div class="contact-card">
-                        <h3>How to Route Your Request</h3>
-                        <div class="routing-list">
-                            <div class="routing-item">
-                                <strong>Request a Quote</strong>
-                                <span>Use sales@sfsdistribution.com or the quote form for RFQs, product sourcing, and pricing.</span>
-                            </div>
-                            <div class="routing-item">
-                                <strong>Customer Support</strong>
-                                <span>Use customer.support@sfsdistribution.com for documentation, order status, and post-contact support.</span>
-                            </div>
-                            <div class="routing-item">
-                                <strong>General Inquiry</strong>
-                                <span>Use semperfi@sfsdistribution.com for first-touch routing and general company communication.</span>
-                            </div>
-                            <div class="routing-item">
-                                <strong>Future Catalog / Product Inquiry</strong>
-                                <span>Use the form below and choose Catalog / Product Interest so the inquiry can be organized for future catalog features.</span>
-                            </div>
-                        </div>
-                    </div>
+                    <article class="gov-bio-card">
+                        <h3>Thomas Smith</h3>
+                        <p class="gov-bio-role">Federal QC / Safety / Field Execution Leadership</p>
+                        <p>
+                            Thomas brings USACE / NAVFAC quality control experience, superintendent and SSHO
+                            leadership, crane and rigging safety depth, RMS / ECMS / Procore familiarity,
+                            and direct experience on military, public-sector, and major infrastructure projects.
+                        </p>
+                        <p>
+                            His background supports the company�s strength in accountability, inspections,
+                            contract-facing documentation, and safe, quality-driven execution.
+                        </p>
+                    </article>
                 </div>
-
-                <form class="contact-form">
-                    <h3>Request / Quote Form</h3>
-
-                    <div class="form-grid-2">
-                        <div class="form-row">
-                            <label for="contact-name">Name</label>
-                            <input id="contact-name" type="text" name="name" placeholder="Your name" />
-                        </div>
-
-                        <div class="form-row">
-                            <label for="contact-company">Company</label>
-                            <input id="contact-company" type="text" name="company" placeholder="Company name" />
-                        </div>
-                    </div>
-
-                    <div class="form-grid-2">
-                        <div class="form-row">
-                            <label for="contact-email">Email</label>
-                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" />
-                        </div>
-
-                        <div class="form-row">
-                            <label for="contact-phone">Phone</label>
-                            <input id="contact-phone" type="tel" name="phone" placeholder="(000) 000-0000" />
-                        </div>
-                    </div>
-
-                    <div class="form-grid-2">
-                        <div class="form-row">
-                            <label for="request-type">Request Type</label>
-                            <select id="request-type" name="request_type">
-                                <option value="">Select a request type</option>
-                                <option>Request a Quote</option>
-                                <option>Sales Inquiry</option>
-                                <option>Customer Support</option>
-                                <option>Catalog / Product Interest</option>
-                                <option>Documentation Request</option>
-                                <option>General Inquiry</option>
-                            </select>
-                        </div>
-
-                        <div class="form-row">
-                            <label for="preferred-contact">Preferred Contact</label>
-                            <select id="preferred-contact" name="preferred_contact">
-                                <option value="">Select preferred contact</option>
-                                <option>Front Office</option>
-                                <option>Sales</option>
-                                <option>Customer Support</option>
-                                <option>Thomas Smith</option>
-                                <option>David New</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-grid-2">
-                        <div class="form-row">
-                            <label for="product-category">Product / Service Category</label>
-                            <input id="product-category" type="text" name="product_category" placeholder="Example: hardware, sourcing support, documentation" />
-                        </div>
-
-                        <div class="form-row">
-                            <label for="solicitation-number">Solicitation / Reference Number</label>
-                            <input id="solicitation-number" type="text" name="solicitation_number" placeholder="Optional reference number" />
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <label for="request-details">Request / RFQ Details</label>
-                        <textarea id="request-details"
-                                  name="request_details"
-                                  rows="7"
-                                  placeholder="Describe your request, required item or service, quantity, due date, documentation needs, and any other relevant details."></textarea>
-                        <div class="form-help">
-                            Helpful details: quantities, delivery window, documentation requirements,
-                            solicitation number, approved source requirements, and contact deadlines.
-                        </div>
-                    </div>
-
-                    <button type="submit" class="btn btn-secondary">Send Request</button>
-
-                    <div class="contact-checklist">
-                        <span>Future-ready for quote intake</span>
-                        <span>Structured for catalog and product requests</span>
-                        <span>Built to support direct routing and cleaner communication</span>
-                    </div>
-                </form>
             </div>
         </section>
 
-        <section class="section" id="future-contact-structure">
-            <div class="container">
-                <div class="section-heading">
-                    <p class="section-kicker">Future Structure</p>
-                    <h2>Built to Grow With Catalog and Customer Workflows</h2>
+        <section class="section" id="motto">
+            <div class="container split-layout">
+                <div>
+                    <p class="section-kicker">Mission</p>
+                    <h2>Built to Bring Discipline, Accountability, and Confidence to the Job</h2>
                     <p>
-                        This page is designed to support your current direct-contact model while also
-                        preparing for future catalog browsing, quote workflows, and customer service routing.
+                        Government work demands professionalism, reliability, and structure. Our goal is to
+                        carry forward the same standards shaped by military service, aviation quality, and
+                        federal project leadership into every opportunity we pursue.
                     </p>
+
+                    <div class="gov-quote-panel" style="margin-top: 1rem;">
+                        <blockquote>
+                            �Structured execution. Clear documentation. Mission-first accountability.�
+                        </blockquote>
+                        <p>
+                            That is the standard we want government customers and partners to associate with Semper Fi Services.
+                        </p>
+                    </div>
                 </div>
 
-                <div class="support-panel-grid">
-                    <article class="support-card">
-                        <h3>Catalog Interest Ready</h3>
-                        <p>
-                            The request structure already includes a path for catalog and product-interest inquiries,
-                            making it easier to connect future product pages to contact workflows.
-                        </p>
-                    </article>
-
-                    <article class="support-card">
-                        <h3>Quote-Friendly Intake</h3>
-                        <p>
-                            The form is organized to collect the kinds of details that matter for quoting:
-                            quantities, references, category, point of contact, and specific request notes.
-                        </p>
-                    </article>
-
-                    <article class="support-card">
-                        <h3>Cleaner Email Routing</h3>
-                        <p>
-                            The separate addresses create a more professional front office, sales, and support
-                            structure while still allowing direct founder access when needed.
-                        </p>
-                    </article>
+                <div>
+                    <img src="../images/government-past-performance-photo.jpg"
+                         alt="Semper Fi Services government and past performance visual"
+                         class="gov-photo" />
                 </div>
             </div>
         </section>
@@ -504,16 +458,16 @@
             <div class="container cta-banner-inner">
                 <div>
                     <p class="section-kicker">Next Step</p>
-                    <h2>Need a Quote, Product Contact, or Direct Response?</h2>
+                    <h2>Need a Government-Ready Partner With Real Inspection and Execution Experience?</h2>
                     <p>
-                        Semper Fi Services is building a cleaner, more professional intake system so customers
-                        and partners can reach the right person faster.
+                        Semper Fi Services brings a resume-backed foundation in quality, safety,
+                        documentation, and disciplined execution shaped by military and federal work.
                     </p>
                 </div>
 
                 <div class="button-row">
-                    <a href="#request-form" class="btn btn-primary">Request a Quote</a>
-                    <a href="mailto:semperfi@sfsdistribution.com" class="btn btn-secondary">Email Front Office</a>
+                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </section>
@@ -535,8 +489,8 @@
                     <li><a href="../company/index.html">Company</a></li>
                     <li><a href="../capabilities/index.html">Capabilities</a></li>
                     <li><a href="../quality/index.html">Quality</a></li>
-                    <li><a href="../government/index.html">Government</a></li>
-                    <li><a href="index.html">Contact</a></li>
+                    <li><a href="index.html">Government</a></li>
+                    <li><a href="../contact/index.html">Contact</a></li>
                 </ul>
             </div>
 
