@@ -996,9 +996,8 @@ FINAL: responsive behavior
 
 .capabilities-page .capability-tab-grid {
     grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 0.9rem;
     margin-top: 1.5rem;
     width: 100%;
@@ -1012,9 +1011,9 @@ FINAL: responsive behavior
     padding: 0.9rem 1.2rem;
     font-weight: 700;
     border: none;
-    min-width: 260px;
+    width: 100%;
+    min-width: 0;
 }
-
     .capabilities-page .capability-tab strong {
         display: block;
         font-size: 0.95rem;
