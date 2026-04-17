@@ -383,7 +383,7 @@ FINAL: hero
     padding-top: 6rem;
     padding-bottom: 5rem;
     background-image: url("images/hero.jpg"); /* <-- update path */
-    background-size: 135%;
+    background-size: 125%;
     background-position: 68% center;
     background-repeat: no-repeat;
     overflow: hidden;
