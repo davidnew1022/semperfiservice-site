@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'SunseekerBC';
-    src: url('fonts/SunseekerBC-Bold.woff2') format('woff2'), url('fonts/SunseekerBC-Bold.woff') format('woff');
+    font-family: 'XenonBC';
+    src: url('fonts/XenonBC-Bold.woff2') format('woff2'), url('fonts/XenonBC-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -179,7 +179,8 @@ FINAL: header/nav
 .logo {
     display: inline-flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.9rem;
+    flex-shrink: 0;
 }
 /* === NEW: logo image support === */
 .logo-image {
@@ -239,14 +240,27 @@ FINAL: header/nav
 }
 
 .logo-text {
-    font-family: 'SunseekerBC', Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
+    font-family: 'XenonBC', Arial, Helvetica, sans-serif;
+    font-size: 1.35rem;
     font-weight: 700;
-    line-height: 2;
-    letter-spacing: 0;
+    line-height: 1;
+    letter-spacing: 0.03em;
     color: #ffffff;
     display: inline-block;
-    transform: translateY(1px);
+}
+.logo-text.stacked {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    font-family: 'XenonBC', Arial, sans-serif; /* <-- FIXED */
+    letter-spacing: 0.04em;
+}
+
+.logo-text.stacked small {
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+    opacity: 0.75;
+    margin-top: 3px;
 }
 
 .site-nav {
@@ -256,10 +270,11 @@ FINAL: header/nav
 }
 
     .site-nav a {
-        font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.85); /* NEW */
+        font-size: 1.05rem; /* slightly bigger */
+        font-weight: 700; /* bold */
+        letter-spacing: 0.02em; /* tighter professional look */
+        color: rgba(255, 255, 255, 0.9);
     }
-
         .site-nav a:hover {
             color: #ffffff;
         }
@@ -281,8 +296,10 @@ NOT FINAL: spacing/colors can be tuned later
     border: 0;
     padding: 0;
     font: inherit;
-    font-size: 0.95rem;
-    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: rgba(255, 255, 255, 0.9);
     cursor: pointer;
 }
 
@@ -1014,11 +1031,15 @@ FINAL: responsive behavior
 
         .site-nav a,
         .nav-dropdown-toggle {
-            width: 100%;
-            text-align: left;
-            padding: 0.9rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-            color: rgba(255, 255, 255, 0.92);
+            background: transparent;
+            border: 0;
+            padding: 0;
+            font: inherit;
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: rgba(255, 255, 255, 0.9);
+            cursor: pointer;
         }
 
             .site-nav a:hover,
