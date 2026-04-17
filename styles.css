@@ -361,6 +361,24 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     .card-grid-3 .card p {
         font-size: 0.9rem;
     }
+    .card-grid-3 {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.85rem !important;
+}
+
+#products .card-grid-3 .card {
+    padding: 1.1rem;
+}
+
+#products .card-grid-3 .card h3 {
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+#products .card-grid-3 .card p {
+    font-size: 0.9rem;
+}
     .quality-page .quality-pill {
         width: 100%;
         min-width: 0;
