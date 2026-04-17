@@ -19,7 +19,7 @@
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
                 <a href="../index.html#hero">Home</a>
-                <a href="index.html">Company</a>
+                <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
                 <a href="../quality/index.html">Quality</a>
                 <a href="../government/index.html">Government</a>
@@ -27,7 +27,7 @@
             </nav>
 
             <div class="header-actions">
-                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="#" class="btn btn-primary" onclick="handleQuoteClick(event)">Download Capabilities PDF</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -63,7 +63,7 @@
 
                     <div class="button-row">
                         <a href="#core-capabilities" class="btn btn-primary">Core Capabilities</a>
-                        <a href="../contact/index.html" class="btn btn-secondary">Request a Quote</a>
+                        <a href="#" class="btn btn-secondary" onclick="handleQuoteClick(event)">Capability Statement</a>
                     </div>
 
 
@@ -104,8 +104,8 @@
 
                     </div>
                 </div>
+            </div>
         </section>
-
         <section class="credibility-strip" aria-label="Experience Highlights">
             <div class="container credibility-items">
                 <span>9 Years USMC Aviation Experience</span>
@@ -410,7 +410,7 @@
                 </div>
 
                 <div class="button-row">
-                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                    <a href="#" class="btn btn-primary" onclick="handleQuoteClick(event)">Request a Quote</a>
                     <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
@@ -449,7 +449,39 @@
             <p>&copy; 2025 Semper Fi Services LLC | All rights reserved.</p>
         </div>
     </footer>
+    <div class="quote-modal" id="quote-modal" aria-hidden="true">
+        <div class="quote-modal-backdrop" onclick="closeQuoteModal()"></div>
 
+        <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+            <button class="quote-modal-close" type="button" onclick="closeQuoteModal()" aria-label="Close">
+                &times;
+            </button>
+
+            <div class="quote-modal-body">
+                <p class="quote-modal-kicker">Before you continue</p>
+                <h3 id="quote-modal-title">Download a Copy</h3>
+                <p class="quote-modal-subtitle">Capability Statement</p>
+
+                <p class="quote-modal-text">
+                    Would you like to download our capabilities statement before continuing to the contact page?
+                </p>
+
+                <div class="quote-modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="downloadCapabilitiesStatement()">
+                        Download PDF
+                    </button>
+
+                    <button type="button" class="btn btn-primary" onclick="goToContactPage()">
+                        Continue to Contact
+                    </button>
+
+                    <button type="button" class="btn btn-secondary" onclick="closeQuoteModal()">
+                        Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="../script.js"></script>
 </body>
 </html>
