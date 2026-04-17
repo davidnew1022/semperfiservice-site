@@ -882,6 +882,19 @@ FINAL: responsive behavior
         overflow-x: hidden;
     }
 
+    /* ADD THIS ↓ */
+    .process-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .process-step {
+        width: 100%;
+        white-space: normal;
+        padding: 0.95rem 1rem;
+    }
+}
+
     .header-inner {
         min-height: 72px;
     }
