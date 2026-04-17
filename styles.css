@@ -183,7 +183,7 @@ FINAL: header/nav
 }
 /* === NEW: logo image support === */
 .logo-image {
-    gap: 0.65rem;
+    display: block;
 }
 
 .site-logo-image {
@@ -1293,3 +1293,67 @@ FINAL: responsive behavior
                 width: 100%;
             }
     }
+    /* capabilities header logo + mobile footer fix */
+
+.site-header .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+}
+
+.site-header .site-logo-image {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.site-header .logo-text {
+    line-height: 1.05;
+    transform: none;
+}
+
+@media (max-width: 860px) {
+    .site-header .logo {
+        gap: 0.55rem;
+        min-width: 0;
+    }
+
+    .site-header .site-logo-image {
+        height: 40px;
+        width: auto;
+    }
+
+    .site-header .logo-text {
+        font-size: 0.95rem;
+        line-height: 1.05;
+        white-space: normal;
+    }
+
+    .footer-grid > div:first-child p {
+        margin-top: 0.75rem;
+    }
+
+    .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: nowrap;
+    }
+
+    .footer-logo-image {
+        width: 52px;
+        height: 52px;
+        object-fit: contain;
+        flex-shrink: 0;
+    }
+
+    .footer-brand-text {
+        display: block;
+        font-size: 1.35rem;
+        line-height: 1.05;
+        white-space: normal;
+        word-break: keep-all;
+        overflow-wrap: normal;
+    }
+}
