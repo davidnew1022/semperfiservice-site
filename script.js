@@ -113,10 +113,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function downloadCapabilitiesStatement() {
-        window.open("../assets/Capabilities_Statement.pdf", "_blank");
+        window.open("../assets/SFS_Capability_Statement.pdf", "_blank");
         closeQuoteModal();
     }
-
     function goToContactPage() {
         window.location.href = "../contact/index.html";
     }
