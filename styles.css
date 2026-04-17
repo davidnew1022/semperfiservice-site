@@ -896,7 +896,11 @@ FINAL: responsive behavior
         align-items: center;
         justify-content: center;
     }
-
+    .process-step:last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        max-width: calc(50% - 0.375rem);
+    }
     .header-inner {
         min-height: 72px;
     }
