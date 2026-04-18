@@ -1,4 +1,4 @@
-﻿/* =========================
+/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -93,6 +93,23 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMobileMenu();
         }
     });
+
+    const isHomePage =
+        window.location.pathname.endsWith("/index.html") &&
+        !window.location.pathname.includes("/company/") &&
+        !window.location.pathname.includes("/capabilities/") &&
+        !window.location.pathname.includes("/quality/") &&
+        !window.location.pathname.includes("/government/") &&
+        !window.location.pathname.includes("/contact/");
+
+    if (!isHomePage && window.scrollY === 0) {
+        window.addEventListener("load", () => {
+            window.scrollTo({
+                top: 72,
+                behavior: "auto"
+            });
+        });
+    }
 });
     function handleQuoteClick(e) {
         e.preventDefault();
