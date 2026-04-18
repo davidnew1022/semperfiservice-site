@@ -92,14 +92,25 @@
             margin-top: 0.9rem;
         }
 
-        .gov-photo {
-            width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            border-radius: 1rem;
-            border: 1px solid #dbe4ec;
-            background: #eef3f7;
-        }
+    .gov-logo-panel {
+        width: 100%;
+        min-height: 320px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+        border: 1px solid #dbe4ec;
+        border-radius: 1rem;
+        background: #eef3f7;
+    }
+    
+    .gov-logo-image {
+        width: 100%;
+        max-width: 340px;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
 
         .gov-quote-panel {
             background: #ffffff;
@@ -125,6 +136,15 @@
             .past-performance-grid,
             .gov-bio-grid {
                 grid-template-columns: 1fr;
+            }
+        
+            .gov-logo-panel {
+                min-height: 220px;
+                padding: 0.75rem;
+            }
+        
+            .gov-logo-image {
+                max-width: 240px;
             }
         }
     </style>
@@ -279,37 +299,42 @@
             </div>
         </section>
 
-        <section class="section section-alt" id="government-overview">
-            <div class="container split-layout">
-                <div>
-                    <p class="section-kicker">Government Readiness</p>
-                    <h2>What This Experience Means for Government Customers</h2>
-                    <p>
-                        The experience behind the company translates directly into government-relevant
-                        execution habits: controlled communication, disciplined records, inspection
-                        awareness, and accountability under contract requirements.
-                    </p>
+ <section class="section" id="motto">
+    <div class="container split-layout">
+        <div>
+            <p class="section-kicker">Mission</p>
+            <h2>Built to Bring Discipline, Accountability, and Confidence to the Job</h2>
+            <p>
+                Semper Fi Services is built on two complementary backgrounds. David brings 9 years
+                of U.S. Marine Corps aviation experience, including quality assurance, maintenance
+                documentation, inspection discipline, and airworthiness-focused execution. Thomas
+                brings federal quality control, safety, superintendent leadership, and contract-facing
+                field execution experience across USACE, NAVFAC, and large public-sector work.
+            </p>
+            <p style="margin-top: 0.9rem;">
+                Together, that experience supports a government-ready operating mindset: clear
+                communication, controlled documentation, inspection awareness, accountability, and
+                disciplined execution under contract requirements.
+            </p>
 
-                    <ul class="feature-list">
-                        <li>USACE / NAVFAC quality control and documentation familiarity</li>
-                        <li>Submittals, RFIs, Daily QC Reports, and turnover-minded execution</li>
-                        <li>Three-Phase QC system exposure and inspection coordination</li>
-                        <li>Field leadership in safety-sensitive and mission-critical environments</li>
-                        <li>Operational discipline shaped by Marine Corps aviation QA experience</li>
-                    </ul>
-                </div>
-
-                <div class="panel">
-                    <h3>Execution Mindset</h3>
-                    <p>
-                        Government customers need more than technical capability. They need contractors
-                        and suppliers who understand structure, communication, documentation, and the
-                        seriousness of getting the work right. That is the operating mindset behind
-                        Semper Fi Services.
-                    </p>
-                </div>
+            <div class="gov-quote-panel" style="margin-top: 1rem;">
+                <blockquote>
+                    “Structured execution. Clear documentation. Mission-first accountability.”
+                </blockquote>
+                <p>
+                    That is the standard we want government customers, primes, and partners to
+                    associate with Semper Fi Services.
+                </p>
             </div>
-        </section>
+        </div>
+
+        <div class="gov-logo-panel">
+            <img src="../images/logo.png"
+                 alt="Semper Fi Services Logo"
+                 class="gov-logo-image" />
+        </div>
+    </div>
+</section>
 
         <section class="section" id="resume-backed-strengths">
             <div class="container">
@@ -403,7 +428,7 @@
                             engineering directive support, and Lean Six Sigma / continuous improvement exposure.
                         </p>
                         <p>
-                            His background supports the company�s emphasis on traceability, inspection,
+                            His background supports the company's emphasis on traceability, inspection,
                             documentation accuracy, and disciplined execution.
                         </p>
                     </article>
@@ -417,7 +442,7 @@
                             and direct experience on military, public-sector, and major infrastructure projects.
                         </p>
                         <p>
-                            His background supports the company�s strength in accountability, inspections,
+                                    His background supports the company's strength in accountability, inspections,
                             contract-facing documentation, and safe, quality-driven execution.
                         </p>
                     </article>
@@ -438,7 +463,7 @@
 
                     <div class="gov-quote-panel" style="margin-top: 1rem;">
                         <blockquote>
-                            �Structured execution. Clear documentation. Mission-first accountability.�
+                            Structured execution. Clear documentation. Mission-first accountability.
                         </blockquote>
                         <p>
                             That is the standard we want government customers and partners to associate with Semper Fi Services.
