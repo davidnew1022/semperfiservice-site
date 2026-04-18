@@ -132,21 +132,40 @@
                 color: #4a5b6d;
             }
 
-        @media (max-width: 860px) {
-            .past-performance-grid,
-            .gov-bio-grid {
-                grid-template-columns: 1fr;
-            }
+@media (max-width: 860px) {
+    .past-performance-grid,
+    .gov-bio-grid {
+        grid-template-columns: 1fr;
+    }
 
-            .gov-logo-panel {
-                min-height: 220px;
-                padding: 0.75rem;
-            }
+    #resume-backed-strengths .card-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
 
-            .gov-logo-image {
-                max-width: 240px;
-            }
-        }
+    #resume-backed-strengths .card-grid-3 .card {
+        padding: 1.15rem;
+    }
+
+    #resume-backed-strengths .card-grid-3 .card h3 {
+        font-size: 1.05rem;
+        line-height: 1.25;
+    }
+
+    #resume-backed-strengths .card-grid-3 .card p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
+
+    .gov-logo-panel {
+        min-height: 220px;
+        padding: 0.75rem;
+    }
+
+    .gov-logo-image {
+        max-width: 240px;
+    }
+}
     </style>
 </head>
 <body class="government-page">
