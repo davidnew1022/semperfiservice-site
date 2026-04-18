@@ -1219,10 +1219,11 @@ FINAL: responsive behavior
                 font-size: 0.95rem;
                 line-height: 1.55;
             }
+}
 
-    .capabilities-page .hero-grid {
-        grid-template-columns: 1fr;
-    }
+.capabilities-page .hero-grid {
+    grid-template-columns: 1fr;
+}
 
 .capabilities-page .hero-copy {
     max-width: 980px;
