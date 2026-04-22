@@ -1251,7 +1251,24 @@ FINAL: responsive behavior
             z-index: 0;
             pointer-events: none;
         }
-
+    .card-grid-3 {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+    }
+    
+    .card-grid-3 .card {
+        padding: 1.15rem;
+    }
+    
+    .card-grid-3 .card h3 {
+        font-size: 1.05rem;
+        line-height: 1.25;
+    }
+    
+    .card-grid-3 .card p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
     #products .card-grid-3 {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
