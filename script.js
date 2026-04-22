@@ -243,7 +243,11 @@ function goToContactPage() {
     requestType.addEventListener("change", syncPackagingFields);
 
     syncPackagingFields();
-    applyQueryPrefill();
+        requestType.addEventListener("change", syncPackagingFields);
+
+            syncPackagingFields();
+            applyQueryPrefill();
+        })();
 // =========================
 // SCROLL REVEAL ANIMATIONS
 // =========================
