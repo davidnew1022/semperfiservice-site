@@ -176,9 +176,15 @@ function goToContactPage() {
 
         syncPackagingFields();
 
-        requestFormSection.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
+        const formElement = document.getElementById("sfs-contact-form");
+        const scrollTarget = formElement || requestFormSection;
+        const header = document.querySelector(".site-header");
+        const headerOffset = header ? header.offsetHeight + 16 : 16;
+        const targetTop = scrollTarget.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: "smooth"
         });
     }
 
