@@ -353,38 +353,21 @@ NOT FINAL: spacing/colors can be tuned later
 /* =========================
 AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 ========================= */
-.quality-page .hero-grid {
+.quality-page .hero-grid,
+.government-page .hero-grid,
+.contact-page .hero-grid,
+.capabilities-page .hero-grid {
     grid-template-columns: 1fr;
 }
 
-.quality-page .hero-copy {
+.quality-page .hero-copy,
+.government-page .hero-copy,
+.contact-page .hero-copy,
+.capabilities-page .hero-copy {
     max-width: 980px;
     position: relative;
     z-index: 2;
 }
-
-    .quality-page .hero-copy h1 {
-        max-width: 15ch;
-    }
-
-
-.government-page .hero-copy {
-    max-width: 980px;
-    position: relative;
-    z-index: 2;
-}
-
-
-.contact-page .hero-copy {
-    max-width: 980px;
-    position: relative;
-    z-index: 2;
-}
-
-    .contact-page .hero-copy h1 {
-        max-width: 15ch;
-    }
-
 .quality-page .quality-pill-grid {
     grid-column: 1 / -1;
     display: grid !important;
@@ -558,7 +541,7 @@ FINAL: hero
     }
 
     .government-page .hero-copy h1 {
-        max-width: 42ch;
+        max-width: 18ch;
     }
 
     .contact-page .hero-copy h1 {
