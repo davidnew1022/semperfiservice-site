@@ -476,7 +476,17 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     align-items: center;
     gap: 0.75rem;
 }
+.site-header .btn-secondary {
+    background: #ffffff;
+    color: #12385f;
+    border: 1px solid #d5dde6;
+    box-shadow: 0 10px 22px rgba(18, 32, 47, 0.10), 0 2px 6px rgba(18, 32, 47, 0.05);
+}
 
+    .site-header .btn-secondary:hover {
+        background: #f1f4f7;
+        border-color: #c7d1db;
+    }
 .nav-toggle {
     display: none;
     border: 0;
