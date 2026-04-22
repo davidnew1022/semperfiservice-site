@@ -108,7 +108,12 @@ FINAL: reusable layout utilities
     text-transform: uppercase;
     color: #1f4f82;
 }
-
+:root {
+    --sfs-blue-gradient: linear-gradient(180deg, #1b4a79 0%, #12385f 55%, #0d2a45 100%);
+    --sfs-blue-gradient-hover: linear-gradient(180deg, #23558a 0%, #17446f 55%, #103250 100%);
+    --sfs-blue-border: #0b2237;
+    --sfs-blue-shadow: 0 12px 26px rgba(9, 25, 40, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
 /* =========================
 FINAL: buttons
 NOT FINAL: brand colors if you want different palette later
