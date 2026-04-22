@@ -363,6 +363,28 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     z-index: 2;
 }
 
+    .quality-page .hero-copy h1 {
+        max-width: 15ch;
+    }
+
+
+.government-page .hero-copy {
+    max-width: 980px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.contact-page .hero-copy {
+    max-width: 980px;
+    position: relative;
+    z-index: 2;
+}
+
+    .contact-page .hero-copy h1 {
+        max-width: 15ch;
+    }
+
 .quality-page .quality-pill-grid {
     grid-column: 1 / -1;
     display: grid !important;
@@ -528,9 +550,21 @@ FINAL: hero
     font-size: clamp(2.4rem, 5vw, 4.6rem);
     line-height: 1.02;
     margin-bottom: 1rem;
-    max-width: 12ch;
+    max-width: 16ch;
 }
+@media (min-width: 861px) {
+    .quality-page .hero-copy h1 {
+        max-width: 18ch;
+    }
 
+    .government-page .hero-copy h1 {
+        max-width: 20ch;
+    }
+
+    .contact-page .hero-copy h1 {
+        max-width: 15ch;
+    }
+}
 .hero-text {
     max-width: 62ch;
     color: #12385f;
