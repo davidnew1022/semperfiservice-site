@@ -20,16 +20,33 @@
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <a href="../index.html#hero">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
-                <a href="index.html">Quality</a>
+
+                <div class="nav-dropdown is-current">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="quality-dropdown-menu">
+                        Quality
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="quality-dropdown-menu">
+                        <a href="#hero" aria-current="page">Overview</a>
+                        <a href="#quality-system">Quality System</a>
+                        <a href="#program-management">Program Management</a>
+                        <a href="#cybersecurity">Cybersecurity</a>
+                        <a href="#records">Records</a>
+                        <a href="#quality-commitment">Commitment</a>
+                    </div>
+                </div>
+
                 <a href="../government/index.html">Government</a>
                 <a href="../contact/index.html">Contact</a>
             </nav>
-
             <div class="header-actions">
-                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -73,7 +90,6 @@
                 <div class="hero-media">
                     <div class="quality-pill-grid" aria-label="Quality focus areas">
 
-                        <div class="quality-pill-grid" aria-label="Quality focus areas">
 
                             <div class="quality-pill">
                                 <span class="quality-pill-label">Standard</span>
@@ -317,8 +333,8 @@
                 </div>
 
                 <div class="button-row">
-                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
-                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
+                    <a href="../contact/index.html#directory" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </section>

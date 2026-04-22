@@ -273,12 +273,27 @@
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <a href="../index.html#hero">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
                 <a href="../quality/index.html">Quality</a>
                 <a href="../government/index.html">Government</a>
-                <a href="../contact/index.html">Contact</a>
+
+                <div class="nav-dropdown is-current">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="contact-dropdown-menu">
+                        Contact
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="contact-dropdown-menu">
+                        <a href="#hero" aria-current="page">Overview</a>
+                        <a href="#directory">Directory</a>
+                        <a href="#request-form">Request Form</a>
+                        <a href="#future-contact-structure">Future Structure</a>
+                    </div>
+                </div>
             </nav>
 
             <div class="header-actions">

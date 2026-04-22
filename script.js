@@ -13,11 +13,7 @@ Purpose:
 document.addEventListener("DOMContentLoaded", () => {
     const navToggle = document.getElementById("nav-toggle");
     const siteNav = document.getElementById("site-nav");
-    const homeDropdown = document.querySelector(".nav-dropdown");
-    const homeDropdownToggle = document.querySelector(".nav-dropdown-toggle");
-    const homeDropdownLinks = homeDropdown
-        ? homeDropdown.querySelectorAll(".nav-dropdown-menu a")
-        : [];
+    const navDropdowns = document.querySelectorAll(".nav-dropdown");
 
     const closeMobileMenu = () => {
         if (siteNav && navToggle) {
@@ -26,11 +22,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    const closeHomeDropdown = () => {
-        if (homeDropdown && homeDropdownToggle) {
-            homeDropdown.classList.remove("is-open");
-            homeDropdownToggle.setAttribute("aria-expanded", "false");
-        }
+    const closeAllDropdowns = () => {
+        navDropdowns.forEach((dropdown) => {
+            const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+            dropdown.classList.remove("is-open");
+            if (toggle) {
+                toggle.setAttribute("aria-expanded", "false");
+            }
+        });
     };
 
     if (navToggle && siteNav) {
@@ -42,39 +41,46 @@ document.addEventListener("DOMContentLoaded", () => {
             navToggle.setAttribute("aria-expanded", String(isOpen));
 
             if (!isOpen) {
-                closeHomeDropdown();
+                closeAllDropdowns();
             }
         });
     }
 
-    if (homeDropdown && homeDropdownToggle) {
-        homeDropdownToggle.addEventListener("click", (event) => {
+    navDropdowns.forEach((dropdown) => {
+        const toggle = dropdown.querySelector(".nav-dropdown-toggle");
+        const links = dropdown.querySelectorAll(".nav-dropdown-menu a");
+
+        if (!toggle) return;
+
+        toggle.addEventListener("click", (event) => {
             event.preventDefault();
             event.stopPropagation();
 
-            const isOpen = homeDropdown.classList.contains("is-open");
+            const isOpen = dropdown.classList.contains("is-open");
 
-            if (isOpen) {
-                homeDropdown.classList.remove("is-open");
-                homeDropdownToggle.setAttribute("aria-expanded", "false");
-                return;
+            closeAllDropdowns();
+
+            if (!isOpen) {
+                dropdown.classList.add("is-open");
+                toggle.setAttribute("aria-expanded", "true");
             }
-
-            homeDropdown.classList.add("is-open");
-            homeDropdownToggle.setAttribute("aria-expanded", "true");
         });
 
-        homeDropdownLinks.forEach((link) => {
+        links.forEach((link) => {
             link.addEventListener("click", () => {
-                closeHomeDropdown();
+                closeAllDropdowns();
                 closeMobileMenu();
             });
         });
-    }
+    });
 
     document.addEventListener("click", (event) => {
-        if (homeDropdown && !homeDropdown.contains(event.target)) {
-            closeHomeDropdown();
+        const clickedInsideAnyDropdown = Array.from(navDropdowns).some((dropdown) =>
+            dropdown.contains(event.target)
+        );
+
+        if (!clickedInsideAnyDropdown) {
+            closeAllDropdowns();
         }
 
         if (
@@ -89,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("resize", () => {
         if (window.innerWidth > 860) {
-            closeHomeDropdown();
+            closeAllDropdowns();
             closeMobileMenu();
         }
     });
@@ -111,6 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+   
 function handleQuoteClick(e) {
     e.preventDefault();
 
@@ -201,7 +208,40 @@ function goToContactPage() {
         });
     });
 
+    function applyQueryPrefill() {
+        const params = new URLSearchParams(window.location.search);
+        const requestParam = params.get("request");
+        const directoryParam = params.get("directory");
+
+        if (requestParam) {
+            requestType.value = requestParam;
+        }
+
+        if (directoryParam) {
+            preferredContact.value = directoryParam;
+        }
+
+        syncPackagingFields();
+
+        const shouldScrollToForm = requestParam || directoryParam;
+        if (shouldScrollToForm && requestFormSection) {
+            window.addEventListener("load", () => {
+                const formElement = document.getElementById("sfs-contact-form");
+                const scrollTarget = formElement || requestFormSection;
+                const header = document.querySelector(".site-header");
+                const headerOffset = header ? header.offsetHeight + 16 : 16;
+                const targetTop = scrollTarget.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: targetTop,
+                    behavior: "auto"
+                });
+            });
+        }
+    }
+
     requestType.addEventListener("change", syncPackagingFields);
 
     syncPackagingFields();
+    applyQueryPrefill();
 })();

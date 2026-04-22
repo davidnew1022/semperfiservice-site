@@ -180,16 +180,34 @@
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <a href="../index.html#hero">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
                 <a href="../quality/index.html">Quality</a>
-                <a href="index.html">Government</a>
+
+                <div class="nav-dropdown is-current">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="government-dropdown-menu">
+                        Government
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="government-dropdown-menu">
+                        <a href="#hero" aria-current="page">Overview</a>
+                        <a href="#past-performance">Past Performance</a>
+                        <a href="#inspection-readiness">Inspection Readiness</a>
+                        <a href="#resume-backed-strengths">Relevant Experience</a>
+                        <a href="#leadership-background">Leadership Background</a>
+                        <a href="#motto">Mission</a>
+                    </div>
+                </div>
+
                 <a href="../contact/index.html">Contact</a>
             </nav>
 
             <div class="header-actions">
-                <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -552,8 +570,8 @@
                 </div>
 
                 <div class="button-row">
-                    <a href="../contact/index.html" class="btn btn-primary">Request a Quote</a>
-                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
+                    <a href="../contact/index.html#directory" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </section>

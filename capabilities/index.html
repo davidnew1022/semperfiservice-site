@@ -21,9 +21,28 @@
             </a>
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
-                <a href="../index.html#hero">Home</a>
+                <a href="../index.html">Home</a>
                 <a href="../company/index.html">Company</a>
-                <a href="../capabilities/index.html">Capabilities</a>
+
+                <div class="nav-dropdown is-current">
+                    <button class="nav-dropdown-toggle"
+                            type="button"
+                            aria-expanded="false"
+                            aria-controls="capabilities-dropdown-menu">
+                        Capabilities
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="capabilities-dropdown-menu">
+                        <a href="#hero" aria-current="page">Overview</a>
+                        <a href="#core-capabilities">Core Capabilities</a>
+                        <a href="#process">Process</a>
+                        <a href="#quality-overview">Quality</a>
+                        <a href="#differentiators">Differentiators</a>
+                        <a href="#industries-supported">Industries</a>
+                        <a href="#company-data">Company Data</a>
+                    </div>
+                </div>
+
                 <a href="../quality/index.html">Quality</a>
                 <a href="../government/index.html">Government</a>
                 <a href="../contact/index.html">Contact</a>
@@ -414,8 +433,8 @@
                 </div>
 
                 <div class="button-row">
-                    <a href="#" class="btn btn-primary" onclick="handleQuoteClick(event)">Request a Quote</a>
-                    <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
+                    <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
+                    <a href="../contact/index.html#directory" class="btn btn-secondary">Contact Us</a>
                 </div>
             </div>
         </section>
