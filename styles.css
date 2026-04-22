@@ -1219,24 +1219,25 @@ FINAL: responsive behavior
                 font-size: 0.95rem;
                 line-height: 1.55;
             }
-        .government-page #resume-backed-strengths .card-grid-3 {
-            grid-template-columns: 1fr !important;
-            gap: 0.9rem;
-        }
-    
+
+    .government-page #resume-backed-strengths .card-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 0.9rem;
+    }
+
         .government-page #resume-backed-strengths .card-grid-3 .card {
             padding: 1.15rem;
         }
-    
-        .government-page #resume-backed-strengths .card-grid-3 .card h3 {
-            font-size: 1.05rem;
-            line-height: 1.25;
-        }
-    
-        .government-page #resume-backed-strengths .card-grid-3 .card p {
-            font-size: 0.95rem;
-            line-height: 1.55;
-        }
+
+            .government-page #resume-backed-strengths .card-grid-3 .card h3 {
+                font-size: 1.05rem;
+                line-height: 1.25;
+            }
+
+            .government-page #resume-backed-strengths .card-grid-3 .card p {
+                font-size: 0.95rem;
+                line-height: 1.55;
+            }
 }
 
 .capabilities-page .hero-grid {

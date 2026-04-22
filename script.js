@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -111,31 +111,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-    function handleQuoteClick(e) {
-        e.preventDefault();
+function handleQuoteClick(e) {
+    e.preventDefault();
 
-        const modal = document.getElementById("quote-modal");
-        if (modal) {
-            modal.classList.add("is-open");
-            document.body.classList.add("modal-open");
-        }
+    const modal = document.getElementById("quote-modal");
+    if (modal) {
+        modal.classList.add("is-open");
+        document.body.classList.add("modal-open");
     }
+}
 
-    function closeQuoteModal() {
-        const modal = document.getElementById("quote-modal");
-        if (modal) {
-            modal.classList.remove("is-open");
-            document.body.classList.remove("modal-open");
-        }
+function closeQuoteModal() {
+    const modal = document.getElementById("quote-modal");
+    if (modal) {
+        modal.classList.remove("is-open");
+        document.body.classList.remove("modal-open");
     }
+}
 
-    function downloadCapabilitiesStatement() {
-        window.open("../assets/SFS_Capability_Statement.pdf", "_blank");
-        closeQuoteModal();
-    }
-    function goToContactPage() {
-        window.location.href = "../contact/index.html";
-    }
+function downloadCapabilitiesStatement() {
+    window.open("../assets/SFS_Capability_Statement.pdf", "_blank");
+    closeQuoteModal();
+}
+function goToContactPage() {
+    window.location.href = "../contact/index.html";
+}
 /* NOT FINAL: Future options for this file:
 - sticky header shrink effect
 - scroll animations
