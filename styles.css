@@ -1250,20 +1250,40 @@ FINAL: responsive behavior
         background-color: #f7f8fa;
     }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 980px;
-            background-image: linear-gradient( to bottom, rgba(255,255,255,0.52) 0%, rgba(255,255,255,0.32) 42%, rgba(255,255,255,0.10) 78%, rgba(255,255,255,0.00) 100% ), url("images/hero.jpg");
-            background-repeat: no-repeat;
-            background-position: center top;
-            background-size: 160% auto;
-            z-index: 0;
-            pointer-events: none;
-        }
+    .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 980px;
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(255,255,255,0.60) 0%,
+                rgba(255,255,255,0.36) 42%,
+                rgba(255,255,255,0.12) 78%,
+                rgba(255,255,255,0.02) 100%
+            ),
+            url("images/hero.jpg");
+        background-repeat: no-repeat;
+        background-position: 70% top;
+        background-size: 182% auto;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .hero-copy {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-copy h1 {
+    text-shadow: 0 1px 0 rgba(255,255,255,0.30);
+}
+
+.hero-text {
+    color: #18344f;
+}
     /* MOBILE: improve stacked card spacing */
     .card-grid-3 {
         grid-template-columns: 1fr;
@@ -1566,7 +1586,7 @@ FINAL: responsive behavior
         }
 }
 /* =========================
-HOME CONTACT PREVIEW – MATCH CURRENT CTA BANNER
+HOME CONTACT PREVIEW Â– MATCH CURRENT CTA BANNER
 ========================= */
 #contact-preview {
     background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 40%, #d6e6f4 100%);
