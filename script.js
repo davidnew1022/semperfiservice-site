@@ -245,9 +245,9 @@ function goToContactPage() {
     syncPackagingFields();
         requestType.addEventListener("change", syncPackagingFields);
 
-            syncPackagingFields();
-            applyQueryPrefill();
-        })();
+        syncPackagingFields();
+        applyQueryPrefill();
+    })();
 // =========================
 // SCROLL REVEAL ANIMATIONS
 // =========================
