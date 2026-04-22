@@ -1205,17 +1205,7 @@ FINAL: responsive behavior
         font-weight: 700;
     }
 
-    @media (max-width: 860px) {
-        .nav-dropdown.is-current .nav-dropdown-toggle {
-            color: #ffffff;
-        }
 
-        .nav-dropdown.is-current .nav-dropdown-menu a[aria-current="page"] {
-            background: transparent;
-            color: #ffffff;
-            font-weight: 700;
-        }
-    }
 
     .nav-dropdown-menu a {
         display: block;
