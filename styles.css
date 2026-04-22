@@ -1565,3 +1565,28 @@ FINAL: responsive behavior
             width: 100%;
         }
 }
+/* =========================
+HOME CONTACT PREVIEW – MATCH CURRENT CTA BANNER
+========================= */
+#contact-preview {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 40%, #d6e6f4 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 12px 30px rgba(18, 32, 47, 0.06);
+}
+
+    #contact-preview h2 {
+        color: #12202f;
+    }
+
+    #contact-preview .section-kicker {
+        color: #1f4f82;
+    }
+
+    #contact-preview p {
+        color: #4a5b6d;
+    }
+
+    #contact-preview .contact-card,
+    #contact-preview .contact-form {
+        background: #ffffff;
+        color: #12202f;
+    }
