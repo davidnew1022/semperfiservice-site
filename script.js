@@ -136,10 +136,66 @@ function downloadCapabilitiesStatement() {
 function goToContactPage() {
     window.location.href = "../contact/index.html";
 }
-/* NOT FINAL: Future options for this file:
-- sticky header shrink effect
-- scroll animations
-- active nav highlighting
-- real form validation
-- AJAX or backend form submission
-*/
+// =========================
+// CONTACT PAGE: directory routing + packaging quote toggle
+// =========================
+(function () {
+    const requestFormSection = document.getElementById("request-form");
+    const requestType = document.getElementById("request-type");
+    const preferredContact = document.getElementById("preferred-contact");
+    const packagingFields = document.getElementById("packaging-quote-fields");
+    const directoryCards = document.querySelectorAll("[data-form-target='request-form']");
+
+    if (!requestFormSection || !requestType || !preferredContact || !directoryCards.length) {
+        return;
+    }
+
+    function syncPackagingFields() {
+        const isPackagingQuote = requestType.value === "Packaging Quote";
+
+        if (packagingFields) {
+            packagingFields.hidden = !isPackagingQuote;
+        }
+
+        if (isPackagingQuote) {
+            preferredContact.value = "Sales";
+        }
+    }
+
+    function routeDirectoryCard(card) {
+        const requestValue = card.getAttribute("data-request-type") || "";
+        const directoryValue = card.getAttribute("data-directory") || "";
+
+        if (requestValue) {
+            requestType.value = requestValue;
+        }
+
+        if (directoryValue) {
+            preferredContact.value = directoryValue;
+        }
+
+        syncPackagingFields();
+
+        requestFormSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+    }
+
+    directoryCards.forEach((card) => {
+        card.addEventListener("click", function () {
+            routeDirectoryCard(card);
+        });
+
+        card.addEventListener("keydown", function (event) {
+            if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                routeDirectoryCard(card);
+            }
+        });
+    });
+
+    requestType.addEventListener("change", syncPackagingFields);
+
+    syncPackagingFields();
+})();

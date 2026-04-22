@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact | Semper Fi Services</title>
     <meta name="description"
-          content="Contact Semper Fi Services for quotes, sourcing requests, customer support, and business inquiries." />
+          content="Contact Semper Fi Services for quotes, sourcing requests, customer support, packaging quotes, and business inquiries." />
     <link rel="stylesheet" href="../styles.css" />
     <style>
         .contact-page .hero-grid {
@@ -49,11 +49,21 @@
             border-radius: 1rem;
             padding: 1.4rem;
             box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+            text-align: left;
+            cursor: pointer;
+            width: 100%;
+            font: inherit;
+            color: inherit;
         }
 
             .directory-card h3 {
                 margin-bottom: 0.35rem;
                 font-size: 1.1rem;
+            }
+
+            .directory-card:focus-visible {
+                outline: 2px solid rgba(31, 79, 130, 0.2);
+                border-color: #1f4f82;
             }
 
         .directory-role {
@@ -145,6 +155,12 @@
             color: #4a5b6d;
         }
 
+        .packaging-quote-fields {
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid #dbe4ec;
+        }
+
         .support-panel-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -197,17 +213,15 @@
 
             <nav class="site-nav" id="site-nav" aria-label="Main Navigation">
                 <a href="../index.html#hero">Home</a>
-                <a href="index.html">Company</a>
+                <a href="../company/index.html">Company</a>
                 <a href="../capabilities/index.html">Capabilities</a>
                 <a href="../quality/index.html">Quality</a>
                 <a href="../government/index.html">Government</a>
                 <a href="../contact/index.html">Contact</a>
             </nav>
 
-
-
             <div class="header-actions">
-                <a href="index.html" class="btn btn-primary">Request a Quote</a>
+                <a href="#request-form" class="btn btn-primary">Request a Quote</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -231,14 +245,14 @@
 
                     <h1>
                         Reach the Right Person Faster for Quotes, Support,
-                        Sales, and Business Inquiries
+                        Packaging Requests, and Business Inquiries
                     </h1>
 
                     <p class="hero-text">
-                        The contact page is built to make communication easier. Whether you need a
-                        quote, customer support, sourcing help, or general business contact, Semper Fi
-                        Services is organizing a direct-response contact structure so inquiries can be
-                        routed to the right person with less back and forth.
+                        The contact page is built to make communication easier. Whether you need a quote,
+                        customer support, sourcing help, or a packaging quote, Semper Fi Services is
+                        organizing a direct-response contact structure so inquiries can be routed to the
+                        right path with less back and forth.
                     </p>
 
                     <div class="button-row">
@@ -253,11 +267,11 @@
 
         <section class="contact-directory-banner" aria-label="Contact Options">
             <div class="container contact-directory-items">
-                <span>Quotes & RFQs</span>
+                <span>Quotes &amp; RFQs</span>
                 <span>Sales Inquiries</span>
                 <span>Customer Support</span>
                 <span>Front Office Contact</span>
-                <span>Future Catalog Requests</span>
+                <span>Packaging Quotes</span>
                 <span>Direct Team Access</span>
             </div>
         </section>
@@ -268,52 +282,77 @@
                     <p class="section-kicker">Directory</p>
                     <h2>Contact Directory</h2>
                     <p>
-                        Use the directory below to contact the right inbox based on the type of request.
+                        Select the directory that best matches your request. Clicking any option below will take you
+                        directly to the form and preselect the appropriate contact path.
                     </p>
                 </div>
 
                 <div class="contact-directory-grid">
-                    <article class="directory-card">
+                    <button class="directory-card"
+                            type="button"
+                            data-form-target="request-form"
+                            data-request-type="General Inquiry"
+                            data-directory="Front Office">
                         <h3>Front Office</h3>
                         <p class="directory-role">General Intake</p>
                         <p><strong>Email:</strong> semperfi@sfsdistribution.com</p>
                         <p>Best for general inquiries, routing requests, and first-contact communication.</p>
-                    </article>
+                    </button>
 
-                    <article class="directory-card">
+                    <button class="directory-card"
+                            type="button"
+                            data-form-target="request-form"
+                            data-request-type="Request a Quote"
+                            data-directory="Sales">
                         <h3>Sales</h3>
-                        <p class="directory-role">Quotes & Opportunities</p>
+                        <p class="directory-role">Quotes &amp; Opportunities</p>
                         <p><strong>Email:</strong> sales@sfsdistribution.com</p>
                         <p>Best for RFQs, sourcing requests, pricing discussions, and business development.</p>
-                    </article>
+                    </button>
 
-                    <article class="directory-card">
+                    <button class="directory-card"
+                            type="button"
+                            data-form-target="request-form"
+                            data-request-type="Customer Support"
+                            data-directory="Customer Support">
                         <h3>Customer Support</h3>
                         <p class="directory-role">Existing Customer Help</p>
                         <p><strong>Email:</strong> customer.support@sfsdistribution.com</p>
                         <p>Best for order follow-up, delivery questions, documentation requests, and support.</p>
-                    </article>
+                    </button>
 
-                    <article class="directory-card">
+                    <button class="directory-card"
+                            type="button"
+                            data-form-target="request-form"
+                            data-request-type="Sales Inquiry"
+                            data-directory="Thomas Smith">
                         <h3>Thomas Smith</h3>
                         <p class="directory-role">Field / Business-Facing Contact</p>
                         <p><strong>Email:</strong> thomas.smith@sfsdistribution.com</p>
-                        <p>Best for relationship-driven communication, business coordination, and project-facing contact.</p>
-                    </article>
+                        <p>Best for supplier relationships, business coordination, and project-facing communication.</p>
+                    </button>
 
-                    <article class="directory-card">
+                    <button class="directory-card"
+                            type="button"
+                            data-form-target="request-form"
+                            data-request-type="Documentation Request"
+                            data-directory="David New">
                         <h3>David New</h3>
                         <p class="directory-role">Operations / Documentation Contact</p>
                         <p><strong>Email:</strong> david.new@sfsdistribution.com</p>
-                        <p>Best for process questions, documentation detail, internal coordination, and operational follow-up.</p>
-                    </article>
+                        <p>Best for documentation detail, process questions, packaging requirements, and operational follow-up.</p>
+                    </button>
 
-                    <article class="directory-card">
-                        <h3>Main Phone</h3>
-                        <p class="directory-role">Direct Contact</p>
-                        <p><strong>Phone:</strong> +1 (623) 301-2271</p>
-                        <p>Best for prompt communication when email is not ideal or you need fast routing.</p>
-                    </article>
+                    <button class="directory-card"
+                            type="button"
+                            data-form-target="request-form"
+                            data-request-type="Packaging Quote"
+                            data-directory="Sales">
+                        <h3>Packaging Quote</h3>
+                        <p class="directory-role">Packaging &amp; Fulfillment Intake</p>
+                        <p><strong>Email:</strong> sales@sfsdistribution.com</p>
+                        <p>Best for pack-out requirements, unit of issue, quantity per pack, weight, labeling, preservation, and packaging quote requests.</p>
+                    </button>
                 </div>
             </div>
         </section>
@@ -330,8 +369,8 @@
                         <p><strong>David:</strong> david.new@sfsdistribution.com</p>
                         <p><strong>Phone:</strong> +1 (623) 301-2271</p>
                         <p class="contact-note">
-                            Response focus: professional communication, quote intake, customer support,
-                            and routing to the appropriate contact.
+                            Use the form to route general inquiries, RFQs, sourcing requests, support needs,
+                            and packaging quote requests to the right contact path.
                         </p>
                     </div>
 
@@ -339,49 +378,49 @@
                         <h3>How to Route Your Request</h3>
                         <div class="routing-list">
                             <div class="routing-item">
-                                <strong>Request a Quote</strong>
-                                <span>Use sales@sfsdistribution.com or the quote form for RFQs, product sourcing, and pricing.</span>
+                                <strong>General / Front Office</strong>
+                                <span>Use for first-contact communication, company questions, and request routing.</span>
+                            </div>
+                            <div class="routing-item">
+                                <strong>Sales / RFQ</strong>
+                                <span>Use for sourcing requests, pricing, solicitation references, and product quote intake.</span>
                             </div>
                             <div class="routing-item">
                                 <strong>Customer Support</strong>
-                                <span>Use customer.support@sfsdistribution.com for documentation, order status, and post-contact support.</span>
+                                <span>Use for documentation requests, order follow-up, delivery questions, and support.</span>
                             </div>
                             <div class="routing-item">
-                                <strong>General Inquiry</strong>
-                                <span>Use semperfi@sfsdistribution.com for first-touch routing and general company communication.</span>
-                            </div>
-                            <div class="routing-item">
-                                <strong>Future Catalog / Product Inquiry</strong>
-                                <span>Use the form below and choose Catalog / Product Interest so the inquiry can be organized for future catalog features.</span>
+                                <strong>Packaging Quote</strong>
+                                <span>Use for packaging and fulfillment pricing based on quantity, pack-out, weight, and labeling requirements.</span>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <form class="contact-form">
+                <form class="contact-form" id="sfs-contact-form">
                     <h3>Request / Quote Form</h3>
 
                     <div class="form-grid-2">
                         <div class="form-row">
                             <label for="contact-name">Name</label>
-                            <input id="contact-name" type="text" name="name" placeholder="Your name" />
+                            <input id="contact-name" type="text" name="name" placeholder="Your name" autocomplete="name" />
                         </div>
 
                         <div class="form-row">
                             <label for="contact-company">Company</label>
-                            <input id="contact-company" type="text" name="company" placeholder="Company name" />
+                            <input id="contact-company" type="text" name="company" placeholder="Company name" autocomplete="organization" />
                         </div>
                     </div>
 
                     <div class="form-grid-2">
                         <div class="form-row">
                             <label for="contact-email">Email</label>
-                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" />
+                            <input id="contact-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" />
                         </div>
 
                         <div class="form-row">
                             <label for="contact-phone">Phone</label>
-                            <input id="contact-phone" type="tel" name="phone" placeholder="(000) 000-0000" />
+                            <input id="contact-phone" type="tel" name="phone" placeholder="(000) 000-0000" autocomplete="tel" />
                         </div>
                     </div>
 
@@ -390,58 +429,205 @@
                             <label for="request-type">Request Type</label>
                             <select id="request-type" name="request_type">
                                 <option value="">Select a request type</option>
-                                <option>Request a Quote</option>
-                                <option>Sales Inquiry</option>
-                                <option>Customer Support</option>
-                                <option>Catalog / Product Interest</option>
-                                <option>Documentation Request</option>
-                                <option>General Inquiry</option>
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Request a Quote">Request a Quote</option>
+                                <option value="Sales Inquiry">Sales Inquiry</option>
+                                <option value="Customer Support">Customer Support</option>
+                                <option value="Documentation Request">Documentation Request</option>
+                                <option value="Packaging Quote">Packaging Quote</option>
                             </select>
                         </div>
 
                         <div class="form-row">
-                            <label for="preferred-contact">Preferred Contact</label>
+                            <label for="preferred-contact">Directory / Preferred Contact</label>
                             <select id="preferred-contact" name="preferred_contact">
-                                <option value="">Select preferred contact</option>
-                                <option>Front Office</option>
-                                <option>Sales</option>
-                                <option>Customer Support</option>
-                                <option>Thomas Smith</option>
-                                <option>David New</option>
+                                <option value="">Select a directory</option>
+                                <option value="Front Office">Front Office</option>
+                                <option value="Sales">Sales</option>
+                                <option value="Customer Support">Customer Support</option>
+                                <option value="Thomas Smith">Thomas Smith</option>
+                                <option value="David New">David New</option>
                             </select>
                         </div>
                     </div>
 
-                    <div class="form-grid-2">
+                    <div class="form-grid-2 general-fields">
                         <div class="form-row">
                             <label for="product-category">Product / Service Category</label>
-                            <input id="product-category" type="text" name="product_category" placeholder="Example: hardware, sourcing support, documentation" />
+                            <input id="product-category"
+                                   type="text"
+                                   name="product_category"
+                                   placeholder="Example: hardware, sourcing support, documentation" />
                         </div>
 
                         <div class="form-row">
                             <label for="solicitation-number">Solicitation / Reference Number</label>
-                            <input id="solicitation-number" type="text" name="solicitation_number" placeholder="Optional reference number" />
+                            <input id="solicitation-number"
+                                   type="text"
+                                   name="solicitation_number"
+                                   placeholder="Optional reference number" />
+                        </div>
+                    </div>
+
+                    <div id="packaging-quote-fields" class="packaging-quote-fields" hidden>
+                        <h3>Packaging Quote Details</h3>
+
+                        <div class="form-grid-2">
+                            <div class="form-row">
+                                <label for="packaging-part-number">Part Number / NSN / Item Reference</label>
+                                <input id="packaging-part-number"
+                                       type="text"
+                                       name="packaging_part_number"
+                                       placeholder="Part number, NSN, or customer item reference" />
+                            </div>
+
+                            <div class="form-row">
+                                <label for="packaging-total-quantity">Total Quantity</label>
+                                <input id="packaging-total-quantity"
+                                       type="number"
+                                       min="1"
+                                       step="1"
+                                       name="packaging_total_quantity"
+                                       placeholder="Total units to be packed" />
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-row">
+                                <label for="packaging-unit-issue">Unit of Issue</label>
+                                <select id="packaging-unit-issue" name="packaging_unit_issue">
+                                    <option value="">Select unit of issue</option>
+                                    <option value="EA">EA - Each</option>
+                                    <option value="PR">PR - Pair</option>
+                                    <option value="SE">SE - Set</option>
+                                    <option value="PK">PK - Pack</option>
+                                    <option value="BX">BX - Box</option>
+                                    <option value="CT">CT - Carton</option>
+                                    <option value="RL">RL - Roll</option>
+                                    <option value="BG">BG - Bag</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="packaging-qty-per-pack">Quantity Per Pack</label>
+                                <input id="packaging-qty-per-pack"
+                                       type="number"
+                                       min="1"
+                                       step="1"
+                                       name="packaging_qty_per_pack"
+                                       placeholder="Units per bag, box, or pack" />
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-row">
+                                <label for="packaging-unit-weight">Weight of 1 Item</label>
+                                <input id="packaging-unit-weight"
+                                       type="text"
+                                       name="packaging_unit_weight"
+                                       placeholder="Example: 0.12 lb each" />
+                            </div>
+
+                            <div class="form-row">
+                                <label for="packaging-pack-weight">Estimated Weight Per Pack</label>
+                                <input id="packaging-pack-weight"
+                                       type="text"
+                                       name="packaging_pack_weight"
+                                       placeholder="Example: 4.5 lb per box" />
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-row">
+                                <label for="packaging-packaging-type">Packaging Type</label>
+                                <select id="packaging-packaging-type" name="packaging_type">
+                                    <option value="">Select packaging type</option>
+                                    <option value="Bagging">Bagging</option>
+                                    <option value="Boxing">Boxing</option>
+                                    <option value="Kitting">Kitting</option>
+                                    <option value="Preservation">Preservation</option>
+                                    <option value="Labeling / Marking">Labeling / Marking</option>
+                                    <option value="Bagging + Boxing">Bagging + Boxing</option>
+                                    <option value="Custom">Custom</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="packaging-material">Packaging Material / Method</label>
+                                <select id="packaging-material" name="packaging_material">
+                                    <option value="">Select material / method</option>
+                                    <option value="Poly bag">Poly bag</option>
+                                    <option value="Heat sealed bag">Heat sealed bag</option>
+                                    <option value="Corrugated box">Corrugated box</option>
+                                    <option value="Inner / outer pack">Inner / outer pack</option>
+                                    <option value="Protective cushioning">Protective cushioning</option>
+                                    <option value="MIL-STD preservation">MIL-STD preservation</option>
+                                    <option value="Customer specified">Customer specified</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-row">
+                                <label for="packaging-labeling">Label / Marking Requirements</label>
+                                <select id="packaging-labeling" name="packaging_labeling">
+                                    <option value="">Select labeling requirement</option>
+                                    <option value="Standard commercial">Standard commercial</option>
+                                    <option value="MIL-STD-129">MIL-STD-129</option>
+                                    <option value="Barcode required">Barcode required</option>
+                                    <option value="Contract label required">Contract label required</option>
+                                    <option value="Customer specified">Customer specified</option>
+                                </select>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="packaging-inspection-level">Inspection / Verification Level</label>
+                                <select id="packaging-inspection-level" name="packaging_inspection_level">
+                                    <option value="">Select inspection level</option>
+                                    <option value="Visual check only">Visual check only</option>
+                                    <option value="Count verification">Count verification</option>
+                                    <option value="Label verification">Label verification</option>
+                                    <option value="Documentation verification">Documentation verification</option>
+                                    <option value="Customer specified">Customer specified</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-grid-2">
+                            <div class="form-row">
+                                <label for="packaging-deadline">Required Delivery Date</label>
+                                <input id="packaging-deadline" type="date" name="packaging_deadline" />
+                            </div>
+
+                            <div class="form-row">
+                                <label for="packaging-special-requirements">Special Requirements</label>
+                                <input id="packaging-special-requirements"
+                                       type="text"
+                                       name="packaging_special_requirements"
+                                       placeholder="Shelf life, preservation, paperwork, special handling, etc." />
+                            </div>
                         </div>
                     </div>
 
                     <div class="form-row">
-                        <label for="request-details">Request / RFQ Details</label>
+                        <label for="request-details">Request Details</label>
                         <textarea id="request-details"
                                   name="request_details"
                                   rows="7"
-                                  placeholder="Describe your request, required item or service, quantity, due date, documentation needs, and any other relevant details."></textarea>
+                                  placeholder="Describe your request, item details, quantity, delivery expectations, documentation requirements, and any other relevant information."></textarea>
                         <div class="form-help">
-                            Helpful details: quantities, delivery window, documentation requirements,
-                            solicitation number, approved source requirements, and contact deadlines.
+                            Helpful details: quantities, delivery window, documentation requirements, solicitation number,
+                            approved source requirements, packaging instructions, and contact deadlines.
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-secondary">Send Request</button>
 
                     <div class="contact-checklist">
-                        <span>Future-ready for quote intake</span>
-                        <span>Structured for catalog and product requests</span>
-                        <span>Built to support direct routing and cleaner communication</span>
+                        <span>Directory-based routing</span>
+                        <span>Autofill-friendly contact inputs</span>
+                        <span>General request and packaging quote intake</span>
                     </div>
                 </form>
             </div>
@@ -476,10 +662,10 @@
                     </article>
 
                     <article class="support-card">
-                        <h3>Cleaner Email Routing</h3>
+                        <h3>Packaging Quote Intake</h3>
                         <p>
-                            The separate addresses create a more professional front office, sales, and support
-                            structure while still allowing direct founder access when needed.
+                            The contact form can switch into a packaging quote workflow that captures pack-out,
+                            unit-of-issue, weight, quantity, labeling, and deadline requirements.
                         </p>
                     </article>
                 </div>
@@ -490,10 +676,10 @@
             <div class="container cta-banner-inner">
                 <div>
                     <p class="section-kicker">Next Step</p>
-                    <h2>Need a Quote, Product Contact, or Direct Response?</h2>
+                    <h2>Need a Quote, Packaging Estimate, or Direct Response?</h2>
                     <p>
                         Semper Fi Services is building a cleaner, more professional intake system so customers
-                        and partners can reach the right person faster.
+                        and partners can reach the right person faster and submit better quote information.
                     </p>
                 </div>
 
@@ -506,33 +692,34 @@
     </main>
 
     <footer class="site-footer">
-        <div>
-            <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
-                <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
-                <span class="footer-brand-text">Semper Fi Services</span>
-            </a>
-            <p>
-                Quality-driven sourcing, distribution, and government-ready operational support.
-            </p>
-        </div>
+        <div class="container footer-grid">
+            <div>
+                <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
+                    <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
+                    <span class="footer-brand-text">Semper Fi Services</span>
+                </a>
+                <p>
+                    Quality-driven sourcing, distribution, and government-ready operational support.
+                </p>
+            </div>
 
-        <div>
-            <h4>Quick Links</h4>
-            <ul class="footer-links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../company/index.html">Company</a></li>
-                <li><a href="../capabilities/index.html">Capabilities</a></li>
-                <li><a href="../quality/index.html">Quality</a></li>
-                <li><a href="../government/index.html">Government</a></li>
-                <li><a href="index.html">Contact</a></li>
-            </ul>
-        </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../company/index.html">Company</a></li>
+                    <li><a href="../capabilities/index.html">Capabilities</a></li>
+                    <li><a href="../quality/index.html">Quality</a></li>
+                    <li><a href="../government/index.html">Government</a></li>
+                    <li><a href="index.html">Contact</a></li>
+                </ul>
+            </div>
 
-        <div>
-            <h4>Contact</h4>
-            <p>semperfi@sfsdistribution.com</p>
-            <p>+1 (623) 301-2271</p>
-        </div>
+            <div>
+                <h4>Contact</h4>
+                <p>semperfi@sfsdistribution.com</p>
+                <p>+1 (623) 301-2271</p>
+            </div>
         </div>
 
         <div class="container footer-bottom">
