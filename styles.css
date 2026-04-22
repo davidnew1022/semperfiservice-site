@@ -119,10 +119,11 @@ NOT FINAL: brand colors if you want different palette later
     justify-content: center;
     min-height: 46px;
     padding: 0.8rem 1.2rem;
-    border-radius: 0.5rem;
+    border-radius: 0.5rem; /* keeps your current rectangular shape */
     border: 1px solid transparent;
     font-weight: 700;
-    transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 20px rgba(18, 32, 47, 0.08);
 }
 
     .btn:hover {
@@ -130,32 +131,30 @@ NOT FINAL: brand colors if you want different palette later
     }
 
 .btn-primary {
-    background: #ffffff;
+    background: linear-gradient(180deg, #ffffff 0%, #f1f4f7 100%);
     color: #0e2a3f;
+    border-color: #d5dde6;
+    box-shadow: 0 10px 22px rgba(18, 32, 47, 0.10), 0 2px 6px rgba(18, 32, 47, 0.05);
 }
 
     .btn-primary:hover {
-        background: #e6edf3;
+        background: linear-gradient(180deg, #ffffff 0%, #e8edf2 100%);
+        border-color: #c7d1db;
+        box-shadow: 0 12px 24px rgba(18, 32, 47, 0.12), 0 3px 8px rgba(18, 32, 47, 0.06);
     }
 
 .btn-secondary {
-    background: #12385f;
+    background: linear-gradient(180deg, #1b4a79 0%, #12385f 55%, #0d2a45 100%);
     color: #ffffff;
-    border-color: #12385f;
+    border-color: #0b2237;
+    box-shadow: 0 12px 26px rgba(9, 25, 40, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
     .btn-secondary:hover {
-        background: #0f2f50;
-        border-color: #0f2f50;
+        background: linear-gradient(180deg, #23558a 0%, #17446f 55%, #103250 100%);
+        border-color: #091b2b;
+        box-shadow: 0 14px 28px rgba(9, 25, 40, 0.26), inset 0 1px 0 rgba(255, 255, 255, 0.14);
     }
-
-
-.button-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.9rem;
-}
-
 /* =========================
 FINAL: header/nav
 ========================= */
