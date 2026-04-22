@@ -372,7 +372,7 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 }
 
 .quality-page .quality-pill {
-    background: #12385f;
+    background: linear-gradient(180deg, #0d2a45 0%, #071a2b 100%);
     color: #ffffff;
     border-radius: 999px;
     text-align: center;
@@ -801,7 +801,7 @@ FINAL: process
 }
 
 .process-step {
-    background: #12385f;
+    background: linear-gradient(180deg, #0d2a45 0%, #071a2b 100%);
     color: #ffffff;
     border-radius: 999px;
     text-align: center;
@@ -1261,7 +1261,7 @@ FINAL: responsive behavior
 }
 
 .capabilities-page .capability-tab {
-    background: #12385f;
+    background: linear-gradient(180deg, #0d2a45 0%, #071a2b 100%);
     color: #ffffff;
     border-radius: 999px;
     text-align: center;
@@ -1318,7 +1318,11 @@ FINAL: responsive behavior
 .modal-open {
     overflow: hidden;
 }
-
+.quality-page .quality-pill,
+.process-step,
+.capabilities-page .capability-tab {
+    border: 1px solid #04121e;
+}
 .quote-modal {
     position: fixed;
     inset: 0;
