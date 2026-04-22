@@ -1,4 +1,4 @@
-﻿/* =========================
+/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -244,4 +244,30 @@ function goToContactPage() {
 
     syncPackagingFields();
     applyQueryPrefill();
+// =========================
+// SCROLL REVEAL ANIMATIONS
+// =========================
+(function () {
+    const animatedItems = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right, .reveal-scale"
+    );
+
+    if (!animatedItems.length) return;
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+                obs.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.14,
+            rootMargin: "0px 0px -40px 0px"
+        }
+    );
+
+    animatedItems.forEach((item) => observer.observe(item));
 })();
