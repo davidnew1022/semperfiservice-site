@@ -434,6 +434,33 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
         min-height: 0;
         padding: 0.9rem 1rem;
     }
+    .quality-page .hero {
+        padding-bottom: 4.5rem;
+    }
+    
+    .quality-page .hero::before {
+        height: 1220px;
+        background-size: 175% auto;
+        background-position: center top;
+    }
+    .quality-page #records .card-grid-3 {
+        grid-template-columns: 1fr !important;
+        gap: 0.9rem;
+    }
+
+    .quality-page #records .card-grid-3 .card {
+        padding: 1.15rem;
+    }
+
+    .quality-page #records .card-grid-3 .card h3 {
+        font-size: 1.05rem;
+        line-height: 1.25;
+    }
+
+    .quality-page #records .card-grid-3 .card p {
+        font-size: 0.95rem;
+        line-height: 1.55;
+    }
 }
 
 .header-actions {
