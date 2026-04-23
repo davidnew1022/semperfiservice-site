@@ -1219,9 +1219,10 @@ FINAL: responsive behavior
             opacity: 1;
         }
 
+    /* REMOVE forced highlight in mobile dropdown */
     .nav-dropdown.is-current .nav-dropdown-menu a[aria-current="page"] {
-        background: #f5f8fb;
-        color: #12385f;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.9);
         font-weight: 700;
     }
 
