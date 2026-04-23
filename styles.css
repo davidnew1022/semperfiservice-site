@@ -1474,6 +1474,13 @@ FINAL: responsive behavior
     .capabilities-page .capability-tab.reveal.is-visible {
         transform: translateY(0);
     }
+        .process-step.reveal {
+        transform: translateY(6px);
+    }
+
+    .process-step {
+        transition: transform 0.24s ease, box-shadow 0.24s ease, opacity 0.5s ease;
+    }
 }
 
 .modal-open {
