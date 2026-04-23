@@ -1468,14 +1468,7 @@ FINAL: responsive behavior
         padding: 0.9rem 1rem;
     }
 
-    .capabilities-page .capability-tab.reveal,
-    .capabilities-page .capability-tab.reveal-left,
-    .capabilities-page .capability-tab.reveal-right,
-    .capabilities-page .capability-tab.reveal-scale {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
+    
 
     .process-step.reveal {
         transform: translateY(6px);
