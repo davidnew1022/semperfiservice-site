@@ -1602,8 +1602,8 @@ HOME CONTACT PREVIEW  MATCH CURRENT CTA BANNER
     }
     .reveal {
     opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
     will-change: opacity, transform;
     }
     
