@@ -1458,7 +1458,49 @@ FINAL: responsive behavior
     text-transform: uppercase;
     color: rgba(255,255,255,0.65);
 }
+/* CAPABILITIES PAGE: first two pills fancy load-in */
+.pill-load-left,
+.pill-load-right {
+    opacity: 0;
+    will-change: transform, opacity;
+    animation-duration: 0.72s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: forwards;
+}
 
+.pill-load-left {
+    transform: translateX(-44px);
+    animation-name: pillLoadLeft;
+    animation-delay: 0.18s;
+}
+
+.pill-load-right {
+    transform: translateX(44px);
+    animation-name: pillLoadRight;
+    animation-delay: 0.30s;
+}
+
+@keyframes pillLoadLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-44px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pillLoadRight {
+    from {
+        opacity: 0;
+        transform: translateX(44px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 @media (max-width: 1080px) {
     .capabilities-page .capability-tab-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
