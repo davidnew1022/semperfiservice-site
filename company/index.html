@@ -23,68 +23,78 @@
         }
 
         .company-values-banner {
-    border-top: 1px solid #dbe4ec;
-    border-bottom: 1px solid #dbe4ec;
-    background: #eaf2f8;
-}
+            border-top: 1px solid #dbe4ec;
+            border-bottom: 1px solid #dbe4ec;
+            background: #eaf2f8;
+        }
 
-.company-values-list {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-top: 1.5rem;
-    padding: 1.5rem 0;
-    width: 100%;
-    align-items: stretch;
-}
+        .company-values-list {
+            display: grid !important;
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding: 1.5rem 0;
+            width: 100%;
+            align-items: stretch;
+        }
 
-.company-values-list .company-value-pill {
-    background: var(--sfs-blue-gradient);
-    color: #ffffff;
-    border-radius: 999px;
-    text-align: center;
-    padding: 0.9rem 1.2rem;
-    font-weight: 700;
-    border: 1px solid var(--sfs-blue-border);
-    box-shadow: var(--sfs-blue-shadow);
-    width: 100%;
-    min-width: 0;
-    min-height: 88px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex: unset !important;
-}
+        .company-page .company-values-list .capability-tab {
+            background: var(--sfs-blue-gradient);
+            color: #ffffff;
+            border-radius: 999px;
+            text-align: center;
+            padding: 0.9rem 1.2rem;
+            font-weight: 700;
+            border: 1px solid var(--sfs-blue-border);
+            box-shadow: var(--sfs-blue-shadow);
+            width: 100%;
+            min-width: 0;
+            min-height: 96px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex: unset !important;
+        }
 
-.company-values-list .company-value-pill span {
-    display: block;
-    font-size: 1.02rem;
-    line-height: 1.25;
-    font-weight: 700;
-    color: #ffffff;
-}
+            .company-page .company-values-list .capability-tab strong {
+                display: block;
+                font-size: 0.95rem;
+                line-height: 1.25;
+                color: #ffffff;
+            }
 
-@media (max-width: 1080px) {
-    .company-values-list {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
+        .company-page .company-values-list .capability-tab-label {
+            display: block;
+            margin-bottom: 0.15rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.65);
+        }
 
-@media (max-width: 860px) {
-    .company-values-list {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-        padding: 1.25rem 0;
-    }
+        @media (max-width: 1080px) {
+            .company-values-list {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+        }
 
-    .company-values-list .company-value-pill {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-        min-height: 0;
-        padding: 0.9rem 1rem;
-    }
-}
+        @media (max-width: 860px) {
+            .company-values-list {
+                grid-template-columns: 1fr !important;
+                gap: 0.75rem;
+                padding: 1.25rem 0;
+            }
+
+            .company-page .company-values-list .capability-tab {
+                width: 100%;
+                min-width: 0;
+                max-width: 100%;
+                min-height: 0;
+                padding: 0.9rem 1rem;
+            }
+        }
+
         .bio-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -156,10 +166,10 @@
             }
 
         @media (max-width: 860px) {
-    .bio-grid {
-        grid-template-columns: 1fr;
-    }
-}
+            .bio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="company-page">
@@ -245,39 +255,39 @@
         </section>
 
         <section class="company-values-banner" aria-label="Core Values">
-            <div class="company-values-list capability-tab-grid">
+            <div class="container company-values-list">
 
-            <div class="capability-tab reveal reveal-delay-1">
-                <span class="capability-tab-label">Core Value</span>
-                <strong>Discipline</strong>
+                <div class="capability-tab reveal reveal-delay-1">
+                    <span class="capability-tab-label">Core Value</span>
+                    <strong>Discipline</strong>
+                </div>
+
+                <div class="capability-tab reveal reveal-delay-2">
+                    <span class="capability-tab-label">Core Value</span>
+                    <strong>Loyalty</strong>
+                </div>
+
+                <div class="capability-tab reveal reveal-delay-3">
+                    <span class="capability-tab-label">Core Value</span>
+                    <strong>Accountability</strong>
+                </div>
+
+                <div class="capability-tab reveal reveal-delay-4">
+                    <span class="capability-tab-label">Core Value</span>
+                    <strong>Resilience</strong>
+                </div>
+
+                <div class="capability-tab reveal reveal-delay-1">
+                    <span class="capability-tab-label">Core Value</span>
+                    <strong>Service Before Self</strong>
+                </div>
+
+                <div class="capability-tab reveal reveal-delay-2">
+                    <span class="capability-tab-label">Core Value</span>
+                    <strong>Quality in Execution</strong>
+                </div>
+
             </div>
-        
-            <div class="capability-tab reveal reveal-delay-2">
-                <span class="capability-tab-label">Core Value</span>
-                <strong>Loyalty</strong>
-            </div>
-        
-            <div class="capability-tab reveal reveal-delay-3">
-                <span class="capability-tab-label">Core Value</span>
-                <strong>Accountability</strong>
-            </div>
-        
-            <div class="capability-tab reveal reveal-delay-4">
-                <span class="capability-tab-label">Core Value</span>
-                <strong>Resilience</strong>
-            </div>
-        
-            <div class="capability-tab reveal reveal-delay-1">
-                <span class="capability-tab-label">Core Value</span>
-                <strong>Service Before Self</strong>
-            </div>
-        
-            <div class="capability-tab reveal reveal-delay-2">
-                <span class="capability-tab-label">Core Value</span>
-                <strong>Quality in Execution</strong>
-            </div>
-        
-        </div>
         </section>
 
         <section class="section" id="history">
