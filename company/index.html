@@ -23,34 +23,65 @@
         }
 
         .company-values-banner {
-            border-top: 1px solid #dbe4ec;
-            border-bottom: 1px solid #dbe4ec;
-            background: #eaf2f8;
-        }
-        .company-values-list {
-            min-height: 72px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem 2rem;
-            padding: 1rem 0;
-            color: #29455f;
-            font-weight: 700;
-            text-align: center;
-        }
-        .company-values-list span {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 48px;
-            padding: 0.75rem 1rem;
-            border-radius: 999px;
-            background: var(--sfs-blue-gradient);
-            color: #ffffff;
-            border: 1px solid var(--sfs-blue-border);
-            box-shadow: var(--sfs-blue-shadow);
-        }
+    border-top: 1px solid #dbe4ec;
+    border-bottom: 1px solid #dbe4ec;
+    background: #eaf2f8;
+}
+
+.company-values-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 1.5rem 0;
+    align-items: stretch;
+}
+
+.company-values-list .company-value-pill {
+    background: var(--sfs-blue-gradient);
+    color: #ffffff;
+    border-radius: 999px;
+    text-align: center;
+    padding: 0.9rem 1.2rem;
+    font-weight: 700;
+    border: 1px solid var(--sfs-blue-border);
+    box-shadow: var(--sfs-blue-shadow);
+    width: 100%;
+    min-width: 0;
+    min-height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: unset !important;
+}
+
+.company-values-list .company-value-pill span {
+    display: block;
+    font-size: 0.95rem;
+    line-height: 1.25;
+    color: #ffffff;
+}
+
+@media (max-width: 1080px) {
+    .company-values-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 860px) {
+    .company-values-list {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1.25rem 0;
+    }
+
+    .company-values-list .company-value-pill {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        min-height: 0;
+        padding: 0.9rem 1rem;
+    }
+}
 
         .bio-grid {
             display: grid;
