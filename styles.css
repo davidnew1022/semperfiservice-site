@@ -1467,22 +1467,33 @@ FINAL: responsive behavior
         min-height: 0;
         padding: 0.9rem 1rem;
     }
-        .capabilities-page .capability-tab.reveal {
+
+    .capabilities-page .capability-tab.reveal {
         transform: translateY(10px);
     }
 
     .capabilities-page .capability-tab.reveal.is-visible {
         transform: translateY(0);
     }
-        .process-step.reveal {
+
+    .process-step.reveal {
         transform: translateY(6px);
     }
 
     .process-step {
         transition: transform 0.24s ease, box-shadow 0.24s ease, opacity 0.5s ease;
     }
-}
 
+    /* ADD THIS */
+    .capabilities-page .card-grid-2 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    .capabilities-page .card-grid-2 .card {
+        padding: 1.2rem;
+    }
+}
 .modal-open {
     overflow: hidden;
 }
