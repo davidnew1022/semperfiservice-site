@@ -1447,6 +1447,13 @@ FINAL: responsive behavior
         min-height: 0;
         padding: 0.9rem 1rem;
     }
+        .capabilities-page .capability-tab.reveal {
+        transform: translateY(10px);
+    }
+
+    .capabilities-page .capability-tab.reveal.is-visible {
+        transform: translateY(0);
+    }
 }
 
 .modal-open {
