@@ -1,4 +1,4 @@
-/* =========================
+﻿/* =========================
 FILE: script.js
 Final status:
 - FINAL for mobile nav toggle + Home dropdown behavior
@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-   
+
 function handleQuoteClick(e) {
     e.preventDefault();
 
@@ -243,11 +243,11 @@ function goToContactPage() {
     requestType.addEventListener("change", syncPackagingFields);
 
     syncPackagingFields();
-        requestType.addEventListener("change", syncPackagingFields);
+    requestType.addEventListener("change", syncPackagingFields);
 
-        syncPackagingFields();
-        applyQueryPrefill();
-    })();
+    syncPackagingFields();
+    applyQueryPrefill();
+})();
 // =========================
 // SCROLL REVEAL ANIMATIONS
 // =========================
