@@ -8,7 +8,12 @@
           content="Learn the story behind Semper Fi Services: two Marines, longtime friends, and a company built on discipline, resilience, and quality-driven execution." />
     <link rel="stylesheet" href="../styles.css" />
     <style>
+        .company-page .hero-grid {
+            grid-template-columns: 1fr;
+        }
+
         .company-page .hero-copy {
+            max-width: 980px;
             position: relative;
             z-index: 2;
         }
@@ -22,7 +27,6 @@
             border-bottom: 1px solid #dbe4ec;
             background: #eaf2f8;
         }
-
         .company-values-list {
             min-height: 72px;
             display: flex;
@@ -34,6 +38,18 @@
             color: #29455f;
             font-weight: 700;
             text-align: center;
+        }
+        .company-values-list span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            background: var(--sfs-blue-gradient);
+            color: #ffffff;
+            border: 1px solid var(--sfs-blue-border);
+            box-shadow: var(--sfs-blue-shadow);
         }
 
         .bio-grid {
@@ -47,7 +63,7 @@
             border: 1px solid #dbe4ec;
             border-radius: 1rem;
             padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(18, 32, 47, 0.04);
+            box-shadow: 0 16px 36px rgba(18, 32, 47, 0.08);
         }
 
         .bio-headshot {
@@ -107,6 +123,13 @@
             }
 
         @media (max-width: 860px) {
+            .company-values-list {
+                gap: 0.75rem;
+            }
+
+                .company-values-list span {
+                    width: 100%;
+                }
             .bio-grid {
                 grid-template-columns: 1fr;
             }
@@ -208,13 +231,13 @@
 
         <section class="section" id="history">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading reveal">
                     <p class="section-kicker">History</p>
                     <h2>The Story Behind the Company</h2>
                 </div>
 
                 <div class="split-layout">
-                    <div>
+                    <div class="reveal-left">
                         <p>
                             Semper Fi Services began with two Marines who both carried a bigger vision
                             for life after active service. Over time, that vision became grounded in
@@ -234,7 +257,7 @@
                         </p>
                     </div>
 
-                    <div class="panel">
+                    <div class="panel reveal-right reveal-delay-1">
                         <h3>What We Are Building</h3>
                         <p>
                             Semper Fi Services is being built as a contract execution company, not a
@@ -255,7 +278,7 @@
 
         <section class="section section-alt" id="leadership">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading reveal">
                     <p class="section-kicker">Leadership</p>
                     <h2>The Dynamic Duo Behind Semper Fi Services</h2>
                     <p>
@@ -266,7 +289,7 @@
                 </div>
 
                 <div class="bio-grid">
-                    <article class="bio-card">
+                    <article class="bio-card reveal-left reveal-delay-1">
                         <img src="../images/thomas-headshot.jpg" alt="Headshot of Thomas" class="bio-headshot" />
                         <h3>Thomas</h3>
                         <p class="bio-role">The Face of the Company</p>
@@ -282,7 +305,7 @@
                         </p>
                     </article>
 
-                    <article class="bio-card">
+                    <article class="bio-card reveal-right reveal-delay-2">
                         <img src="../images/david-headshot.jpg" alt="Headshot of David" class="bio-headshot" />
                         <h3>David</h3>
                         <p class="bio-role">The Behind-the-Scenes Operator</p>
@@ -303,7 +326,7 @@
 
         <section class="section" id="why-it-matters">
             <div class="container">
-                <div class="section-heading">
+                <div class="section-heading reveal">
                     <p class="section-kicker">Why It Matters</p>
                     <h2>A Company Built on More Than Business</h2>
                     <p>
@@ -314,7 +337,7 @@
                 </div>
 
                 <div class="card-grid card-grid-3">
-                    <article class="card">
+                    <article class="card reveal-scale reveal-delay-1">
                         <h3>Shared Motivation</h3>
                         <p>
                             The company was shaped through the realities of military transition,
@@ -322,7 +345,7 @@
                         </p>
                     </article>
 
-                    <article class="card">
+                    <article class="card reveal-scale reveal-delay-2">
                         <h3>Shared Vision</h3>
                         <p>
                             Both founders carried the same long-term goal: build something real,
@@ -330,7 +353,7 @@
                         </p>
                     </article>
 
-                    <article class="card">
+                    <article class="card reveal-scale reveal-delay-3">
                         <h3>Shared Standard</h3>
                         <p>
                             The standard is simple: be dependable, stay accountable, and execute with
@@ -343,7 +366,7 @@
 
         <section class="section section-alt" id="motto">
             <div class="container split-layout">
-                <div>
+                <div class="reveal-left">
                     <p class="section-kicker">Motto</p>
                     <h2>Still Side by Side, Still Building Forward</h2>
                     <p>
@@ -351,7 +374,7 @@
                         refusal to quit on the future. Semper Fi Services stands on the belief that
                         loyalty, discipline, and shared purpose can still build something powerful.
                     </p>
-                    <div class="quote-panel" style="margin-top: 1rem;">
+                    <div class="quote-panel reveal-scale reveal-delay-2" style="margin-top: 1rem;">
                         <blockquote>
                             Built on friendship. Strengthened by hardship. Driven by mission.
                         </blockquote>
@@ -361,7 +384,7 @@
                     </div>
                 </div>
 
-                <div>
+                <div class="reveal-right reveal-delay-1">
                     <img src="../images/company-motto-photo.jpg"
                          alt="Thomas and David together during military service"
                          class="motto-photo" />
