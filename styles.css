@@ -1219,11 +1219,21 @@ FINAL: responsive behavior
             opacity: 1;
         }
 
-    /* REMOVE forced highlight in mobile dropdown */
-    .nav-dropdown.is-current .nav-dropdown-menu a[aria-current="page"] {
-        background: transparent;
-        color: rgba(255, 255, 255, 0.9);
+   .site-nav .nav-dropdown.is-current .nav-dropdown-menu a[aria-current="page"],
+    .site-nav .nav-dropdown-menu a[aria-current="page"] {
+        background: transparent !important;
+        color: rgba(255, 255, 255, 0.82) !important;
         font-weight: 700;
+        box-shadow: none !important;
+    }
+    
+    .site-nav .nav-dropdown-menu a[aria-current="page"]:hover,
+    .site-nav .nav-dropdown-menu a[aria-current="page"]:focus,
+    .site-nav .nav-dropdown-menu a[aria-current="page"]:active {
+        background: transparent !important;
+        color: #ffffff !important;
+        box-shadow: none !important;
+        outline: none;
     }
 
 
