@@ -421,11 +421,7 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     }
 
     .quality-page .quality-pill {
-        width: 100%;
-        min-width: 0;
-        max-width: 100%;
-        min-height: 0;
-        padding: 0.9rem 1rem;
+        padding: 0.9rem 1.2rem;
     }
 
     .quality-page .hero {
@@ -1416,7 +1412,7 @@ FINAL: responsive behavior
     grid-template-columns: repeat(3, minmax(0, 1fr));
     justify-content: center;
     gap: 0.9rem;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     max-width: 760px;
     margin-left: auto;
     margin-right: auto;
