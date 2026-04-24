@@ -1401,7 +1401,7 @@ FINAL: responsive behavior
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.9rem;
-    margin-top: 1.5rem;
+    margin-top: 0.5rem;
     width: 100%;
     align-items: stretch;
 }
