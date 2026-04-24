@@ -356,17 +356,10 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     position: relative;
     z-index: 2;
 }
-.quality-page .quality-pill-grid {
-    grid-column: 1 / -1;
-    display: grid !important;
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 0.9rem;
-    margin-top: 1.5rem;
-    width: 100%;
-    align-items: stretch;
-}
 
-.quality-page .quality-pill {
+
+.quality-page .quality-pill,
+.company-page .quality-pill {
     background: var(--sfs-blue-gradient);
     color: #ffffff;
     border-radius: 999px;
@@ -384,14 +377,16 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     flex: unset !important;
 }
 
-    .quality-page .quality-pill strong {
+    .quality-page .quality-pill strong,
+    .company-page .quality-pill strong {
         display: block;
         font-size: 0.95rem;
         line-height: 1.25;
         color: #ffffff;
     }
 
-.quality-page .quality-pill-label {
+.quality-page .quality-pill-label,
+.company-page .quality-pill-label {
     display: block;
     margin-bottom: 0.15rem;
     font-size: 0.7rem;
@@ -402,13 +397,15 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 }
 
 @media (max-width: 1080px) {
-    .quality-page .quality-pill-grid {
+    .quality-page .quality-pill-grid,
+    .company-page .quality-pill-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
 }
 
 @media (max-width: 860px) {
-    .quality-page .quality-pill-grid {
+    .quality-page .quality-pill-grid,
+    .company-page .quality-pill-grid {
         grid-template-columns: 1fr !important;
         gap: 0.75rem;
     }
@@ -681,6 +678,9 @@ FINAL: hero
     }
 
     .hero-panel-metrics {
+        grid-template-columns: 1fr;
+    }
+    .quality-page .hero-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1399,7 +1399,28 @@ FINAL: responsive behavior
     width: 100%;
     align-items: stretch;
 }
+/* KEEP QUALITY EXACTLY SAME */
+.quality-page .quality-pill-grid {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+    width: 100%;
+    align-items: stretch;
+}
 
+/* FIX COMPANY ONLY */
+.company-page .quality-pill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+}
 .capabilities-page .capability-tab {
     background: var(--sfs-blue-gradient);
     color: #ffffff;
@@ -1624,7 +1645,28 @@ FINAL: responsive behavior
     flex-wrap: wrap;
     gap: 0.75rem;
 }
+.footer-brand .footer-logo-text {
+    color: #ffffff;
+}
 
+    .footer-brand .footer-logo-text.stacked {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1;
+        font-family: 'XenonBC', Arial, sans-serif;
+        letter-spacing: 0.03em;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+        .footer-brand .footer-logo-text.stacked small {
+            font-size: 0.58rem;
+            letter-spacing: 0.18em;
+            opacity: 0.82;
+            margin-top: 4px;
+            text-transform: uppercase;
+        }
 @media (max-width: 860px) {
     .footer-grid {
         grid-template-columns: 1fr;
@@ -1644,10 +1686,7 @@ FINAL: responsive behavior
         object-fit: contain;
     }
 
-    .footer-brand-text {
-        font-size: 1.05rem;
-        line-height: 1.05;
-    }
+
         .footer-brand .footer-logo-text {
         color: #ffffff;
     }
