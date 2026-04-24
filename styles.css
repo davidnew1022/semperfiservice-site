@@ -1473,6 +1473,28 @@ FINAL: responsive behavior
     animation-name: pillLoadRight;
     animation-delay: 0.30s;
 }
+/* QUALITY PAGE: match capabilities animation */
+
+.quality-page .pill-load-left,
+.quality-page .pill-load-right {
+    opacity: 0;
+    will-change: transform, opacity;
+    animation-duration: 0.72s;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-fill-mode: forwards;
+}
+
+.quality-page .pill-load-left {
+    transform: translateX(-44px);
+    animation-name: pillLoadLeft;
+    animation-delay: 0.18s;
+}
+
+.quality-page .pill-load-right {
+    transform: translateX(44px);
+    animation-name: pillLoadRight;
+    animation-delay: 0.30s;
+}
 
 @keyframes pillLoadLeft {
     from {
