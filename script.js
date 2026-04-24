@@ -99,7 +99,30 @@ document.addEventListener("DOMContentLoaded", () => {
             closeMobileMenu();
         }
     });
+    const revealItems = document.querySelectorAll(
+        ".reveal, .reveal-left, .reveal-right, .reveal-scale"
+    );
 
+    if (revealItems.length) {
+        const revealObserver = new IntersectionObserver(
+            (entries, observer) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+
+                    entry.target.classList.add("is-visible");
+                    observer.unobserve(entry.target);
+                });
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
+            }
+        );
+
+        revealItems.forEach((item) => {
+            revealObserver.observe(item);
+        });
+    }
     const isHomePage =
         window.location.pathname.endsWith("/index.html") &&
         !window.location.pathname.includes("/company/") &&

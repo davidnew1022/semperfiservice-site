@@ -220,14 +220,7 @@ FINAL: header/nav
     flex-shrink: 0;
 }
 
-.footer-brand-text {
-    font-family: 'SunseekerBC', Arial, Helvetica, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: 0.01em;
-    color: #ffffff;
-}
+
 
 .site-header .logo,
 .site-header .logo-text {
@@ -264,6 +257,7 @@ FINAL: header/nav
         font-family: 'XenonBC', Arial, sans-serif;
         letter-spacing: 0.03em;
         color: #ffffff;
+        text-transform: uppercase;
     }
 
         .logo-text.stacked small {
@@ -354,22 +348,14 @@ NOT FINAL: spacing/colors can be tuned later
 /* =========================
 AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 ========================= */
-.quality-page .hero-grid,
-.government-page .hero-grid,
-.contact-page .hero-grid,
-.capabilities-page .hero-grid {
-    grid-template-columns: 1fr;
-}
-
 .quality-page .hero-copy,
 .government-page .hero-copy,
 .contact-page .hero-copy,
-.capabilities-page .hero-copy {
-    max-width: 980px;
+.capabilities-page .hero-copy,
+.company-page .hero-copy {
     position: relative;
     z-index: 2;
 }
-
 .quality-page .quality-pill-grid {
     grid-column: 1 / -1;
     display: grid !important;
@@ -553,16 +539,12 @@ FINAL: hero
 }
 
 @media (min-width: 861px) {
-    .quality-page .hero-copy h1 {
-        max-width: 18ch;
-    }
-
-    .government-page .hero-copy h1 {
-        max-width: 18ch;
-    }
-
-    .contact-page .hero-copy h1 {
-        max-width: 15ch;
+    .quality-page .hero-copy h1,
+    .government-page .hero-copy h1,
+    .contact-page .hero-copy h1,
+    .capabilities-page .hero-copy h1,
+    .company-page .hero-copy h1 {
+        max-width: 24ch;
     }
 }
 
@@ -1666,7 +1648,28 @@ FINAL: responsive behavior
         font-size: 1.05rem;
         line-height: 1.05;
     }
+        .footer-brand .footer-logo-text {
+        color: #ffffff;
+    }
 
+    .footer-brand .footer-logo-text.stacked {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        line-height: 1;
+        font-family: 'XenonBC', Arial, sans-serif;
+        letter-spacing: 0.03em;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+    .footer-brand .footer-logo-text.stacked small {
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        opacity: 0.82;
+        margin-top: 4px;
+        text-transform: uppercase;
+    }
     .footer-bottom {
         text-align: center;
     }
