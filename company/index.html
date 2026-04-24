@@ -28,72 +28,7 @@
             background: #eaf2f8;
         }
 
-        .company-values-list {
-            display: grid !important;
-            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-            gap: 1rem;
-            margin-top: 1.5rem;
-            padding: 1.5rem 0;
-            width: 100%;
-            align-items: stretch;
-        }
-
-        .company-page .company-values-list .capability-tab {
-            background: var(--sfs-blue-gradient);
-            color: #ffffff;
-            border-radius: 999px;
-            text-align: center;
-            padding: 0.9rem 1.2rem;
-            font-weight: 700;
-            border: 1px solid var(--sfs-blue-border);
-            box-shadow: var(--sfs-blue-shadow);
-            width: 100%;
-            min-width: 0;
-            min-height: 96px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            flex: unset !important;
-        }
-
-            .company-page .company-values-list .capability-tab strong {
-                display: block;
-                font-size: 0.95rem;
-                line-height: 1.25;
-                color: #ffffff;
-            }
-
-        .company-page .company-values-list .capability-tab-label {
-            display: block;
-            margin-bottom: 0.15rem;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: rgba(255,255,255,0.65);
-        }
-
-        @media (max-width: 1080px) {
-            .company-values-list {
-                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-            }
-        }
-
-        @media (max-width: 860px) {
-            .company-values-list {
-                grid-template-columns: 1fr !important;
-                gap: 0.75rem;
-                padding: 1.25rem 0;
-            }
-
-            .company-page .company-values-list .capability-tab {
-                width: 100%;
-                min-width: 0;
-                max-width: 100%;
-                min-height: 0;
-                padding: 0.9rem 1rem;
-            }
-        }
+       
 
         .bio-grid {
             display: grid;
@@ -253,42 +188,44 @@
                 <div class="hero-media" aria-hidden="true"></div>
             </div>
         </section>
+        <section class="section company-values-banner">
+            <div class="container">
+                <div class="quality-pill-grid">
 
-        <section class="company-values-banner" aria-label="Core Values">
-            <div class="container company-values-list">
+                    <div class="quality-pill pill-load-left">
+                        <span class="quality-pill-label">Core Value</span>
+                        <strong>Discipline</strong>
+                    </div>
 
-                <div class="capability-tab reveal reveal-delay-1">
-                    <span class="capability-tab-label">Core Value</span>
-                    <strong>Discipline</strong>
+                    <div class="quality-pill pill-load-right">
+                        <span class="quality-pill-label">Core Value</span>
+                        <strong>Loyalty</strong>
+                    </div>
+
+                    <div class="quality-pill reveal reveal-delay-1">
+                        <span class="quality-pill-label">Core Value</span>
+                        <strong>Accountability</strong>
+                    </div>
+
+                    <div class="quality-pill reveal reveal-delay-2">
+                        <span class="quality-pill-label">Core Value</span>
+                        <strong>Resilience</strong>
+                    </div>
+
+                    <div class="quality-pill reveal reveal-delay-3">
+                        <span class="quality-pill-label">Core Value</span>
+                        <strong>Service Before Self</strong>
+                    </div>
+
+                    <div class="quality-pill reveal reveal-delay-4">
+                        <span class="quality-pill-label">Core Value</span>
+                        <strong>Quality in Execution</strong>
+                    </div>
+
                 </div>
-
-                <div class="capability-tab reveal reveal-delay-2">
-                    <span class="capability-tab-label">Core Value</span>
-                    <strong>Loyalty</strong>
-                </div>
-
-                <div class="capability-tab reveal reveal-delay-3">
-                    <span class="capability-tab-label">Core Value</span>
-                    <strong>Accountability</strong>
-                </div>
-
-                <div class="capability-tab reveal reveal-delay-4">
-                    <span class="capability-tab-label">Core Value</span>
-                    <strong>Resilience</strong>
-                </div>
-
-                <div class="capability-tab reveal reveal-delay-1">
-                    <span class="capability-tab-label">Core Value</span>
-                    <strong>Service Before Self</strong>
-                </div>
-
-                <div class="capability-tab reveal reveal-delay-2">
-                    <span class="capability-tab-label">Core Value</span>
-                    <strong>Quality in Execution</strong>
-                </div>
-
             </div>
         </section>
+
 
         <section class="section" id="history">
             <div class="container">
@@ -471,45 +408,45 @@
             </div>
         </section>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div>
-                <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
-                    <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
-                    <span class="logo-text stacked footer-logo-text">
-                        Semper Fi Services
-                        <small>Distribution</small>
-                    </span>
-                </a>
-                <p>
-                    Quality-driven sourcing, distribution, and government-ready operational support.
-                </p>
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
+                        <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
+                        <span class="logo-text stacked footer-logo-text">
+                            Semper Fi Services
+                            <small>Distribution</small>
+                        </span>
+                    </a>
+                    <p>
+                        Quality-driven sourcing, distribution, and government-ready operational support.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="index.html">Company</a></li>
+                        <li><a href="../capabilities/index.html">Capabilities</a></li>
+                        <li><a href="../quality/index.html">Quality</a></li>
+                        <li><a href="../government/index.html">Government</a></li>
+                        <li><a href="../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <p>semperfi@sfsdistribution.com</p>
+                    <p>+1 (623) 301-2271</p>
+                </div>
             </div>
 
-            <div>
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html">Company</a></li>
-                    <li><a href="../capabilities/index.html">Capabilities</a></li>
-                    <li><a href="../quality/index.html">Quality</a></li>
-                    <li><a href="../government/index.html">Government</a></li>
-                    <li><a href="../contact/index.html">Contact</a></li>
-                </ul>
+            <div class="container footer-bottom">
+                <p>&copy; 2025 Semper Fi Services LLC | All rights reserved.</p>
             </div>
+        </footer>
 
-            <div>
-                <h4>Contact</h4>
-                <p>semperfi@sfsdistribution.com</p>
-                <p>+1 (623) 301-2271</p>
-            </div>
-        </div>
-
-        <div class="container footer-bottom">
-            <p>&copy; 2025 Semper Fi Services LLC | All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script src="../script.js"></script>
+        <script src="../script.js"></script>
 </body>
 </html>
