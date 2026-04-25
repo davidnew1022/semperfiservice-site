@@ -1383,7 +1383,7 @@ FINAL: responsive behavior
 .capabilities-page .hero-copy {
     max-width: 980px;
     position: relative;
-    z-index: 2;
+    z-index: 2;f
 }
 
 .capabilities-page .capability-tab-grid {
@@ -1408,15 +1408,15 @@ FINAL: responsive behavior
 
 /* FIX COMPANY ONLY */
 .company-page .quality-pill-grid {
+    grid-column: 1 / -1;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    justify-content: center;
     gap: 0.9rem;
-    margin-top: 0.5rem;
-    max-width: 760px;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: -4rem; /* KEY FIX */
+    width: 100%;
+    align-items: stretch;
 }
+
 .capabilities-page .capability-tab {
     background: var(--sfs-blue-gradient);
     color: #ffffff;
