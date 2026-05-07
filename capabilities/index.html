@@ -150,8 +150,6 @@
                 </div>
 
             </div>
-            </div>
-            </div>
         </section>
         <section class="credibility-strip" aria-label="Experience Highlights">
             <div class="container credibility-items">
@@ -465,78 +463,78 @@
             </div>
         </section>
 
-    <footer class="site-footer">
-        <div class="container footer-grid">
-            <div>
-                <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
-                    <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
-                    <span class="logo-text stacked footer-logo-text">
-                        Semper Fi Services
-                        <small>Distribution</small>
-                    </span>
-                </a>
+        <footer class="site-footer">
+            <div class="container footer-grid">
+                <div>
+                    <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
+                        <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
+                        <span class="logo-text stacked footer-logo-text">
+                            Semper Fi Services
+                            <small>Distribution</small>
+                        </span>
+                    </a>
 
-                <p>
-                    Quality-driven sourcing, distribution, and government-ready operational support.
-                </p>
+                    <p>
+                        Quality-driven sourcing, distribution, and government-ready operational support.
+                    </p>
+                </div>
+
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../company/index.html">Company</a></li>
+                        <li><a href="index.html">Capabilities</a></li>
+                        <li><a href="../quality/index.html">Quality</a></li>
+                        <li><a href="../government/index.html">Government</a></li>
+                        <li><a href="../contact/index.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4>Contact</h4>
+                    <p>semperfi@sfsdistribution.com</p>
+                    <p>+1 (623) 301-2271</p>
+                </div>
             </div>
 
-            <div>
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="../company/index.html">Company</a></li>
-                    <li><a href="index.html">Capabilities</a></li>
-                    <li><a href="../quality/index.html">Quality</a></li>
-                    <li><a href="../government/index.html">Government</a></li>
-                    <li><a href="../contact/index.html">Contact</a></li>
-                </ul>
+            <div class="container footer-bottom">
+                <p>&copy; 2025 Semper Fi Services LLC | All rights reserved.</p>
             </div>
+        </footer>
+        <div class="quote-modal" id="quote-modal" aria-hidden="true">
+            <div class="quote-modal-backdrop" onclick="closeQuoteModal()"></div>
 
-            <div>
-                <h4>Contact</h4>
-                <p>semperfi@sfsdistribution.com</p>
-                <p>+1 (623) 301-2271</p>
-            </div>
-        </div>
+            <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
+                <button class="quote-modal-close" type="button" onclick="closeQuoteModal()" aria-label="Close">
+                    &times;
+                </button>
 
-        <div class="container footer-bottom">
-            <p>&copy; 2025 Semper Fi Services LLC | All rights reserved.</p>
-        </div>
-    </footer>
-    <div class="quote-modal" id="quote-modal" aria-hidden="true">
-        <div class="quote-modal-backdrop" onclick="closeQuoteModal()"></div>
+                <div class="quote-modal-body">
+                    <p class="quote-modal-kicker">Before you continue</p>
+                    <h3 id="quote-modal-title">Download a Copy</h3>
+                    <p class="quote-modal-subtitle">Capability Statement</p>
 
-        <div class="quote-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="quote-modal-title">
-            <button class="quote-modal-close" type="button" onclick="closeQuoteModal()" aria-label="Close">
-                &times;
-            </button>
+                    <p class="quote-modal-text">
+                        Would you like to download our capabilities statement before continuing to the contact page?
+                    </p>
 
-            <div class="quote-modal-body">
-                <p class="quote-modal-kicker">Before you continue</p>
-                <h3 id="quote-modal-title">Download a Copy</h3>
-                <p class="quote-modal-subtitle">Capability Statement</p>
+                    <div class="quote-modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="downloadCapabilitiesStatement()">
+                            Download PDF
+                        </button>
 
-                <p class="quote-modal-text">
-                    Would you like to download our capabilities statement before continuing to the contact page?
-                </p>
+                        <button type="button" class="btn btn-primary" onclick="goToContactPage()">
+                            Continue to Contact
+                        </button>
 
-                <div class="quote-modal-actions">
-                    <button type="button" class="btn btn-secondary" onclick="downloadCapabilitiesStatement()">
-                        Download PDF
-                    </button>
-
-                    <button type="button" class="btn btn-primary" onclick="goToContactPage()">
-                        Continue to Contact
-                    </button>
-
-                    <button type="button" class="btn btn-secondary" onclick="closeQuoteModal()">
-                        Go Back
-                    </button>
+                        <button type="button" class="btn btn-secondary" onclick="closeQuoteModal()">
+                            Go Back
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="../script.js"></script>
+        <script src="../script.js"></script>
 </body>
 </html>
