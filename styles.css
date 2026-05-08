@@ -1593,40 +1593,7 @@ FINAL: responsive behavior
 
 
 
-    @media (max-width: 860px) {
-        .capabilities-page .capability-tab-grid {
-            grid-template-columns: 1fr !important;
-            gap: 0.75rem;
-        }
 
-        .capabilities-page .capability-tab {
-            width: 100%;
-            min-width: 0;
-            max-width: 100%;
-            min-height: 0;
-            padding: 0.9rem 1rem;
-        }
-
-
-
-        .process-step.reveal {
-            transform: translateY(6px);
-        }
-
-        .process-step {
-            transition: transform 0.24s ease, box-shadow 0.24s ease, opacity 0.5s ease;
-        }
-
-        /* ADD THIS */
-        .capabilities-page .card-grid-2 {
-            grid-template-columns: 1fr !important;
-            gap: 1rem;
-        }
-
-            .capabilities-page .card-grid-2 .card {
-                padding: 1.2rem;
-            }
-    }
 
     .modal-open {
         overflow: hidden;
