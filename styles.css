@@ -396,12 +396,14 @@ Company + Quality + Capabilities
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+@media (min-width: 861px) {
     .company-page .quality-pill:hover,
     .quality-page .quality-pill:hover,
     .capabilities-page .capability-tab:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 18px 34px rgba(9, 25, 40, 0.28);
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 24px 44px rgba(9, 25, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.16);
     }
+}
 
     .company-page .quality-pill strong,
     .quality-page .quality-pill strong,
@@ -560,11 +562,11 @@ FINAL: hero
         background-position: center center !important;
     }
 
-    .quality-page .hero,
-    .company-page .hero {
+    .quality-page .hero {
         min-height: 860px;
     }
 
+    .company-page .hero,
     .capabilities-page .hero,
     .government-page .hero,
     .contact-page .hero {
@@ -1463,48 +1465,40 @@ FINAL: responsive behavior
             padding: 1.2rem;
         }
 }
-    /* CAPABILITIES PAGE: first two pills fancy load-in */
-    .pill-load-left,
-    .pill-load-right {
-        opacity: 0;
-        will-change: transform, opacity;
-        animation-duration: 0.72s;
-        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-        animation-fill-mode: forwards;
-    }
+/* HERO PILL LOAD-IN: MOBILE ONLY
+   Applies to Company, Quality, and Capabilities because all three pages
+   use .pill-load-left and .pill-load-right on the first two pills.
+   Desktop is intentionally excluded so hover scale/shadow works on all pills.
+*/
+    @media (max-width: 860px) {
+        .company-page .pill-load-left,
+        .company-page .pill-load-right,
+        .quality-page .pill-load-left,
+        .quality-page .pill-load-right,
+        .capabilities-page .pill-load-left,
+        .capabilities-page .pill-load-right {
+            opacity: 0;
+            will-change: transform, opacity;
+            animation-duration: 0.72s;
+            animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+            animation-fill-mode: forwards;
+        }
 
-    .pill-load-left {
-        transform: translateX(-44px);
-        animation-name: pillLoadLeft;
-        animation-delay: 0.18s;
-    }
+        .company-page .pill-load-left,
+        .quality-page .pill-load-left,
+        .capabilities-page .pill-load-left {
+            transform: translateX(-44px);
+            animation-name: pillLoadLeft;
+            animation-delay: 0.18s;
+        }
 
-    .pill-load-right {
-        transform: translateX(44px);
-        animation-name: pillLoadRight;
-        animation-delay: 0.30s;
-    }
-    /* QUALITY PAGE: match capabilities animation */
-
-    .quality-page .pill-load-left,
-    .quality-page .pill-load-right {
-        opacity: 0;
-        will-change: transform, opacity;
-        animation-duration: 0.72s;
-        animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-        animation-fill-mode: forwards;
-    }
-
-    .quality-page .pill-load-left {
-        transform: translateX(-44px);
-        animation-name: pillLoadLeft;
-        animation-delay: 0.18s;
-    }
-
-    .quality-page .pill-load-right {
-        transform: translateX(44px);
-        animation-name: pillLoadRight;
-        animation-delay: 0.30s;
+        .company-page .pill-load-right,
+        .quality-page .pill-load-right,
+        .capabilities-page .pill-load-right {
+            transform: translateX(44px);
+            animation-name: pillLoadRight;
+            animation-delay: 0.30s;
+        }
     }
 
     @keyframes pillLoadLeft {
@@ -1824,4 +1818,42 @@ HOME CONTACT PREVIEW  MATCH CURRENT CTA BANNER
         .hero-metric-link:hover {
             cursor: pointer;
         }
-    
+/* FINAL OVERRIDE: desktop first two hero pills reveal, then hover correctly */
+@media (min-width: 861px) and (hover: hover) and (pointer: fine) {
+
+    .company-page .quality-pill.pill-load-left,
+    .company-page .quality-pill.pill-load-right,
+    .quality-page .quality-pill.pill-load-left,
+    .quality-page .quality-pill.pill-load-right,
+    .capabilities-page .capability-tab.pill-load-left,
+    .capabilities-page .capability-tab.pill-load-right {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.55s ease, transform 0.55s ease, box-shadow 0.25s ease;
+        animation: none !important;
+        will-change: opacity, transform;
+    }
+
+        .company-page .quality-pill.pill-load-left.is-visible,
+        .company-page .quality-pill.pill-load-right.is-visible,
+        .quality-page .quality-pill.pill-load-left.is-visible,
+        .quality-page .quality-pill.pill-load-right.is-visible,
+        .capabilities-page .capability-tab.pill-load-left.is-visible,
+        .capabilities-page .capability-tab.pill-load-right.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .company-page .quality-pill:hover,
+        .quality-page .quality-pill:hover,
+        .capabilities-page .capability-tab:hover,
+        .company-page .quality-pill.pill-load-left:hover,
+        .company-page .quality-pill.pill-load-right:hover,
+        .quality-page .quality-pill.pill-load-left:hover,
+        .quality-page .quality-pill.pill-load-right:hover,
+        .capabilities-page .capability-tab.pill-load-left:hover,
+        .capabilities-page .capability-tab.pill-load-right:hover {
+            transform: translateY(-4px) scale(1.03) !important;
+            box-shadow: 0 24px 44px rgba(9, 25, 40, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.16) !important;
+        }
+}

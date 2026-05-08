@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const revealItems = document.querySelectorAll(
-        ".reveal, .reveal-left, .reveal-right, .reveal-scale"
+        ".reveal, .reveal-left, .reveal-right, .reveal-scale, .pill-load-left, .pill-load-right"
     );
 
     if (revealItems.length) {
