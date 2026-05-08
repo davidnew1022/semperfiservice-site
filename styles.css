@@ -647,8 +647,9 @@ FINAL: hero
 @media (min-width: 861px) {
     .home-page .hero {
         min-height: 930px;
-        background-size: auto 112% !important;
+        background-size: cover !important;
         background-position: center center !important;
+        background-repeat: no-repeat !important;
     }
 
     .home-page .hero-grid {
