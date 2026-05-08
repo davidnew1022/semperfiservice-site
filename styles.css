@@ -1273,26 +1273,32 @@ FINAL: responsive behavior
 
         .nav-dropdown.is-current .nav-dropdown-toggle {
             color: #ffffff;
+            background: rgba(255, 255, 255, 0.16);
+            border-left: 4px solid #d6e6f4;
+            border-radius: 0.45rem;
+            padding: 0.35rem 0.75rem;
+            width: 100%;
+            text-align: left;
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.10);
         }
 
             .nav-dropdown.is-current .nav-dropdown-toggle::after {
                 opacity: 1;
             }
-
         .site-nav .nav-dropdown.is-current .nav-dropdown-menu a[aria-current="page"],
         .site-nav .nav-dropdown-menu a[aria-current="page"] {
-            background: transparent !important;
-            color: rgba(255, 255, 255, 0.82) !important;
-            font-weight: 700;
-            box-shadow: none !important;
+            background: rgba(18, 56, 95, 0.10) !important;
+            color: #12385f !important;
+            font-weight: 800;
+            box-shadow: inset 4px 0 0 #12385f !important;
         }
 
             .site-nav .nav-dropdown-menu a[aria-current="page"]:hover,
             .site-nav .nav-dropdown-menu a[aria-current="page"]:focus,
             .site-nav .nav-dropdown-menu a[aria-current="page"]:active {
-                background: transparent !important;
-                color: #ffffff !important;
-                box-shadow: none !important;
+                background: rgba(18, 56, 95, 0.16) !important;
+                color: #12385f !important;
+                box-shadow: inset 4px 0 0 #12385f !important;
                 outline: none;
             }
 
