@@ -357,14 +357,30 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     z-index: 2;
 }
 
+/* =========================================
+UNIFIED HERO PILL SYSTEM
+Company + Quality + Capabilities
+========================================= */
 
+.company-page .quality-pill-grid,
+.quality-page .quality-pill-grid,
+.capabilities-page .capability-tab-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.9rem;
+    width: 100%;
+    margin-top: 1rem;
+    align-items: stretch;
+}
+
+.company-page .quality-pill,
 .quality-page .quality-pill,
-.company-page .quality-pill {
+.capabilities-page .capability-tab {
     background: var(--sfs-blue-gradient);
     color: #ffffff;
     border-radius: 999px;
     text-align: center;
-    padding: 0.9rem 1.2rem;
+    padding: 1rem 1.2rem;
     font-weight: 700;
     border: 1px solid var(--sfs-blue-border);
     box-shadow: var(--sfs-blue-shadow);
@@ -375,18 +391,28 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     flex-direction: column;
     justify-content: center;
     flex: unset !important;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+    .company-page .quality-pill:hover,
+    .quality-page .quality-pill:hover,
+    .capabilities-page .capability-tab:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(9, 25, 40, 0.28);
+    }
+
+    .company-page .quality-pill strong,
     .quality-page .quality-pill strong,
-    .company-page .quality-pill strong {
+    .capabilities-page .capability-tab strong {
         display: block;
         font-size: 0.95rem;
         line-height: 1.25;
         color: #ffffff;
     }
 
+.company-page .quality-pill-label,
 .quality-page .quality-pill-label,
-.company-page .quality-pill-label {
+.capabilities-page .capability-tab-label {
     display: block;
     margin-bottom: 0.15rem;
     font-size: 0.7rem;
@@ -396,18 +422,37 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     color: rgba(255,255,255,0.65);
 }
 
+/* =========================================
+TABLET
+========================================= */
+
 @media (max-width: 1080px) {
+
+    .company-page .quality-pill-grid,
     .quality-page .quality-pill-grid,
-    .company-page .quality-pill-grid {
+    .capabilities-page .capability-tab-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
 }
 
+/* =========================================
+MOBILE
+========================================= */
+
 @media (max-width: 860px) {
+
+    .company-page .quality-pill-grid,
     .quality-page .quality-pill-grid,
-    .company-page .quality-pill-grid {
+    .capabilities-page .capability-tab-grid {
         grid-template-columns: 1fr !important;
         gap: 0.75rem;
+    }
+
+    .company-page .quality-pill,
+    .quality-page .quality-pill,
+    .capabilities-page .capability-tab {
+        padding: 0.95rem 1rem;
+        min-height: 76px;
     }
 
     .site-logo-image {
@@ -418,10 +463,6 @@ AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
     .footer-logo-image {
         width: 38px;
         height: 38px;
-    }
-
-    .quality-page .quality-pill {
-        padding: 0.9rem 1.2rem;
     }
 
     .quality-page .hero {
@@ -516,13 +557,24 @@ FINAL: hero
         background-size: cover !important;
         background-position: center center !important;
     }
+
+    .quality-page .hero,
+    .company-page .hero {
+        min-height: 860px;
+    }
+
+    .capabilities-page .hero,
+    .government-page .hero,
+    .contact-page .hero {
+        min-height: 930px;
+    }
 }
     /* dark overlay for readability */
     .hero::before {
         content: "";
         position: absolute;
         inset: 0;
-        background: linear-gradient( to right, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.34) 32%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.00) 82% );
+        background: none;
         z-index: 0;
     }
 
@@ -534,7 +586,7 @@ FINAL: hero
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 2rem;
 }
@@ -577,7 +629,7 @@ FINAL: hero
 
 .hero-panel {
     position: relative;
-    top: 20px;
+    top: 0;
     width: 100%;
     max-width: 690px;
     display: grid;
@@ -588,9 +640,20 @@ FINAL: hero
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 251, 0.96));
     box-shadow: 0 18px 45px rgba(15, 43, 58, 0.08), 0 4px 12px rgba(15, 43, 58, 0.04);
     overflow: hidden;
-    transform: translateX(320px);
+    transform: none;
 }
+@media (min-width: 861px) {
+    .home-page .hero-grid {
+        grid-template-columns: minmax(0, 620px) minmax(360px, 520px);
+        align-items: center;
+        gap: 4rem;
+    }
 
+    .home-page .hero-panel {
+        justify-self: end;
+        margin-top: 4rem;
+    }
+}
     .hero-panel::before {
         content: "";
         position: absolute;
@@ -1072,9 +1135,6 @@ FINAL: responsive behavior
         background-position: 72% center;
     }
 
-        .hero::before {
-            background: linear-gradient( to bottom, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.58) 34%, rgba(255,255,255,0.28) 64%, rgba(255,255,255,0.08) 100% );
-        }
 
     .hero-media {
         justify-content: center;
@@ -1391,26 +1451,8 @@ FINAL: responsive behavior
                 }
     }
 
-    .capabilities-page .hero-grid {
-        grid-template-columns: 1fr;
-    }
 
-    .capabilities-page .hero-copy {
-        max-width: 980px;
-        max-width: 980px;
-        position: relative;
-        z-index: 2;
-    }
 
-    .capabilities-page .capability-tab-grid {
-        grid-column: 1 / -1;
-        display: grid !important;
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-        gap: 0.9rem;
-        margin-top: 1.5rem;
-        width: 100%;
-        align-items: stretch;
-    }
     /* KEEP QUALITY EXACTLY SAME */
     .quality-page .quality-pill-grid {
         grid-column: 1 / -1;
@@ -1437,24 +1479,28 @@ FINAL: responsive behavior
         background: var(--sfs-blue-gradient);
         color: #ffffff;
         border-radius: 999px;
-        text-align: center;
-        padding: 0.9rem 1.2rem;
+        text-align: left;
+        padding: 1.15rem 1.6rem;
         font-weight: 700;
         border: 1px solid var(--sfs-blue-border);
         box-shadow: var(--sfs-blue-shadow);
         width: 100%;
-        min-width: 0;
-        min-height: 88px;
+        min-height: 92px;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        flex: unset !important;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
+
+        .capabilities-page .capability-tab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 34px rgba(9, 25, 40, 0.28);
+        }
 
         .capabilities-page .capability-tab strong {
             display: block;
-            font-size: 0.95rem;
-            line-height: 1.25;
+            font-size: 1rem;
+            line-height: 1.3;
             color: #ffffff;
         }
 
@@ -1535,11 +1581,7 @@ FINAL: responsive behavior
         }
     }
 
-    @media (max-width: 1080px) {
-        .capabilities-page .capability-tab-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        }
-    }
+
 
     @media (max-width: 860px) {
         .capabilities-page .capability-tab-grid {
@@ -1834,19 +1876,7 @@ HOME CONTACT PREVIEW  MATCH CURRENT CTA BANNER
     .reveal-delay-4 {
         transition-delay: 0.32s;
     }
-    /* =========================================
-FIX: REMOVE GOVERNMENT HERO GAP (MATCH CAPABILITIES)
-========================================= */
 
-    @media (min-width: 861px) {
-        .government-page .hero {
-            padding-bottom: 0; /* remove extra bottom space */
-        }
-
-        .government-page .section:first-of-type {
-            margin-top: -2.5rem; /* pull next section up */
-        }
-    }
     /* Make entire hero panel clickable */
     .hero-panel-link {
         display: block;
@@ -1877,47 +1907,4 @@ FIX: REMOVE GOVERNMENT HERO GAP (MATCH CAPABILITIES)
         .hero-metric-link:hover {
             cursor: pointer;
         }
-    /* =========================
-GLOBAL HERO PAGE FIX
-========================= */
-
-    .capabilities-page .hero,
-    .company-page .hero,
-    .quality-page .hero,
-    .government-page .hero,
-    .contact-page .hero {
-        min-height: auto;
-        padding-bottom: 4rem;
-    }
-
-    .capabilities-page .hero-grid,
-    .company-page .hero-grid,
-    .quality-page .hero-grid,
-    .government-page .hero-grid,
-    .contact-page .hero-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .capabilities-page .hero-media,
-    .company-page .hero-media,
-    .quality-page .hero-media,
-    .government-page .hero-media,
-    .contact-page .hero-media {
-        width: 100%;
-        justify-content: flex-start;
-        padding-top: 0;
-    }
-
-    .capabilities-page .capability-tab-grid,
-    .company-page .quality-pill-grid,
-    .quality-page .quality-pill-grid {
-        margin-top: 0;
-        position: relative;
-        z-index: 2;
-    }
-
-    .hero-panel {
-        transform: none !important;
-    }
+    
