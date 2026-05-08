@@ -1470,15 +1470,25 @@ FINAL: responsive behavior
         align-items: stretch;
     }
 
-    /* FIX COMPANY ONLY */
-    .company-page .quality-pill-grid {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.9rem;
-        margin-top: -4rem; /* KEY FIX */
-        width: 100%;
-        align-items: stretch;
+
+    /* FIX COMPANY ONLY - DESKTOP/TABLET */
+    @media (min-width: 861px) {
+        .company-page .quality-pill-grid {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.9rem;
+            margin-top: -4rem;
+            width: 100%;
+            align-items: stretch;
+        }
+    }
+
+    /* FIX COMPANY ONLY - MOBILE */
+    @media (max-width: 860px) {
+        .company-page .quality-pill-grid {
+            margin-top: 1.25rem;
+        }
     }
 
     .capabilities-page .capability-tab {
