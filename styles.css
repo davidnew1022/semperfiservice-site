@@ -645,6 +645,8 @@ FINAL: hero
 @media (min-width: 861px) {
     .home-page .hero {
         min-height: 930px;
+        background-size: auto 112% !important;
+        background-position: center center !important;
     }
 
     .home-page .hero-grid {
@@ -1257,11 +1259,11 @@ FINAL: responsive behavior
             position: static;
             display: none;
             min-width: 100%;
-            border: 1px solid var(--sfs-blue-border);
+            border: 1px solid #c7d6e4;
             border-radius: 0.6rem;
-            box-shadow: var(--sfs-blue-shadow);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.7), 0 12px 30px rgba(18, 32, 47, 0.06);
             padding: 0.5rem 0;
-            background: var(--sfs-blue-gradient);
+            background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 40%, #d6e6f4 100%);
         }
 
         .nav-dropdown.is-open .nav-dropdown-menu {
@@ -1299,8 +1301,8 @@ FINAL: responsive behavior
             display: block;
             width: 100%;
             padding: 0.7rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-            color: #ffffff;
+            border-bottom: 1px solid rgba(18, 32, 47, 0.10);
+            color: #12385f;
             white-space: normal;
         }
 
