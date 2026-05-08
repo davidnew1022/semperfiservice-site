@@ -409,7 +409,7 @@ Company + Quality + Capabilities
     .quality-page .quality-pill strong,
     .capabilities-page .capability-tab strong {
         display: block;
-        font-size: 0.95rem;
+        font-size: 1.0rem;
         line-height: 1.25;
         color: #ffffff;
     }
@@ -1337,6 +1337,10 @@ FINAL: responsive behavior
         padding-bottom: 3rem;
         background-image: none;
         background-color: #f7f8fa;
+    }
+    .government-page .hero {
+        min-height: auto;
+        padding-bottom: 2.25rem;
     }
 
         .hero::before {
