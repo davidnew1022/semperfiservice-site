@@ -349,6 +349,7 @@ NOT FINAL: spacing/colors can be tuned later
 /* =========================
 AUTO DROPDOWN ON HOVER (DESKTOP ONLY)
 ========================= */
+.home-page .hero-copy,
 .quality-page .hero-copy,
 .government-page .hero-copy,
 .contact-page .hero-copy,
@@ -1461,68 +1462,6 @@ FINAL: responsive behavior
             padding: 1.2rem;
         }
 }
-
-/* KEEP QUALITY EXACTLY SAME */
-.quality-page .quality-pill-grid {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.9rem;
-    margin-top: 1rem;
-    width: 100%;
-    align-items: stretch;
-}
-
-/* FIX COMPANY ONLY - DESKTOP/TABLET */
-@media (min-width: 861px) {
-    .company-page .quality-pill-grid {
-        grid-column: 1 / -1;
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.9rem;
-        margin-top: -4rem;
-        width: 100%;
-        align-items: stretch;
-    }
-}
-    .capabilities-page .capability-tab {
-        background: var(--sfs-blue-gradient);
-        color: #ffffff;
-        border-radius: 999px;
-        text-align: left;
-        padding: 1.15rem 1.6rem;
-        font-weight: 700;
-        border: 1px solid var(--sfs-blue-border);
-        box-shadow: var(--sfs-blue-shadow);
-        width: 100%;
-        min-height: 92px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-
-        .capabilities-page .capability-tab:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 34px rgba(9, 25, 40, 0.28);
-        }
-
-        .capabilities-page .capability-tab strong {
-            display: block;
-            font-size: 1rem;
-            line-height: 1.3;
-            color: #ffffff;
-        }
-
-    .capabilities-page .capability-tab-label {
-        display: block;
-        margin-bottom: 0.15rem;
-        font-size: 0.7rem;
-        font-weight: 700;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: rgba(255,255,255,0.65);
-    }
     /* CAPABILITIES PAGE: first two pills fancy load-in */
     .pill-load-left,
     .pill-load-right {

@@ -15,6 +15,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const siteNav = document.getElementById("site-nav");
     const navDropdowns = document.querySelectorAll(".nav-dropdown");
 
+    if (document.body.classList.contains("home-page")) {
+        const homeDropdown = document.querySelector(".nav-dropdown");
+        const homeOverviewLink = document.querySelector("#home-dropdown-menu a[href='index.html#hero']");
+
+        if (homeDropdown) {
+            homeDropdown.classList.add("is-current");
+        }
+
+        if (homeOverviewLink) {
+            homeOverviewLink.setAttribute("aria-current", "page");
+        }
+    }
+
     const closeMobileMenu = () => {
         if (siteNav && navToggle) {
             siteNav.classList.remove("is-open");
