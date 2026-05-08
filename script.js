@@ -151,22 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const isInteriorPage =
-        document.body.classList.contains("company-page") ||
-        document.body.classList.contains("capabilities-page") ||
-        document.body.classList.contains("quality-page") ||
-        document.body.classList.contains("government-page") ||
-        document.body.classList.contains("contact-page");
-
-    if (isInteriorPage && !window.location.hash && window.scrollY === 0) {
-        window.addEventListener("load", () => {
-            window.scrollTo({
-                top: 72,
-                behavior: "auto"
-            });
-        });
-    }
-
+    // Page-load auto-scroll removed so mobile pages stay at the true top.
     setupContactPageRouting();
 });
 
