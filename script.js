@@ -131,7 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
         !window.location.pathname.includes("/government/") &&
         !window.location.pathname.includes("/contact/");
 
-    if (!isHomePage && window.scrollY === 0) {
+    if (!isHomePage && !window.location.hash && window.scrollY === 0) {
         window.addEventListener("load", () => {
             window.scrollTo({
                 top: 72,
@@ -139,7 +139,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
     }
-});
 
 function handleQuoteClick(e) {
     e.preventDefault();
