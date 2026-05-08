@@ -536,7 +536,7 @@ FINAL: hero
 ========================= */
 .hero {
     position: relative;
-    padding-top: 6rem;
+    padding-top: 2.5rem;
     padding-bottom: 5rem;
     /* FORCE CONSISTENT HEIGHT ACROSS ALL PAGES */
     min-height: 780px;
