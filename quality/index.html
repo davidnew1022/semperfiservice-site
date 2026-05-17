@@ -1,31 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/images/brand/favicon.png">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AS9120-Aligned Quality System | Aerospace Parts Traceability | Semper Fi Services</title>
-    <meta name="description"
-          content="Semper Fi Services uses AS9120-aligned quality processes for aerospace parts distribution, supplier verification, documentation control, traceability, MIL-STD packaging records, inspection readiness, and government contract compliance." />
 
-    <meta name="keywords"
-          content="AS9120 distributor, AS9120 quality system, aerospace parts traceability, supplier verification, documentation control, DLA supplier quality, NSN parts documentation, MIL-STD-2073 packaging, MIL-STD-129 labeling, government contract compliance, inspection ready supplier, ISO 9001 aligned distribution" />
+    <title>Quality | Semper Fi Services</title>
+
+    <meta name="description"
+          content="Semper Fi Services applies AS9120-aligned quality processes to aerospace parts distribution, supplier verification, documentation control, traceability, MIL-STD packaging awareness, and government contract compliance." />
 
     <link rel="canonical" href="https://sfsdistribution.com/quality/" />
 
-    <meta property="og:title" content="AS9120-Aligned Quality System | Semper Fi Services" />
-    <meta property="og:description" content="Aerospace and government supply quality processes focused on supplier verification, traceability, documentation control, inspection readiness, and contract-compliant delivery." />
-    <meta property="og:url" content="https://sfsdistribution.com/quality/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://sfsdistribution.com/images/logo.png" />
-
-    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/layout.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/cards.css">
+    <link rel="stylesheet" href="../css/forms.css">
+    <link rel="stylesheet" href="../css/hero.css">
+    <link rel="stylesheet" href="../css/pills.css">
+    <link rel="stylesheet" href="../css/cinematic.css">
+    <link rel="stylesheet" href="../css/cloud_animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/pages/animations.css">
+    <link rel="stylesheet" href="../css/pages/quality.css">
 </head>
+
 <body class="quality-page">
     <header class="site-header">
         <div class="container header-inner">
             <a href="../index.html" class="logo logo-image" aria-label="Semper Fi Services Home">
-                <img src="../images/logo2.png" alt="Semper Fi Services Logo" class="site-logo-image">
+                <img src="../assets/images/brand/logo2.png" alt="Semper Fi Services Logo" class="site-logo-image">
                 <span class="logo-text stacked">
                     Semper Fi Services
                     <small>Distribution</small>
@@ -38,28 +46,40 @@
                 <a href="../capabilities/index.html">Capabilities</a>
 
                 <div class="nav-dropdown is-current">
-                    <button class="nav-dropdown-toggle"
-                            type="button"
-                            aria-expanded="false"
-                            aria-controls="quality-dropdown-menu">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="quality-dropdown-menu">
                         Quality
                     </button>
 
                     <div class="nav-dropdown-menu" id="quality-dropdown-menu">
-                        <a href="#hero" aria-current="page">Overview</a>
+                        <a href="index.html" aria-current="page">Quality Overview</a>
                         <a href="#quality-system">Quality System</a>
                         <a href="#program-management">Program Management</a>
                         <a href="#cybersecurity">Cybersecurity</a>
-                        <a href="#records">Records</a>
+                        <a href="#records-retention">Records</a>
                         <a href="#quality-commitment">Commitment</a>
+                        <a href="#quality-next-step">Next Step</a>
                     </div>
                 </div>
 
                 <a href="../government/index.html">Government</a>
+
+                <div class="nav-dropdown is-supply" id="supply-nav">
+                    <button class="nav-dropdown-toggle" type="button" aria-expanded="false" aria-controls="supply-dropdown-menu">
+                        Supply
+                    </button>
+
+                    <div class="nav-dropdown-menu" id="supply-dropdown-menu">
+                        <a href="../aircraft-parts-distributor/index.html">Aircraft Parts Distribution</a>
+                        <a href="../nsn-parts-sourcing/index.html">NSN Parts Sourcing</a>
+                        <a href="../mil-std-packaging-support/index.html">MIL-STD Packaging Support</a>
+                    </div>
+                </div>
+
                 <a href="../contact/index.html">Contact</a>
             </nav>
+
             <div class="header-actions">
-                <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
+                <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-secondary">Request a Quote</a>
 
                 <button class="nav-toggle"
                         id="nav-toggle"
@@ -76,177 +96,186 @@
     </header>
 
     <main>
-        <section class="hero section" id="hero">
-            <div class="container hero-grid">
-                <div class="hero-copy reveal">
+        <section class="quality-hero" id="quality-hero" aria-label="Quality hero image">
+            <img src="../assets/images/hero/quality/hero.jpg" alt="Quality system and aerospace distribution background" class="quality-hero-image">
+
+            <div class="container quality-hero-content">
+                <div class="quality-hero-card quality-hero-load">
                     <p class="eyebrow">Quality | Traceability | Government Contract Compliance</p>
 
-                    <h1>
-                        AS9120-Aligned Quality Processes for Aerospace Parts Distribution,
-                        Supplier Verification, and Inspection-Ready Delivery
-                    </h1>
+                    <h1>AS9120-Aligned Quality Processes for Aerospace Parts Distribution, Supplier Verification, and Inspection-Ready Delivery</h1>
 
-                    <p class="hero-text">
-                        Semper Fi Services applies AS9120-aligned distribution practices to support
-                        aerospace hardware sourcing, NSN parts documentation, supplier verification,
-                        traceability control, MIL-STD packaging records, and government contract
-                        compliance from quote review through final delivery.
+                    <p>
+                        Semper Fi Services applies AS9120-aligned distribution practices to support aerospace hardware sourcing, NSN parts documentation, supplier verification, traceability control, MIL-STD packaging records, and government contract compliance from quote review through final delivery.
                     </p>
 
                     <div class="button-row">
                         <a href="#quality-system" class="btn btn-primary">Quality System</a>
-                        <a href="../contact/index.html" class="btn btn-secondary">Request a Quote</a>
+                        <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-secondary">Request a Quote</a>
                     </div>
-
-                    <div class="hero-mobile-band" aria-hidden="true"></div>
                 </div>
-
-                <div class="hero-media"></div>
-            </div>
-
-            <div class="quality-pill-grid" aria-label="Quality focus areas">
-
-                <div class="quality-pill pill-load-left">
-                    <span class="quality-pill-label">Standard</span>
-                    <strong>AS9120 / ISO 9001-Aligned Distribution</strong>
-                </div>
-
-                <div class="quality-pill pill-load-right">
-                    <span class="quality-pill-label">Suppliers</span>
-                    <strong>Aerospace Supplier Verification</strong>
-                </div>
-
-                <div class="quality-pill reveal reveal-delay-1">
-                    <span class="quality-pill-label">Contracts</span>
-                    <strong>DLA &amp; NSN Documentation Control</strong>
-                </div>
-
-                <div class="quality-pill reveal reveal-delay-2">
-                    <span class="quality-pill-label">Inspection</span>
-                    <strong>DCMA Source Inspection Readiness</strong>
-                </div>
-
-                <div class="quality-pill reveal reveal-delay-3">
-                    <span class="quality-pill-label">Records</span>
-                    <strong>Traceability &amp; Chain-of-Custody Control</strong>
-                </div>
-
-                <div class="quality-pill reveal reveal-delay-4">
-                    <span class="quality-pill-label">Delivery</span>
-                    <strong>MIL-STD Packaging &amp; Marking Support</strong>
-                </div>
-
-            </div>
-
-            </section>
-
-
-        <section class="credibility-strip reveal" aria-label="AS9120 Aerospace Quality Highlights">
-            <div class="container credibility-items">
-                <span>AS9120-Aligned Distribution Processes</span>
-                <span>ISO 9001 Quality Management Practices</span>
-                <span>Aerospace Supplier Verification</span>
-                <span>NSN Parts Documentation Control</span>
-                <span>MIL-STD-2073 Packaging Awareness</span>
-                <span>MIL-STD-129 Marking Awareness</span>
-                <span>Traceability &amp; Chain-of-Custody Records</span>
-                <span>Inspection-Ready Government Supply</span>
             </div>
         </section>
 
-        <section class="section" id="quality-system">
+        <section class="credibility-strip quality-quicklinks" aria-label="Quality Page Menu">
+            <div class="container credibility-items">
+                <a href="#quality-system">Quality System</a>
+                <a href="#program-management">Program Management</a>
+                <a href="#cybersecurity">Cybersecurity</a>
+                <a href="#records-retention">Records</a>
+                <a href="#quality-commitment">Commitment</a>
+                <a href="#quality-next-step">Next Step</a>
+            </div>
+        </section>
+
+        <section class="section quality-snapshot" id="quality-snapshot">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-kicker">Quality System</p>
-                    <h2>Quality System Foundation</h2>
+                    <h2>Inspection-Ready Distribution Controls</h2>
                     <p>
-                        Our quality system is being built around AS9120-aligned aerospace distribution
-                        practices, supplier control, documentation accuracy, material traceability,
-                        chain-of-custody records, and disciplined execution so that government supply
-                        contracts can be sourced, verified, documented, packaged, and delivered with
-                        inspection-ready confidence.
+                        A practical quality foundation built around supplier verification, documentation control, traceability records, inspection readiness, and contract-compliant delivery.
                     </p>
                 </div>
 
-                <div class="card-grid card-grid-4">
+                <div class="card-grid card-grid-3">
                     <article class="card reveal-scale reveal-delay-1">
+                        <p class="section-kicker">Standard</p>
                         <h3>AS9120 / ISO 9001-Aligned Distribution</h3>
-                        <p>
-                            Internal processes are structured around aerospace parts traceability, supplier
-                            verification, documentation control, record retention, and continuous improvement
-                            to support long-term AS9120 and ISO 9001 certification readiness.
-                        </p>
+                        <p>Distribution practices structured around aerospace traceability, supplier control, documentation accuracy, and record retention.</p>
                     </article>
 
                     <article class="card reveal-scale reveal-delay-2">
+                        <p class="section-kicker">Suppliers</p>
                         <h3>Aerospace Supplier Verification</h3>
-                        <p>
-                            Supplier capability, authorized distribution status, documentation support,
-                            quality certifications, lead times, and execution readiness are reviewed before
-                            committing to DLA, NSN, defense, or federal supply requirements.
-                        </p>
+                        <p>Supplier capability, certifications, authorized status, lead times, and documentation support reviewed before commitment.</p>
                     </article>
 
                     <article class="card reveal-scale reveal-delay-3">
-                        <h3>Documentation &amp; Traceability Control</h3>
-                        <p>
-                            Certificates of conformance, supplier records, inspection documents, lot data,
-                            chain-of-custody records, and contract files are controlled so material can be
-                            traced, verified, and released with confidence.
-                        </p>
+                        <p class="section-kicker">Contracts</p>
+                        <h3>DLA &amp; NSN Documentation Control</h3>
+                        <p>Contract files, supplier records, certificates, inspection records, and traceability documents controlled for release readiness.</p>
                     </article>
 
-                    <article class="card reveal-scale reveal-delay-4">
-                        <h3>Inspection-Ready Execution Discipline</h3>
-                        <p>
-                            Quality controls support consistent quote review, contract flowdown, source inspection
-                            coordination, MIL-STD packaging awareness, marking verification, delivery discipline,
-                            and lower execution risk from sourcing through shipment.
-                        </p>
+                    <article class="card reveal-scale reveal-delay-1">
+                        <p class="section-kicker">Inspection</p>
+                        <h3>DCMA Source Inspection Readiness</h3>
+                        <p>Support for supplier readiness, product status, document availability, and government inspection coordination.</p>
+                    </article>
+
+                    <article class="card reveal-scale reveal-delay-2">
+                        <p class="section-kicker">Records</p>
+                        <h3>Traceability &amp; Chain-of-Custody Control</h3>
+                        <p>Controlled records from source through shipment to support verification, acceptance, and future retrieval.</p>
+                    </article>
+
+                    <article class="card reveal-scale reveal-delay-3">
+                        <p class="section-kicker">Delivery</p>
+                        <h3>MIL-STD Packaging &amp; Marking Support</h3>
+                        <p>Packaging and marking awareness aligned with MIL-STD-2073, MIL-STD-129, shipment records, and contract requirements.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt" id="program-management">
+        <section class="quality-system-banner" id="quality-system">
+            <div class="container quality-system-banner-inner reveal">
+                <p class="section-kicker">Quality System</p>
+                <h2>Quality System Foundation</h2>
+                <p>
+                    Our quality system is being built around AS9120-aligned aerospace distribution practices, supplier control, documentation accuracy, material traceability, chain-of-custody records, and disciplined execution so that government supply contracts can be sourced, verified, documented, packaged, and delivered with inspection-ready confidence.
+                </p>
+            </div>
+        </section>
+
+        <section class="section quality-system">
+            <div class="container">
+                <div class="quality-qms-layout">
+
+                    <div class="quality-qms-center reveal-scale">
+                        <span>Quality</span>
+                        <strong>Management System</strong>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-1 reveal-down reveal-delay-1">
+                        <h3>AS9120 / ISO 9001-Aligned Distribution</h3>
+                        <p>Internal processes are structured around aerospace parts traceability, supplier verification, documentation control, record retention, and continuous improvement to support long-term AS9120 and ISO 9001 certification readiness.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-2 reveal-right reveal-delay-2">
+                        <h3>Aerospace Supplier Verification</h3>
+                        <p>Supplier capability, authorized distribution status, documentation support, quality certifications, lead times, and execution readiness are reviewed before committing to DLA, NSN, defense, or federal supply requirements.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-3 reveal-right reveal-delay-3">
+                        <h3>Documentation &amp; Traceability Control</h3>
+                        <p>Certificates of conformance, supplier records, inspection documents, lot data, chain-of-custody records, and contract files are controlled so material can be traced, verified, and released with confidence.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-4 reveal-right reveal-delay-4">
+                        <h3>Inspection-Ready Execution Discipline</h3>
+                        <p>Quality controls support consistent quote review, contract flowdown, source inspection coordination, MIL-STD packaging awareness, marking verification, delivery discipline, and lower execution risk from sourcing through shipment.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-5 reveal-up reveal-delay-5">
+                        <h3>Record Retention</h3>
+                        <p>Records are preserved in a structured format to support traceability, retrieval, future repeat work, audit readiness, and customer review.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-6 reveal-left reveal-delay-6">
+                        <h3>Continuous Improvement</h3>
+                        <p>The system is designed to mature through lessons learned, supplier feedback, internal checks, corrective action, and repeatable execution controls.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-7 reveal-left reveal-delay-7">
+                        <h3>Customer Coordination</h3>
+                        <p>Customer-facing coordination supports DLA, NAVSUP, and federal supply requirements through clear communication, documentation readiness, JCP / export-controlled access awareness, and contract-aligned execution discipline.</p>
+                    </div>
+
+                    <div class="quality-qms-card quality-qms-card-8 reveal-left reveal-delay-8">
+                        <h3>Vendor Support</h3>
+                        <p>Vendor coordination helps suppliers feel prepared for recurring government supply work, DCMA source inspection, documentation expectations, traceability records, packaging requirements, and repeat contract execution.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section quality-program" id="program-management">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-kicker">Program Management</p>
                     <h2>Program Management &amp; Execution Control</h2>
                     <p>
-                    <p>
-                        Quality depends on controlled execution from the beginning of the job. Our process emphasizes
-                        planning, requirement review, safety awareness, quote accuracy, lead-time control,
-                        documentation flow, and status visibility so commitments made to customers and suppliers
-                        can be supported through disciplined program management.
+                        Quality depends on controlled execution from the beginning of the job. Our process emphasizes planning, requirement review, safety awareness, quote accuracy, lead-time control, documentation flow, and status visibility so commitments made to customers and suppliers can be supported through disciplined program management.
                     </p>
                 </div>
 
                 <div class="process-row">
-                    <div class="process-step reveal reveal-delay-1">Plan</div>
-                    <div class="process-step reveal reveal-delay-2">Review</div>
-                    <div class="process-step reveal reveal-delay-3">Control</div>
-                    <div class="process-step reveal reveal-delay-4">Document</div>
-                    <div class="process-step reveal reveal-delay-4">Improve</div>
+                    <div class="process-step reveal-scale reveal-delay-1">Plan</div>
+                    <div class="process-step reveal-scale reveal-delay-2">Review</div>
+                    <div class="process-step reveal-scale reveal-delay-3">Control</div>
+                    <div class="process-step reveal-scale reveal-delay-4">Document</div>
+                    <div class="process-step reveal-scale reveal-delay-4">Improve</div>
                 </div>
 
                 <div class="detail-grid">
-                    <div class="detail-item">
+                    <div class="detail-item reveal-right reveal-delay-1">
                         <h3>Planning</h3>
                         <p>Requirements, quote assumptions, lead times, safety considerations, and documentation expectations identified before execution.</p>
                     </div>
 
-                    <div class="detail-item">
+                    <div class="detail-item reveal-right reveal-delay-2">
                         <h3>Review</h3>
                         <p>Internal checks applied to supplier inputs, records, and contract requirements before release or commitment.</p>
                     </div>
 
-                    <div class="detail-item">
+                    <div class="detail-item reveal-right reveal-delay-3">
                         <h3>Control</h3>
                         <p>Program controls, supplier records, file structure, safety awareness, and status tracking used to keep execution organized and reliable.</p>
                     </div>
 
-                    <div class="detail-item">
+                    <div class="detail-item reveal-right reveal-delay-4">
                         <h3>Retention</h3>
                         <p>Records preserved in a structured manner to support retrieval, traceability, repeat work, and audit readiness.</p>
                     </div>
@@ -254,15 +283,16 @@
             </div>
         </section>
 
-        <section class="section" id="cybersecurity">
-            <div class="container split-layout">
-                <div class="reveal-left">
+        <section class="quality-photo-section quality-cyber-photo" id="cybersecurity" aria-label="Cybersecurity image">
+            <img src="../assets/images/hero/quality/cyber_security.jpg" alt="Controlled digital records and cybersecurity background" class="quality-section-image">
+
+            <div class="container quality-photo-content quality-photo-content-left">
+                <div class="quality-photo-card reveal-left">
                     <p class="section-kicker">Cybersecurity</p>
                     <h2>Controlled Digital Records &amp; Secure Information Handling</h2>
+
                     <p>
-                        Quality execution depends on organized and secure digital records. Our approach emphasizes
-                        controlled access, structured storage, and disciplined handling of supplier, contract,
-                        and quality documentation needed to support execution and retrieval.
+                        Quality execution depends on organized and secure digital records. Our approach emphasizes controlled access, structured storage, and disciplined handling of supplier, contract, and quality documentation needed to support execution and retrieval.
                     </p>
 
                     <ul class="feature-list">
@@ -272,28 +302,22 @@
                         <li>Restricted access mindset for sensitive documentation</li>
                         <li>Process alignment toward secure operational maturity</li>
                     </ul>
-                </div>
 
-                <div class="panel reveal-right reveal-delay-1">
                     <h3>Secure Process Objective</h3>
                     <p>
-                        Our goal is to maintain a quality and records environment that is not only
-                        organized and auditable, but also secure in how information is stored,
-                        managed, and shared.
+                        Our goal is to maintain a quality and records environment that is not only organized and auditable, but also secure in how information is stored, managed, and shared.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="section section-alt" id="records">
+        <section class="section quality-records" id="records-retention">
             <div class="container">
                 <div class="section-heading reveal">
                     <p class="section-kicker">Records</p>
                     <h2>Records, Retention, and Traceability</h2>
                     <p>
-                        Reliable execution requires records that can support quoting, delivery decisions, supplier
-                        accountability, and future repeat work. Our system emphasizes clean record structure,
-                        retrieval readiness, and disciplined retention.
+                        Reliable execution requires records that can support quoting, delivery decisions, supplier accountability, and future repeat work. Our system emphasizes clean record structure, retrieval readiness, and disciplined retention.
                     </p>
                 </div>
 
@@ -316,15 +340,16 @@
             </div>
         </section>
 
-        <section class="section" id="quality-commitment">
-            <div class="container split-layout">
-                <div class="reveal-left">
+        <section class="quality-photo-section quality-commitment-photo" id="quality-commitment" aria-label="Quality commitment image">
+            <img src="../assets/images/hero/quality/quality_commitment.jpg" alt="Quality commitment and execution background" class="quality-section-image">
+
+            <div class="container quality-photo-content quality-photo-content-right">
+                <div class="quality-photo-card reveal-right">
                     <p class="section-kicker">Commitment</p>
                     <h2>Quality Commitment</h2>
+
                     <p>
-                        Semper Fi Services is committed to building a quality system that improves supplier confidence,
-                        supports accurate quoting and delivery commitments, and strengthens repeat performance through
-                        controlled execution, organized records, and continuous improvement.
+                        Semper Fi Services is committed to building a quality system that improves supplier confidence, supports accurate quoting and delivery commitments, and strengthens repeat performance through controlled execution, organized records, and continuous improvement.
                     </p>
 
                     <ul class="feature-list">
@@ -334,49 +359,46 @@
                         <li>Delivery and lead-time awareness</li>
                         <li>Continuous improvement toward AS9120 / ISO 9001 readiness</li>
                     </ul>
-                </div>
 
-                <div class="panel reveal-right reveal-delay-1">
                     <h3>Quality Objective</h3>
                     <p>
-                        Build a dependable, audit-conscious operating system that gives suppliers confidence,
-                        supports accurate execution, and positions the company for repeat work and future certification.
+                        Build a dependable, audit-conscious operating system that gives suppliers confidence, supports accurate execution, and positions the company for repeat work and future certification.
                     </p>
                 </div>
             </div>
         </section>
 
-        <section class="section cta-banner">
-            <div class="container cta-banner-inner">
-                <div class="reveal-left">
+        <section class="section quality-next-step" id="quality-next-step">
+            <div class="quality-next-step-bg" aria-hidden="true"></div>
+
+            <div class="container quality-next-step-content">
+                <div class="quality-next-step-card reveal-left">
                     <p class="section-kicker">Next Step</p>
                     <h2>Looking for a Supplier Focused on Execution and Reliability?</h2>
                     <p>
-                        Semper Fi Services delivers controlled sourcing, complete documentation,
-                        and contract-aligned execution designed to reduce risk and improve outcomes.
+                        Semper Fi Services delivers controlled sourcing, complete documentation, and contract-aligned execution designed to reduce risk and improve outcomes.
                     </p>
-                </div>
 
-                <div class="button-row reveal-right">
-                    <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
-                    <a href="../contact/index.html#directory" class="btn btn-secondary">Contact Us</a>
+                    <div class="button-row">
+                        <a href="../contact/index.html?request=Request%20a%20Quote&directory=Sales#request-form" class="btn btn-primary">Request a Quote</a>
+                        <a href="../contact/index.html" class="btn btn-secondary">Contact Us</a>
+                    </div>
                 </div>
             </div>
         </section>
+    </main>
 
     <footer class="site-footer">
         <div class="container footer-grid">
             <div>
                 <a href="../index.html" class="footer-brand footer-brand-image" aria-label="Semper Fi Services Home">
-                    <img src="../images/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
+                    <img src="../assets/images/brand/logo.png" alt="Semper Fi Services Logo" class="footer-logo-image">
                     <span class="logo-text stacked footer-logo-text">
                         Semper Fi Services
                         <small>Distribution</small>
                     </span>
                 </a>
-                <p>
-                    Quality-driven sourcing, distribution, and government-ready operational support.
-                </p>
+                <p>Quality-driven sourcing, distribution, and government-ready operational support.</p>
             </div>
 
             <div>
@@ -403,6 +425,11 @@
         </div>
     </footer>
 
-    <script src="../script.js"></script>
+    <script src="../js/utilities.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/dropdowns.js"></script>
+    <script src="../js/reveal.js"></script>
+    <script src="../js/cinematic-media.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>
