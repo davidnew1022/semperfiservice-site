@@ -1,0 +1,26 @@
+.sfs-cloud-drift {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-01.jpg");
+    background-size: 115%;
+    background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
+    background-repeat: no-repeat;
+    transition: background-position 0.08s linear;
+}
+
+    .sfs-cloud-drift::after {
+        content: none;
+    }
+    .sfs-cloud-drift > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+.sfs-cloud-blend-light {
+    background-color: #eaf7ff;
+}
+
+.sfs-cloud-blend-dark {
+    background-color: #0d2a45;
+}

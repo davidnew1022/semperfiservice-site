@@ -1,0 +1,285 @@
+﻿/* Homepage edge blend only.
+   Keep clouds clear. Blend only at image seams.
+*/
+
+/* HERO -> MISSION: tiny seam blend */
+.home-scene-hero {
+    position: relative;
+    z-index: 1;
+}
+
+    .home-scene-hero::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -24px;
+        height: 72px;
+        z-index: 3;
+        pointer-events: none;
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.22) 38%, rgba(255, 255, 255, 0.70) 68%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+/* MISSION: clear visible clouds */
+#mission.home-subnav.section-sm.sfs-cloud-drift {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 0;
+    height: 620px !important;
+    min-height: 620px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    background-image: url("../../assets/images/page-art/supplier/supplier-detail.jpg") !important;
+    background-size: cover !important;
+    background-position: var(--cloud-x, 50%) var(--cloud-y, 50%) !important;
+    background-repeat: no-repeat !important;
+    background-color: #f4f7f9 !important;
+}
+    #mission.home-subnav.section-sm.sfs-cloud-drift > .container {
+        position: relative;
+        z-index: 1;
+        width: var(--container);
+    }
+    /* tiny fade only at the very top edge of clouds */
+    #mission.home-subnav.sfs-cloud-drift::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -18px;
+        height: 64px;
+        z-index: 0;
+        pointer-events: none;
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.34) 48%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+    #mission.home-subnav.sfs-cloud-drift::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -18px;
+        height: 64px;
+        z-index: 0;
+        pointer-events: none;
+        background: linear-gradient( to top, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.34) 48%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+    #mission.home-subnav.sfs-cloud-drift > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+/* MISSION -> HUEY: tiny seam blend upward from Huey */
+#aerospace-supply {
+    position: relative;
+    z-index: 1;
+    margin-top: 0;
+}
+
+    #aerospace-supply::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -42px;
+        height: 130px;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 0.82) 0%, rgba(255, 255, 255, 0.58) 28%, rgba(255, 255, 255, 0.28) 58%, rgba(255, 255, 255, 0.08) 82%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+    #aerospace-supply .home-scene-content {
+        position: relative;
+        z-index: 3;
+    }
+/* GLOBAL HOMEPAGE PHOTO SEAM BLEND
+   Applies top and bottom white seam fades to every homepage image section except hero.
+   Keeps the fade at the image boundaries only.
+*/
+
+.home-page .home-scene:not(.home-scene-hero) {
+    position: relative;
+    overflow: hidden;
+}
+
+    .home-page .home-scene:not(.home-scene-hero)::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -1px;
+        height: 165px;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 26%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+    .home-page .home-scene:not(.home-scene-hero)::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 165px;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 26%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+    .home-page .home-scene:not(.home-scene-hero) .home-scene-content {
+        position: relative;
+        z-index: 3;
+    }
+/* FINAL OVERRIDES: force seam blends on first homepage image sections */
+
+/* HERO -> MISSION */
+.home-page .home-scene-hero::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 170px;
+    z-index: 5;
+    pointer-events: none;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 28%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+/* MISSION top blend */
+#mission.home-subnav.sfs-cloud-drift::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 165px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 28%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+/* MISSION bottom blend */
+#mission.home-subnav.sfs-cloud-drift::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 165px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 28%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+/* HUEY / AEROSPACE top blend */
+#aerospace-supply::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 165px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 28%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+/* HUEY / AEROSPACE bottom blend */
+#aerospace-supply::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 165px;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.68) 28%, rgba(255, 255, 255, 0.34) 58%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+#mission.home-subnav.sfs-cloud-drift > .container,
+#aerospace-supply .home-scene-content {
+    position: relative;
+    z-index: 3;
+}
+/* PRODUCTS TWO-SIDED SEAM BLEND
+   C-130 fades out. Products fades in.
+   Controlled here only.
+*/
+
+/* Bottom fade from the image directly above Products */
+#capabilities-overview + .home-scene::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 230px;
+    z-index: 4;
+    pointer-events: none;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.78) 20%, rgba(255, 255, 255, 0.44) 48%, rgba(255, 255, 255, 0.16) 76%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+/* Top fade into Products metal image */
+body.home-page #products.sfs-metal-drift::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 260px;
+    z-index: 5;
+    pointer-events: none;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.78) 18%, rgba(255, 255, 255, 0.44) 46%, rgba(255, 255, 255, 0.16) 74%, rgba(255, 255, 255, 0.00) 100% ) !important;
+}
+/* Capabilities cloud -> C-130 two-sided seam blend */
+
+#capabilities-overview.capabilities-cloud-strip::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 190px;
+    z-index: 3;
+    pointer-events: none;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.72) 24%, rgba(255, 255, 255, 0.36) 56%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+#capabilities-overview + .home-scene::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    height: 210px;
+    z-index: 4;
+    pointer-events: none;
+    background: linear-gradient( to bottom, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.76) 20%, rgba(255, 255, 255, 0.42) 48%, rgba(255, 255, 255, 0.14) 76%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+#capabilities-overview + .home-scene .home-scene-content {
+    position: relative;
+    z-index: 5;
+}
+/* Bottom fade out of Products into Apache */
+body.home-page #products.sfs-metal-drift::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 230px;
+    z-index: 5;
+    pointer-events: none;
+    background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.70) 24%, rgba(255, 255, 255, 0.34) 56%, rgba(255, 255, 255, 0.10) 82%, rgba(255, 255, 255, 0.00) 100% ) !important;
+}
+
+body.home-page #products.sfs-metal-drift > .container {
+    position: relative;
+    z-index: 6;
+}

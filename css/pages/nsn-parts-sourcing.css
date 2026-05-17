@@ -1,0 +1,761 @@
+/* =========================================================
+NSN PARTS SOURCING PAGE
+Page-specific styling only.
+========================================================= */
+
+.nsn-page {
+    background: #ffffff;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.nsn-hero {
+    position: relative;
+    min-height: 680px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0d2a45;
+}
+
+    .nsn-hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: url("../../assets/images/hero/nsn-parts-sourcing/hero.jpg");
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+    }
+
+.nsn-hero-image {
+    display: none !important;
+}
+
+.nsn-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.42) 0%, rgba(5, 18, 32, 0.16) 46%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.nsn-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: none;
+    min-height: inherit;
+    margin: 0;
+    padding: clamp(3rem, 7vw, 6rem) clamp(7rem, 12vw, 16rem) clamp(3rem, 7vw, 6rem) 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.nsn-hero-card {
+    width: min(720px, calc(100% - 2rem));
+    margin-left: auto;
+    margin-right: 0;
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.76) 0%, rgba(220, 236, 248, 0.66) 42%, rgba(199, 222, 239, 0.58) 100%);
+    border: 1px solid rgba(126, 160, 190, 0.62);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(18, 32, 47, 0.22);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+    .nsn-hero-card h1 {
+        color: var(--sfs-text);
+        font-size: clamp(2.35rem, 4.9vw, 4.7rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .nsn-hero-card p {
+        color: var(--sfs-blue);
+        font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+        line-height: 1.78;
+        font-weight: 600;
+    }
+
+/* =========================================================
+QUICK LINKS BANNER
+========================================================= */
+
+.nsn-quicklinks {
+    border-top: 1px solid #dbe4ec;
+    border-bottom: 1px solid #dbe4ec;
+    background: #eaf2f8;
+}
+
+    .nsn-quicklinks .credibility-items {
+        min-height: 72px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem 2rem;
+        padding: 1rem 0;
+        color: #29455f;
+        font-weight: 700;
+        text-align: center;
+    }
+
+        .nsn-quicklinks .credibility-items a {
+            color: #29455f;
+            font-weight: 800;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+            .nsn-quicklinks .credibility-items a:hover {
+                color: var(--sfs-blue);
+                transform: translateY(-1px);
+            }
+.nsn-hero-card.nsn-load-sequence-1 {
+    opacity: 0;
+    transform: translateX(-36px);
+    animation: nsnHeroLoadLeft 0.85s ease forwards 0.18s;
+}
+
+.nsn-quicklinks .nsn-load-sequence-2 {
+    opacity: 0;
+    transform: translateY(18px);
+    animation: nsnQuicklinksLoadUp 0.75s ease forwards 0.48s;
+}
+
+.nsn-why-sfs .nsn-load-sequence-3 {
+    opacity: 0;
+    transform: translateX(-36px);
+    animation: nsnWhyLoadLeft 0.85s ease forwards 0.62s;
+}
+
+.nsn-why-sfs .nsn-load-sequence-4 {
+    opacity: 0;
+    transform: translateX(36px);
+    animation: nsnWhyLoadRight 0.85s ease forwards 0.78s;
+}
+
+@keyframes nsnHeroLoadLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes nsnQuicklinksLoadUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes nsnWhyLoadLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes nsnWhyLoadRight {
+    from {
+        opacity: 0;
+        transform: translateX(36px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+/* =========================================================
+PHOTO SECTIONS
+========================================================= */
+
+.nsn-photo-section {
+    position: relative;
+    min-height: clamp(680px, 78vw, 940px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0d2a45;
+}
+
+.nsn-section-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+.nsn-photo-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.44) 0%, rgba(5, 18, 32, 0.16) 46%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.nsn-photo-content {
+    position: relative;
+    z-index: 2;
+    width: var(--container);
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.nsn-photo-content-left {
+    justify-content: flex-start;
+}
+
+.nsn-photo-card {
+    width: min(720px, 100%);
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(5, 18, 32, 0.24);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+    .nsn-photo-card h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2.25rem, 4.75vw, 4.9rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+        margin-bottom: 1rem;
+    }
+
+    .nsn-photo-card p {
+        color: var(--sfs-blue);
+        font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+        line-height: 1.78;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+        .nsn-photo-card p:last-child {
+            margin-bottom: 0;
+        }
+
+    .nsn-photo-card .feature-list {
+        margin-top: 1.25rem;
+    }
+
+        .nsn-photo-card .feature-list li {
+            color: var(--sfs-blue);
+            font-weight: 650;
+        }
+
+/* =========================================================
+CONTENT SECTIONS
+========================================================= */
+
+.nsn-sourcing-support,
+.nsn-rfq-cards,
+.nsn-inspection-cards,
+.nsn-part-categories,
+.nsn-why-sfs {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+}
+
+    .nsn-sourcing-support .section-heading {
+        max-width: 980px;
+    }
+
+        .nsn-sourcing-support .section-heading p + p {
+            margin-top: 1rem;
+        }
+
+    .nsn-rfq-cards .card,
+    .nsn-inspection-cards .card,
+    .nsn-part-categories .card,
+    .nsn-why-sfs .panel {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(219, 228, 236, 0.9);
+        box-shadow: 0 18px 45px rgba(18, 32, 47, 0.10);
+        border-radius: 1rem;
+    }
+
+        .nsn-rfq-cards .card h3,
+        .nsn-inspection-cards .card h3,
+        .nsn-part-categories .card h3,
+        .nsn-why-sfs .panel h3 {
+            color: var(--sfs-text);
+        }
+
+        .nsn-rfq-cards .card p,
+        .nsn-inspection-cards .card p,
+        .nsn-part-categories .card p,
+        .nsn-why-sfs p,
+        .nsn-why-sfs li {
+            color: var(--sfs-muted);
+            line-height: 1.75;
+        }
+
+    .nsn-why-sfs .split-layout {
+        align-items: center;
+        gap: clamp(2rem, 5vw, 4rem);
+    }
+
+        .nsn-why-sfs .split-layout > div:first-child,
+        .nsn-why-sfs .panel {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(219, 228, 236, 0.95);
+            border-radius: 1.25rem;
+            box-shadow: 0 22px 55px rgba(18, 32, 47, 0.13);
+            padding: clamp(1.75rem, 3.5vw, 2.75rem);
+        }
+
+    .nsn-why-sfs h2 {
+        font-size: clamp(2.25rem, 4.4vw, 4.35rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .nsn-why-sfs .split-layout > div:first-child p {
+        color: #33475c;
+        line-height: 1.85;
+    }
+
+        .nsn-why-sfs .split-layout > div:first-child p + p {
+            margin-top: 1rem;
+        }
+    /* =========================================================
+NSN SOURCING SUPPORT BOX SECTION
+========================================================= */
+
+.nsn-sourcing-support {
+    padding: clamp(4rem, 7vw, 6.5rem) 0;
+}
+
+.nsn-sourcing-box-layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.95fr) minmax(320px, 1.05fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+}
+
+.nsn-sourcing-title-box,
+.nsn-sourcing-copy-box {
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(219, 228, 236, 0.95);
+    border-radius: 1rem;
+    box-shadow: 0 22px 55px rgba(18, 32, 47, 0.13);
+}
+
+.nsn-sourcing-title-box {
+    padding: clamp(1.75rem, 3.5vw, 2.75rem);
+}
+
+.nsn-sourcing-copy-box {
+    padding: clamp(1.65rem, 3vw, 2.35rem);
+}
+
+.nsn-sourcing-title-box h2 {
+    color: var(--sfs-text);
+    font-size: clamp(2.15rem, 4vw, 3.75rem);
+    line-height: 1.04;
+    letter-spacing: -0.05em;
+    margin-bottom: 0;
+}
+
+.nsn-sourcing-copy-box p {
+    color: #33475c;
+    font-size: clamp(1rem, 1.1vw, 1.08rem);
+    line-height: 1.85;
+    max-width: 58ch;
+}
+
+    .nsn-sourcing-copy-box p + p {
+        margin-top: 1.15rem;
+    }
+
+@media (max-width: 860px) {
+    .nsn-sourcing-box-layout {
+        grid-template-columns: 1fr;
+    }
+}
+.nsn-documentation-photo {
+    min-height: clamp(820px, 86vw, 1080px);
+}
+
+.nsn-documentation-layout {
+    position: relative;
+    z-index: 2;
+    width: var(--container);
+    min-height: inherit;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.05fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.nsn-documentation-main-card {
+    max-width: 760px;
+    justify-self: flex-end;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.nsn-documentation-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    grid-column: 1;
+    grid-row: 1;
+}
+    .nsn-documentation-card-grid .card {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.76);
+        box-shadow: 0 18px 45px rgba(5, 18, 32, 0.22);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+        .nsn-documentation-card-grid .card h3 {
+            color: var(--sfs-text);
+        }
+
+        .nsn-documentation-card-grid .card p {
+            color: var(--sfs-blue);
+            line-height: 1.7;
+            font-weight: 600;
+        }
+.nsn-rfq-full {
+    position: relative;
+    min-height: clamp(820px, 86vw, 1080px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0d2a45;
+}
+
+.nsn-rfq-full-inner {
+    position: relative;
+    z-index: 2;
+    width: var(--container);
+    min-height: inherit;
+    display: grid;
+    grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.05fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.nsn-rfq-main-card {
+    max-width: 760px;
+    justify-self: flex-start;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.nsn-rfq-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+    .nsn-rfq-card-grid .card {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.76);
+        box-shadow: 0 18px 45px rgba(5, 18, 32, 0.22);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+        .nsn-rfq-card-grid .card h3 {
+            color: var(--sfs-text);
+        }
+
+        .nsn-rfq-card-grid .card p {
+            color: var(--sfs-blue);
+            line-height: 1.7;
+            font-weight: 600;
+        }
+@media (max-width: 860px) {
+    .nsn-documentation-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .nsn-documentation-main-card,
+    .nsn-documentation-card-grid {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .nsn-documentation-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nsn-documentation-main-card {
+        justify-self: stretch;
+    }
+    .nsn-rfq-full {
+        min-height: 920px;
+    }
+
+    .nsn-rfq-full-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .nsn-rfq-main-card,
+    .nsn-rfq-card-grid {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .nsn-rfq-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nsn-rfq-main-card {
+        justify-self: stretch;
+    }
+}
+.nsn-inspection-photo {
+    min-height: clamp(820px, 86vw, 1080px);
+}
+
+.nsn-inspection-layout {
+    position: relative;
+    z-index: 2;
+    width: var(--container);
+    min-height: inherit;
+    display: grid;
+    grid-template-columns: minmax(420px, 1.05fr) minmax(320px, 0.95fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: center;
+    padding: clamp(4rem, 8vw, 7rem) 0;
+}
+
+.nsn-inspection-main-card {
+    max-width: 760px;
+    justify-self: flex-start;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.nsn-inspection-card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+    .nsn-inspection-card-grid .card {
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(255, 255, 255, 0.76);
+        box-shadow: 0 18px 45px rgba(5, 18, 32, 0.22);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+        .nsn-inspection-card-grid .card h3 {
+            color: var(--sfs-text);
+        }
+
+        .nsn-inspection-card-grid .card p {
+            color: var(--sfs-blue);
+            line-height: 1.7;
+            font-weight: 600;
+        }
+
+@media (max-width: 860px) {
+    .nsn-inspection-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .nsn-inspection-main-card,
+    .nsn-inspection-card-grid {
+        grid-column: auto;
+        grid-row: auto;
+    }
+
+    .nsn-inspection-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nsn-inspection-main-card {
+        justify-self: stretch;
+    }
+}
+/* =========================================================
+NEXT STEP
+========================================================= */
+
+.nsn-next-step {
+    position: relative;
+    overflow: hidden;
+    background: #0d2a45;
+}
+
+.nsn-next-step-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.nsn-next-step::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.40) 0%, rgba(5, 18, 32, 0.14) 48%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.nsn-next-step > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.nsn-next-step-card {
+    width: min(720px, 100%);
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(5, 18, 32, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+    .nsn-next-step-card h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2.2rem, 4.3vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        margin-bottom: 1rem;
+    }
+
+    .nsn-next-step-card p {
+        color: var(--sfs-blue);
+        line-height: 1.78;
+        font-weight: 600;
+    }
+.nsn-inspection-summary {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+    padding: 2.5rem 0;
+}
+
+    .nsn-inspection-summary p {
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+        color: #12385f;
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        line-height: 1.75;
+        font-weight: 650;
+    }
+/* =========================================================
+FOOTER SEO TEXT
+========================================================= */
+
+.nsn-footer-seo {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+    padding: 2.5rem 0;
+}
+
+    .nsn-footer-seo p {
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+        color: #12385f;
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        line-height: 1.75;
+        font-weight: 650;
+    }
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 860px) {
+
+    .nsn-hero,
+    .nsn-photo-section {
+        min-height: 720px;
+    }
+
+    .nsn-hero-content,
+    .nsn-photo-content,
+    .nsn-photo-content-left {
+        width: var(--container);
+        max-width: var(--container);
+        padding: clamp(2.5rem, 8vw, 4rem) 0;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .nsn-hero-card,
+    .nsn-photo-card,
+    .nsn-next-step-card {
+        width: 100%;
+        max-width: 620px;
+        padding: clamp(1.25rem, 5vw, 1.8rem);
+        background: rgba(255, 255, 255, 0.86);
+    }
+
+        .nsn-hero-card h1,
+        .nsn-photo-card h2,
+        .nsn-next-step-card h2,
+        .nsn-why-sfs h2 {
+            font-size: clamp(2.05rem, 9vw, 3.45rem);
+            line-height: 1.02;
+        }
+
+    .nsn-quicklinks .credibility-items {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+    }
+
+        .nsn-quicklinks .credibility-items a {
+            flex: 0 0 auto;
+        }
+
+    .nsn-next-step .btn,
+    .nsn-hero .btn {
+        width: 100%;
+    }
+}

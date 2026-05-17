@@ -1,0 +1,383 @@
+/* =========================================================
+AIRCRAFT PARTS DISTRIBUTION PAGE
+Page-specific styling only.
+========================================================= */
+
+.aircraft-parts-page {
+    background: #ffffff;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.aircraft-parts-hero {
+    position: relative;
+    min-height: clamp(680px, 82vw, 980px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0d2a45;
+}
+
+.aircraft-parts-hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+.aircraft-parts-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.42) 0%, rgba(5, 18, 32, 0.16) 46%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.aircraft-parts-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 75vw;
+    max-width: 75vw;
+    min-height: inherit;
+    margin-left: 0;
+    margin-right: auto;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.aircraft-parts-hero-card {
+    width: min(720px, calc(100% - 2rem));
+    margin-left: auto;
+    margin-right: 0;
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.76) 0%, rgba(220, 236, 248, 0.66) 42%, rgba(199, 222, 239, 0.58) 100%);
+    border: 1px solid rgba(126, 160, 190, 0.62);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(18, 32, 47, 0.22);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+    .aircraft-parts-hero-card h1 {
+        color: var(--sfs-text);
+        font-size: clamp(2.35rem, 4.9vw, 4.7rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .aircraft-parts-hero-card p {
+        color: var(--sfs-blue);
+        font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+        line-height: 1.78;
+        font-weight: 600;
+    }
+
+/* =========================================================
+QUICK LINKS BANNER
+========================================================= */
+
+.aircraft-parts-quicklinks {
+    border-top: 1px solid #dbe4ec;
+    border-bottom: 1px solid #dbe4ec;
+    background: #eaf2f8;
+}
+
+    .aircraft-parts-quicklinks .credibility-items {
+        min-height: 72px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem 2rem;
+        padding: 1rem 0;
+        color: #29455f;
+        font-weight: 700;
+        text-align: center;
+    }
+
+        .aircraft-parts-quicklinks .credibility-items a {
+            color: #29455f;
+            font-weight: 800;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+            .aircraft-parts-quicklinks .credibility-items a:hover {
+                color: var(--sfs-blue);
+                transform: translateY(-1px);
+            }
+
+/* =========================================================
+PHOTO SECTIONS
+========================================================= */
+
+.aircraft-parts-photo-section {
+    position: relative;
+    min-height: clamp(680px, 78vw, 940px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0d2a45;
+}
+
+.aircraft-parts-section-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+.aircraft-parts-photo-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.44) 0%, rgba(5, 18, 32, 0.16) 46%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.aircraft-parts-photo-content {
+    position: relative;
+    z-index: 2;
+    width: var(--container);
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.aircraft-parts-photo-content-left {
+    justify-content: flex-start;
+}
+
+.aircraft-parts-photo-card {
+    width: min(720px, 100%);
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(5, 18, 32, 0.24);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+    .aircraft-parts-photo-card h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2.25rem, 4.75vw, 4.9rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+        margin-bottom: 1rem;
+    }
+
+    .aircraft-parts-photo-card p {
+        color: var(--sfs-blue);
+        font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+        line-height: 1.78;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+        .aircraft-parts-photo-card p:last-child {
+            margin-bottom: 0;
+        }
+
+    .aircraft-parts-photo-card .feature-list {
+        margin-top: 1.25rem;
+    }
+
+        .aircraft-parts-photo-card .feature-list li {
+            color: var(--sfs-blue);
+            font-weight: 650;
+        }
+
+/* =========================================================
+CONTENT SECTIONS
+========================================================= */
+
+.aircraft-core-support,
+.aircraft-product-categories,
+.aircraft-supplier-verification,
+.aircraft-why-sfs {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+}
+
+    .aircraft-core-support .card,
+    .aircraft-product-categories .card,
+    .aircraft-supplier-verification .panel,
+    .aircraft-why-sfs .panel {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(219, 228, 236, 0.9);
+        box-shadow: 0 18px 45px rgba(18, 32, 47, 0.10);
+        border-radius: 1rem;
+    }
+
+        .aircraft-core-support .card h3,
+        .aircraft-product-categories .card h3,
+        .aircraft-supplier-verification .panel h3,
+        .aircraft-why-sfs .panel h3 {
+            color: var(--sfs-text);
+        }
+
+        .aircraft-core-support .card p,
+        .aircraft-product-categories .card p,
+        .aircraft-supplier-verification p,
+        .aircraft-supplier-verification li,
+        .aircraft-why-sfs p,
+        .aircraft-why-sfs li {
+            color: var(--sfs-muted);
+            line-height: 1.75;
+        }
+
+    .aircraft-supplier-verification h2,
+    .aircraft-why-sfs h2 {
+        font-size: clamp(2.25rem, 4.4vw, 4.35rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        margin-bottom: 1rem;
+    }
+
+/* =========================================================
+NEXT STEP
+========================================================= */
+
+.aircraft-parts-next-step {
+    position: relative;
+    overflow: hidden;
+    background: #0d2a45;
+}
+
+.aircraft-parts-next-step-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.aircraft-parts-next-step::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.40) 0%, rgba(5, 18, 32, 0.14) 48%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.aircraft-parts-next-step > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.aircraft-parts-next-step-card {
+    width: min(720px, 100%);
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(5, 18, 32, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+    .aircraft-parts-next-step-card h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2.2rem, 4.3vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        margin-bottom: 1rem;
+    }
+
+    .aircraft-parts-next-step-card p {
+        color: var(--sfs-blue);
+        line-height: 1.78;
+        font-weight: 600;
+    }
+
+/* =========================================================
+FOOTER SEO TEXT
+========================================================= */
+
+.aircraft-footer-seo {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+    padding: 2.5rem 0;
+}
+
+    .aircraft-footer-seo p {
+        max-width: 980px;
+        margin: 0 auto;
+        text-align: center;
+        color: #12385f;
+        font-size: clamp(1rem, 1.2vw, 1.15rem);
+        line-height: 1.75;
+        font-weight: 650;
+    }
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 860px) {
+
+    .aircraft-parts-hero,
+    .aircraft-parts-photo-section {
+        min-height: 720px;
+    }
+
+    .aircraft-parts-hero-content,
+    .aircraft-parts-photo-content,
+    .aircraft-parts-photo-content-left {
+        width: var(--container);
+        max-width: var(--container);
+        padding: clamp(2.5rem, 8vw, 4rem) 0;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .aircraft-parts-hero-card,
+    .aircraft-parts-photo-card,
+    .aircraft-parts-next-step-card {
+        width: 100%;
+        max-width: 620px;
+        padding: clamp(1.25rem, 5vw, 1.8rem);
+        background: rgba(255, 255, 255, 0.86);
+    }
+
+        .aircraft-parts-hero-card h1,
+        .aircraft-parts-photo-card h2,
+        .aircraft-parts-next-step-card h2,
+        .aircraft-supplier-verification h2,
+        .aircraft-why-sfs h2 {
+            font-size: clamp(2.05rem, 9vw, 3.45rem);
+            line-height: 1.02;
+        }
+
+    .aircraft-parts-quicklinks .credibility-items {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+    }
+
+        .aircraft-parts-quicklinks .credibility-items a {
+            flex: 0 0 auto;
+        }
+
+    .aircraft-parts-next-step .btn,
+    .aircraft-parts-hero .btn {
+        width: 100%;
+    }
+}

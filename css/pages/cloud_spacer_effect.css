@@ -1,0 +1,67 @@
+/* Cloud spacer seam blending around Products.
+   Clear clouds in the middle. Heavy blend only at image boundaries.
+*/
+
+.home-cloud-spacer {
+	position: relative;
+	z-index: 4;
+	height: clamp(220px, 14vw, 300px);
+	overflow: hidden;
+	margin-top: -70px;
+	margin-bottom: -70px;
+	background-image: url("../../assets/images/page-art/cloud-cover/cloud-transition-01.jpg");
+	background-size: 145%;
+	background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
+	background-repeat: no-repeat;
+	background-color: #eaf7ff;
+}
+
+	/* top image boundary blend */
+	.home-cloud-spacer::before {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: -1px;
+		height: 105px;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient( to bottom, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.76) 26%, rgba(255, 255, 255, 0.34) 62%, rgba(255, 255, 255, 0.00) 100% );
+	}
+
+	/* bottom image boundary blend */
+	.home-cloud-spacer::after {
+		content: "";
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: -1px;
+		height: 105px;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.76) 26%, rgba(255, 255, 255, 0.34) 62%, rgba(255, 255, 255, 0.00) 100% );
+	}
+
+/* C-130 -> top cloud spacer */
+.home-scene + .home-cloud-spacer {
+	margin-top: -80px;
+}
+
+/* Products -> bottom cloud spacer */
+#products.sfs-metal-drift + .home-cloud-spacer {
+	margin-top: -80px;
+	margin-bottom: -80px;
+}
+
+/* top cloud spacer -> Products */
+.home-cloud-spacer + #products.sfs-metal-drift::before {
+	top: -1px;
+	height: 150px;
+	background: linear-gradient( to bottom, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.64) 34%, rgba(255, 255, 255, 0.22) 72%, rgba(255, 255, 255, 0.00) 100% );
+}
+
+/* bottom cloud spacer -> next image */
+.home-cloud-spacer + .home-scene {
+	position: relative;
+}
+

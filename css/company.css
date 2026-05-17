@@ -1,0 +1,158 @@
+/* =========================================================
+COMPANY PAGE CLEAN PATCH
+Purpose:
+- restores clean old-site style flow
+- fixes reveal behavior for Company page text/cards
+- does not change site-wide nav or other pages
+========================================================= */
+
+.company-page .reveal,
+.company-page .reveal-left,
+.company-page .reveal-right,
+.company-page .reveal-scale {
+    will-change: opacity, transform;
+}
+
+.company-page .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+}
+
+    .company-page .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+.company-page .reveal-left {
+    opacity: 0;
+    transform: translateX(-36px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+    .company-page .reveal-left.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+.company-page .reveal-right {
+    opacity: 0;
+    transform: translateX(36px);
+    transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+    .company-page .reveal-right.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+.company-page .reveal-scale {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+    .company-page .reveal-scale.is-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+.company-page .reveal-delay-1 {
+    transition-delay: 0.08s;
+}
+
+.company-page .reveal-delay-2 {
+    transition-delay: 0.16s;
+}
+
+.company-page .reveal-delay-3 {
+    transition-delay: 0.24s;
+}
+
+.company-page .reveal-delay-4 {
+    transition-delay: 0.32s;
+}
+
+.company-leadership-banner {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+    border-top: 1px solid var(--sfs-border);
+    border-bottom: 1px solid var(--sfs-border);
+}
+
+.company-leadership-banner-inner {
+    max-width: 900px;
+    text-align: center;
+}
+
+    .company-leadership-banner-inner h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2rem, 3.6vw, 3.7rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        margin-bottom: 1rem;
+    }
+
+    .company-leadership-banner-inner p:last-child {
+        color: var(--sfs-muted);
+        font-weight: 600;
+        line-height: 1.75;
+    }
+
+.company-page .company-photo-card h3 {
+    margin: 1rem 0;
+    color: var(--sfs-blue);
+    font-size: clamp(1.25rem, 2vw, 1.65rem);
+    line-height: 1.25;
+}
+
+@media (max-width: 860px) {
+    .company-page .reveal-left,
+    .company-page .reveal-right {
+        transform: translateY(18px);
+    }
+
+        .company-page .reveal-left.is-visible,
+        .company-page .reveal-right.is-visible {
+            transform: translateY(0);
+        }
+
+    .company-leadership-banner-inner {
+        text-align: left;
+    }
+}
+/* =========================
+COMPANY REVEAL FAILSAFE
+Prevents permanent invisible text if JS fails.
+========================= */
+
+.company-page .reveal,
+.company-page .reveal-left,
+.company-page .reveal-right,
+.company-page .reveal-scale,
+.company-page .pill-load-left,
+.company-page .pill-load-right {
+    transition-property: opacity, transform;
+}
+
+    .company-page .reveal.is-visible,
+    .company-page .reveal-left.is-visible,
+    .company-page .reveal-right.is-visible,
+    .company-page .reveal-scale.is-visible,
+    .company-page .pill-load-left.is-visible,
+    .company-page .pill-load-right.is-visible {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+@media (prefers-reduced-motion: reduce) {
+    .company-page .reveal,
+    .company-page .reveal-left,
+    .company-page .reveal-right,
+    .company-page .reveal-scale,
+    .company-page .pill-load-left,
+    .company-page .pill-load-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}

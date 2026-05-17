@@ -1,0 +1,128 @@
+.hero {
+    position: relative;
+    min-height: 930px;
+    padding-top: 2.5rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+}
+
+    .hero > .container {
+        position: relative;
+        z-index: 2;
+    }
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 620px) minmax(360px, 520px);
+    align-items: center;
+    gap: 4rem;
+    min-height: 760px;
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 3;
+}
+
+    .hero-copy h1 {
+        font-size: clamp(2.4rem, 5vw, 4.6rem);
+        line-height: 1.02;
+        margin-bottom: 1rem;
+        max-width: 16ch;
+    }
+
+.hero-text {
+    max-width: 62ch;
+    color: var(--sfs-blue);
+    margin-bottom: 1.5rem;
+}
+
+.hero-panel {
+    position: relative;
+    width: 100%;
+    max-width: 690px;
+    display: grid;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    border: 1px solid rgba(15, 43, 58, 0.12);
+    border-radius: 20px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(246, 249, 251, 0.96));
+    box-shadow: var(--sfs-panel-shadow);
+    overflow: hidden;
+    justify-self: end;
+}
+
+    .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0 0 auto 0;
+        height: 4px;
+        background: linear-gradient(90deg, #0f2b3a, #7f98a5);
+    }
+
+.hero-panel-grid {
+    display: grid;
+    gap: 0.9rem;
+}
+
+.hero-panel-card {
+    padding: 1rem 1rem 0.95rem;
+    border: 1px solid rgba(15, 43, 58, 0.1);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+    .hero-panel-card strong {
+        display: block;
+        font-size: 1rem;
+        line-height: 1.35;
+        color: #0f2b3a;
+    }
+
+.hero-panel-label {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6c828e;
+}
+
+.hero-panel-metrics {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
+    padding-top: 0.25rem;
+}
+
+.hero-metric {
+    padding: 0.9rem 0.75rem;
+    border-radius: 14px;
+    background: var(--sfs-blue-gradient);
+    border: 1px solid var(--sfs-blue-border);
+    box-shadow: var(--sfs-blue-shadow);
+    text-align: center;
+}
+
+.hero-metric-value {
+    display: block;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.hero-metric-label {
+    display: block;
+    margin-top: 0.2rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.hero-panel-card-link,
+.hero-metric-link {
+    display: block;
+    color: inherit;
+}

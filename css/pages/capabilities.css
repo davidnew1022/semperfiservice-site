@@ -1,0 +1,470 @@
+/* =========================================================
+CAPABILITIES PAGE
+Page-specific styling only.
+========================================================= */
+
+.capabilities-page {
+    background: #ffffff;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.capabilities-hero {
+    position: relative;
+    min-height: clamp(680px, 82vw, 980px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.capabilities-hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("../../assets/images/hero/capabilities/Hero.jpg");
+    background-size: 138%;
+    background-position: var(--metal-x, 50%) var(--metal-y, 50%);
+    background-repeat: no-repeat;
+    transition: background-position 0.08s linear;
+}
+
+.capabilities-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: transparent;
+}
+.capabilities-hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: none;
+    min-height: inherit;
+    margin: 0;
+    padding: clamp(3rem, 7vw, 6rem) 0 clamp(3rem, 7vw, 6rem) max(clamp(7rem, 12vw, 16rem), 25vw);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.capabilities-hero-card {
+    width: min(680px, calc(100% - 2rem));
+    margin-left: 0;
+    margin-right: auto;
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.76) 0%, rgba(220, 236, 248, 0.66) 42%, rgba(199, 222, 239, 0.58) 100%);
+    border: 1px solid rgba(126, 160, 190, 0.62);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(18, 32, 47, 0.22);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+.capabilities-hero-load {
+    animation: capabilitiesHeroLoad 0.72s ease 0.18s both;
+}
+
+@keyframes capabilitiesHeroLoad {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+    .capabilities-hero-card h1 {
+        color: var(--sfs-text);
+        font-size: clamp(2.35rem, 4.9vw, 4.7rem);
+        line-height: 1.02;
+        letter-spacing: -0.05em;
+        margin-bottom: 1rem;
+    }
+
+    .capabilities-hero-card p {
+        color: var(--sfs-blue);
+        font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+        line-height: 1.78;
+        font-weight: 600;
+    }
+
+/* =========================================================
+QUICK LINKS BANNER
+========================================================= */
+
+.capabilities-quicklinks {
+    border-top: 1px solid #dbe4ec;
+    border-bottom: 1px solid #dbe4ec;
+    background: #eaf2f8;
+}
+
+    .capabilities-quicklinks .credibility-items {
+        min-height: 72px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem 2rem;
+        padding: 1rem 0;
+        color: #29455f;
+        font-weight: 700;
+        text-align: center;
+    }
+
+        .capabilities-quicklinks .credibility-items a {
+            color: #29455f;
+            font-weight: 800;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+            .capabilities-quicklinks .credibility-items a:hover {
+                color: var(--sfs-blue);
+                transform: translateY(-1px);
+            }
+
+/* =========================================================
+PHOTO SECTIONS
+========================================================= */
+
+.capabilities-photo-section {
+    position: relative;
+    min-height: clamp(680px, 78vw, 940px);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: #0d2a45;
+}
+
+.capabilities-section-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+}
+
+.capabilities-photo-section::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.44) 0%, rgba(5, 18, 32, 0.16) 46%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.capabilities-photo-content {
+    position: relative;
+    z-index: 2;
+    width: var(--container);
+    min-height: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.capabilities-photo-card {
+    width: min(680px, 100%);
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: rgba(255, 255, 255, 0.84);
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(5, 18, 32, 0.24);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+    .capabilities-photo-card h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2.35rem, 5vw, 5.25rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+        margin-bottom: 1rem;
+    }
+
+    .capabilities-photo-card h3 {
+        color: var(--sfs-blue);
+        font-size: clamp(1.35rem, 2.2vw, 2rem);
+        line-height: 1.2;
+        margin: 1.25rem 0 0.75rem;
+    }
+
+    .capabilities-photo-card p {
+        color: var(--sfs-blue);
+        font-size: clamp(0.98rem, 1.25vw, 1.1rem);
+        line-height: 1.78;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+
+        .capabilities-photo-card p:last-child {
+            margin-bottom: 0;
+        }
+
+    .capabilities-photo-card .feature-list {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
+    }
+
+        .capabilities-photo-card .feature-list li {
+            color: var(--sfs-blue);
+            font-weight: 650;
+        }
+
+/* =========================================================
+CONTENT SECTIONS
+========================================================= */
+
+.capabilities-snapshot,
+.capabilities-process,
+.capabilities-industries {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+}
+.capabilities-detail {
+    background: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+}
+.capabilities-differentiators {
+    background: #ffffff;
+}
+
+.capabilities-differentiators-photo {
+    position: relative;
+    overflow: hidden;
+    background-image: url("../../assets/images/hero/capabilities/differentiators.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #0d2a45;
+}
+
+    .capabilities-differentiators-photo::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: linear-gradient(90deg, rgba(5, 18, 32, 0.34) 0%, rgba(5, 18, 32, 0.12) 48%, rgba(5, 18, 32, 0.04) 100%);
+    }
+
+    .capabilities-differentiators-photo > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .capabilities-snapshot .card,
+    .capabilities-detail .card,
+    .capabilities-differentiators .card,
+    .capabilities-industries .card {
+        background: rgba(255, 255, 255, 0.92);
+        border: 1px solid rgba(219, 228, 236, 0.9);
+        box-shadow: 0 18px 45px rgba(18, 32, 47, 0.10);
+    }
+
+        .capabilities-snapshot .card h3,
+        .capabilities-detail .card h3,
+        .capabilities-differentiators .card h3,
+        .capabilities-industries .card h3 {
+            color: var(--sfs-text);
+        }
+
+        .capabilities-snapshot .card p,
+        .capabilities-detail .card p,
+        .capabilities-differentiators .card p,
+        .capabilities-industries .card p {
+            color: var(--sfs-muted);
+            line-height: 1.75;
+        }
+
+.capabilities-process-lead {
+    max-width: 980px;
+    margin-bottom: 2rem;
+    color: var(--sfs-blue);
+    font-size: clamp(1.05rem, 1.35vw, 1.28rem);
+    line-height: 1.75;
+    font-weight: 700;
+}
+
+/* =========================================================
+COMPANY DATA CLOUD SECTION
+========================================================= */
+
+.capabilities-company-data {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background-image: url("../../assets/images/page-art/cloud-cover/cloud-transition-02.jpg");
+    background-size: 155%;
+    background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
+    background-repeat: no-repeat;
+    background-color: #dfeef8;
+    transition: background-position 0.08s linear;
+}
+
+    .capabilities-company-data::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        background: rgba(255, 255, 255, 0.10);
+    }
+
+    .capabilities-company-data > .container {
+        position: relative;
+        z-index: 1;
+    }
+
+    .capabilities-company-data h2 {
+        font-size: clamp(2.4rem, 5vw, 5.2rem);
+        line-height: 0.98;
+        letter-spacing: -0.055em;
+        margin-bottom: 1rem;
+    }
+
+    .capabilities-company-data p,
+    .capabilities-company-data li {
+        color: var(--sfs-blue);
+        line-height: 1.78;
+        font-weight: 650;
+    }
+
+.capabilities-data-list {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+}
+
+.capabilities-company-data .panel {
+    background: rgba(234, 242, 248, 0.62);
+    border: 1px solid rgba(156, 180, 201, 0.58);
+    box-shadow: 0 18px 45px rgba(18, 32, 47, 0.12);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
+/* =========================================================
+NEXT STEP
+========================================================= */
+
+.capabilities-next-step {
+    position: relative;
+    overflow: hidden;
+    background: #0d2a45;
+}
+
+.capabilities-next-step-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.capabilities-next-step::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(90deg, rgba(5, 18, 32, 0.40) 0%, rgba(5, 18, 32, 0.14) 48%, rgba(5, 18, 32, 0.04) 100%);
+}
+
+.capabilities-next-step > .container {
+    position: relative;
+    z-index: 2;
+}
+
+.capabilities-next-step-card {
+    width: min(720px, 100%);
+    padding: clamp(1.4rem, 3vw, 2.35rem);
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(255, 255, 255, 0.78);
+    border-radius: 1.25rem;
+    box-shadow: 0 18px 45px rgba(5, 18, 32, 0.22);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+    .capabilities-next-step-card h2 {
+        color: var(--sfs-text);
+        font-size: clamp(2.2rem, 4.3vw, 4rem);
+        line-height: 1.02;
+        letter-spacing: -0.045em;
+        margin-bottom: 1rem;
+    }
+
+    .capabilities-next-step-card p {
+        color: var(--sfs-blue);
+        line-height: 1.78;
+        font-weight: 600;
+    }
+
+/* =========================================================
+MOBILE
+========================================================= */
+
+@media (max-width: 860px) {
+
+    .capabilities-hero,
+    .capabilities-photo-section {
+        min-height: 720px;
+    }
+
+    .capabilities-hero-content,
+    .capabilities-photo-content {
+        width: var(--container);
+        max-width: var(--container);
+        padding: clamp(2.5rem, 8vw, 4rem) 0;
+        align-items: flex-end;
+        justify-content: center;
+    }
+
+    .capabilities-hero-card,
+    .capabilities-photo-card,
+    .capabilities-next-step-card {
+        width: 100%;
+        max-width: 620px;
+        padding: clamp(1.25rem, 5vw, 1.8rem);
+        background: rgba(255, 255, 255, 0.86);
+    }
+
+        .capabilities-hero-card h1,
+        .capabilities-photo-card h2,
+        .capabilities-company-data h2,
+        .capabilities-next-step-card h2 {
+            font-size: clamp(2.05rem, 9vw, 3.45rem);
+            line-height: 1.02;
+        }
+
+    .capabilities-quicklinks .credibility-items {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+    }
+
+        .capabilities-quicklinks .credibility-items a {
+            flex: 0 0 auto;
+        }
+
+    .capabilities-company-data .split-layout {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+
+    .capabilities-next-step .btn,
+    .capabilities-hero .btn {
+        width: 100%;
+    }
+}

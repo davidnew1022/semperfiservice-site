@@ -1,0 +1,13 @@
+.cinematic-hero,
+.cinematic-break,
+.cinematic-media,
+.cinematic-break-media,
+.cinematic-overlay,
+.cinematic-break-overlay,
+.cloud-transition,
+.transition-band,
+.home-transition,
+.home-transition-clouds,
+.home-feature-image {
+    all: unset;
+}

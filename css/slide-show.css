@@ -1,0 +1,201 @@
+/* =========================================================
+SFS SLIDESHOW SYSTEM
+Reusable slideshow layer for hero or section backgrounds.
+========================================================= */
+
+[data-sfs-slideshow] {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #eef5fb;
+    z-index: 0;
+}
+
+.sfs-slideshow-layer {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity var(--sfs-slide-fade, 1600ms) ease;
+    will-change: opacity;
+}
+
+    .sfs-slideshow-layer.is-initial {
+        transition: none;
+    }
+    .sfs-slideshow-layer.is-active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .sfs-slideshow-layer.is-exiting {
+        opacity: 0;
+        z-index: 1;
+    }
+
+.sfs-slideshow-media {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+    will-change: transform;
+}
+
+.sfs-slideshow-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    background: radial-gradient(circle at 70% 38%, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.00) 34%), linear-gradient(90deg, rgba(5, 18, 32, 0.58) 0%, rgba(5, 18, 32, 0.26) 52%, rgba(5, 18, 32, 0.12) 100%);
+}
+
+/* =========================================================
+MOTION OPTIONS
+========================================================= */
+
+.sfs-motion-slow-zoom .sfs-slideshow-media {
+    animation: sfsSlowZoom 9000ms ease-in-out forwards;
+}
+
+.sfs-motion-pan-right .sfs-slideshow-media {
+    animation: sfsPanRight 9000ms ease-in-out forwards;
+}
+
+.sfs-motion-pan-left .sfs-slideshow-media {
+    animation: sfsPanLeft 9000ms ease-in-out forwards;
+}
+
+.sfs-motion-rise .sfs-slideshow-media {
+    animation: sfsRise 9000ms ease-in-out forwards;
+}
+
+.sfs-motion-drift .sfs-slideshow-media {
+    animation: sfsDrift 9000ms ease-in-out forwards;
+}
+
+.sfs-motion-soft-pulse .sfs-slideshow-media {
+    animation: sfsSoftPulse 9000ms ease-in-out forwards;
+}
+
+.sfs-motion-cinematic-push .sfs-slideshow-media {
+    animation: sfsCinematicPush 9000ms ease-in-out forwards;
+}
+
+@keyframes sfsSlowZoom {
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.10);
+    }
+}
+
+@keyframes sfsPanRight {
+    from {
+        transform: scale(1.08) translateX(-2.5%);
+    }
+
+    to {
+        transform: scale(1.08) translateX(2.5%);
+    }
+}
+
+@keyframes sfsPanLeft {
+    from {
+        transform: scale(1.08) translateX(2.5%);
+    }
+
+    to {
+        transform: scale(1.08) translateX(-2.5%);
+    }
+}
+
+@keyframes sfsRise {
+    from {
+        transform: scale(1.08) translateY(2.5%);
+    }
+
+    to {
+        transform: scale(1.08) translateY(-2.5%);
+    }
+}
+
+@keyframes sfsDrift {
+    from {
+        transform: scale(1.07) translate3d(-1.5%, 1.5%, 0);
+    }
+
+    to {
+        transform: scale(1.09) translate3d(1.5%, -1.5%, 0);
+    }
+}
+
+@keyframes sfsSoftPulse {
+    0% {
+        transform: scale(1.03);
+    }
+
+    50% {
+        transform: scale(1.075);
+    }
+
+    100% {
+        transform: scale(1.045);
+    }
+}
+
+@keyframes sfsCinematicPush {
+    from {
+        transform: scale(1.04) translate3d(0, 1.5%, 0);
+        filter: saturate(1.02) contrast(1.02);
+    }
+
+    to {
+        transform: scale(1.12) translate3d(0, -1.5%, 0);
+        filter: saturate(1.08) contrast(1.05);
+    }
+}
+
+/* =========================================================
+OPTIONAL CONTAINER HELPERS
+========================================================= */
+
+.sfs-slideshow-host {
+    position: relative;
+    overflow: hidden;
+    background: #eef5fb;
+}
+
+    .sfs-slideshow-host > .container,
+    .sfs-slideshow-host > .home-scene-content,
+    .sfs-slideshow-host > .company-hero-content,
+    .sfs-slideshow-host > .capabilities-hero-content {
+        position: relative;
+        z-index: 5;
+    }
+
+/* =========================================================
+REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .sfs-slideshow-layer {
+        transition: none;
+    }
+
+    .sfs-slideshow-media {
+        animation: none !important;
+        transform: scale(1.03);
+    }
+}
+
+.home-page .sfs-home-hero-slideshow:not(.is-enhanced) ~ .home-scene-content {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.home-page .sfs-home-hero-slideshow.is-enhanced ~ .home-scene-content {
+    opacity: 1;
+    visibility: visible;
+}

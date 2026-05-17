@@ -1,0 +1,55 @@
+/* Shared warehouse-style drift effect.
+   Quality uses warehouse image.
+   Government uses F35 image.
+   White blend only at top/bottom seams.
+*/
+
+#quality-overview.sfs-warehouse-drift,
+#government-overview.sfs-warehouse-drift {
+    position: relative;
+    overflow: hidden;
+    background-size: 122%;
+    background-position: var(--warehouse-x, 42%) var(--warehouse-y, 38%);
+    background-repeat: no-repeat;
+    background-color: #f5f8fb;
+}
+
+#quality-overview.sfs-warehouse-drift {
+    background-image: url("../../assets/images/page-art/logistics/warehouse.jpg");
+}
+
+#government-overview.sfs-warehouse-drift {
+    background-image: url("../../assets/images/page-art/aircraft/F35.jpg");
+}
+
+    #quality-overview.sfs-warehouse-drift > .container,
+    #government-overview.sfs-warehouse-drift > .container {
+        position: relative;
+        z-index: 2;
+    }
+
+    #quality-overview.sfs-warehouse-drift::before,
+    #government-overview.sfs-warehouse-drift::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -1px;
+        height: 145px;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient( to bottom, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.62) 34%, rgba(255, 255, 255, 0.18) 72%, rgba(255, 255, 255, 0.00) 100% );
+    }
+
+    #quality-overview.sfs-warehouse-drift::after,
+    #government-overview.sfs-warehouse-drift::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 145px;
+        z-index: 1;
+        pointer-events: none;
+        background: linear-gradient( to top, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.62) 34%, rgba(255, 255, 255, 0.18) 72%, rgba(255, 255, 255, 0.00) 100% );
+    }

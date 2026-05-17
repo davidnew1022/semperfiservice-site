@@ -1,0 +1,27 @@
+﻿:root {
+    --sfs-navy: #0d2a45;
+    --sfs-blue: #12385f;
+    --sfs-blue-light: #1b4a79;
+    --sfs-blue-soft: #d6e6f4;
+    --sfs-blue-pale: #eef5fb;
+    --sfs-blue-banner: linear-gradient(180deg, #eef5fb 0%, #e3eef7 42%, #d6e6f4 100%);
+    --sfs-text: #12202f;
+    --sfs-muted: #4a5b6d;
+    --sfs-border: #dbe4ec;
+    --sfs-soft-bg: #f5f8fb;
+    --sfs-strip-bg: #eaf2f8;
+    --sfs-blue-gradient: linear-gradient(180deg, #1b4a79 0%, #12385f 55%, #0d2a45 100%);
+    --sfs-blue-gradient-hover: linear-gradient(180deg, #23558a 0%, #17446f 55%, #103250 100%);
+    --sfs-blue-border: #0b2237;
+    --sfs-blue-shadow: 0 12px 26px rgba(9, 25, 40, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    --sfs-card-shadow: 0 18px 45px rgba(18, 32, 47, 0.07);
+    --sfs-panel-shadow: 0 24px 60px rgba(15, 43, 58, 0.10), 0 6px 16px rgba(15, 43, 58, 0.05);
+    --container: min(1180px, calc(100% - 2rem));
+    --header-height: 78px;
+    --section-y: clamp(5rem, 9vw, 8.5rem);
+    --section-y-tight: clamp(3.5rem, 6vw, 5.5rem);
+    --transition-y: clamp(5rem, 10vw, 9rem);
+    --sfs-gunmetal: #5f6a72;
+    --sfs-gunmetal-soft: #d9e1e6;
+    --sfs-gunmetal-body: #eef4f7;
+}
