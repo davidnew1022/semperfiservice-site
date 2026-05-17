@@ -1,2 +1,3 @@
-# semperfiservice-site
-Landing Page for Parts Distribution Company
+# Semper Fi Services Website
+
+Clean rebuild structure for sfsdistribution.com.
