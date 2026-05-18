@@ -291,24 +291,6 @@ body.home-page #contact-preview .contact-form {
     gap: 1rem 2.25rem;
 }
 
-@media (max-width: 860px) {
-    .home-scene,
-    .home-scene-hero {
-        min-height: 620px;
-    }
-
-        .home-scene-content,
-        .home-scene:nth-of-type(odd) .home-scene-content,
-        .home-scene:nth-of-type(even) .home-scene-content {
-            justify-content: center;
-            align-items: flex-end;
-        }
-
-    .home-scene-card {
-        margin-bottom: 1.5rem;
-    }
-}
-
 .contact-banner-bg {
     background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
     background-size: cover;
@@ -385,6 +367,15 @@ body.home-page #contact-preview.contact-banner-bg {
     .home-page .home-scene-hero .hero-copy .button-row {
         margin-top: 1.35rem;
     }
+    body.home-page .home-scene-hero .hero-copy {
+        padding-bottom: 0.9rem;
+    }
+
+        body.home-page .home-scene-hero .hero-copy .btn {
+            min-height: 48px;
+            border-radius: 0.65rem;
+            font-size: 0.95rem;
+        }
 /* Mission returns to clean text section */
 .home-page #mission {
     background: #ffffff;
@@ -670,35 +661,7 @@ body.home-page #company-overview .split-layout > div:last-child {
     background: #ffffff;
 }
 
-/* Mobile reset */
-@media (max-width: 860px) {
-    .home-page .home-scene-hero .home-scene-content,
-    .home-page #aerospace-supply .home-scene-content {
-        width: var(--container);
-        max-width: var(--container);
-        padding-left: 0;
-        padding-right: 0;
-        justify-content: center;
-        align-items: flex-end;
-    }
 
-    .home-page .home-scene-hero .hero-copy,
-    .home-page #aerospace-supply .home-scene-card {
-        margin-left: 0;
-        margin-right: 0;
-        margin-bottom: 1.5rem;
-    }
-
-    .home-page .home-scene-hero .hero-copy {
-        width: 100%;
-        padding: 1.25rem;
-        border-radius: 1rem;
-    }
-
-    .home-page #aerospace-supply .home-scene-image {
-        object-position: center center;
-    }
-}
 /* HOMEPAGE EFFECT REMOVAL OVERRIDE
    No cloud motion, no white-wash overlays, no seam blends on homepage.
    Effect files remain available for future pages.
@@ -878,39 +841,7 @@ body.home-page #aerospace-supply .aerospace-supply-list {
             margin-bottom: 0;
         }
 
-@media (max-width: 860px) {
-    body.home-page #aerospace-supply .home-scene-content {
-        width: var(--container);
-        max-width: var(--container);
-        margin: 0 auto;
-        padding: clamp(3rem, 7vw, 6rem) 0;
-        align-items: flex-end;
-        justify-content: center;
-    }
 
-    .home-page #aerospace-supply .aerospace-supply-list {
-        margin: 1rem 0 0;
-        padding-left: 1.25rem;
-        color: var(--sfs-muted);
-        font-size: clamp(0.95rem, 1.25vw, 1.08rem);
-        line-height: 1.75;
-        font-weight: 600;
-    }
-
-        body.home-page #aerospace-supply .home-scene-card .section-kicker,
-        body.home-page #aerospace-supply .home-scene-card h2,
-        body.home-page #aerospace-supply .aerospace-supply-list {
-            position: static;
-            max-width: none;
-            color: var(--sfs-text);
-            text-shadow: none;
-        }
-
-    body.home-page #aerospace-supply .aerospace-supply-list {
-        margin-top: 1rem;
-        color: var(--sfs-muted);
-    }
-}
 /* Products cards: more transparent glass */
 
 body.home-page #products.products-static-photo .card {
@@ -932,6 +863,7 @@ body.home-page #products.products-static-photo .card {
    MOBILE HOME PAGE OVERRIDES
    Applies only to homepage screens 860px and below.
    Desktop rules above remain unchanged.
+   Add future homepage mobile fixes inside this block.
 ========================================================= */
 
 @media (max-width: 860px) {
@@ -939,86 +871,84 @@ body.home-page #products.products-static-photo .card {
     /* Global mobile section rhythm */
     body.home-page .section,
     body.home-page .section-sm {
-        padding-top: clamp(3.5rem, 10vw, 5rem);
-        padding-bottom: clamp(3.5rem, 10vw, 5rem);
+        padding-top: clamp(3rem, 9vw, 4.25rem);
+        padding-bottom: clamp(3rem, 9vw, 4.25rem);
     }
 
     body.home-page .section-heading {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.35rem;
     }
 
         body.home-page .section-heading h2 {
-            font-size: clamp(2.15rem, 10vw, 3.25rem);
-            line-height: 1.02;
-            letter-spacing: -0.05em;
+            font-size: clamp(2rem, 9vw, 3rem);
+            line-height: 1.04;
+            letter-spacing: -0.045em;
         }
 
         body.home-page .section-heading p {
-            font-size: 1rem;
-            line-height: 1.7;
+            font-size: 0.96rem;
+            line-height: 1.65;
         }
 
-    /* Hero mobile: preserve cinematic effect but avoid edge gaps */
+    /* Hero mobile: compact upper-left text, buttons pinned lower */
     body.home-page .home-scene-hero {
         min-height: 720px;
         overflow: hidden;
+        padding-bottom: 0;
     }
 
-    body.home-page .sfs-hero-drift {
-        perspective: 1100px;
-        perspective-origin: center center;
-    }
-
-        body.home-page .sfs-hero-drift .home-scene-image {
-            width: 130%;
-            height: 130%;
-            left: 50%;
-            top: 50%;
-            object-fit: cover;
-            object-position: center center;
-            transform: translate(-50%, -50%) translate3d(var(--hero-pan-x, 0px), var(--hero-pan-y, 0px), 0) scale(1.03) rotateY(var(--hero-rotate-y, 0deg));
-            transform-origin: center center;
+        body.home-page .home-scene-hero .home-scene-content {
+            width: 100%;
+            max-width: none;
+            min-height: inherit;
+            margin: 0;
+            padding: 0;
+            display: block;
+            position: relative;
         }
 
-    body.home-page .home-scene-hero .home-scene-content {
-        width: var(--container);
-        max-width: var(--container);
-        padding: clamp(2rem, 8vw, 4rem) 0;
-        align-items: flex-end;
-        justify-content: center;
-    }
+        body.home-page .home-scene-hero .hero-copy {
+            position: absolute;
+            top: 1.25rem;
+            left: 1rem;
+            right: 1rem;
+            transform: none;
+            width: auto;
+            max-width: 370px;
+            margin-left: auto;
+            margin-right: auto;
+            margin: 0;
+            padding: 0.78rem 0.85rem;
+            background: linear-gradient( 180deg, rgba(245, 250, 255, 0.50) 0%, rgba(224, 239, 250, 0.42) 48%, rgba(203, 226, 242, 0.34) 100% );
+            border: 1px solid rgba(255, 255, 255, 0.48);
+            border-radius: 0.9rem;
+            box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
 
-    body.home-page .home-scene-hero .hero-copy {
-        width: 100%;
-        max-width: 620px;
-        margin: 0 0 1.5rem;
-        padding: clamp(1.25rem, 5vw, 1.8rem);
-        background: rgba(255, 255, 255, 0.84);
-        border: 1px solid rgba(255, 255, 255, 0.76);
-        border-radius: 1.15rem;
-        box-shadow: 0 18px 42px rgba(5, 18, 32, 0.22);
-        backdrop-filter: blur(7px);
-        -webkit-backdrop-filter: blur(7px);
-    }
+            body.home-page .home-scene-hero .hero-copy .eyebrow {
+                margin-bottom: 0.45rem;
+                font-size: 0.58rem;
+                line-height: 1.35;
+                letter-spacing: 0.17em;
+            }
 
-    body.home-page .home-scene-hero h1 {
-        font-size: clamp(2.05rem, 9vw, 3.35rem);
-        line-height: 1.02;
-        letter-spacing: -0.05em;
-    }
+            body.home-page .home-scene-hero .hero-copy h1 {
+                margin-bottom: 0.55rem;
+                font-size: clamp(1.18rem, 5.6vw, 1.62rem);
+                line-height: 1.03;
+                letter-spacing: -0.048em;
+            }
 
-    body.home-page .home-scene-hero .hero-text {
-        font-size: 0.98rem;
-        line-height: 1.7;
-    }
+            body.home-page .home-scene-hero .hero-copy .hero-text,
+            body.home-page .home-scene-hero .hero-copy p {
+                font-size: 0.72rem;
+                line-height: 1.42;
+                font-weight: 650;
+            }
 
-    body.home-page .home-scene-hero .button-row {
-        gap: 0.75rem;
-    }
 
-    body.home-page .home-scene-hero .btn {
-        width: 100%;
-    }
 
     /* Mission mobile */
     body.home-page #mission > .container {
@@ -1031,12 +961,12 @@ body.home-page #products.products-static-photo .card {
     }
 
     body.home-page #mission .section-heading h2 {
-        font-size: clamp(2.35rem, 11vw, 3.75rem);
+        font-size: clamp(2.25rem, 10vw, 3.35rem);
     }
 
     /* Aerospace Supply mobile */
     body.home-page #aerospace-supply {
-        min-height: 680px;
+        min-height: 620px;
     }
 
         body.home-page #aerospace-supply .home-scene-image {
@@ -1047,23 +977,23 @@ body.home-page #products.products-static-photo .card {
             width: var(--container);
             max-width: var(--container);
             margin: 0 auto;
-            padding: clamp(3rem, 8vw, 5rem) 0;
+            padding: clamp(2.5rem, 8vw, 4rem) 0;
             align-items: flex-end;
             justify-content: center;
         }
 
         body.home-page #aerospace-supply .home-scene-card {
-            width: 100%;
-            max-width: 620px;
+            width: min(88vw, 350px);
+            max-width: 350px;
             min-height: auto;
-            margin: 0 0 1.5rem;
-            padding: clamp(1.25rem, 5vw, 1.8rem);
-            background: rgba(255, 255, 255, 0.84) !important;
-            border: 1px solid rgba(255, 255, 255, 0.76) !important;
-            border-radius: 1.15rem !important;
-            box-shadow: 0 18px 42px rgba(5, 18, 32, 0.22) !important;
-            backdrop-filter: blur(7px) !important;
-            -webkit-backdrop-filter: blur(7px) !important;
+            margin: 0 auto 1.25rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.64) !important;
+            border: 1px solid rgba(255, 255, 255, 0.58) !important;
+            border-radius: 1rem !important;
+            box-shadow: 0 14px 34px rgba(5, 18, 32, 0.22) !important;
+            backdrop-filter: blur(6px) !important;
+            -webkit-backdrop-filter: blur(6px) !important;
         }
 
             body.home-page #aerospace-supply .home-scene-card .section-kicker,
@@ -1076,42 +1006,28 @@ body.home-page #products.products-static-photo .card {
             }
 
             body.home-page #aerospace-supply .home-scene-card h2 {
-                font-size: clamp(2.05rem, 9vw, 3.25rem);
+                font-size: clamp(1.65rem, 7.2vw, 2.25rem);
+                line-height: 1.04;
             }
 
         body.home-page #aerospace-supply .aerospace-supply-list {
-            margin-top: 1rem;
+            margin-top: 0.85rem;
+            padding-left: 1.15rem;
             color: var(--sfs-muted);
+            font-size: 0.9rem;
+            line-height: 1.55;
         }
 
-    /* Capabilities / Products / Process grids */
+    /* Mobile grids */
     body.home-page .card-grid-4,
-    body.home-page .detail-grid {
+    body.home-page .card-grid-3,
+    body.home-page .card-grid-2,
+    body.home-page .detail-grid,
+    body.home-page .split-layout,
+    body.home-page #contact-preview .contact-layout {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
-
-    body.home-page #products .card-grid-3 {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    body.home-page #products.products-static-photo {
-        background-size: 150%;
-        background-position: var(--metal-x, 50%) var(--metal-y, 50%);
-    }
-
-        body.home-page #products.products-static-photo .section-heading h2 {
-            font-size: clamp(2.4rem, 12vw, 4rem);
-        }
-
-        body.home-page #products.products-static-photo .section-heading p {
-            font-size: 1rem;
-        }
-
-        body.home-page #products.products-static-photo .card {
-            background: rgba(255, 255, 255, 0.78);
-        }
 
     /* Process pills */
     body.home-page .process-row {
@@ -1120,7 +1036,7 @@ body.home-page #products.products-static-photo .card {
     }
 
     body.home-page .process-step {
-        min-height: 56px;
+        min-height: 54px;
         padding: 0.75rem;
         white-space: normal;
         display: flex;
@@ -1130,79 +1046,78 @@ body.home-page #products.products-static-photo .card {
 
         body.home-page .process-step:last-child {
             grid-column: 1 / -1;
-            max-width: none;
         }
 
-    /* Quality mobile */
-    body.home-page #quality-overview.quality-static-photo {
-        background-size: 155%;
-        background-position: var(--warehouse-x, 50%) var(--warehouse-y, 45%);
-    }
-
-        body.home-page #quality-overview.quality-static-photo .split-layout {
-            grid-template-columns: 1fr;
-            gap: 1.25rem;
-        }
-
-            body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child,
-            body.home-page #quality-overview.quality-static-photo .panel {
-                width: 100%;
-                padding: clamp(1.25rem, 5vw, 1.8rem);
-                background: rgba(255, 255, 255, 0.84);
-            }
-
-        body.home-page #quality-overview.quality-static-photo h2 {
-            font-size: clamp(2.35rem, 12vw, 4rem);
-        }
-
-        body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child > p {
-            color: var(--sfs-blue);
-            text-shadow: none;
-            font-size: 1rem;
-        }
-
-    /* Government mobile */
+    /* Photo background sections */
+    body.home-page #products.products-static-photo,
+    body.home-page #quality-overview.quality-static-photo,
     body.home-page #government-overview.government-static-photo {
         background-size: 155%;
-        background-position: var(--warehouse-x, 50%) var(--warehouse-y, 45%);
+        background-position: center center;
     }
 
-        body.home-page #government-overview.government-static-photo .card-grid-2 {
-            grid-template-columns: 1fr;
-            gap: 0.9rem;
+        body.home-page #products.products-static-photo .section-heading h2,
+        body.home-page #quality-overview.quality-static-photo h2 {
+            font-size: clamp(2.2rem, 11vw, 3.6rem);
         }
 
-        body.home-page #government-overview.government-static-photo .card {
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.78);
+        body.home-page #products.products-static-photo .section-heading p,
+        body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child > p {
+            font-size: 0.96rem;
+            line-height: 1.6;
         }
+
+        body.home-page #products.products-static-photo .card,
+        body.home-page #government-overview.government-static-photo .card,
+        body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child,
+        body.home-page #quality-overview.quality-static-photo .panel,
+        body.home-page #contact-preview .contact-card,
+        body.home-page #contact-preview .contact-form {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.58);
+            border-radius: 1rem;
+            box-shadow: 0 14px 34px rgba(5, 18, 32, 0.18);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+        }
+
+            body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child > p {
+                color: var(--sfs-blue);
+                text-shadow: none;
+            }
 
     /* Company mobile */
-    body.home-page #company-overview .split-layout {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+    body.home-page #company-overview .split-layout > div:last-child {
+        padding: 1rem;
     }
-
-        body.home-page #company-overview .split-layout > div:last-child {
-            padding: clamp(1.25rem, 5vw, 1.8rem);
-        }
 
     body.home-page .home-company-logo {
-        max-width: 220px;
+        max-width: 210px;
     }
 
-    /* Contact mobile */
-    body.home-page #contact-preview .contact-layout {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    body.home-page #contact-preview .contact-card,
-    body.home-page #contact-preview .contact-form {
-        padding: clamp(1.25rem, 5vw, 1.8rem);
-    }
-
-    body.home-page #contact-preview .btn {
+    /* Buttons */
+    body.home-page #contact-preview .btn,
+    body.home-page .section-cta .btn {
         width: 100%;
     }
 }
+/* Hero buttons: pinned to bottom of slideshow, separate from text card */
+body.home-page .home-scene-hero .hero-button-row {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1.25rem;
+    max-width: 370px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    z-index: 10;
+}
+
+    body.home-page .home-scene-hero .hero-button-row .btn {
+        width: 100%;
+        min-height: 42px;
+        padding: 0.65rem 0.9rem;
+        font-size: 0.88rem;
+    }
