@@ -1057,7 +1057,7 @@ body.home-page #products.products-static-photo .card {
         body.home-page #aerospace-supply .aerospace-supply-list {
             position: static;
             max-width: 330px;
-            margin: clamp(8rem, 25vh, 10rem) 0 0;
+            margin: clamp(11rem, 34vh, 15rem) 0 0;
             padding-left: 1.1rem;
             color: #f4f8fb;
             font-size: 0.86rem;
@@ -1081,16 +1081,62 @@ body.home-page #products.products-static-photo .card {
     body.home-page .detail-item,
     body.home-page .contact-card,
     body.home-page .contact-form,
-    body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child,
-    body.home-page #quality-overview.quality-static-photo .panel,
     body.home-page #company-overview .split-layout > div:last-child {
         padding: 0.75rem 0.9rem;
-        background: linear-gradient( 180deg, rgba(245, 250, 255, 0.50) 0%, rgba(224, 239, 250, 0.42) 48%, rgba(203, 226, 242, 0.34) 100% );
+        background: linear-gradient(180deg, rgba(245, 250, 255, 0.50) 0%, rgba(224, 239, 250, 0.42) 48%, rgba(203, 226, 242, 0.34) 100%);
         border: 1px solid rgba(255, 255, 255, 0.48);
         border-radius: 0.9rem;
         box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
         backdrop-filter: blur(5px);
         -webkit-backdrop-filter: blur(5px);
+    }
+
+    /* Quality mobile only */
+    body.home-page #quality-overview.quality-static-photo {
+        min-height: clamp(620px, 110vw, 860px);
+        background-size: cover;
+        background-position: 56% center;
+    }
+
+    body.home-page #quality-overview.quality-static-photo .split-layout {
+        align-content: end;
+    }
+
+    body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child {
+        width: min(88vw, 360px);
+        margin: 0 auto;
+        padding: 0.9rem;
+        background: rgba(255, 255, 255, 0.64);
+        border: 1px solid rgba(255, 255, 255, 0.54);
+        border-radius: 0.9rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.16);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    body.home-page #quality-overview.quality-static-photo .panel {
+        display: none;
+    }
+
+    body.home-page #quality-overview.quality-static-photo .section-kicker {
+        margin-bottom: 0.4rem;
+        font-size: 0.62rem;
+        letter-spacing: 0.16em;
+    }
+
+    body.home-page #quality-overview.quality-static-photo h2 {
+        margin-bottom: 0.5rem;
+        font-size: clamp(1.55rem, 7vw, 2.15rem);
+        line-height: 1.02;
+    }
+
+    body.home-page #quality-overview.quality-static-photo .feature-list {
+        margin-top: 0.7rem;
+        margin-bottom: 0.7rem;
+    }
+
+    body.home-page #quality-overview.quality-static-photo .section-cta {
+        margin-top: 0.4rem;
     }
 
         /* Card text sizing */
@@ -1364,5 +1410,11 @@ body.home-page #products.products-static-photo .card {
     body.home-page #contact-preview .contact-form input,
     body.home-page #contact-preview .contact-form textarea {
         font-size: 0.88rem;
+    }
+}
+/* Desktop: hide separate mobile hero buttons */
+@media (min-width: 861px) {
+    body.home-page .hero-button-row {
+        display: none !important;
     }
 }

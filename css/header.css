@@ -70,13 +70,10 @@
     }
 
         .nav-dropdown-toggle::after {
-            content: "▾";
-            font-size: 0.62rem;
-            line-height: 1;
-            margin-left: 0.25rem;
-            opacity: 0.85;
-            transform: translateY(-1px);
+            content: none;
+            display: none;
         }
+        
         .site-nav a:hover,
         .nav-dropdown-toggle:hover,
         .nav-dropdown.is-current > .nav-dropdown-toggle,
@@ -98,12 +95,8 @@
 }
 
     .nav-dropdown-toggle::after {
-        content: "▾";
-        font-size: 0.72rem;
-        line-height: 1;
-        margin-left: 0.35rem;
-        opacity: 0.85;
-        transform: translateY(-1px);
+        content: none;
+        display: none;
     }
 
 .nav-dropdown-menu {

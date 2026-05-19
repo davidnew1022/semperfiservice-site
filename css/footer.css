@@ -55,3 +55,34 @@
     font-size: 0.95rem;
     color: #c6d4e1;
 }
+/* =========================================================
+   MOBILE FOOTER
+========================================================= */
+
+@media (max-width: 860px) {
+    .site-footer {
+        padding-top: 1.35rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr;
+        gap: 0.18rem;
+    }
+
+        .footer-links a {
+            display: block;
+            padding: 0.12rem 0;
+            font-size: 0.9rem;
+        }
+
+    .footer-bottom {
+        padding: 0.75rem 0 1rem;
+        font-size: 0.78rem;
+        line-height: 1.35;
+    }
