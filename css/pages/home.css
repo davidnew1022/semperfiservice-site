@@ -1398,6 +1398,20 @@ body.home-page #products.products-static-photo .card {
                 line-height: 1.3;
                 margin: 0;
             }
+    /* Government mobile: move title/body/cards up, leave GOVERNMENT kicker alone */
+    body.home-page #government-overview.government-static-photo .section-heading h2 {
+        margin-top: -0.75rem;
+        margin-bottom: 0.55rem;
+    }
+
+    body.home-page #government-overview.government-static-photo .section-heading p {
+        margin-top: -0.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    body.home-page #government-overview.government-static-photo .card-grid {
+        margin-top: -0.35rem;
+    }
     /* ═══════════════════════════════════════════
        COMPANY LOGO
     ═══════════════════════════════════════════ */
