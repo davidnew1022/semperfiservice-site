@@ -642,36 +642,39 @@ body.home-page #company-overview .split-layout > div:last-child {
         -webkit-backdrop-filter: blur(4px);
     }
 
-        .home-page #government-overview.government-static-photo .card h3 {
-            margin: 0 0 0.25rem;
-            color: var(--sfs-text);
-            font-size: clamp(1rem, 1.15vw, 1.18rem);
-            line-height: 1.25;
-        }
+body.home-page #government-overview.government-static-photo .card {
+    padding: 0.5rem 0.65rem;
+}
 
-        .home-page #government-overview.government-static-photo .card p {
-            margin: 0;
-            color: var(--sfs-blue);
-            font-size: clamp(0.9rem, 1.05vw, 1rem);
-            font-weight: 600;
-            line-height: 1.42;
-        }
+    body.home-page #government-overview.government-static-photo .card h3 {
+        margin: 0 0 0.18rem;
+        color: var(--sfs-text);
+        font-size: 0.78rem;
+        line-height: 1.2;
+    }
+
+    body.home-page #government-overview.government-static-photo .card p {
+        margin: 0;
+        color: var(--sfs-blue);
+        font-size: 0.66rem;
+        font-weight: 600;
+        line-height: 1.35;
+    }
+
 /* Company back to clean text section */
 .home-page #company-overview {
     background: #ffffff;
 }
 
 
-/* HOMEPAGE EFFECT REMOVAL OVERRIDE
-   No cloud motion, no white-wash overlays, no seam blends on homepage.
-   Effect files remain available for future pages.
+/* HOMEPAGE EFFECT OVERRIDE
+   Keep seam overlays removed, but allow image drift motion on homepage.
 */
 
 body.home-page .sfs-cloud-drift,
 body.home-page .sfs-metal-drift,
 body.home-page .sfs-warehouse-drift {
-    animation: none;
-    transition: none;
+    transition: background-position 0.08s linear;
 }
 
 body.home-page #products.products-static-photo::before,
@@ -684,6 +687,7 @@ body.home-page .home-scene::after {
     content: none !important;
     background: none !important;
 }
+
 /* Homepage white-section replacement: baby-blue gradient background */
 
 body.home-page #mission,
@@ -1338,6 +1342,7 @@ body.home-page #products.products-static-photo .card {
     body.home-page #government-overview.government-static-photo {
         background-size: 155%;
         background-position: center center;
+        padding-top: 0;
     }
 
     /* Products mobile: fit all text/cards inside image section */
@@ -1355,7 +1360,7 @@ body.home-page #products.products-static-photo .card {
         body.home-page #products.products-static-photo .section-kicker {
             font-size: 0.58rem;
             letter-spacing: 0.22em;
-            margin-bottom: 0.28rem;
+            margin-bottom: 0.25rem;
         }
 
         body.home-page #products.products-static-photo .section-heading h2 {
@@ -1397,7 +1402,7 @@ body.home-page #products.products-static-photo .card {
        COMPANY LOGO
     ═══════════════════════════════════════════ */
     body.home-page .home-company-logo {
-        max-width: 180px;
+        max-width: 360px;
     }
 
     /* ═══════════════════════════════════════════
