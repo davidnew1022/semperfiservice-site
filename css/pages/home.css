@@ -1,4 +1,4 @@
-.home-subnav {
+﻿.home-subnav {
     background-color: #ffffff;
 }
 
@@ -703,7 +703,7 @@ body.home-page #company-overview {
         position: relative;
         z-index: 1;
     }
-/* Products heading readability on steel background � no text boxes */
+/* Products heading readability on steel background — no text boxes */
 
 body.home-page #products.products-static-photo .section-kicker {
     display: block;
@@ -821,16 +821,17 @@ body.home-page #aerospace-supply .home-scene-card {
 
 body.home-page #aerospace-supply .aerospace-supply-list {
     position: absolute;
-    top: clamp(34rem, 42vw, 42rem);
-    left: clamp(2rem, 6vw, 6rem);
-    max-width: 620px;
+    left: 1.55rem;
+    right: 1.55rem;
+    bottom: 3rem;
+    max-width: 330px;
     margin: 0;
-    padding-left: 1.3rem;
-    color: #d9e1e6;
-    font-size: clamp(1rem, 1.25vw, 1.18rem);
+    padding-left: 1.1rem;
+    color: #f4f8fb;
+    font-size: 0.86rem;
+    line-height: 1.65;
     font-weight: 750;
-    line-height: 1.75;
-    text-shadow: 0 3px 16px rgba(0, 0, 0, 0.62);
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.68);
 }
 
     body.home-page #aerospace-supply .aerospace-supply-list li {
@@ -865,32 +866,35 @@ body.home-page #products.products-static-photo .card {
    Desktop rules above remain unchanged.
    Add future homepage mobile fixes inside this block.
 ========================================================= */
-
 @media (max-width: 860px) {
 
-    /* Global mobile section rhythm */
+    /* ═══════════════════════════════════════════
+       GLOBAL MOBILE RHYTHM
+    ═══════════════════════════════════════════ */
     body.home-page .section,
     body.home-page .section-sm {
-        padding-top: clamp(3rem, 9vw, 4.25rem);
-        padding-bottom: clamp(3rem, 9vw, 4.25rem);
+        padding-top: clamp(2.5rem, 8vw, 3.5rem);
+        padding-bottom: clamp(2.5rem, 8vw, 3.5rem);
     }
 
     body.home-page .section-heading {
-        margin-bottom: 1.35rem;
+        margin-bottom: 1rem;
     }
 
         body.home-page .section-heading h2 {
-            font-size: clamp(2rem, 9vw, 3rem);
+            font-size: clamp(1.75rem, 8vw, 2.5rem);
             line-height: 1.04;
-            letter-spacing: -0.045em;
+            letter-spacing: -0.04em;
         }
 
         body.home-page .section-heading p {
-            font-size: 0.96rem;
-            line-height: 1.65;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
-    /* Hero mobile: compact upper-left text, buttons pinned lower */
+    /* ═══════════════════════════════════════════
+       HERO MOBILE — DO NOT MODIFY
+    ═══════════════════════════════════════════ */
     body.home-page .home-scene-hero {
         min-height: 720px;
         overflow: hidden;
@@ -912,13 +916,12 @@ body.home-page #products.products-static-photo .card {
             top: 1.25rem;
             left: 1rem;
             right: 1rem;
-            transform: none;
             width: auto;
             max-width: 370px;
-            margin-left: auto;
-            margin-right: auto;
             margin: 0;
-            padding: 0.78rem 0.85rem;
+            padding: 0.75rem 0.9rem 0.85rem;
+            height: auto;
+            overflow: visible;
             background: linear-gradient( 180deg, rgba(245, 250, 255, 0.50) 0%, rgba(224, 239, 250, 0.42) 48%, rgba(203, 226, 242, 0.34) 100% );
             border: 1px solid rgba(255, 255, 255, 0.48);
             border-radius: 0.9rem;
@@ -928,29 +931,54 @@ body.home-page #products.products-static-photo .card {
         }
 
             body.home-page .home-scene-hero .hero-copy .eyebrow {
-                margin-bottom: 0.45rem;
+                margin: 0 0 0.35rem;
                 font-size: 0.58rem;
-                line-height: 1.35;
+                line-height: 1.3;
                 letter-spacing: 0.17em;
             }
 
             body.home-page .home-scene-hero .hero-copy h1 {
-                margin-bottom: 0.55rem;
-                font-size: clamp(1.18rem, 5.6vw, 1.62rem);
-                line-height: 1.03;
-                letter-spacing: -0.048em;
+                margin: 0 0 0.45rem;
+                font-size: clamp(1.1rem, 5.2vw, 1.5rem);
+                line-height: 1.04;
+                letter-spacing: -0.045em;
             }
 
             body.home-page .home-scene-hero .hero-copy .hero-text,
             body.home-page .home-scene-hero .hero-copy p {
+                margin: 0;
                 font-size: 0.72rem;
-                line-height: 1.42;
-                font-weight: 650;
+                line-height: 1.45;
+                font-weight: 600;
+                overflow: visible;
+                display: block;
+                -webkit-line-clamp: unset;
+                -webkit-box-orient: unset;
             }
 
+        body.home-page .home-scene-hero .desktop-buttons {
+            display: none;
+        }
 
+    body.home-page .hero-button-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+        position: relative;
+        z-index: 20;
+        margin: -6rem 1rem 1rem;
+    }
 
-    /* Mission mobile */
+        body.home-page .hero-button-row .btn {
+            width: 100%;
+            min-height: 42px;
+            padding: 0.65rem 0.9rem;
+            font-size: 0.88rem;
+        }
+
+    /* ═══════════════════════════════════════════
+       MISSION — transparent, no box
+    ═══════════════════════════════════════════ */
     body.home-page #mission > .container {
         width: var(--container);
         margin: 0 auto;
@@ -958,15 +986,18 @@ body.home-page #products.products-static-photo .card {
         background: transparent;
         border: 0;
         box-shadow: none;
+        backdrop-filter: none;
     }
 
     body.home-page #mission .section-heading h2 {
-        font-size: clamp(2.25rem, 10vw, 3.35rem);
+        font-size: clamp(2rem, 10vw, 3rem);
     }
-
-    /* Aerospace Supply mobile */
+    /* ═══════════════════════════════════════════
+   AEROSPACE SUPPLY — mobile text styled like desktop
+═══════════════════════════════════════════ */
     body.home-page #aerospace-supply {
         min-height: 620px;
+        position: relative;
     }
 
         body.home-page #aerospace-supply .home-scene-image {
@@ -974,51 +1005,248 @@ body.home-page #products.products-static-photo .card {
         }
 
         body.home-page #aerospace-supply .home-scene-content {
-            width: var(--container);
-            max-width: var(--container);
-            margin: 0 auto;
-            padding: clamp(2.5rem, 8vw, 4rem) 0;
-            align-items: flex-end;
-            justify-content: center;
+            width: 100%;
+            max-width: none;
+            min-height: inherit;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
         }
 
         body.home-page #aerospace-supply .home-scene-card {
+            position: static !important;
             width: min(88vw, 350px);
             max-width: 350px;
             min-height: auto;
-            margin: 0 auto 1.25rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.64) !important;
-            border: 1px solid rgba(255, 255, 255, 0.58) !important;
-            border-radius: 1rem !important;
-            box-shadow: 0 14px 34px rgba(5, 18, 32, 0.22) !important;
-            backdrop-filter: blur(6px) !important;
-            -webkit-backdrop-filter: blur(6px) !important;
+            margin: 3rem 0 0 1.55rem;
+            padding: 0 !important;
+            background: transparent !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
         }
 
-            body.home-page #aerospace-supply .home-scene-card .section-kicker,
-            body.home-page #aerospace-supply .home-scene-card h2,
-            body.home-page #aerospace-supply .aerospace-supply-list {
+            body.home-page #aerospace-supply .home-scene-card .section-kicker {
                 position: static;
                 max-width: none;
-                color: var(--sfs-text);
-                text-shadow: none;
+                margin: 0 0 0.8rem;
+                color: #f7fafc;
+                font-size: 0.82rem;
+                font-weight: 900;
+                line-height: 1.2;
+                letter-spacing: 0.24em;
+                text-transform: uppercase;
+                text-shadow: 0 3px 14px rgba(0, 0, 0, 0.58);
             }
 
             body.home-page #aerospace-supply .home-scene-card h2 {
-                font-size: clamp(1.65rem, 7.2vw, 2.25rem);
-                line-height: 1.04;
+                position: static;
+                max-width: 330px;
+                margin: 0 0 1rem;
+                color: #ffffff;
+                font-size: clamp(2.25rem, 11vw, 3.45rem);
+                line-height: 0.96;
+                letter-spacing: -0.06em;
+                text-shadow: 0 5px 24px rgba(0, 0, 0, 0.62);
             }
 
         body.home-page #aerospace-supply .aerospace-supply-list {
-            margin-top: 0.85rem;
-            padding-left: 1.15rem;
-            color: var(--sfs-muted);
-            font-size: 0.9rem;
-            line-height: 1.55;
+            position: static;
+            max-width: 330px;
+            margin: clamp(8rem, 25vh, 10rem) 0 0;
+            padding-left: 1.1rem;
+            color: #f4f8fb;
+            font-size: 0.86rem;
+            line-height: 1.65;
+            font-weight: 750;
+            text-shadow: 0 3px 14px rgba(0, 0, 0, 0.68);
         }
 
-    /* Mobile grids */
+            body.home-page #aerospace-supply .aerospace-supply-list li {
+                margin-bottom: 0.35rem;
+            }
+
+                body.home-page #aerospace-supply .aerospace-supply-list li:last-child {
+                    margin-bottom: 0;
+                }
+    /* ═══════════════════════════════════════════
+       SHARED GLASS CARD — matches hero exactly
+    ═══════════════════════════════════════════ */
+    body.home-page .card,
+    body.home-page .panel,
+    body.home-page .detail-item,
+    body.home-page .contact-card,
+    body.home-page .contact-form,
+    body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child,
+    body.home-page #quality-overview.quality-static-photo .panel,
+    body.home-page #company-overview .split-layout > div:last-child {
+        padding: 0.75rem 0.9rem;
+        background: linear-gradient( 180deg, rgba(245, 250, 255, 0.50) 0%, rgba(224, 239, 250, 0.42) 48%, rgba(203, 226, 242, 0.34) 100% );
+        border: 1px solid rgba(255, 255, 255, 0.48);
+        border-radius: 0.9rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+        /* Card text sizing */
+        body.home-page .card h3,
+        body.home-page .panel h3,
+        body.home-page .detail-item h3,
+        body.home-page .contact-card h3 {
+            font-size: clamp(0.92rem, 3.8vw, 1.05rem);
+            line-height: 1.25;
+            margin: 0 0 0.3rem;
+            color: var(--sfs-text);
+        }
+
+        body.home-page .card p,
+        body.home-page .panel p,
+        body.home-page .detail-item p,
+        body.home-page .contact-card p {
+            font-size: 0.78rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+    /* ═══════════════════════════════════════════
+   QUALITY — hero-style: big image, tight box, button below
+═══════════════════════════════════════════ */
+    body.home-page #quality-overview.quality-static-photo {
+        min-height: 680px;
+        padding: 1rem 1rem 0;
+        background-size: cover;
+        background-position: center center;
+        position: relative;
+        overflow: visible;
+        display: block;
+    }
+
+        /* position: static removes this as an anchor so .section-cta anchors to the section instead */
+        body.home-page #quality-overview.quality-static-photo .split-layout {
+            position: static;
+            display: block;
+            padding: 0.75rem 0.9rem;
+            background: linear-gradient( 180deg, rgba(245, 250, 255, 0.56) 0%, rgba(224, 239, 250, 0.46) 48%, rgba(203, 226, 242, 0.38) 100% );
+            border: 1px solid rgba(255, 255, 255, 0.52);
+            border-radius: 0.85rem;
+            box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+
+            body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child {
+                padding: 0;
+                background: transparent;
+                border: 0;
+                border-radius: 0;
+                box-shadow: none;
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+            }
+
+        /* Hide panel — keeps the box tight like the hero card */
+        body.home-page #quality-overview.quality-static-photo .panel {
+            display: none;
+        }
+
+        body.home-page #quality-overview.quality-static-photo .section-kicker {
+            font-size: 0.6rem;
+            letter-spacing: 0.18em;
+            margin: 0 0 0.32rem;
+        }
+
+        body.home-page #quality-overview.quality-static-photo h2 {
+            font-size: clamp(1.55rem, 7vw, 2rem);
+            line-height: 0.98;
+            margin: 0 0 0.4rem;
+        }
+
+        body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child > p {
+            color: var(--sfs-blue);
+            text-shadow: none;
+            font-size: 0.64rem;
+            line-height: 1.32;
+            font-weight: 650;
+            margin: 0 0 0.45rem;
+        }
+
+        body.home-page #quality-overview.quality-static-photo .feature-list {
+            margin: 0.4rem 0 0;
+            padding-left: 0.9rem;
+        }
+
+            body.home-page #quality-overview.quality-static-photo .feature-list li {
+                font-size: 0.62rem;
+                line-height: 1.3;
+                margin-bottom: 0.22rem;
+            }
+
+        /* Button anchors to the section (not the glass box) — sits just below the image */
+        body.home-page #quality-overview.quality-static-photo .section-cta {
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            bottom: -3.5rem;
+            margin: 0;
+            padding: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+            body.home-page #quality-overview.quality-static-photo .section-cta .btn {
+                width: 100%;
+                min-height: 44px;
+                padding: 0.65rem 0.8rem;
+                font-size: 0.85rem;
+            }
+        /* ═══════════════════════════════════════════
+       BUTTONS OUTSIDE BOXES
+       Any .button-row or .section-cta inside a
+       glass card gets pulled below with a divider
+    ═══════════════════════════════════════════ */
+        body.home-page .card .section-cta,
+        body.home-page .panel .section-cta,
+        body.home-page .contact-card .section-cta,
+        body.home-page #quality-overview .split-layout > div:first-child .section-cta,
+        body.home-page #company-overview .split-layout > div:last-child .button-row {
+            margin: 0.65rem -0.9rem -0.75rem;
+            padding: 0.65rem 0.9rem 0.75rem;
+            background: transparent;
+            border-top: 1px solid rgba(126, 160, 190, 0.22);
+            border-radius: 0 0 0.9rem 0.9rem;
+            box-shadow: none;
+            backdrop-filter: none;
+            -webkit-backdrop-filter: none;
+        }
+
+        /* All buttons full width on mobile */
+        body.home-page .card .btn,
+        body.home-page .panel .btn,
+        body.home-page .contact-card .btn,
+        body.home-page #company-overview .split-layout > div:last-child .btn,
+        body.home-page .section-cta .btn,
+        body.home-page .contact-form > .btn {
+            width: 100%;
+            min-height: 42px;
+            font-size: 0.88rem;
+            padding: 0.65rem 0.9rem;
+        }
+
+    /* Standalone section-cta (outside any card) */
+    body.home-page .section-cta {
+        margin-top: 1rem;
+    }
+
+    /* ═══════════════════════════════════════════
+       GRIDS
+    ═══════════════════════════════════════════ */
     body.home-page .card-grid-4,
     body.home-page .card-grid-3,
     body.home-page .card-grid-2,
@@ -1026,98 +1254,115 @@ body.home-page #products.products-static-photo .card {
     body.home-page .split-layout,
     body.home-page #contact-preview .contact-layout {
         grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-
-    /* Process pills */
-    body.home-page .process-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0.75rem;
     }
 
+    /* ═══════════════════════════════════════════
+       PROCESS PILLS — glass style matching hero
+    ═══════════════════════════════════════════ */
+    body.home-page .process-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.65rem;
+    }
+
     body.home-page .process-step {
-        min-height: 54px;
-        padding: 0.75rem;
+        min-height: 50px;
+        padding: 0.65rem;
         white-space: normal;
         display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 0.85rem;
+        background: linear-gradient( 180deg, rgba(245, 250, 255, 0.50) 0%, rgba(224, 239, 250, 0.42) 48%, rgba(203, 226, 242, 0.34) 100% );
+        border: 1px solid rgba(255, 255, 255, 0.48);
+        border-radius: 0.65rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 
         body.home-page .process-step:last-child {
             grid-column: 1 / -1;
         }
 
-    /* Photo background sections */
+    /* ═══════════════════════════════════════════
+   PHOTO BACKGROUND SECTIONS
+═══════════════════════════════════════════ */
     body.home-page #products.products-static-photo,
-    body.home-page #quality-overview.quality-static-photo,
     body.home-page #government-overview.government-static-photo {
         background-size: 155%;
         background-position: center center;
     }
 
-        body.home-page #products.products-static-photo .section-heading h2,
-        body.home-page #quality-overview.quality-static-photo h2 {
-            font-size: clamp(2.2rem, 11vw, 3.6rem);
+    /* Products mobile: fit all text/cards inside image section */
+    body.home-page #products.products-static-photo {
+        padding-top: 2.2rem;
+        padding-bottom: 2.2rem;
+        background-size: cover;
+        background-position: center center;
+    }
+
+        body.home-page #products.products-static-photo .section-heading {
+            margin-bottom: 0.8rem;
         }
 
-        body.home-page #products.products-static-photo .section-heading p,
-        body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child > p {
-            font-size: 0.96rem;
-            line-height: 1.6;
+        body.home-page #products.products-static-photo .section-kicker {
+            font-size: 0.72rem;
+            letter-spacing: 0.22em;
+            margin-bottom: 0.55rem;
         }
 
-        body.home-page #products.products-static-photo .card,
-        body.home-page #government-overview.government-static-photo .card,
-        body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child,
-        body.home-page #quality-overview.quality-static-photo .panel,
-        body.home-page #contact-preview .contact-card,
-        body.home-page #contact-preview .contact-form {
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.72);
-            border: 1px solid rgba(255, 255, 255, 0.58);
-            border-radius: 1rem;
-            box-shadow: 0 14px 34px rgba(5, 18, 32, 0.18);
-            backdrop-filter: blur(6px);
-            -webkit-backdrop-filter: blur(6px);
+        body.home-page #products.products-static-photo .section-heading h2 {
+            font-size: clamp(1.85rem, 8vw, 2.35rem);
+            line-height: 1;
+            margin-bottom: 0.55rem;
         }
 
-            body.home-page #quality-overview.quality-static-photo .split-layout > div:first-child > p {
-                color: var(--sfs-blue);
-                text-shadow: none;
+        body.home-page #products.products-static-photo .section-heading p {
+            max-width: 100%;
+            font-size: 0.82rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+
+        body.home-page #products.products-static-photo .card-grid-3 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 0.55rem;
+        }
+
+        body.home-page #products.products-static-photo .card {
+            min-height: 0;
+            padding: 0.58rem 0.62rem;
+            border-radius: 0.72rem;
+        }
+
+            body.home-page #products.products-static-photo .card h3 {
+                font-size: 0.82rem;
+                line-height: 1.15;
+                margin: 0 0 0.28rem;
             }
 
-    /* Company mobile */
-    body.home-page #company-overview .split-layout > div:last-child {
-        padding: 1rem;
-    }
-
+            body.home-page #products.products-static-photo .card p {
+                font-size: 0.68rem;
+                line-height: 1.35;
+                margin: 0;
+            }
+    /* ═══════════════════════════════════════════
+       COMPANY LOGO
+    ═══════════════════════════════════════════ */
     body.home-page .home-company-logo {
-        max-width: 210px;
+        max-width: 180px;
     }
 
-    /* Buttons */
-    body.home-page #contact-preview .btn,
-    body.home-page .section-cta .btn {
-        width: 100%;
+    /* ═══════════════════════════════════════════
+       CONTACT FORM INPUTS
+    ═══════════════════════════════════════════ */
+    body.home-page #contact-preview .contact-form label {
+        font-size: 0.82rem;
     }
-}
-/* Hero buttons: pinned to bottom of slideshow, separate from text card */
-body.home-page .home-scene-hero .hero-button-row {
-    position: absolute;
-    left: 1rem;
-    right: 1rem;
-    bottom: 1.25rem;
-    max-width: 370px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0.7rem;
-    z-index: 10;
-}
 
-    body.home-page .home-scene-hero .hero-button-row .btn {
-        width: 100%;
-        min-height: 42px;
-        padding: 0.65rem 0.9rem;
+    body.home-page #contact-preview .contact-form input,
+    body.home-page #contact-preview .contact-form textarea {
         font-size: 0.88rem;
     }
+}
