@@ -2,11 +2,37 @@
 
 import datetime as dt
 import os
+import sys
 from pathlib import Path
 from typing import Iterable
 
-ROOT = Path(r"C:\Users\david\source\repos\semperfiservice-site-github")
-OUTPUT = Path(r"C:\Users\david\source\repos\semperfiservice-site-github\scripts\sfsdistribution_code_dump.pdf")
+try:
+    from reportlab.lib import colors
+    from reportlab.lib.enums import TA_LEFT
+    from reportlab.lib.pagesizes import letter
+    from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
+    from reportlab.lib.units import inch
+    from reportlab.pdfbase import pdfmetrics
+    from reportlab.pdfbase.ttfonts import TTFont
+    from reportlab.platypus import (
+        PageBreak,
+        Paragraph,
+        Preformatted,
+        SimpleDocTemplate,
+        Spacer,
+    )
+except ImportError:
+    print("ERROR: reportlab is required.")
+    print("Run this once:")
+    print("python -m pip install reportlab")
+    raise SystemExit(1)
+
+
+SCRIPT_PATH = Path(__file__).resolve()
+SCRIPTS_DIR = SCRIPT_PATH.parent
+ROOT = SCRIPTS_DIR.parent
+
+OUTPUT = ROOT / "sfsdistribution_code_dump.pdf"
 
 TEXT_EXTENSIONS = {
     ".html", ".css", ".js", ".json", ".md", ".txt", ".xml",
@@ -17,6 +43,10 @@ TEXT_EXTENSIONS = {
 SKIP_DIR_NAMES = {
     "__pycache__", ".git", ".vs", ".venv", "venv",
     ".mypy_cache", ".pytest_cache", "node_modules",
+}
+
+SKIP_FILE_NAMES = {
+    "sfsdistribution_code_dump.pdf",
 }
 
 MAX_INLINE_TEXT_BYTES = 2_000_000
@@ -32,272 +62,270 @@ def should_skip_dir(path: Path) -> bool:
     return path.name.lower() in {name.lower() for name in SKIP_DIR_NAMES}
 
 
+def should_skip_file(path: Path) -> bool:
+    return path.name.lower() in {name.lower() for name in SKIP_FILE_NAMES}
+
+
 def iter_files(root: Path) -> Iterable[Path]:
     for current_root, dirnames, filenames in os.walk(root):
         current_path = Path(current_root)
+
         dirnames[:] = [
-            d for d in sorted(dirnames)
-            if not should_skip_dir(current_path / d)
+            dirname
+            for dirname in sorted(dirnames)
+            if not should_skip_dir(current_path / dirname)
         ]
 
         for filename in sorted(filenames):
-            yield current_path / filename
+            path = current_path / filename
+
+            if should_skip_file(path):
+                continue
+
+            yield path
+
+
+def safe_relpath(path: Path, root: Path) -> str:
+    return str(path.relative_to(root)).replace("/", "\\")
+
+
+def format_modified_time(path: Path) -> str:
+    try:
+        modified = dt.datetime.fromtimestamp(path.stat().st_mtime)
+        return modified.strftime("%Y-%m-%d %H:%M:%S")
+    except OSError:
+        return "unknown"
+
+
+def read_text_file(path: Path) -> list[str]:
+    raw = path.read_bytes()
+
+    if len(raw) > MAX_INLINE_TEXT_BYTES:
+        return [
+            f"[text file omitted because it is larger than {MAX_INLINE_TEXT_BYTES:,} bytes]"
+        ]
+
+    encodings = ("utf-8-sig", "utf-8", "cp1252", "latin-1")
+
+    for encoding in encodings:
+        try:
+            text = raw.decode(encoding)
+            break
+        except UnicodeDecodeError:
+            continue
+    else:
+        text = raw.decode("utf-8", errors="replace")
+
+    text = text.replace("\r\n", "\n").replace("\r", "\n")
+    return text.split("\n")
 
 
 def build_directory_tree(root: Path) -> list[str]:
     lines: list[str] = [f"{root.name}/"]
 
-    def walk_dir(dir_path: Path, prefix: str) -> None:
-        children = sorted(
-            [p for p in dir_path.iterdir() if not (p.is_dir() and should_skip_dir(p))],
-            key=lambda p: (not p.is_dir(), p.name.lower()),
-        )
+    all_paths = list(iter_files(root))
+    folders = sorted({
+        parent
+        for path in all_paths
+        for parent in path.relative_to(root).parents
+        if str(parent) != "."
+    })
 
-        for index, child in enumerate(children):
-            is_last = index == len(children) - 1
-            branch = "`-- " if is_last else "|-- "
-            lines.append(f"{prefix}{branch}{child.name}")
+    entries = sorted(
+        [(folder, True) for folder in folders] +
+        [(path.relative_to(root), False) for path in all_paths],
+        key=lambda item: str(item[0]).lower()
+    )
 
-            if child.is_dir():
-                extension = "    " if is_last else "|   "
-                walk_dir(child, prefix + extension)
-
-    walk_dir(root, "")
-    return [f"{line_number:04d}: {line}" for line_number, line in enumerate(lines, start=1)]
-
-def safe_read_text(path: Path) -> str:
-    try:
-        return path.read_text(encoding="utf-8")
-    except Exception:
-        try:
-            return path.read_text(encoding="utf-8", errors="replace")
-        except Exception:
-            return path.read_text(encoding="cp1252", errors="replace")
-
-
-def file_summary_line(path: Path, root: Path) -> str:
-    rel = path.relative_to(root)
-    stat = path.stat()
-    kind = "TEXT" if is_text_like(path) else "BINARY"
-    modified = dt.datetime.fromtimestamp(stat.st_mtime).strftime("%Y-%m-%d %H:%M:%S")
-    return f"{rel} | {kind} | {stat.st_size} bytes | modified {modified}"
-
-
-def build_report_lines(root: Path) -> list[str]:
-    lines: list[str] = []
-    now = dt.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
-    all_files = list(iter_files(root))
-    text_files = [p for p in all_files if is_text_like(p)]
-    binary_files = [p for p in all_files if not is_text_like(p)]
-
-    lines.append("SFSDISTRIBUTION WEBSITE CODE DUMP")
-    lines.append("=" * 80)
-    lines.append(f"Project root: {root}")
-    lines.append(f"Generated:    {now}")
-    lines.append(f"Total files:  {len(all_files)}")
-    lines.append(f"Text files:   {len(text_files)}")
-    lines.append(f"Binary files: {len(binary_files)}")
-    lines.append("")
-
-    lines.append("DIRECTORY TREE")
-    lines.append("=" * 80)
-    lines.extend(build_directory_tree(root))
-    lines.append("")
-
-    lines.append("FILE INVENTORY")
-    lines.append("=" * 80)
-    for path in all_files:
-        lines.append(file_summary_line(path, root))
-    lines.append("")
-
-    lines.append("FILE CONTENTS")
-    lines.append("=" * 80)
-
-    for path in all_files:
-        rel = path.relative_to(root)
-        stat = path.stat()
-
-        lines.append("")
-        lines.append("-" * 80)
-        lines.append(f"FILE: {rel}")
-        lines.append(f"TYPE: {'TEXT' if is_text_like(path) else 'BINARY'}")
-        lines.append(f"SIZE: {stat.st_size} bytes")
-        lines.append(f"MODIFIED: {dt.datetime.fromtimestamp(stat.st_mtime).strftime('%Y-%m-%d %H:%M:%S')}")
-        lines.append("-" * 80)
-
-        if not is_text_like(path):
-            lines.append("[binary file listed but omitted from inline dump]")
-            continue
-
-        if stat.st_size > MAX_INLINE_TEXT_BYTES:
-            lines.append(f"[text file omitted because it exceeds {MAX_INLINE_TEXT_BYTES} bytes]")
-            continue
-
-        try:
-            content = safe_read_text(path)
-        except Exception as exc:
-            lines.append(f"[failed to read file: {exc}]")
-            continue
-
-        content_lines = content.splitlines()
-
-        if not content_lines:
-            lines.append("0001: ")
-            continue
-
-        for line_number, raw_line in enumerate(content_lines, start=1):
-            lines.append(f"{line_number:04d}: {raw_line.expandtabs(4)}")
+    for relative, is_dir in entries:
+        depth = len(relative.parts) - 1
+        indent = "|   " * depth
+        marker = "|-- "
+        suffix = "/" if is_dir else ""
+        lines.append(f"{indent}{marker}{relative.name}{suffix}")
 
     return lines
 
 
-def wrap_line(line: str, max_chars: int) -> list[str]:
-    if line == "":
-        return [""]
+def build_inventory(root: Path) -> list[str]:
+    lines: list[str] = []
 
-    chunks: list[str] = []
-    remaining = line
+    for path in iter_files(root):
+        try:
+            size = path.stat().st_size
+        except OSError:
+            size = 0
 
-    while len(remaining) > max_chars:
-        split_at = remaining.rfind(" ", 0, max_chars)
-
-        if split_at <= 0:
-            split_at = max_chars
-
-        chunks.append(remaining[:split_at])
-        remaining = remaining[split_at:].lstrip()
-
-    chunks.append(remaining)
-    return chunks
-
-
-def paginate_lines(lines: list[str], max_chars: int = 95, lines_per_page: int = 68) -> list[list[str]]:
-    wrapped: list[str] = []
-
-    for line in lines:
-        wrapped.extend(wrap_line(line, max_chars))
-
-    pages: list[list[str]] = []
-
-    for index in range(0, len(wrapped), lines_per_page):
-        pages.append(wrapped[index:index + lines_per_page])
-
-    return pages or [[]]
-
-
-def pdf_escape(text: str) -> str:
-    return (
-        text.replace("\\", "\\\\")
-        .replace("(", "\\(")
-        .replace(")", "\\)")
-    )
-
-
-def build_pdf_bytes(pages: list[list[str]], title: str) -> bytes:
-    page_width = 612
-    page_height = 792
-    margin_left = 36
-    margin_top = 36
-    font_size = 8
-    line_height = 10
-
-    objects: list[bytes] = []
-
-    def add_obj(data: str | bytes) -> int:
-        if isinstance(data, str):
-            data = data.encode("latin-1", errors="replace")
-        objects.append(data)
-        return len(objects)
-
-    catalog_id = add_obj("<< /Type /Catalog /Pages 2 0 R >>")
-    pages_id = add_obj("<< /Type /Pages /Kids [] /Count 0 >>")
-    font_id = add_obj("<< /Type /Font /Subtype /Type1 /BaseFont /Courier >>")
-
-    page_ids: list[int] = []
-
-    for page_number, page_lines in enumerate(pages, start=1):
-        content_parts: list[str] = [
-            "BT",
-            f"/F1 {font_size} Tf",
-            f"{line_height} TL",
-            f"{margin_left} {page_height - margin_top} Td",
-            f"({pdf_escape(title)} | Page {page_number}) Tj",
-            "T*",
-            f"({'-' * 100}) Tj",
-            "T*",
-        ]
-
-        for line in page_lines:
-            content_parts.append(f"({pdf_escape(line)}) Tj")
-            content_parts.append("T*")
-
-        content_parts.append("ET")
-
-        content_stream = "\n".join(content_parts).encode("latin-1", errors="replace")
-        content_obj = (
-            f"<< /Length {len(content_stream)} >>\nstream\n".encode("latin-1")
-            + content_stream
-            + b"\nendstream"
+        file_type = "TEXT" if is_text_like(path) else "BINARY"
+        lines.append(
+            f"{safe_relpath(path, root)} | {file_type} | {size} bytes | modified {format_modified_time(path)}"
         )
 
-        content_id = add_obj(content_obj)
+    return lines
 
-        page_obj = (
-            f"<< /Type /Page /Parent {pages_id} 0 R "
-            f"/MediaBox [0 0 {page_width} {page_height}] "
-            f"/Resources << /Font << /F1 {font_id} 0 R >> >> "
-            f"/Contents {content_id} 0 R >>"
-        )
 
-        page_id = add_obj(page_obj)
-        page_ids.append(page_id)
+def register_monospace_font() -> str:
+    font_candidates = [
+        Path(r"C:\Windows\Fonts\consola.ttf"),
+        Path(r"C:\Windows\Fonts\cour.ttf"),
+        Path("/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"),
+        Path("/usr/share/fonts/truetype/liberation2/LiberationMono-Regular.ttf"),
+    ]
 
-    kids = " ".join(f"{page_id} 0 R" for page_id in page_ids)
-    objects[pages_id - 1] = (
-        f"<< /Type /Pages /Kids [{kids}] /Count {len(page_ids)} >>"
-    ).encode("latin-1")
+    for font_path in font_candidates:
+        if font_path.exists():
+            try:
+                pdfmetrics.registerFont(TTFont("SFSMono", str(font_path)))
+                return "SFSMono"
+            except Exception:
+                pass
 
-    output = bytearray()
-    output.extend(b"%PDF-1.4\n%\xE2\xE3\xCF\xD3\n")
+    return "Courier"
 
-    offsets = [0]
 
-    for index, obj in enumerate(objects, start=1):
-        offsets.append(len(output))
-        output.extend(f"{index} 0 obj\n".encode("latin-1"))
-        output.extend(obj)
-        output.extend(b"\nendobj\n")
+def add_heading(story: list, text: str, style: ParagraphStyle) -> None:
+    story.append(Paragraph(text, style))
+    story.append(Spacer(1, 0.12 * inch))
 
-    xref_position = len(output)
-    output.extend(f"xref\n0 {len(objects) + 1}\n".encode("latin-1"))
-    output.extend(b"0000000000 65535 f \n")
 
-    for offset in offsets[1:]:
-        output.extend(f"{offset:010d} 00000 n \n".encode("latin-1"))
+def add_rule(story: list, mono_style: ParagraphStyle) -> None:
+    story.append(Preformatted("-" * 100, mono_style))
 
-    output.extend(
-        (
-            f"trailer\n<< /Size {len(objects) + 1} /Root {catalog_id} 0 R >>\n"
-            f"startxref\n{xref_position}\n%%EOF\n"
-        ).encode("latin-1")
+
+def build_pdf(root: Path, output: Path) -> None:
+    mono_font = register_monospace_font()
+
+    styles = getSampleStyleSheet()
+
+    title_style = ParagraphStyle(
+        "SFS_Title",
+        parent=styles["Title"],
+        fontName="Helvetica-Bold",
+        fontSize=16,
+        leading=20,
+        alignment=TA_LEFT,
+        spaceAfter=10,
     )
 
-    return bytes(output)
+    heading_style = ParagraphStyle(
+        "SFS_Heading",
+        parent=styles["Heading2"],
+        fontName="Helvetica-Bold",
+        fontSize=12,
+        leading=15,
+        alignment=TA_LEFT,
+        spaceBefore=10,
+        spaceAfter=6,
+    )
+
+    body_style = ParagraphStyle(
+        "SFS_Body",
+        parent=styles["BodyText"],
+        fontName="Helvetica",
+        fontSize=8.5,
+        leading=11,
+        alignment=TA_LEFT,
+    )
+
+    mono_style = ParagraphStyle(
+        "SFS_Mono",
+        fontName=mono_font,
+        fontSize=6.5,
+        leading=8,
+        leftIndent=0,
+        rightIndent=0,
+        alignment=TA_LEFT,
+        textColor=colors.black,
+        splitLongWords=True,
+    )
+
+    doc = SimpleDocTemplate(
+        str(output),
+        pagesize=letter,
+        rightMargin=0.45 * inch,
+        leftMargin=0.45 * inch,
+        topMargin=0.45 * inch,
+        bottomMargin=0.45 * inch,
+        title="sfsdistribution code dump",
+        author="Semper Fi Services",
+    )
+
+    text_files = []
+    binary_files = []
+
+    for path in iter_files(root):
+        if is_text_like(path):
+            text_files.append(path)
+        else:
+            binary_files.append(path)
+
+    story: list = []
+
+    add_heading(story, "SFSDISTRIBUTION WEBSITE CODE DUMP", title_style)
+    story.append(Paragraph(f"Project root: {root}", body_style))
+    story.append(Paragraph(f"Generated: {dt.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}", body_style))
+    story.append(Paragraph(f"Total files: {len(text_files) + len(binary_files)}", body_style))
+    story.append(Paragraph(f"Text files: {len(text_files)}", body_style))
+    story.append(Paragraph(f"Binary files: {len(binary_files)}", body_style))
+    story.append(Spacer(1, 0.2 * inch))
+
+    add_heading(story, "DIRECTORY TREE", heading_style)
+    story.append(Preformatted("\n".join(build_directory_tree(root)), mono_style))
+    story.append(PageBreak())
+
+    add_heading(story, "FILE INVENTORY", heading_style)
+    story.append(Preformatted("\n".join(build_inventory(root)), mono_style))
+    story.append(PageBreak())
+
+    add_heading(story, "FILE CONTENTS", heading_style)
+
+    for path in iter_files(root):
+        rel = safe_relpath(path, root)
+        file_type = "TEXT" if is_text_like(path) else "BINARY"
+
+        add_rule(story, mono_style)
+        story.append(Preformatted(f"FILE: {rel}", mono_style))
+        story.append(Preformatted(f"TYPE: {file_type}", mono_style))
+
+        try:
+            story.append(Preformatted(f"SIZE: {path.stat().st_size} bytes", mono_style))
+        except OSError:
+            story.append(Preformatted("SIZE: unknown", mono_style))
+
+        story.append(Preformatted(f"MODIFIED: {format_modified_time(path)}", mono_style))
+        add_rule(story, mono_style)
+
+        if file_type == "BINARY":
+            story.append(Preformatted("[binary file listed but omitted from inline dump]", mono_style))
+            story.append(Spacer(1, 0.1 * inch))
+            continue
+
+        try:
+            lines = read_text_file(path)
+        except Exception as exc:
+            lines = [f"[unable to read file: {exc}]"]
+
+        numbered = "\n".join(
+            f"{index:04d}: {line}"
+            for index, line in enumerate(lines, start=1)
+        )
+
+        story.append(Preformatted(numbered, mono_style))
+        story.append(Spacer(1, 0.1 * inch))
+
+    doc.build(story)
 
 
 def main() -> int:
     if not ROOT.exists() or not ROOT.is_dir():
-        print(f"ERROR: folder not found: {ROOT}")
+        print(f"ERROR: project root not found: {ROOT}")
         return 1
 
-    report_lines = build_report_lines(ROOT)
-    pages = paginate_lines(report_lines)
-    pdf_bytes = build_pdf_bytes(pages, title="sfsdistribution code dump")
-
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_bytes(pdf_bytes)
 
+    build_pdf(ROOT, OUTPUT)
+
+    print(f"Project root: {ROOT}")
     print(f"PDF created: {OUTPUT}")
     return 0
 
