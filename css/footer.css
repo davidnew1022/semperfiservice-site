@@ -55,6 +55,12 @@
     font-size: 0.95rem;
     color: #c6d4e1;
 }
+.footer-brand .footer-logo-text {
+    font-family: 'Tungsten', 'XenonBC', Arial, Helvetica, sans-serif;
+    font-size: 1.55rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
 /* =========================================================
    MOBILE FOOTER
 ========================================================= */
