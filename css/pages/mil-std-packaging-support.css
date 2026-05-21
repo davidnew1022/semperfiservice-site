@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
 MIL-STD PACKAGING SUPPORT PAGE
 Page-specific styling only.
 ========================================================= */
@@ -463,51 +463,367 @@ MOBILE
 
 @media (max-width: 860px) {
 
-    .milstd-hero,
-    .milstd-photo-section {
-        min-height: 720px;
+    /* ═══════════════════════════════════════════
+       GLOBAL RHYTHM
+    ═══════════════════════════════════════════ */
+    body.milstd-page .section {
+        padding: clamp(2rem, 7vw, 3rem) 0;
     }
 
-    .milstd-hero-content,
-    .milstd-photo-content,
-    .milstd-photo-content-left {
-        width: var(--container);
-        max-width: var(--container);
-        padding: clamp(2.5rem, 8vw, 4rem) 0;
+    body.milstd-page .section-heading {
+        margin-bottom: 0.75rem;
+    }
+
+        body.milstd-page .section-heading h2 {
+            font-size: clamp(1.85rem, 8vw, 2.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.45rem;
+        }
+
+        body.milstd-page .section-heading p {
+            font-size: 0.92rem;
+            line-height: 1.5;
+        }
+
+    body.milstd-page .section-kicker,
+    body.milstd-page .eyebrow {
+        font-size: 0.70rem;
+        margin-bottom: 0.28rem;
+        letter-spacing: 0.16em;
+    }
+
+    /* ═══════════════════════════════════════════
+       HERO — compact glass card pinned top-left
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-hero {
+        min-height: 720px;
+        align-items: flex-start;
+    }
+
+    body.milstd-page .milstd-hero-content {
+        position: absolute;
+        inset: 0;
+        display: block;
+        padding: 0;
+        width: 100%;
+        max-width: none;
+        min-height: inherit;
+        margin: 0;
+    }
+
+    body.milstd-page .milstd-hero-card {
+        position: absolute;
+        top: 1.25rem;
+        left: 1rem;
+        right: 1rem;
+        width: auto;
+        max-width: 390px;
+        margin: 0;
+        padding: 0.9rem 1.05rem 1rem;
+        background: linear-gradient(180deg, rgba(245, 250, 255, 0.52) 0%, rgba(224, 239, 250, 0.44) 48%, rgba(203, 226, 242, 0.36) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.50);
+        border-radius: 0.9rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.20);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+        body.milstd-page .milstd-hero-card .eyebrow {
+            font-size: 0.66rem;
+            line-height: 1.3;
+            letter-spacing: 0.16em;
+            margin-bottom: 0.3rem;
+        }
+
+        body.milstd-page .milstd-hero-card h1 {
+            font-size: clamp(1.3rem, 6.2vw, 1.8rem);
+            line-height: 1.04;
+            letter-spacing: -0.045em;
+            margin-bottom: 0.4rem;
+            color: var(--sfs-text);
+        }
+
+        body.milstd-page .milstd-hero-card p {
+            font-size: 0.82rem;
+            line-height: 1.42;
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        body.milstd-page .milstd-hero-card .button-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.45rem;
+            margin-top: 0.65rem;
+            padding-top: 0.65rem;
+            border-top: 1px solid rgba(126, 160, 190, 0.22);
+        }
+
+        body.milstd-page .milstd-hero-card .btn {
+            width: 100%;
+            min-height: 40px;
+            font-size: 0.95rem;
+            padding: 0.55rem 0.8rem;
+        }
+
+    /* ═══════════════════════════════════════════
+       QUICK LINKS — horizontal scroll
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-quicklinks .credibility-items {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 0.75rem 1rem;
+        gap: 0.65rem 1.25rem;
+        min-height: 48px;
+        scrollbar-width: none;
+    }
+
+        body.milstd-page .milstd-quicklinks .credibility-items::-webkit-scrollbar {
+            display: none;
+        }
+
+        body.milstd-page .milstd-quicklinks .credibility-items a {
+            flex: 0 0 auto;
+            font-size: 0.86rem;
+            white-space: nowrap;
+        }
+
+    /* ═══════════════════════════════════════════
+       REQUIREMENTS PHOTO — card grid over image
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-photo-section.milstd-requirements-photo {
+        min-height: 680px;
+        display: block;
+        align-items: unset;
+        padding: 1rem;
+    }
+
+    body.milstd-page .milstd-requirements-layout {
+        padding: 1.5rem 0;
+        min-height: 680px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    body.milstd-page .milstd-requirements-card-grid {
+        width: 100%;
+        justify-self: stretch;
+    }
+
+        body.milstd-page .milstd-requirements-card-grid .card {
+            padding: 0.7rem 0.85rem;
+            border-radius: 0.75rem;
+        }
+
+            body.milstd-page .milstd-requirements-card-grid .card h3 {
+                font-size: 0.90rem;
+                line-height: 1.2;
+                margin-bottom: 0.2rem;
+            }
+
+            body.milstd-page .milstd-requirements-card-grid .card p {
+                font-size: 0.76rem;
+                line-height: 1.42;
+            }
+
+    /* ═══════════════════════════════════════════
+       REQUIREMENTS BANNER — text section
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-requirements-banner {
+        padding: 1.5rem 0;
+        text-align: left;
+    }
+
+        body.milstd-page .milstd-requirements-banner h2 {
+            font-size: clamp(1.85rem, 8vw, 2.5rem);
+            line-height: 1.04;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.45rem;
+        }
+
+        body.milstd-page .milstd-requirements-banner p:last-child {
+            font-size: 0.92rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+    /* ═══════════════════════════════════════════
+       PHOTO SECTIONS — image fills, card at bottom
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-photo-section {
+        min-height: 680px;
+        overflow: hidden;
+        display: block;
+        align-items: unset;
+        padding: 1rem;
+    }
+
+    body.milstd-page .milstd-photo-content,
+    body.milstd-page .milstd-photo-content-left {
+        position: relative;
+        z-index: 2;
+        width: auto;
+        max-width: none;
+        min-height: 680px;
+        padding: 0;
+        display: flex;
         align-items: flex-end;
         justify-content: center;
     }
 
-    .milstd-hero-card,
-    .milstd-photo-card,
-    .milstd-next-step-card {
-        width: 100%;
-        max-width: 620px;
-        padding: clamp(1.25rem, 5vw, 1.8rem);
-        background: rgba(255, 255, 255, 0.86);
+    body.milstd-page .milstd-photo-card {
+        position: static;
+        width: auto;
+        max-width: none;
+        padding: 0.9rem 1.05rem;
+        background: linear-gradient(180deg, rgba(245, 250, 255, 0.54) 0%, rgba(224, 239, 250, 0.46) 48%, rgba(203, 226, 242, 0.38) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.52);
+        border-radius: 0.85rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
     }
 
-        .milstd-hero-card h1,
-        .milstd-photo-card h2,
-        .milstd-next-step-card h2,
-        .milstd-why-sfs h2 {
-            font-size: clamp(2.05rem, 9vw, 3.45rem);
-            line-height: 1.02;
+        body.milstd-page .milstd-photo-card h2 {
+            font-size: clamp(1.6rem, 7.2vw, 2.2rem);
+            line-height: 1.0;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.4rem;
+            color: var(--sfs-blue);
         }
 
-    .milstd-quicklinks .credibility-items {
-        justify-content: flex-start;
-        overflow-x: auto;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-    }
-
-        .milstd-quicklinks .credibility-items a {
-            flex: 0 0 auto;
+        body.milstd-page .milstd-photo-card p {
+            font-size: 0.88rem;
+            line-height: 1.42;
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+            color: var(--sfs-text);
         }
 
-    .milstd-next-step .btn,
-    .milstd-hero .btn {
-        width: 100%;
+            body.milstd-page .milstd-photo-card p:last-child {
+                margin-bottom: 0;
+            }
+
+        body.milstd-page .milstd-photo-card .feature-list li {
+            font-size: 0.88rem;
+            line-height: 1.42;
+            color: var(--sfs-text);
+        }
+
+    /* ═══════════════════════════════════════════
+       WHY SFS — split layout
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-why-sfs h2 {
+        font-size: clamp(1.85rem, 8vw, 2.5rem);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+        margin-bottom: 0.45rem;
     }
+
+    body.milstd-page .milstd-why-sfs .split-layout {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+        body.milstd-page .milstd-why-sfs .split-layout > div:first-child {
+            padding: 0.9rem 1.05rem;
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid rgba(219, 228, 236, 0.9);
+            border-radius: 0.85rem;
+            box-shadow: 0 8px 20px rgba(18, 32, 47, 0.10);
+        }
+
+            body.milstd-page .milstd-why-sfs .split-layout > div:first-child p {
+                font-size: 0.88rem;
+                line-height: 1.5;
+            }
+
+    body.milstd-page .milstd-why-sfs .panel {
+        padding: 0.9rem 1.05rem;
+    }
+
+        body.milstd-page .milstd-why-sfs .panel h3 {
+            font-size: 0.90rem;
+            line-height: 1.2;
+            margin-bottom: 0.2rem;
+        }
+
+    body.milstd-page .milstd-why-sfs .feature-list li {
+        font-size: 0.84rem;
+        line-height: 1.42;
+    }
+
+    /* ═══════════════════════════════════════════
+       FOOTER SEO + PACKAGING SUMMARY
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-footer-seo p,
+    body.milstd-page .milstd-packaging-summary p {
+        font-size: 0.84rem;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    /* ═══════════════════════════════════════════
+       NEXT STEP — glass card pinned to image bottom
+    ═══════════════════════════════════════════ */
+    body.milstd-page .milstd-next-step {
+        display: flex;
+        align-items: flex-end;
+        min-height: 560px;
+        padding: 0 1rem 1rem;
+    }
+
+        body.milstd-page .milstd-next-step > .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: none;
+        }
+
+    body.milstd-page .milstd-next-step-card {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0.9rem 1.05rem;
+        background: linear-gradient(180deg, rgba(245, 250, 255, 0.54) 0%, rgba(224, 239, 250, 0.46) 48%, rgba(203, 226, 242, 0.38) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.52);
+        border-radius: 0.85rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.22);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+    }
+
+        body.milstd-page .milstd-next-step-card h2 {
+            font-size: clamp(1.6rem, 7vw, 2.2rem);
+            line-height: 1.0;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.35rem;
+            color: var(--sfs-text);
+        }
+
+        body.milstd-page .milstd-next-step-card p {
+            font-size: 0.82rem;
+            line-height: 1.4;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        body.milstd-page .milstd-next-step-card .button-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.45rem;
+            margin-top: 0.65rem;
+            padding-top: 0.65rem;
+            border-top: 1px solid rgba(126, 160, 190, 0.22);
+        }
+
+        body.milstd-page .milstd-next-step-card .btn {
+            width: 100%;
+            min-height: 42px;
+            font-size: 1.0rem;
+            padding: 0.65rem 0.9rem;
+        }
 }
