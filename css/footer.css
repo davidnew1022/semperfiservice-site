@@ -12,6 +12,28 @@
     padding-bottom: 2rem;
 }
 
+.footer-grid-reversed {
+    grid-template-columns: minmax(220px, 1fr) minmax(180px, 0.75fr) minmax(320px, 1.35fr);
+    align-items: start;
+}
+
+.footer-brand-column {
+    justify-self: end;
+    max-width: 430px;
+}
+
+    .footer-brand-column .footer-brand {
+        justify-content: flex-start;
+    }
+
+.footer-copyright {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    color: #c6d4e1;
+    font-size: 0.95rem;
+}
+
 .footer-brand {
     margin-bottom: 0.75rem;
     color: #ffffff;
