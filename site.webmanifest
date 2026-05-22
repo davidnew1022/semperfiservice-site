@@ -1,0 +1,24 @@
+{
+  "name": "Semper Fi Services",
+  "short_name": "SFS",
+  "description": "Veteran-led aerospace parts distribution, NSN sourcing, and government supply support.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#123f73",
+  "theme_color": "#123f73",
+  "icons": [
+    {
+      "src": "assets/images/brand/logo2.png?v=8",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/brand/logo2.png?v=8",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
