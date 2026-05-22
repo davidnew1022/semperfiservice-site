@@ -998,26 +998,29 @@ MOBILE
     /* ═══════════════════════════════════════════
        QUICK LINKS — horizontal scroll
     ═══════════════════════════════════════════ */
-    body.capabilities-page .capabilities-quicklinks .credibility-items {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 0.75rem 1rem;
-        gap: 0.65rem 1.25rem;
-        min-height: 48px;
-        scrollbar-width: none;
+    body.capabilities-page .capabilities-quicklinks {
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
     }
 
-        body.capabilities-page .capabilities-quicklinks .credibility-items::-webkit-scrollbar {
-            display: none;
+        body.capabilities-page .capabilities-quicklinks .credibility-items {
+            width: 100%;
+            max-width: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            overflow: visible;
+            padding: 0.75rem 1rem;
+            gap: 0.65rem 1.1rem;
+            min-height: auto;
         }
 
-        body.capabilities-page .capabilities-quicklinks .credibility-items a {
-            flex: 0 0 auto;
-            font-size: 0.72rem;
-            white-space: nowrap;
-        }
+            body.capabilities-page .capabilities-quicklinks .credibility-items a {
+                flex: 0 1 auto;
+                font-size: 0.72rem;
+                white-space: nowrap;
+            }
 
     /* ═══════════════════════════════════════════
        PHOTO SECTIONS — Core & Quality

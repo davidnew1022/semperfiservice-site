@@ -1083,27 +1083,29 @@ MOBILE
     /* ═══════════════════════════════════════════
        QUICK LINKS — horizontal scroll
     ═══════════════════════════════════════════ */
-    body.contact-page .contact-quicklinks .credibility-items {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding: 0.75rem 1rem;
-        gap: 0.65rem 1.25rem;
-        min-height: 48px;
-        scrollbar-width: none;
+    body.contact-page .contact-quicklinks {
+        width: 100%;
+        max-width: 100%;
+        overflow: visible;
     }
 
-        body.contact-page .contact-quicklinks .credibility-items::-webkit-scrollbar {
-            display: none;
+        body.contact-page .contact-quicklinks .credibility-items {
+            width: 100%;
+            max-width: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            overflow: visible;
+            padding: 0.75rem 1rem;
+            gap: 0.65rem 1.1rem;
+            min-height: auto;
         }
 
-        body.contact-page .contact-quicklinks .credibility-items a {
-            flex: 0 0 auto;
-            font-size: 0.86rem;
-            white-space: nowrap;
-        }
-
+            body.contact-page .contact-quicklinks .credibility-items a {
+                flex: 0 1 auto;
+                font-size: 0.86rem;
+                white-space: nowrap;
+            }
     /* ═══════════════════════════════════════════
        SNAPSHOT — card-grid-3 → 2-column
     ═══════════════════════════════════════════ */
