@@ -103,7 +103,14 @@
 
     <main>
         <section class="quality-hero" id="quality-hero" aria-label="Quality hero image">
-            <img src="../assets/images/hero/quality/hero.jpg" alt="Quality system and aerospace distribution background" class="quality-hero-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/quality/hero-mobile.webp">
+                <img src="../assets/images/hero/quality/hero.webp"
+                     alt="Quality system and aerospace distribution background"
+                     class="quality-hero-image"
+                     fetchpriority="high"
+                     decoding="sync">
+            </picture>
 
             <div class="container quality-hero-content">
                 <div class="quality-hero-card quality-hero-load">
@@ -290,7 +297,14 @@
         </section>
 
         <section class="quality-photo-section quality-cyber-photo" id="cybersecurity" aria-label="Cybersecurity image">
-            <img src="../assets/images/hero/quality/cyber_security.jpg" alt="Controlled digital records and cybersecurity background" class="quality-section-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/quality/cyber_security-mobile.webp">
+                <img src="../assets/images/hero/quality/cyber_security.webp"
+                     alt="Controlled digital records and cybersecurity background"
+                     class="quality-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container quality-photo-content quality-photo-content-left">
                 <div class="quality-photo-card reveal-left">
@@ -347,7 +361,14 @@
         </section>
 
         <section class="quality-photo-section quality-commitment-photo" id="quality-commitment" aria-label="Quality commitment image">
-            <img src="../assets/images/hero/quality/quality_commitment.jpg" alt="Quality commitment and execution background" class="quality-section-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/quality/quality_commitment-mobile.webp">
+                <img src="../assets/images/hero/quality/quality_commitment.webp"
+                     alt="Quality commitment and execution background"
+                     class="quality-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container quality-photo-content quality-photo-content-right">
                 <div class="quality-photo-card reveal-right">
