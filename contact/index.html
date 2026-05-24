@@ -100,7 +100,14 @@
 
     <main>
         <section class="contact-hero" id="contact-hero" aria-label="Contact hero image">
-            <img src="../assets/images/hero/home/next_steps_banner.jpg" alt="Contact and RFQ support background" class="contact-hero-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/home/next_steps_banner-mobile.webp">
+                <img src="../assets/images/hero/home/next_steps_banner.webp"
+                     alt="Contact and RFQ support background"
+                     class="contact-hero-image"
+                     fetchpriority="high"
+                     decoding="sync">
+            </picture>
 
             <div class="container contact-hero-content">
                 <div class="contact-hero-card contact-hero-load">
@@ -168,7 +175,14 @@
         </section>
 
         <section class="contact-directory-full" id="contact-directory" aria-label="Contact directory background image">
-            <img src="../assets/images/hero/contact/contact_directory.jpg" alt="Contact directory background" class="contact-section-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/contact/contact_directory-mobile.webp">
+                <img src="../assets/images/hero/contact/contact_directory.webp"
+                     alt="Contact directory background"
+                     class="contact-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container contact-directory-full-inner">
                 <div class="contact-photo-card contact-directory-main-card reveal-left">
@@ -404,7 +418,14 @@
         </section>
 
         <section class="contact-request-full" id="request-form" aria-label="Request quote form background image">
-            <img src="../assets/images/hero/contact/request_form.jpg" alt="Request quote form background" class="contact-section-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/contact/request_form-mobile.webp">
+                <img src="../assets/images/hero/contact/request_form.webp"
+                     alt="Request quote form background"
+                     class="contact-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container contact-request-full-inner">
                 <div class="contact-request-form-shell contact-request-sequence reveal">
@@ -643,7 +664,14 @@
         </section>
 
         <section class="contact-future-full" aria-label="Future contact structure background image">
-            <img src="../assets/images/hero/contact/future_structure.jpg" alt="Future contact structure background" class="contact-section-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/contact/future_structure-mobile.webp">
+                <img src="../assets/images/hero/contact/future_structure.webp"
+                     alt="Future contact structure background"
+                     class="contact-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container contact-future-full-inner">
                 <div class="contact-future-card-grid">
