@@ -787,7 +787,7 @@ REQUEST FORM FULL IMAGE SECTION
     }
 
         .contact-request-form-layout .contact-form-intro h2 {
-            color: var(--sfs-text);
+            color: var(--sfs-blue);
             font-size: clamp(2.2rem, 4vw, 3.9rem);
             line-height: 1.02;
             letter-spacing: -0.045em;
@@ -796,16 +796,45 @@ REQUEST FORM FULL IMAGE SECTION
 
         .contact-request-form-layout .contact-form-intro p,
         .contact-request-form-layout .contact-form-intro li {
-            color: var(--sfs-blue);
+            color: var(--sfs-text);
             font-weight: 600;
             line-height: 1.75;
         }
+
+    .contact-request-form-layout .form-row label {
+        display: inline-block;
+        font-size: clamp(1.08rem, 1.05vw, 1.2rem);
+        line-height: 1.25;
+        font-weight: 800;
+        color: var(--sfs-blue);
+        letter-spacing: 0.01em;
+    }
 
     .contact-request-form-layout .form-row input,
     .contact-request-form-layout .form-row select,
     .contact-request-form-layout .form-row textarea {
         width: 100%;
     }
+
+    .contact-request-form-layout .form-row select {
+        min-height: 50px;
+        padding: 0.9rem 2.75rem 0.9rem 0.95rem;
+        border: 1px solid #c5d2de;
+        border-radius: 0.75rem;
+        font: inherit;
+        font-size: 0.98rem;
+        font-weight: 650;
+        line-height: 1.25;
+        color: var(--sfs-text);
+        background-color: #ffffff;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85), 0 8px 20px rgba(18, 32, 47, 0.06);
+        cursor: pointer;
+    }
+
+        .contact-request-form-layout .form-row select:focus {
+            outline: 3px solid rgba(31, 79, 130, 0.16);
+            border-color: #1f4f82;
+        }
 
 .contact-request-sequence .request-reveal-step {
     opacity: 0;

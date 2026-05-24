@@ -415,13 +415,16 @@
                             <h2 class="request-reveal-step request-reveal-step-2">Request / Quote Form</h2>
 
                             <p class="request-reveal-step request-reveal-step-3">
-                                Use this form to route DLA RFQs, NSN sourcing requests, aerospace hardware quotes, documentation needs, supplier questions, customer support, and MIL-STD packaging quote requests.
+                                Use this form to send RFQs, sourcing requests, documentation questions, support issues, contract follow-up, or MIL-STD packaging quote details to the correct Semper Fi Services contact path.
                             </p>
 
                             <ul class="feature-list">
-                                <li class="request-reveal-step request-reveal-step-4">Directory-based routing</li>
-                                <li class="request-reveal-step request-reveal-step-5">Autofill-friendly contact inputs</li>
-                                <li class="request-reveal-step request-reveal-step-6">General request and packaging quote intake</li>
+                                <li class="request-reveal-step request-reveal-step-4">Choose the request type that best matches your need.</li>
+                                <li class="request-reveal-step request-reveal-step-5">Select the preferred directory so the form routes to the correct team.</li>
+                                <li class="request-reveal-step request-reveal-step-6">Include NSN, part number, solicitation number, quantity, deadline, and documentation needs when available.</li>
+                                <li class="request-reveal-step request-reveal-step-7">Shipping &amp; Logistics opens extra packaging questions automatically.</li>
+                                <li class="request-reveal-step request-reveal-step-8">Most requests are reviewed within a 3 business day turnaround window.</li>
+                                <li class="request-reveal-step request-reveal-step-8">Complete the form as fully as possible so we can review your request and respond as soon as possible.</li>
                             </ul>
                         </div>
 
@@ -438,12 +441,12 @@
 
                             <div class="form-row request-reveal-step request-reveal-step-6">
                                 <label for="email">Email</label>
-                                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email">
+                                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" inputmode="email">
                             </div>
 
                             <div class="form-row request-reveal-step request-reveal-step-6">
                                 <label for="phone">Phone</label>
-                                <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel">
+                                <input id="phone" name="phone" type="tel" placeholder="(000) 000-0000" autocomplete="tel" inputmode="tel">
                             </div>
 
                             <div class="form-row request-reveal-step request-reveal-step-7">
@@ -485,6 +488,7 @@
                                        name="selected_contact_email"
                                        type="email"
                                        placeholder="Select a directory to autofill"
+                                       autocomplete="off"
                                        readonly>
                             </div>
 

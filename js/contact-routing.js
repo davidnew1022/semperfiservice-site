@@ -28,6 +28,20 @@ function initContactPageRouting() {
         shipping: "shipping@sfsdistribution.com"
     };
 
+    const directoryRequestTypeMap = {
+        sales: "dla-rfq",
+        info: "general",
+        support: "customer-support",
+        contracts: "dla-rfq",
+        sourcing: "nsn-sourcing",
+        quality: "documentation",
+        accounting: "general",
+        purchasing: "supplier-support",
+        compliance: "documentation",
+        traceability: "documentation",
+        shipping: "packaging"
+    };
+
     const packagingDirectories = new Set([
         "shipping"
     ]);
@@ -38,23 +52,31 @@ function initContactPageRouting() {
         selectedContactEmail.value = directoryEmailMap[preferredContact.value] || "";
     };
 
+    const syncRequestTypeFromDirectory = () => {
+        const mappedRequestType = directoryRequestTypeMap[preferredContact.value];
+
+        if (mappedRequestType) {
+            requestType.value = mappedRequestType;
+        }
+    };
+
     const syncPackagingFields = () => {
         const isPackagingQuote =
             requestType.value === "packaging" ||
             packagingDirectories.has(preferredContact.value);
 
-        if (packagingFields) {
-            packagingFields.hidden = !isPackagingQuote;
-        }
-
         if (isPackagingQuote && preferredContact.value === "") {
             preferredContact.value = "shipping";
+        }
+
+        if (packagingFields) {
+            packagingFields.hidden = !isPackagingQuote;
         }
     };
 
     const syncDirectoryRouting = () => {
-        syncPackagingFields();
         syncSelectedContactEmail();
+        syncPackagingFields();
     };
 
     const scrollToRequestForm = (behavior = "smooth") => {
@@ -114,18 +136,26 @@ function initContactPageRouting() {
     });
 
     requestType.addEventListener("change", syncDirectoryRouting);
-    preferredContact.addEventListener("change", syncDirectoryRouting);
+
+    preferredContact.addEventListener("change", () => {
+        syncRequestTypeFromDirectory();
+        syncDirectoryRouting();
+    });
 
     const params = new URLSearchParams(window.location.search);
     const requestParam = params.get("request");
     const directoryParam = params.get("directory");
 
-    if (requestParam) {
-        requestType.value = requestParam;
+    const normalizedRequestParam = requestParam ? requestParam.trim().toLowerCase() : "";
+    const normalizedDirectoryParam = directoryParam ? directoryParam.trim().toLowerCase().replace(/\s+/g, "-") : "";
+
+    if (normalizedRequestParam) {
+        requestType.value = normalizedRequestParam;
     }
 
-    if (directoryParam) {
-        preferredContact.value = directoryParam;
+    if (normalizedDirectoryParam) {
+        preferredContact.value = normalizedDirectoryParam;
+        syncRequestTypeFromDirectory();
     }
 
     syncDirectoryRouting();
