@@ -24,7 +24,7 @@ HERO
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url("../../assets/images/hero/capabilities/Hero.jpg");
+    background-image: url("../../assets/images/hero/capabilities/Hero.webp");
     background-size: 138%;
     background-position: var(--metal-x, 50%) var(--metal-y, 50%);
     background-repeat: no-repeat;
@@ -241,7 +241,7 @@ CONTENT SECTIONS
 .capabilities-differentiators-photo {
     position: relative;
     overflow: hidden;
-    background-image: url("../../assets/images/hero/capabilities/differentiators.jpg");
+    background-image: url("../../assets/images/hero/capabilities/differentiators.webp");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -331,7 +331,7 @@ COMPANY DATA CLOUD SECTION
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("../../assets/images/page-art/cloud-cover/cloud-transition-02.jpg");
+    background-image: url("../../assets/images/page-art/cloud-cover/cloud-transition-02.webp");
     background-size: 155%;
     background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
     background-repeat: no-repeat;
@@ -395,7 +395,7 @@ NEXT STEP
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
+    background-image: url("../../assets/images/hero/home/next_steps_banner.webp");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1252,4 +1252,21 @@ MOBILE
             font-size: 0.85rem;
             padding: 0.65rem 0.9rem;
         }
+}
+@media (max-width: 768px) {
+    .capabilities-hero-bg {
+        background-image: url("../../assets/images/hero/capabilities/Hero-mobile.webp");
+    }
+
+    .capabilities-differentiators-photo {
+        background-image: url("../../assets/images/hero/capabilities/differentiators-mobile.webp");
+    }
+
+    .capabilities-company-data {
+        background-image: url("../../assets/images/page-art/cloud-cover/cloud-transition-02-mobile.webp");
+    }
+
+    .capabilities-next-step-bg {
+        background-image: url("../../assets/images/hero/home/next_steps_banner-mobile.webp");
+    }
 }
