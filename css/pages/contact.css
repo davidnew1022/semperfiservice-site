@@ -341,7 +341,7 @@ CONTACT DIRECTORY FULL IMAGE SECTION
 
 .contact-directory-full {
     position: relative;
-    min-height: clamp(980px, 92vw, 1240px);
+    min-height: clamp(1120px, 92vw, 1380px);
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -365,7 +365,7 @@ CONTACT DIRECTORY FULL IMAGE SECTION
         inset: 0;
         z-index: 1;
         pointer-events: none;
-        background: linear-gradient(90deg, rgba(5, 18, 32, 0.42) 0%, rgba(5, 18, 32, 0.18) 48%, rgba(5, 18, 32, 0.08) 100%);
+        background: linear-gradient(90deg, rgba(5, 18, 32, 0.50) 0%, rgba(5, 18, 32, 0.22) 48%, rgba(5, 18, 32, 0.10) 100%);
     }
 
 .contact-directory-full-inner {
@@ -375,50 +375,123 @@ CONTACT DIRECTORY FULL IMAGE SECTION
     min-height: inherit;
     display: grid;
     align-content: center;
-    gap: clamp(2rem, 4vw, 3rem);
+    gap: clamp(1.35rem, 2.4vw, 2.1rem);
     padding: clamp(4rem, 7vw, 6rem) 0;
 }
 
 .contact-directory-main-card {
-    width: min(640px, 100%);
+    width: min(720px, 100%);
+    justify-self: start;
+    margin-left: clamp(1rem, 4vw, 4rem);
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.86) 0%, rgba(220, 236, 248, 0.76) 42%, rgba(199, 222, 239, 0.68) 100%);
+    border: 1px solid rgba(126, 160, 190, 0.62);
+}
+
+.contact-directory-group {
+    display: grid;
+    gap: 1rem;
+    width: min(1180px, 100%);
     justify-self: center;
 }
+
+.contact-directory-heading {
+    width: min(880px, 100%);
+    justify-self: center;
+    text-align: center;
+    padding: clamp(1rem, 2vw, 1.35rem);
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.88) 0%, rgba(220, 236, 248, 0.78) 100%);
+    border: 1px solid rgba(126, 160, 190, 0.58);
+    border-radius: 1rem;
+    box-shadow: 0 18px 45px rgba(18, 32, 47, 0.16);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
+}
+
+    .contact-directory-heading h3 {
+        color: var(--sfs-text);
+        font-size: clamp(1.75rem, 3vw, 3rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+        margin-bottom: 0.55rem;
+    }
+
+    .contact-directory-heading p {
+        max-width: 760px;
+        margin: 0 auto;
+        color: #12385f;
+        font-size: clamp(0.96rem, 1.1vw, 1.08rem);
+        line-height: 1.62;
+        font-weight: 700;
+    }
 
 .contact-directory-card-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    width: min(1080px, 100%);
+    gap: 0.9rem;
+    width: 100%;
     justify-self: center;
 }
 
-    .contact-directory-card-grid .card {
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(255, 255, 255, 0.74);
-        border-radius: 1rem;
-        box-shadow: 0 16px 36px rgba(5, 18, 32, 0.18);
-        backdrop-filter: blur(6px);
-        -webkit-backdrop-filter: blur(6px);
+.contact-directory-primary-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.contact-directory-card-grid .card {
+    min-height: 205px;
+    padding: 1rem 1.05rem;
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.90) 0%, rgba(220, 236, 248, 0.82) 100%);
+    border: 1px solid rgba(156, 180, 201, 0.68);
+    border-radius: 1rem;
+    box-shadow: 0 18px 45px rgba(18, 32, 47, 0.13);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+
+    .contact-directory-card-grid .card:hover,
+    .contact-directory-card-grid .card:focus {
+        transform: translateY(-3px);
+        border-color: rgba(75, 156, 211, 0.72);
+        box-shadow: 0 22px 50px rgba(18, 32, 47, 0.20);
+        outline: none;
     }
 
-        .contact-directory-card-grid .card h3 {
-            color: var(--sfs-text);
-            font-size: 1.02rem;
-            line-height: 1.28;
-            margin-bottom: 0.55rem;
-        }
+    .contact-directory-card-grid .card h3 {
+        color: var(--sfs-text);
+        font-size: clamp(0.98rem, 1.05vw, 1.12rem);
+        line-height: 1.22;
+        letter-spacing: -0.025em;
+        margin-bottom: 0.5rem;
+    }
 
-        .contact-directory-card-grid .card p {
-            color: var(--sfs-muted);
-            font-size: 0.93rem;
-            line-height: 1.62;
-        }
+    .contact-directory-card-grid .card p {
+        color: var(--sfs-muted);
+        font-size: clamp(0.82rem, 0.88vw, 0.93rem);
+        line-height: 1.52;
+        font-weight: 500;
+    }
 
-        .contact-directory-card-grid .card strong {
-            color: var(--sfs-blue);
-            font-weight: 800;
-        }
+    .contact-directory-card-grid .card strong {
+        color: var(--sfs-blue);
+        font-weight: 800;
+    }
+
+@media (max-width: 1180px) {
+    .contact-directory-primary-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .contact-directory-main-card {
+        justify-self: center;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-directory-primary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
 /* =========================================================
 FORM SECTION
 ========================================================= */
@@ -1205,7 +1278,114 @@ MOBILE
                 line-height: 1.42;
                 word-break: break-word;
             }
+    /* ═══════════════════════════════════════════
+       DIRECTORY FULL — mobile quality-page style
+    ═══════════════════════════════════════════ */
+    body.contact-page .contact-directory-full {
+        min-height: auto;
+        display: block;
+        overflow: hidden;
+        padding: 1rem;
+    }
 
+    body.contact-page .contact-directory-full-inner {
+        min-height: auto;
+        padding: 0;
+        gap: 0.75rem;
+    }
+
+    body.contact-page .contact-directory-main-card {
+        position: static;
+        width: auto;
+        max-width: none;
+        justify-self: stretch;
+        margin-left: 0;
+        padding: 0.9rem 1.05rem;
+        background: linear-gradient(180deg, rgba(245, 250, 255, 0.54) 0%, rgba(224, 239, 250, 0.46) 48%, rgba(203, 226, 242, 0.38) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.52);
+        border-radius: 0.85rem;
+        box-shadow: 0 12px 28px rgba(5, 18, 32, 0.18);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+        body.contact-page .contact-directory-main-card h2 {
+            font-size: clamp(1.6rem, 7.2vw, 2.2rem);
+            line-height: 1;
+            letter-spacing: -0.04em;
+            margin-bottom: 0.35rem;
+            color: var(--sfs-blue);
+        }
+
+        body.contact-page .contact-directory-main-card p {
+            font-size: 0.86rem;
+            line-height: 1.42;
+            font-weight: 600;
+            color: var(--sfs-text);
+            margin-bottom: 0.45rem;
+        }
+
+            body.contact-page .contact-directory-main-card p:last-child {
+                margin-bottom: 0;
+            }
+
+    body.contact-page .contact-directory-group {
+        gap: 0.55rem;
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    body.contact-page .contact-directory-heading {
+        justify-self: stretch;
+        width: 100%;
+        padding: 0.75rem 0.85rem;
+        text-align: left;
+        border-radius: 0.75rem;
+    }
+
+        body.contact-page .contact-directory-heading h3 {
+            font-size: 1.18rem;
+            line-height: 1.12;
+            letter-spacing: -0.035em;
+            margin-bottom: 0.25rem;
+        }
+
+        body.contact-page .contact-directory-heading p {
+            font-size: 0.80rem;
+            line-height: 1.45;
+            font-weight: 650;
+        }
+
+    body.contact-page .contact-directory-primary-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+        width: 100%;
+        justify-self: stretch;
+    }
+
+    body.contact-page .contact-directory-card-grid .card {
+        min-height: 0;
+        padding: 0.75rem 0.9rem;
+        border-radius: 0.75rem;
+    }
+
+        body.contact-page .contact-directory-card-grid .card .section-kicker {
+            font-size: 0.60rem;
+            margin-bottom: 0.15rem;
+        }
+
+        body.contact-page .contact-directory-card-grid .card h3 {
+            font-size: 0.96rem;
+            line-height: 1.18;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.24rem;
+        }
+
+        body.contact-page .contact-directory-card-grid .card p {
+            font-size: 0.78rem;
+            line-height: 1.42;
+            word-break: break-word;
+        }
     /* ═══════════════════════════════════════════
        DIRECT CONTACT PANEL — routing guide
     ═══════════════════════════════════════════ */

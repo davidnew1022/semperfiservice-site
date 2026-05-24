@@ -176,92 +176,213 @@
                     <h2>Contact Directory</h2>
 
                     <p>
-                        Select the directory that best matches your request. Each option routes RFQs, DLA sourcing inquiries, NSN parts requests, aerospace hardware quotes, documentation support, or packaging questions to the appropriate contact path.
+                        Semper Fi Services uses dedicated email groups to route RFQs, supplier communication, customer support, contract coordination, sourcing, quality documentation, accounting, shipping, and compliance inquiries to the right workflow.
+                    </p>
+
+                    <p>
+                        Select the directory that best matches your request. Each card routes users to the contact form, prefills the selected directory, and identifies the correct contact email.
                     </p>
                 </div>
 
-                <div class="contact-directory-card-grid" id="direct-contact">
-                    <article class="card reveal-scale reveal-delay-1">
-                        <p class="section-kicker">Front Office</p>
-                        <h3>General Intake</h3>
-                        <p><strong>Email:</strong> semperfi@sfsdistribution.com</p>
-                        <p>Best for general inquiries, routing requests, and first-contact communication.</p>
-                    </article>
+                <div class="contact-directory-group">
+                    <div class="contact-directory-heading reveal-up">
+                        <p class="section-kicker">Contact Paths</p>
+                        <h3>Email Groups for Clear Routing and Faster Response</h3>
+                        <p>
+                            These directories help us maintain customer relationships, organize response processes, and keep RFQs, contracts, sourcing, documentation, accounting, and support requests moving through the correct path.
+                        </p>
+                    </div>
 
-                    <article class="card reveal-scale reveal-delay-2">
-                        <p class="section-kicker">Sales</p>
-                        <h3>Quotes &amp; Opportunities</h3>
-                        <p><strong>Email:</strong> sales@sfsdistribution.com</p>
-                        <p>Best for DLA RFQs, NSN parts sourcing, aerospace hardware quotes, pricing discussions, and business development.</p>
-                    </article>
+                    <div class="contact-directory-card-grid contact-directory-primary-grid" id="direct-contact">
+                        <article class="card contact-directory-card reveal-scale reveal-delay-1"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="dla-rfq"
+                                 data-directory="sales"
+                                 data-contact-email="sales@sfsdistribution.com">
+                            <p class="section-kicker">Sales</p>
+                            <h3>RFQs, Quotes &amp; Opportunities</h3>
+                            <p><strong>Email:</strong> sales@sfsdistribution.com</p>
+                            <p>RFQs, vendor support, customer quotes, pricing requests, and sourcing inquiries tied to active opportunities.</p>
+                        </article>
 
-                    <article class="card reveal-scale reveal-delay-3">
-                        <p class="section-kicker">Customer Support</p>
-                        <h3>Existing Customer Help</h3>
-                        <p><strong>Email:</strong> customer.support@sfsdistribution.com</p>
-                        <p>Best for order follow-up, delivery questions, documentation requests, and support.</p>
-                    </article>
+                        <article class="card contact-directory-card reveal-scale reveal-delay-2"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="general"
+                                 data-directory="info"
+                                 data-contact-email="info@sfsdistribution.com">
+                            <p class="section-kicker">Information Desk</p>
+                            <h3>General Company Intake</h3>
+                            <p><strong>Email:</strong> info@sfsdistribution.com</p>
+                            <p>General company inquiries, website contact submissions, front office communications, and requests that need routing.</p>
+                        </article>
 
-                    <article class="card reveal-scale reveal-delay-1">
-                        <p class="section-kicker">Thomas Smith</p>
-                        <h3>Field / Business-Facing Contact</h3>
-                        <p><strong>Email:</strong> thomas.smith@sfsdistribution.com</p>
-                        <p>Best for supplier relationships, business coordination, and project-facing communication.</p>
-                    </article>
+                        <article class="card contact-directory-card reveal-scale reveal-delay-3"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="customer-support"
+                                 data-directory="support"
+                                 data-contact-email="support@sfsdistribution.com">
+                            <p class="section-kicker">Customer Support</p>
+                            <h3>Support &amp; Follow-Up</h3>
+                            <p><strong>Email:</strong> support@sfsdistribution.com</p>
+                            <p>Customer and vendor support requests, issue resolution, order follow-up, service questions, and response tracking.</p>
+                        </article>
 
-                    <article class="card reveal-scale reveal-delay-2">
-                        <p class="section-kicker">David New</p>
-                        <h3>Operations / Documentation Contact</h3>
-                        <p><strong>Email:</strong> david.new@sfsdistribution.com</p>
-                        <p>Best for documentation detail, traceability questions, inspection-ready records, packaging requirements, and operational follow-up.</p>
-                    </article>
+                        <article class="card contact-directory-card reveal-scale reveal-delay-1"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="dla-rfq"
+                                 data-directory="contracts"
+                                 data-contact-email="contracts@sfsdistribution.com">
+                            <p class="section-kicker">Contracts</p>
+                            <h3>Government &amp; Award Coordination</h3>
+                            <p><strong>Email:</strong> contracts@sfsdistribution.com</p>
+                            <p>Government solicitations, awarded contracts, RFQ coordination, contract administration, and contract-related follow-up.</p>
+                        </article>
 
-                    <article class="card reveal-scale reveal-delay-3">
-                        <p class="section-kicker">Packaging Quote</p>
-                        <h3>Packaging &amp; Fulfillment Intake</h3>
-                        <p><strong>Email:</strong> sales@sfsdistribution.com</p>
-                        <p>Best for MIL-STD packaging questions, pack-out requirements, unit of issue, quantity per pack, weight, labeling, preservation, and packaging quote requests.</p>
-                    </article>
+                        <article class="card contact-directory-card reveal-scale reveal-delay-2"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="nsn-sourcing"
+                                 data-directory="sourcing"
+                                 data-contact-email="sourcing@sfsdistribution.com">
+                            <p class="section-kicker">Sourcing</p>
+                            <h3>Supplier &amp; Manufacturer Coordination</h3>
+                            <p><strong>Email:</strong> sourcing@sfsdistribution.com</p>
+                            <p>Supplier outreach, manufacturer sourcing, approved-source review, vendor pricing, availability checks, and sourcing coordination.</p>
+                        </article>
+
+                        <article class="card contact-directory-card reveal-scale reveal-delay-3"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="documentation"
+                                 data-directory="quality"
+                                 data-contact-email="quality@sfsdistribution.com">
+                            <p class="section-kicker">Quality Assurance</p>
+                            <h3>Documentation &amp; Records</h3>
+                            <p><strong>Email:</strong> quality@sfsdistribution.com</p>
+                            <p>Inspection records, certifications, traceability documentation, test records, compliance documents, and quality communications.</p>
+                        </article>
+
+                        <article class="card contact-directory-card reveal-scale reveal-delay-1"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="general"
+                                 data-directory="accounting"
+                                 data-contact-email="accounting@sfsdistribution.com">
+                            <p class="section-kicker">Accounting</p>
+                            <h3>Invoices, Billing &amp; Payments</h3>
+                            <p><strong>Email:</strong> accounting@sfsdistribution.com</p>
+                            <p>Invoices, payment coordination, billing records, remittance details, accounting correspondence, and payment follow-up.</p>
+                        </article>
+
+                        <article class="card contact-directory-card reveal-scale reveal-delay-2"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="supplier-support"
+                                 data-directory="purchasing"
+                                 data-contact-email="purchasing@sfsdistribution.com">
+                            <p class="section-kicker">Purchasing</p>
+                            <h3>Purchase Orders &amp; Procurement</h3>
+                            <p><strong>Email:</strong> purchasing@sfsdistribution.com</p>
+                            <p>Purchase orders, procurement coordination, supplier order execution, and supplier-side order communication.</p>
+                        </article>
+
+                        <article class="card contact-directory-card reveal-scale reveal-delay-3"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="documentation"
+                                 data-directory="compliance"
+                                 data-contact-email="compliance@sfsdistribution.com">
+                            <p class="section-kicker">Compliance</p>
+                            <h3>Regulatory &amp; Contract Compliance</h3>
+                            <p><strong>Email:</strong> compliance@sfsdistribution.com</p>
+                            <p>FAR, DFARS, CMMC, contract flowdowns, regulatory compliance communications, and compliance-related documentation.</p>
+                        </article>
+
+                        <article class="card contact-directory-card reveal-scale reveal-delay-1"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="documentation"
+                                 data-directory="traceability"
+                                 data-contact-email="traceability@sfsdistribution.com">
+                            <p class="section-kicker">Traceability Control</p>
+                            <h3>Certs, Lots &amp; Records</h3>
+                            <p><strong>Email:</strong> traceability@sfsdistribution.com</p>
+                            <p>Lot traceability, certifications, test records, document retention, inspection records, and source documentation control.</p>
+                        </article>
+
+                        <article class="card contact-directory-card reveal-scale reveal-delay-2"
+                                 role="button"
+                                 tabindex="0"
+                                 data-form-target="request-form"
+                                 data-request-type="packaging"
+                                 data-directory="shipping"
+                                 data-contact-email="shipping@sfsdistribution.com"
+                                 data-show-packaging="true">
+                            <p class="section-kicker">Shipping &amp; Logistics</p>
+                            <h3>Shipments, Delivery &amp; Packaging</h3>
+                            <p><strong>Email:</strong> shipping@sfsdistribution.com</p>
+                            <p>Shipment coordination, delivery tracking, logistics updates, carrier communication, packaging details, and shipping support.</p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-
         <section class="section contact-direct-panel" id="routing-guide">
             <div class="container contact-direct-layout">
                 <div class="contact-direct-card reveal-left">
-                    <p class="section-kicker">Direct Contact</p>
-                    <h2>Route the Request to the Right Contact Path</h2>
+                    <p class="section-kicker">Routing Guide</p>
+                    <h2>Contact Paths for RFQs, Contracts, Sourcing, Quality, and Support</h2>
+
+                    <p>
+                        Dedicated email groups help Semper Fi Services keep customer relationships, supplier communication, documentation requests, awarded orders, and response processes organized.
+                    </p>
 
                     <div class="contact-email-list">
-                        <p><strong>Front Office:</strong> semperfi@sfsdistribution.com</p>
                         <p><strong>Sales:</strong> sales@sfsdistribution.com</p>
-                        <p><strong>Customer Support:</strong> customer.support@sfsdistribution.com</p>
-                        <p><strong>Thomas:</strong> thomas.smith@sfsdistribution.com</p>
-                        <p><strong>David:</strong> david.new@sfsdistribution.com</p>
+                        <p><strong>Contracts:</strong> contracts@sfsdistribution.com</p>
+                        <p><strong>Sourcing:</strong> sourcing@sfsdistribution.com</p>
+                        <p><strong>Quality:</strong> quality@sfsdistribution.com</p>
+                        <p><strong>Support:</strong> support@sfsdistribution.com</p>
+                        <p><strong>Information Desk:</strong> info@sfsdistribution.com</p>
+                        <p><strong>Accounting:</strong> accounting@sfsdistribution.com</p>
                         <p><strong>Phone:</strong> +1 (623) 301-2271</p>
                     </div>
                 </div>
 
                 <div class="contact-routing-card-grid">
                     <article class="card reveal-scale reveal-delay-1">
-                        <h3>General / Front Office</h3>
-                        <p>Use for first-contact communication, company questions, and request routing.</p>
+                        <h3>RFQs &amp; Customer Quotes</h3>
+                        <p>Use Sales for quote requests, pricing discussions, vendor support, sourcing inquiries, and new customer opportunities.</p>
                     </article>
 
                     <article class="card reveal-scale reveal-delay-2">
-                        <h3>Sales / RFQ</h3>
-                        <p>Use for sourcing requests, pricing, solicitation references, and product quote intake.</p>
+                        <h3>Contracts &amp; Awarded Work</h3>
+                        <p>Use Contracts for government solicitations, awarded orders, contract coordination, RFQ administration, and official contract follow-up.</p>
                     </article>
 
                     <article class="card reveal-scale reveal-delay-3">
-                        <h3>Customer Support</h3>
-                        <p>Use for documentation requests, order follow-up, delivery questions, and support.</p>
+                        <h3>Sourcing &amp; Supplier Coordination</h3>
+                        <p>Use Sourcing for supplier outreach, manufacturer checks, approved-source review, vendor pricing, and availability confirmation.</p>
                     </article>
 
                     <article class="card reveal-scale reveal-delay-4">
-                        <h3>Packaging Quote</h3>
-                        <p>Use for packaging and fulfillment pricing based on quantity, pack-out, weight, and labeling requirements.</p>
+                        <h3>Quality, Traceability &amp; Compliance</h3>
+                        <p>Use Quality, Compliance, or Traceability Control for certifications, inspection records, test records, compliance documents, and documentation review.</p>
                     </article>
                 </div>
             </div>
@@ -329,13 +450,27 @@
                                 <label for="directory">Directory / Preferred Contact</label>
                                 <select id="directory" name="directory">
                                     <option value="">Select a directory</option>
-                                    <option value="front-office">Front Office</option>
                                     <option value="sales">Sales</option>
-                                    <option value="customer-support">Customer Support</option>
-                                    <option value="thomas-smith">Thomas Smith</option>
-                                    <option value="david-new">David New</option>
-                                    <option value="packaging-quote">Packaging Quote</option>
+                                    <option value="info">Information Desk</option>
+                                    <option value="support">Customer Support</option>
+                                    <option value="contracts">Contracts</option>
+                                    <option value="sourcing">Sourcing</option>
+                                    <option value="quality">Quality Assurance</option>
+                                    <option value="accounting">Accounting</option>
+                                    <option value="purchasing">Purchasing</option>
+                                    <option value="compliance">Compliance</option>
+                                    <option value="traceability">Traceability Control</option>
+                                    <option value="shipping">Shipping &amp; Logistics</option>
                                 </select>
+                            </div>
+
+                            <div class="form-row request-reveal-step request-reveal-step-7">
+                                <label for="selected-contact-email">Selected Contact Email</label>
+                                <input id="selected-contact-email"
+                                       name="selected_contact_email"
+                                       type="email"
+                                       placeholder="Select a directory to autofill"
+                                       readonly>
                             </div>
 
                             <div class="form-row request-reveal-step request-reveal-step-8">
