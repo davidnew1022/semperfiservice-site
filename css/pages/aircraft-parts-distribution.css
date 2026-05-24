@@ -741,3 +741,8 @@ MOBILE
             padding: 0.65rem 0.9rem;
         }
 }
+@media (max-width: 768px) {
+    .aircraft-parts-next-step-bg {
+        background-image: url("../../assets/images/hero/home/next_steps_banner-mobile.webp");
+    }
+}
