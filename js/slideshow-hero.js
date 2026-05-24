@@ -18,115 +18,158 @@
             "cinematic-push"
         ],
 
-        slides: [
-            {
-                src: "assets/images/hero/contact/future_structure.jpg",
-                alt: "Semper Fi Services future supply structure",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/capabilities/differentiators.jpg",
-                alt: "Semper Fi Services operational differentiators",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/packaging_shipping.jpg",
-                alt: "Packaging and shipping support",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/contact/future_structure.jpg",
-                alt: "Semper Fi Services future structure",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/home/c130-flight-01.jpg",
-                alt: "C-130 aircraft in flight",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/contact/request_form1.jpg",
-                alt: "Request form and RFQ support",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/capabilities/Hero.jpg",
-                alt: "Semper Fi Services capabilities background",
-                type: "image"
-            },
-            {
-                src: "assets/images/page-art/inspection/inspection-detail-01.jpg",
-                alt: "Inspection and quality detail",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/contact/future_structure.jpg",
-                alt: "Future supply workflow structure",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/home/apache-hover-01.jpg",
-                alt: "Apache helicopter hover image",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/quality_assurance.jpg",
-                alt: "Quality assurance support",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/aerospace-parts/aerospace-supply-support1.jpg",
-                alt: "Aerospace supply support",
-                type: "image"
-            },
-            {
-                src: "assets/images/hero/aerospace-parts/quality-approach.jpg",
-                alt: "Aerospace quality approach",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/aircraft_parts.jpg",
-                alt: "Aircraft parts support",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/nsn_as9120_packaging.jpg",
-                alt: "NSN AS9120 packaging support",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/semper_fi.jpg",
-                alt: "Semper Fi Services brand image",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/dla_distributor.jpg",
-                alt: "DLA distributor support",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/distributor.jpg",
-                alt: "Distribution support",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/nsn_sourcing.jpg",
-                alt: "NSN sourcing support",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/nsn_distributor.jpg",
-                alt: "NSN distributor support",
-                type: "image"
-            },
-            {
-                src: "assets/images/slideshow/aicraft_parts_shipping.jpg",
-                alt: "Aircraft parts shipping support",
-                type: "image"
-            }
-        ]
-    };
-
+slides: [
+    {
+        src: "assets/images/hero/contact/future_structure.webp",
+        mobileSrc: "assets/images/hero/contact/future_structure-mobile.webp",
+        alt: "Semper Fi Services future supply structure",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/apache-hover-01.webp",
+        mobileSrc: "assets/images/hero/home/apache-hover-01-mobile.webp",
+        alt: "Apache helicopter hover image",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/c130-flight-01.webp",
+        mobileSrc: "assets/images/hero/home/c130-flight-01-mobile.webp",
+        alt: "C-130 aircraft in flight",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/ch53-runway-01.webp",
+        mobileSrc: "assets/images/hero/home/ch53-runway-01-mobile.webp",
+        alt: "CH-53 helicopter on runway",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/f22-hero-01.webp",
+        mobileSrc: "assets/images/hero/home/f22-hero-01-mobile.webp",
+        alt: "F-22 aircraft hero image",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/inspection-detail-01.webp",
+        mobileSrc: "assets/images/hero/home/inspection-detail-01-mobile.webp",
+        alt: "Inspection detail image",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/marines-boarding-c130-01.webp",
+        mobileSrc: "assets/images/hero/home/marines-boarding-c130-01-mobile.webp",
+        alt: "Marines boarding C-130 aircraft",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/next_steps_banner.webp",
+        mobileSrc: "assets/images/hero/home/next_steps_banner-mobile.webp",
+        alt: "Semper Fi Services next steps banner",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/home/uh1y-venom-sky-01.webp",
+        mobileSrc: "assets/images/hero/home/uh1y-venom-sky-01-mobile.webp",
+        alt: "UH-1Y Venom in flight",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/capabilities/differentiators.webp",
+        mobileSrc: "assets/images/hero/capabilities/differentiators-mobile.webp",
+        alt: "Semper Fi Services operational differentiators",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/packaging_shipping.webp",
+        mobileSrc: "assets/images/slideshow/packaging_shipping-mobile.webp",
+        alt: "Packaging and shipping support",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/contact/request_form1.webp",
+        mobileSrc: "assets/images/hero/contact/request_form1-mobile.webp",
+        alt: "Request form and RFQ support",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/capabilities/Hero.webp",
+        mobileSrc: "assets/images/hero/capabilities/Hero-mobile.webp",
+        alt: "Semper Fi Services capabilities background",
+        type: "image"
+    },
+    {
+        src: "assets/images/page-art/inspection/inspection-detail-01.webp",
+        mobileSrc: "assets/images/page-art/inspection/inspection-detail-01-mobile.webp",
+        alt: "Inspection and quality detail",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/quality_assurance.webp",
+        mobileSrc: "assets/images/slideshow/quality_assurance-mobile.webp",
+        alt: "Quality assurance support",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/aerospace-parts/aerospace-supply-support1.webp",
+        mobileSrc: "assets/images/hero/aerospace-parts/aerospace-supply-support1-mobile.webp",
+        alt: "Aerospace supply support",
+        type: "image"
+    },
+    {
+        src: "assets/images/hero/aerospace-parts/quality-approach.webp",
+        mobileSrc: "assets/images/hero/aerospace-parts/quality-approach-mobile.webp",
+        alt: "Aerospace quality approach",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/aircraft_parts.webp",
+        mobileSrc: "assets/images/slideshow/aircraft_parts-mobile.webp",
+        alt: "Aircraft parts support",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/nsn_as9120_packaging.webp",
+        mobileSrc: "assets/images/slideshow/nsn_as9120_packaging-mobile.webp",
+        alt: "NSN AS9120 packaging support",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/semper_fi.webp",
+        mobileSrc: "assets/images/slideshow/semper_fi-mobile.webp",
+        alt: "Semper Fi Services brand image",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/dla_distributor.webp",
+        mobileSrc: "assets/images/slideshow/dla_distributor-mobile.webp",
+        alt: "DLA distributor support",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/distributor.webp",
+        mobileSrc: "assets/images/slideshow/distributor-mobile.webp",
+        alt: "Distribution support",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/nsn_sourcing.webp",
+        mobileSrc: "assets/images/slideshow/nsn_sourcing-mobile.webp",
+        alt: "NSN sourcing support",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/nsn_distributor.webp",
+        mobileSrc: "assets/images/slideshow/nsn_distributor-mobile.webp",
+        alt: "NSN distributor support",
+        type: "image"
+    },
+    {
+        src: "assets/images/slideshow/aicraft_parts_shipping.webp",
+        mobileSrc: "assets/images/slideshow/aicraft_parts_shipping-mobile.webp",
+        alt: "Aircraft parts shipping support",
+        type: "image"
+    }
+]
     const imageExtensions = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
     const videoExtensions = [".mp4"];
 

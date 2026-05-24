@@ -2,7 +2,7 @@
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-01.jpg");
+    background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-01.webp");
     background-size: 115%;
     background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
     background-repeat: no-repeat;

@@ -433,7 +433,7 @@ NEXT STEP
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
+    background-image: url("../../assets/images/hero/home/next_steps_banner.webp");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -934,4 +934,9 @@ MOBILE
             font-size: 1.0rem;
             padding: 0.65rem 0.9rem;
         }
+}
+@media (max-width: 768px) {
+    .government-next-step-bg {
+        background-image: url("../../assets/images/hero/home/next_steps_banner-mobile.webp");
+    }
 }
