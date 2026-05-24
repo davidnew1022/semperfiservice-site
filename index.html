@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="css/pages/animations.css">
     <link rel="stylesheet" href="css/cloud_animations.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="preload" as="image" href="assets/images/hero/capabilities/differentiators.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="assets/images/hero/contact/future_structure.webp" fetchpriority="high">
     <link rel="stylesheet" href="css/slide-show.css">
     <link rel="stylesheet" href="css/pages/home.css">
 
@@ -136,11 +136,14 @@
         <section class="home-scene home-scene-hero sfs-slideshow-host" id="hero" aria-label="Semper Fi Services homepage hero">
             <div class="sfs-home-hero-slideshow is-enhanced" data-sfs-slideshow aria-hidden="true">
                 <div class="sfs-slideshow-layer is-active is-initial">
-                    <img src="assets/images/hero/contact/future_structure.jpg"
-                         alt=""
-                         class="sfs-slideshow-media"
-                         fetchpriority="high"
-                         decoding="sync">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/hero/contact/future_structure-mobile.webp">
+                        <img src="assets/images/hero/contact/future_structure.webp"
+                             alt=""
+                             class="sfs-slideshow-media"
+                             fetchpriority="high"
+                             decoding="sync">
+                    </picture>
                 </div>
             </div>
 
@@ -187,7 +190,14 @@
         </section>
 
         <section class="home-scene" id="aerospace-supply" aria-label="UH-1Y Huey aerospace supply image">
-            <img src="assets/images/hero/home/uh1y-venom-sky-01.jpg" alt="UH-1Y Huey in flight" class="home-scene-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="assets/images/hero/home/uh1y-venom-sky-01-mobile.webp">
+                <img src="assets/images/hero/home/uh1y-venom-sky-01.webp"
+                     alt="UH-1Y Huey in flight"
+                     class="home-scene-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container home-scene-content">
                 <div class="home-scene-card reveal-right">
