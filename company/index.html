@@ -116,7 +116,14 @@
     <img class="company-hero-image"> so the image actually renders.
     ============================================= -->
         <section class="company-hero" id="company-hero" aria-label="Semper Fi Services company hero image">
-            <img src="../assets/images/company/hero.jpg" alt="Semper Fi Services company hero background" class="company-hero-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/company/hero-mobile.webp">
+                <img src="../assets/images/company/hero.webp"
+                     alt="Semper Fi Services company hero background"
+                     class="company-hero-image"
+                     fetchpriority="high"
+                     decoding="sync">
+            </picture>
 
             <div class="container company-hero-content">
                 <div class="company-hero-card company-hero-load reveal-left">
@@ -156,7 +163,14 @@
     FIX: moved above Foundation to match quicklinks order.
     ============================================= -->
         <section class="company-history-photo sfs-warehouse-drift" id="company-history" aria-label="Company history image">
-            <img src="../assets/images/company/history.jpg" alt="Company history background" class="company-section-image">
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/company/history-mobile.webp">
+                <img src="../assets/images/company/history.webp"
+                     alt="Company history background"
+                     class="company-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
 
             <div class="container company-photo-content">
                 <div class="company-photo-card reveal-left">
@@ -256,7 +270,14 @@
         <!-- THOMAS -->
         <section class="company-leader-section company-leader-thomas" id="thomas-smith">
             <div class="company-leader-media sfs-portrait-drift company-headshot-reveal reveal-soft">
-                <img src="../assets/images/company/thomas-smith-headshot.jpg" alt="Headshot of Thomas Smith" class="company-leader-image">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="../assets/images/company/thomas-smith-headshot-mobile.webp">
+                    <img src="../assets/images/company/thomas-smith-headshot.webp"
+                         alt="Headshot of Thomas Smith"
+                         class="company-leader-image"
+                         loading="lazy"
+                         decoding="async">
+                </picture>
             </div>
 
             <div class="container company-leader-content">
@@ -294,7 +315,14 @@
         <!-- DAVID -->
         <section class="company-leader-section company-leader-david" id="david-new">
             <div class="company-leader-media sfs-portrait-drift sfs-portrait-drift-reverse company-headshot-reveal reveal-soft">
-                <img src="../assets/images/company/david-new-headshot.jpg" alt="Headshot of David New" class="company-leader-image">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="../assets/images/company/david-new-headshot-mobile.webp">
+                    <img src="../assets/images/company/david-new-headshot.webp"
+                         alt="Headshot of David New"
+                         class="company-leader-image"
+                         loading="lazy"
+                         decoding="async">
+                </picture>
             </div>
 
             <div class="container company-leader-content">
@@ -343,8 +371,14 @@
         </section>
         <!-- MOTTO -->
         <section class="company-motto-photo" id="company-motto" aria-label="Marines boarding C-130 motto image">
-            <img src="../assets/images/hero/home/marines-boarding-c130-01.JPG" alt="Thomas and David together during military service" class="company-section-image">
-
+            <picture>
+                <source media="(max-width: 768px)" srcset="../assets/images/hero/home/marines-boarding-c130-01-mobile.webp">
+                <img src="../assets/images/hero/home/marines-boarding-c130-01.webp"
+                     alt="Thomas and David together during military service"
+                     class="company-section-image"
+                     loading="lazy"
+                     decoding="async">
+            </picture>
             <div class="container company-photo-content">
                 <div class="company-photo-card reveal-right">
                     <p class="section-kicker">Motto</p>

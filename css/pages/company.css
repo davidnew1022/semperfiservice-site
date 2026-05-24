@@ -372,7 +372,7 @@ BUILDING SECTION
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-02.jpg");
+    background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-02.webp");
     background-size: 155%;
     background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
     background-repeat: no-repeat;
@@ -507,7 +507,7 @@ NEXT STEP
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url("../../assets/images/hero/home/next_steps_banner.jpg");
+    background-image: url("../../assets/images/hero/home/next_steps_banner.webp");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1180,5 +1180,14 @@ MOBILE
     .footer-brand-column {
         justify-self: start;
         max-width: none;
+    }
+}
+@media (max-width: 768px) {
+    .company-building {
+        background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-02-mobile.webp");
+    }
+
+    .company-next-step-bg {
+        background-image: url("../../assets/images/hero/home/next_steps_banner-mobile.webp");
     }
 }
