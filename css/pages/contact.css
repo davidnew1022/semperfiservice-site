@@ -381,10 +381,15 @@ CONTACT DIRECTORY FULL IMAGE SECTION
 
 .contact-directory-main-card {
     width: min(720px, 100%);
-    justify-self: start;
-    margin-left: clamp(1rem, 4vw, 4rem);
-    background: linear-gradient(180deg, rgba(243, 249, 255, 0.86) 0%, rgba(220, 236, 248, 0.76) 42%, rgba(199, 222, 239, 0.68) 100%);
-    border: 1px solid rgba(126, 160, 190, 0.62);
+    justify-self: center;
+    margin-left: 0;
+    padding: clamp(1.65rem, 2.7vw, 2.25rem);
+    background: linear-gradient(180deg, rgba(243, 249, 255, 0.88) 0%, rgba(220, 236, 248, 0.78) 42%, rgba(199, 222, 239, 0.70) 100%);
+    border: 1px solid rgba(126, 160, 190, 0.66);
+    border-radius: 0.95rem;
+    box-shadow: 0 20px 50px rgba(18, 32, 47, 0.18);
+    backdrop-filter: blur(7px);
+    -webkit-backdrop-filter: blur(7px);
 }
 
 .contact-directory-group {
@@ -465,7 +470,7 @@ CONTACT DIRECTORY FULL IMAGE SECTION
     }
 
     .contact-directory-card-grid .card p {
-        color: var(--sfs-muted);
+        color: var(--sfs-text);
         font-size: clamp(0.82rem, 0.88vw, 0.93rem);
         line-height: 1.52;
         font-weight: 500;
