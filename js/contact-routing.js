@@ -8,6 +8,8 @@ function initContactPageRouting() {
     const preferredContact = document.getElementById("directory") || document.getElementById("preferred-contact");
     const selectedContactEmail = document.getElementById("selected-contact-email");
     const packagingFields = document.getElementById("packaging-quote-fields");
+    const nsnSourcingFields = document.getElementById("nsn-sourcing-fields");
+    const aerospaceHardwareFields = document.getElementById("aerospace-hardware-fields");
     const directoryCards = document.querySelectorAll("[data-form-target='request-form']");
 
     if (!requestFormSection || !requestType || !preferredContact) return;
@@ -69,23 +71,34 @@ function initContactPageRouting() {
         }
     };
 
-    const syncPackagingFields = () => {
-        const isPackagingQuote =
-            requestType.value === "packaging" ||
-            packagingDirectories.has(preferredContact.value);
+    const syncConditionalFields = () => {
+    const isPackagingQuote =
+    requestType.value === "packaging" ||
+    packagingDirectories.has(preferredContact.value);
 
-        if (isPackagingQuote && preferredContact.value === "") {
-            preferredContact.value = "shipping";
-        }
+    const isNsnSourcingQuote = requestType.value === "nsn-sourcing";
+    const isAerospaceHardwareQuote = requestType.value === "aerospace-hardware";
 
-        if (packagingFields) {
-            packagingFields.hidden = !isPackagingQuote;
-        }
+    if (isPackagingQuote && preferredContact.value === "") {
+    preferredContact.value = "shipping";
+    }
+
+    if (packagingFields) {
+    packagingFields.hidden = !isPackagingQuote;
+    }
+
+    if (nsnSourcingFields) {
+    nsnSourcingFields.hidden = !isNsnSourcingQuote;
+    }
+
+    if (aerospaceHardwareFields) {
+    aerospaceHardwareFields.hidden = !isAerospaceHardwareQuote;
+    }
     };
 
     const syncDirectoryRouting = () => {
-        syncSelectedContactEmail();
-        syncPackagingFields();
+    syncSelectedContactEmail();
+    syncConditionalFields();
     };
 
     const scrollToRequestForm = (behavior = "smooth") => {

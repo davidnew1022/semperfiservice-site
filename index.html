@@ -506,6 +506,62 @@
                         </div>
 
                         <div class="form-row">
+                            <label for="home-request-type">Request Type</label>
+                            <select id="home-request-type" name="request_type">
+                                <option value="">Select request type</option>
+                                <option value="nsn-sourcing">NSN Parts Sourcing</option>
+                                <option value="aerospace-hardware">Aerospace Hardware Quote</option>
+                                <option value="packaging">MIL-STD Packaging Quote</option>
+                                <option value="general">General Request</option>
+                            </select>
+                        </div>
+
+                        <div class="packaging-quote-fields" id="home-nsn-sourcing-fields" hidden>
+                            <h3>NSN Sourcing Details</h3>
+
+                            <div class="form-row">
+                                <label for="home-nsn-number">NSN / NIIN</label>
+                                <input id="home-nsn-number" name="nsn_number" type="text" placeholder="NSN, NIIN, or known stock number">
+                            </div>
+
+                            <div class="form-row">
+                                <label for="home-nsn-quantity">Quantity / Unit of Issue</label>
+                                <input id="home-nsn-quantity" name="nsn_quantity_unit" type="text" placeholder="Quantity, unit of issue, or required pack quantity">
+                            </div>
+
+                            <div class="form-row">
+                                <label for="home-nsn-solicitation">Solicitation / Contract Number</label>
+                                <input id="home-nsn-solicitation" name="nsn_solicitation_contract" type="text" placeholder="DLA solicitation, RFQ, contract number, or buyer reference">
+                            </div>
+                        </div>
+
+                        <div class="packaging-quote-fields" id="home-aerospace-hardware-fields" hidden>
+                            <h3>Aerospace Hardware Quote Details</h3>
+
+                            <div class="form-row">
+                                <label for="home-hardware-part-number">Part Number / Item Description</label>
+                                <input id="home-hardware-part-number" name="hardware_part_number_description" type="text" placeholder="Part number, item description, fastener, fitting, seal, component, or hardware type">
+                            </div>
+
+                            <div class="form-row">
+                                <label for="home-hardware-quantity">Quantity Needed</label>
+                                <input id="home-hardware-quantity" name="hardware_quantity" type="text" placeholder="Quantity, unit, or estimated order size">
+                            </div>
+
+                            <div class="form-row">
+                                <label for="home-hardware-source-method">Sourcing Method</label>
+                                <select id="home-hardware-source-method" name="hardware_sourcing_method">
+                                    <option value="">Select sourcing method</option>
+                                    <option value="manufacturer-direct">Manufacturer direct</option>
+                                    <option value="authorized-distributor">Authorized distributor</option>
+                                    <option value="qualified-supplier">Qualified supplier channel</option>
+                                    <option value="open-market-with-verification">Open market with verification</option>
+                                    <option value="not-sure">Not sure / need sourcing support</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
                             <label for="home-message">Request / RFQ</label>
                             <textarea id="home-message" name="message" rows="6" placeholder="Briefly describe your request" required></textarea>
                         </div>
@@ -513,7 +569,7 @@
                         <div class="form-row">
                             <div class="cf-turnstile"
                                  data-sitekey="0x4AAAAAADVxDEqCi-dPzmUH"
-                                 data-theme="light"
+                                 data-size="invisible"
                                  data-action="home-contact-form"></div>
                         </div>
 
@@ -576,8 +632,30 @@
     <script src="js/warehouse-drift.js" defer></script>
     <script src="js/slideshow-hero.js?v=2" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const requestType = document.getElementById("home-request-type");
+        const nsnFields = document.getElementById("home-nsn-sourcing-fields");
+        const hardwareFields = document.getElementById("home-aerospace-hardware-fields");
+
+        if (!requestType) return;
+
+        const syncHomeRequestFields = () => {
+            if (nsnFields) {
+                nsnFields.hidden = requestType.value !== "nsn-sourcing";
+            }
+
+            if (hardwareFields) {
+                hardwareFields.hidden = requestType.value !== "aerospace-hardware";
+            }
+        };
+
+        requestType.addEventListener("change", syncHomeRequestFields);
+        syncHomeRequestFields();
+    });
+    </script>
     <script src="js/main.js" defer></script>
 
-    
+
 </body>
 </html>
