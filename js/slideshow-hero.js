@@ -170,6 +170,8 @@ slides: [
         type: "image"
     }
 ]
+    };
+
     const imageExtensions = [".jpg", ".jpeg", ".png", ".webp", ".gif"];
     const videoExtensions = [".mp4"];
 
@@ -189,14 +191,18 @@ slides: [
 
         return "image";
     }
-
+    function getResponsiveSrc(slide) {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    return isMobile && slide.mobileSrc ? slide.mobileSrc : slide.src;
+}
     function createMedia(slide) {
-        const type = getFileType(slide.src, slide.type);
+    const src = getResponsiveSrc(slide);
+    const type = getFileType(src, slide.type);
 
         if (type === "video") {
             const video = document.createElement("video");
             video.className = "sfs-slideshow-media";
-            video.src = slide.src;
+            video.src = src;
             video.muted = true;
             video.loop = true;
             video.playsInline = true;
@@ -208,7 +214,7 @@ slides: [
 
         const img = document.createElement("img");
         img.className = "sfs-slideshow-media";
-        img.src = slide.src;
+        img.src = src;
         img.alt = slide.alt || "";
         img.loading = "eager";
         img.decoding = "async";
@@ -257,12 +263,13 @@ slides: [
     function preloadNextSlide(slide) {
         if (!slide || !slide.src) return;
 
-        const type = getFileType(slide.src, slide.type);
+    const src = getResponsiveSrc(slide);
+    const type = getFileType(src, slide.type);
 
         if (type === "video") return;
 
         const img = new Image();
-        img.src = slide.src;
+        img.src = src;
     }
 
     function initSlideshow(root, config) {
