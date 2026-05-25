@@ -3,12 +3,7 @@
   "short_name": "SFS",
   "icons": [
     {
-      "src": "/assets/images/brand/google-favicon.png?v=11",
-      "sizes": "96x96",
-      "type": "image/png"
-    },
-    {
-      "src": "/assets/images/brand/favicon.png?v=11",
+      "src": "/assets/images/brand/google-favicon.png?v=14",
       "sizes": "512x512",
       "type": "image/png"
     }
