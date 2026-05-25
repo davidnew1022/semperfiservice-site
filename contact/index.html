@@ -527,11 +527,65 @@
                                 </div>
                             </div>
 
+                            <div class="packaging-quote-fields request-reveal-step request-reveal-step-8" id="nsn-sourcing-fields" hidden>
+                                <h3>NSN Sourcing Details</h3>
+
+                                <div class="form-row">
+                                    <label for="nsn-number">NSN / NIIN</label>
+                                    <input id="nsn-number" name="nsn_number" type="text" placeholder="NSN, NIIN, or known stock number">
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="nsn-quantity">Quantity / Unit of Issue</label>
+                                    <input id="nsn-quantity" name="nsn_quantity_unit" type="text" placeholder="Quantity, unit of issue, or required pack quantity">
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="nsn-solicitation">Solicitation / Contract Number</label>
+                                    <input id="nsn-solicitation" name="nsn_solicitation_contract" type="text" placeholder="DLA solicitation, RFQ, contract number, or buyer reference">
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="nsn-requirements">Sourcing Requirements</label>
+                                    <textarea id="nsn-requirements" name="nsn_sourcing_requirements" rows="4" placeholder="Approved source restrictions, documentation requirements, delivery window, inspection requirements, packaging notes, or required certifications."></textarea>
+                                </div>
+                            </div>
+
+                            <div class="packaging-quote-fields request-reveal-step request-reveal-step-8" id="aerospace-hardware-fields" hidden>
+                                <h3>Aerospace Hardware Quote Details</h3>
+
+                                <div class="form-row">
+                                    <label for="hardware-part-number">Part Number / Item Description</label>
+                                    <input id="hardware-part-number" name="hardware_part_number_description" type="text" placeholder="Part number, item description, fastener, fitting, seal, component, or hardware type">
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="hardware-quantity">Quantity Needed</label>
+                                    <input id="hardware-quantity" name="hardware_quantity" type="text" placeholder="Quantity, unit, or estimated order size">
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="hardware-source-method">Sourcing Method</label>
+                                    <select id="hardware-source-method" name="hardware_sourcing_method">
+                                        <option value="">Select sourcing method</option>
+                                        <option value="manufacturer-direct">Manufacturer direct</option>
+                                        <option value="authorized-distributor">Authorized distributor</option>
+                                        <option value="qualified-supplier">Qualified supplier channel</option>
+                                        <option value="open-market-with-verification">Open market with verification</option>
+                                        <option value="not-sure">Not sure / need sourcing support</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="hardware-requirements">Hardware Requirements</label>
+                                    <textarea id="hardware-requirements" name="hardware_requirements" rows="4" placeholder="Material, size, spec, manufacturer, approved source, traceability, certification, delivery, packaging, or inspection requirements."></textarea>
+                                </div>
+                            </div>
+
                             <div class="form-row request-reveal-step request-reveal-step-8">
                                 <label for="message">Request Details</label>
                                 <textarea id="message" name="message" rows="7" placeholder="Describe your request, item details, quantity, delivery expectations, documentation requirements, and any other relevant information." required></textarea>
                             </div>
-
 
                             <div class="form-row form-check-row request-reveal-step request-reveal-step-8">
                                 <label>
