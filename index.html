@@ -632,39 +632,6 @@
     <script src="js/warehouse-drift.js" defer></script>
     <script src="js/slideshow-hero.js?v=2" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const requestType = document.getElementById("home-request-type");
-    const nsnFields = document.getElementById("home-nsn-sourcing-fields");
-    const hardwareFields = document.getElementById("home-aerospace-hardware-fields");
-
-    if (requestType) {
-        const syncHomeRequestFields = () => {
-            if (nsnFields) {
-                nsnFields.hidden = requestType.value !== "nsn-sourcing";
-            }
-
-            if (hardwareFields) {
-                hardwareFields.hidden = requestType.value !== "aerospace-hardware";
-            }
-        };
-
-        requestType.addEventListener("change", syncHomeRequestFields);
-        syncHomeRequestFields();
-    }
-
-    const favicon = document.querySelector("link[rel='icon']");
-    const shortcutIcon = document.querySelector("link[rel='shortcut icon']");
-
-    if (favicon) {
-        favicon.href = "assets/images/brand/logo2.png?v=14";
-    }
-
-    if (shortcutIcon) {
-        shortcutIcon.href = "assets/images/brand/logo2.png?v=14";
-    }
-});
-    </script>
     <script src="js/main.js" defer></script>
 </body>
 </html>

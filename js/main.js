@@ -19,6 +19,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initScrollCloudDrift();
     initPortraitDrift();
+    initHomeRequestFields();
+    initBrowserTabFavicon();
 });
 
 function initScrollCloudDrift() {
@@ -49,6 +51,7 @@ function initScrollCloudDrift() {
     window.addEventListener("scroll", updateClouds, { passive: true });
     window.addEventListener("resize", updateClouds);
 }
+
 function initPortraitDrift() {
     const portraitSections = document.querySelectorAll(".company-leader-section");
 
@@ -88,4 +91,43 @@ function initPortraitDrift() {
 
     window.addEventListener("scroll", updatePortraits, { passive: true });
     window.addEventListener("resize", updatePortraits);
+}
+
+function initHomeRequestFields() {
+    const requestType = document.getElementById("home-request-type");
+    const nsnFields = document.getElementById("home-nsn-sourcing-fields");
+    const hardwareFields = document.getElementById("home-aerospace-hardware-fields");
+
+    if (!requestType) return;
+
+    const syncHomeRequestFields = () => {
+        if (nsnFields) {
+            nsnFields.hidden = requestType.value !== "nsn-sourcing";
+        }
+
+        if (hardwareFields) {
+            hardwareFields.hidden = requestType.value !== "aerospace-hardware";
+        }
+    };
+
+    requestType.addEventListener("change", syncHomeRequestFields);
+    syncHomeRequestFields();
+}
+
+function initBrowserTabFavicon() {
+    const favicon = document.querySelector("link[rel='icon']");
+    const shortcutIcon = document.querySelector("link[rel='shortcut icon']");
+
+    const isSubpage = window.location.pathname.split("/").filter(Boolean).length > 0;
+    const iconPath = isSubpage
+        ? "../assets/images/brand/logo2.png?v=15"
+        : "assets/images/brand/logo2.png?v=15";
+
+    if (favicon) {
+        favicon.href = iconPath;
+    }
+
+    if (shortcutIcon) {
+        shortcutIcon.href = iconPath;
+    }
 }
