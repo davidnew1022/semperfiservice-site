@@ -460,7 +460,7 @@ body.home-page #contact-preview.contact-banner-bg {
 .home-page #quality-overview.quality-static-photo {
     position: relative;
     overflow: hidden;
-    background-image: url("../../assets/images/page-art/logistics/warehouse.jpg");
+    background-image: url("../../assets/images/page-art/logistics/warehouse.webp");
     background-size: 122%;
     background-position: var(--warehouse-x, 42%) var(--warehouse-y, 38%);
     background-repeat: no-repeat;
@@ -608,7 +608,7 @@ body.home-page #company-overview .split-layout > div:last-child {
 .home-page #government-overview.government-static-photo {
     position: relative;
     overflow: hidden;
-    background-image: url("../../assets/images/page-art/aircraft/F35.jpg");
+    background-image: url("../../assets/images/page-art/aircraft/F35.webp");
     background-size: 122%;
     background-position: var(--warehouse-x, 42%) var(--warehouse-y, 38%);
     background-repeat: no-repeat;
