@@ -481,28 +481,47 @@
                         </div>
                     </div>
 
-                    <form class="contact-form reveal-right reveal-delay-2" id="home-email-form">
-                        <div class="form-row">
-                            <label for="name">Name</label>
-                            <input id="name" name="name" type="text" placeholder="Your name" />
+                    <form class="contact-form reveal-right reveal-delay-2"
+                          action="https://formspree.io/f/YOUR_FORMSPREE_FORM_ID"
+                          method="POST">
+
+                        <input type="hidden" name="_subject" value="SFS Home Page Quick Request">
+                        <input type="hidden" name="form_source" value="Home Page Contact Preview">
+                        <input type="hidden" name="selected_contact_email" value="semperfi@sfsdistribution.com">
+
+                        <div class="form-row" hidden>
+                            <label for="home-website">Website</label>
+                            <input id="home-website" name="website" type="text" tabindex="-1" autocomplete="off">
                         </div>
 
                         <div class="form-row">
-                            <label for="email">Email</label>
-                            <input id="email" name="email" type="email" placeholder="you@example.com" />
+                            <label for="home-name">Name</label>
+                            <input id="home-name" name="name" type="text" placeholder="Your name" required>
                         </div>
 
                         <div class="form-row">
-                            <label for="company">Company</label>
-                            <input id="company" name="company" type="text" placeholder="Company name" />
+                            <label for="home-email">Email</label>
+                            <input id="home-email" name="email" type="email" placeholder="you@example.com" required>
                         </div>
 
                         <div class="form-row">
-                            <label for="message">Request / RFQ</label>
-                            <textarea id="message" name="message" rows="6" placeholder="Briefly describe your request"></textarea>
+                            <label for="home-company">Company</label>
+                            <input id="home-company" name="company" type="text" placeholder="Company name">
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Open Email</button>
+                        <div class="form-row">
+                            <label for="home-message">Request / RFQ</label>
+                            <textarea id="home-message" name="message" rows="6" placeholder="Briefly describe your request" required></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="cf-turnstile"
+                                 data-sitekey="0x4AAAAAADVxDEqCi-dPzmUH"
+                                 data-theme="light"
+                                 data-action="home-contact-form"></div>
+                        </div>
+
+                        <button class="btn btn-primary" type="submit">Send Request</button>
                     </form>
                 </div>
             </div>
@@ -560,42 +579,9 @@
     <script src="js/metal-drift.js" defer></script>
     <script src="js/warehouse-drift.js" defer></script>
     <script src="js/slideshow-hero.js?v=2" defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="js/main.js" defer></script>
 
-    <script>
-document.addEventListener("DOMContentLoaded", () => {
-    const homeEmailForm = document.getElementById("home-email-form");
-
-    if (!homeEmailForm) return;
-
-    homeEmailForm.addEventListener("submit", (event) => {
-        event.preventDefault();
-
-        const name = document.getElementById("name")?.value.trim() || "";
-        const email = document.getElementById("email")?.value.trim() || "";
-        const company = document.getElementById("company")?.value.trim() || "";
-        const message = document.getElementById("message")?.value.trim() || "";
-
-        const subject = "SFS Website Request";
-        const body = [
-            "New website request from the home page:",
-            "",
-            `Name: ${name}`,
-            `Email: ${email}`,
-            `Company: ${company}`,
-            "",
-            "Request / RFQ:",
-            message
-        ].join("\n");
-
-        const mailtoUrl =
-            "mailto:semperfi@sfsdistribution.com" +
-            `?subject=${encodeURIComponent(subject)}` +
-            `&body=${encodeURIComponent(body)}`;
-
-        window.location.href = mailtoUrl;
-    });
-});
-    </script>
+    
 </body>
 </html>
