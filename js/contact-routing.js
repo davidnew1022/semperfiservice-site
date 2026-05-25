@@ -10,9 +10,7 @@ function initContactPageRouting() {
     const packagingFields = document.getElementById("packaging-quote-fields");
     const directoryCards = document.querySelectorAll("[data-form-target='request-form']");
 
-    if (!requestFormSection || !requestType || !preferredContact) {
-        return;
-    }
+    if (!requestFormSection || !requestType || !preferredContact) return;
 
     const directoryEmailMap = {
         sales: "sales@sfsdistribution.com",
@@ -42,13 +40,24 @@ function initContactPageRouting() {
         shipping: "packaging"
     };
 
-    const packagingDirectories = new Set([
-        "shipping"
-    ]);
+    const requestParamMap = {
+        "request-a-quote": "dla-rfq",
+        "quote": "dla-rfq",
+        "rfq": "dla-rfq",
+        "dla-rfq": "dla-rfq",
+        "nsn-sourcing": "nsn-sourcing",
+        "aerospace-hardware": "aerospace-hardware",
+        "documentation": "documentation",
+        "packaging": "packaging",
+        "supplier-support": "supplier-support",
+        "customer-support": "customer-support",
+        "general": "general"
+    };
+
+    const packagingDirectories = new Set(["shipping"]);
 
     const syncSelectedContactEmail = () => {
         if (!selectedContactEmail) return;
-
         selectedContactEmail.value = directoryEmailMap[preferredContact.value] || "";
     };
 
@@ -102,30 +111,17 @@ function initContactPageRouting() {
         const contactEmailValue = card.getAttribute("data-contact-email") || "";
         const shouldShowPackaging = card.getAttribute("data-show-packaging") === "true";
 
-        if (requestValue) {
-            requestType.value = requestValue;
-        }
-
-        if (directoryValue) {
-            preferredContact.value = directoryValue;
-        }
-
-        if (contactEmailValue && selectedContactEmail) {
-            selectedContactEmail.value = contactEmailValue;
-        }
-
-        if (shouldShowPackaging) {
-            requestType.value = "packaging";
-        }
+        if (requestValue) requestType.value = requestValue;
+        if (directoryValue) preferredContact.value = directoryValue;
+        if (contactEmailValue && selectedContactEmail) selectedContactEmail.value = contactEmailValue;
+        if (shouldShowPackaging) requestType.value = "packaging";
 
         syncDirectoryRouting();
         scrollToRequestForm("smooth");
     };
 
     directoryCards.forEach((card) => {
-        card.addEventListener("click", () => {
-            routeDirectoryCard(card);
-        });
+        card.addEventListener("click", () => routeDirectoryCard(card));
 
         card.addEventListener("keydown", (event) => {
             if (event.key === "Enter" || event.key === " ") {
@@ -146,14 +142,19 @@ function initContactPageRouting() {
     const requestParam = params.get("request");
     const directoryParam = params.get("directory");
 
-    const normalizedRequestParam = requestParam ? requestParam.trim().toLowerCase() : "";
-    const normalizedDirectoryParam = directoryParam ? directoryParam.trim().toLowerCase().replace(/\s+/g, "-") : "";
+    const normalizedRequestParam = requestParam
+        ? requestParam.trim().toLowerCase().replace(/\s+/g, "-")
+        : "";
 
-    if (normalizedRequestParam) {
-        requestType.value = normalizedRequestParam;
+    const normalizedDirectoryParam = directoryParam
+        ? directoryParam.trim().toLowerCase().replace(/\s+/g, "-")
+        : "";
+
+    if (normalizedRequestParam && requestParamMap[normalizedRequestParam]) {
+        requestType.value = requestParamMap[normalizedRequestParam];
     }
 
-    if (normalizedDirectoryParam) {
+    if (normalizedDirectoryParam && directoryEmailMap[normalizedDirectoryParam]) {
         preferredContact.value = normalizedDirectoryParam;
         syncRequestTypeFromDirectory();
     }
