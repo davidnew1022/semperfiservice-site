@@ -349,7 +349,7 @@ CONTACT DIRECTORY FULL IMAGE SECTION
     isolation: isolate;
 }
 
-    .contact-directory-full > .contact-section-image {
+    .contact-directory-full .contact-section-image {
         position: absolute;
         inset: 0;
         z-index: 0;
@@ -721,7 +721,7 @@ REQUEST FORM FULL IMAGE SECTION
     isolation: isolate;
 }
 
-    .contact-request-full > .contact-section-image {
+    .contact-request-full .contact-section-image {
         position: absolute;
         inset: 0;
         z-index: 0;
@@ -949,14 +949,14 @@ FUTURE STRUCTURE BANNER + FULL IMAGE SECTION
     background: #0d2a45;
     isolation: isolate;
 }
-    .contact-future-full > .contact-section-image {
+    .contact-future-full .contact-section-image {
         position: absolute;
         inset: 0;
         z-index: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center center;
+        object-position: center 65%;
     }
     .contact-future-full::after {
         content: "";
