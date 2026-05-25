@@ -671,7 +671,15 @@ body.home-page #government-overview.government-static-photo .card {
         font-weight: 600;
         line-height: 1.35;
     }
-
+.sfs-honeypot {
+    position: absolute !important;
+    left: -9999px !important;
+    width: 1px !important;
+    height: 1px !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
 /* Company back to clean text section */
 .home-page #company-overview {
     background: #ffffff;
