@@ -117,8 +117,9 @@ function initHomeRequestFields() {
 function initBrowserTabFavicon() {
     const favicon = document.querySelector("link[rel='icon']");
     const shortcutIcon = document.querySelector("link[rel='shortcut icon']");
+    const pathParts = window.location.pathname.split("/").filter(Boolean);
+    const isSubpage = pathParts.length > 0 && pathParts[0] !== "index.html";
 
-    const isSubpage = window.location.pathname.split("/").filter(Boolean).length > 0;
     const iconPath = isSubpage
         ? "../assets/images/brand/logo2.png?v=15"
         : "assets/images/brand/logo2.png?v=15";
