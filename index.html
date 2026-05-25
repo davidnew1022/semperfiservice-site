@@ -481,7 +481,7 @@
                         </div>
                     </div>
 
-                    <form class="contact-form reveal-right reveal-delay-2" action="contact/index.html#request-form" method="get">
+                    <form class="contact-form reveal-right reveal-delay-2" id="home-email-form">
                         <div class="form-row">
                             <label for="name">Name</label>
                             <input id="name" name="name" type="text" placeholder="Your name" />
@@ -502,7 +502,7 @@
                             <textarea id="message" name="message" rows="6" placeholder="Briefly describe your request"></textarea>
                         </div>
 
-                        <button class="btn btn-primary" type="submit">Start Request</button>
+                        <button class="btn btn-primary" type="submit">Open Email</button>
                     </form>
                 </div>
             </div>
@@ -561,5 +561,41 @@
     <script src="js/warehouse-drift.js" defer></script>
     <script src="js/slideshow-hero.js?v=2" defer></script>
     <script src="js/main.js" defer></script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const homeEmailForm = document.getElementById("home-email-form");
+
+    if (!homeEmailForm) return;
+
+    homeEmailForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const name = document.getElementById("name")?.value.trim() || "";
+        const email = document.getElementById("email")?.value.trim() || "";
+        const company = document.getElementById("company")?.value.trim() || "";
+        const message = document.getElementById("message")?.value.trim() || "";
+
+        const subject = "SFS Website Request";
+        const body = [
+            "New website request from the home page:",
+            "",
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Company: ${company}`,
+            "",
+            "Request / RFQ:",
+            message
+        ].join("\n");
+
+        const mailtoUrl =
+            "mailto:semperfi@sfsdistribution.com" +
+            `?subject=${encodeURIComponent(subject)}` +
+            `&body=${encodeURIComponent(body)}`;
+
+        window.location.href = mailtoUrl;
+    });
+});
+    </script>
 </body>
 </html>
