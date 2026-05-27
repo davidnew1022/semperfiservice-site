@@ -1189,10 +1189,10 @@ MOBILE
 }
 @media (max-width: 768px) {
     .company-building {
-        background-image: url("../../assets/images/page-art/cloud-cover/cloud-transition-02-mobile.webp");
+        background-image: url("/assets/images/page-art/cloud-cover/cloud-transition-02-mobile.webp");
     }
 
     .company-next-step-bg {
-        background-image: url("../../assets/images/hero/home/next_steps_banner-mobile.webp");
+        background-image: url("/assets/images/hero/home/next_steps_banner-mobile.webp");
     }
 }
