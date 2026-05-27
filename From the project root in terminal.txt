@@ -1,0 +1,18 @@
+From the project root in terminal:
+
+cd C:\Users\david\source\repos\semperfiservice-site-github
+python -m http.server 5500
+
+Then open:
+
+http://localhost:5500/
+
+To stop it:
+
+Ctrl + C
+
+If python does not work, try:
+
+py -m http.server 5500
+
+Done.
