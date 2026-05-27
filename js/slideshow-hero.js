@@ -313,6 +313,7 @@ slides: [
 
         root.appendChild(standbyLayer);
         root.appendChild(overlay);
+        root.classList.add("is-enhanced");
 
         let currentIndex = 0;
 
