@@ -377,7 +377,7 @@ BUILDING SECTION
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    background-image: url("../assets/images/page-art/cloud-cover/cloud-transition-02.webp");
+    background-image: url("/assets/images/page-art/cloud-cover/cloud-transition-02.webp");
     background-size: 155%;
     background-position: var(--cloud-x, 50%) var(--cloud-y, 50%);
     background-repeat: no-repeat;
