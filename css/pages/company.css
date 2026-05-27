@@ -211,6 +211,11 @@ card = glass box, left or right aligned
     display: block;
 }
 
+.company-history-photo.sfs-warehouse-drift .company-section-image {
+    object-position: var(--warehouse-x, 42%) var(--warehouse-y, 38%);
+    transition: object-position 0.08s linear;
+}
+
 .company-history-photo::after,
 .company-motto-photo::after,
 .company-leader-section::after {
@@ -822,11 +827,11 @@ MOBILE
     ═══════════════════════════════════════════ */
     body.company-page .company-history-photo,
     body.company-page .company-motto-photo {
-        min-height: 680px;
+        min-height: clamp(680px, 78vw, 940px);
         overflow: hidden;
         padding: 1rem;
-        display: block;
-        align-items: unset;
+        display: flex;
+        align-items: center;
     }
 
     body.company-page .company-photo-content {
